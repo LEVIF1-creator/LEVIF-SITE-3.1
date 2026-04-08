@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Auto Lab — FAQ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="wrap topbar-inner">
+        <a href="index.html" class="brand">
+          <div class="brand-mark"></div>
+          <div class="brand-text">
+            <strong>System Auto Lab</strong>
+            <span>Énergie vivante, automatisation organique.</span>
+          </div>
+        </a>
+        <nav class="nav">
+          <a href="index.html">Accueil</a>
+          <a href="shop.html">Shop</a>
+          <a href="entreprise.html">Entreprise</a>
+          <a href="actualites.html">Actualités</a>
+          <a href="faq.html">FAQ</a>
+          <a href="chatbot.html" class="nav-cta">Chatbot</a>
+        </nav>
+      </div>
+    </header>
+    <main class="wrap">
+<section class="section hero"><div class="hero-shell" style="min-height:320px;"><div class="organic-textures"></div><div class="energy-orbs"></div><div class="arc-layer"></div><div class="hero-grid" style="grid-template-columns:1fr;"><div class="hero-copy"><div class="badge"><span class="badge-dot"></span>FAQ complète</div><h1>Questions <span class="accent">fréquentes</span></h1><p class="lead">Une page entière pour filtrer les objections, rassurer et réduire les frictions avant achat.</p></div></div></div></section><section class="section"><div class="faq-wrap"><article class="faq-item open"><button class="faq-button"><span>Comment choisir entre les systèmes ?</span><span>+</span></button><div class="faq-answer">Pars de la zone qui te ralentit le plus aujourd’hui : accueil, contenu, conversion, support ou organisation interne.</div></article><article class="faq-item"><button class="faq-button"><span>Pourquoi trois niveaux par système ?</span><span>+</span></button><div class="faq-answer">Starter, Pro et Premium rendent la montée en puissance plus lisible et permettent d’adapter l’offre au contexte réel.</div></article><article class="faq-item"><button class="faq-button"><span>Les paiements se font-ils sur le site ?</span><span>+</span></button><div class="faq-answer">Oui. La logique du tunnel est centralisée sur le site, puis tes scénarios post-achat prennent le relais automatiquement.</div></article><article class="faq-item"><button class="faq-button"><span>Le chatbot remplace-t-il l’humain ?</span><span>+</span></button><div class="faq-answer">Non. Il prépare, filtre, oriente et accélère les échanges. Il améliore le départ d’une conversation.</div></article><article class="faq-item"><button class="faq-button"><span>Les abonnements sont-ils obligatoires ?</span><span>+</span></button><div class="faq-answer">Non. Ils servent à entretenir, prolonger ou accélérer la valeur d’une base déjà activée.</div></article></div></section>
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-left">
+            <strong>System Auto Lab</strong>
+            <span>Énergie vivante, logique réelle.</span>
+          </div>
+          <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="shop.html">Shop</a>
+            <a href="entreprise.html">Entreprise</a>
+            <a href="actualites.html">Actualités</a>
+            <a href="faq.html">FAQ</a>
+            <a href="chatbot.html">Chatbot</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <a href="chatbot.html" class="floating-contact"><span>⚡</span><span>Chatbot</span></a>
+  </div>
+  <script>
+    document.querySelectorAll('.faq-button').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var item = button.closest('.faq-item');
+        if (item) item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

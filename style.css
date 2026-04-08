@@ -1,0 +1,430 @@
+:root {
+  --bg: #05070d;
+  --bg-soft: #08111c;
+  --panel: rgba(10, 16, 28, 0.82);
+  --panel-2: rgba(14, 22, 37, 0.88);
+  --line: rgba(255,255,255,0.08);
+  --text: #f4f7fb;
+  --muted: #aab4c7;
+  --blue: #6ec8ff;
+  --blue-2: #2ca7ff;
+  --violet: #a87dff;
+  --yellow: #ffd25e;
+  --orange: #ff9b3d;
+  --white: #ffffff;
+  --green: #7ef0b2;
+  --shadow: 0 24px 70px rgba(0,0,0,0.42);
+  --radius: 22px;
+  --radius-lg: 34px;
+  --max: 1320px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(44,167,255,0.14), transparent 24%),
+    radial-gradient(circle at 84% 20%, rgba(255,155,61,0.10), transparent 22%),
+    radial-gradient(circle at 50% 78%, rgba(168,125,255,0.10), transparent 28%),
+    linear-gradient(180deg,#05070d 0%,#08111c 42%,#05070d 100%);
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+  background-size:44px 44px;
+  opacity:.32;
+}
+body::after{
+  content:"";
+  position:fixed;inset:-20%;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(circle at 30% 45%, rgba(44,167,255,0.09), transparent 16%),
+    radial-gradient(circle at 65% 35%, rgba(255,210,94,0.08), transparent 15%),
+    radial-gradient(circle at 56% 58%, rgba(255,155,61,0.10), transparent 19%);
+  filter:blur(18px);
+}
+.page{position:relative;z-index:1}
+.wrap{width:calc(100% - 32px);max-width:var(--max);margin:0 auto}
+.topbar{
+  position:sticky;top:0;z-index:100;
+  backdrop-filter: blur(16px);
+  background:rgba(5,7,13,.82);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.topbar-inner{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
+.brand-mark{
+  width:48px;height:48px;border-radius:16px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.92), transparent 18%),
+    linear-gradient(135deg, rgba(110,200,255,.95), rgba(255,155,61,.92) 55%, rgba(255,210,94,.88));
+  box-shadow:0 0 24px rgba(44,167,255,.20), 0 0 30px rgba(255,155,61,.14);
+  border:1px solid rgba(255,255,255,.12);
+}
+.brand-mark::after{
+  content:"";position:absolute;left:6px;top:22px;width:36px;height:2px;transform:rotate(-24deg);
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.95), transparent);
+}
+.brand-text strong{display:block;font-size:16px;letter-spacing:.02em}
+.brand-text span{display:block;font-size:12px;color:var(--muted)}
+.nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.nav a{text-decoration:none;color:#dbe7fb;padding:10px 14px;border-radius:999px;transition:.2s ease}
+.nav a:hover{background:rgba(255,255,255,.06)}
+.nav .nav-cta{border:1px solid rgba(110,200,255,.24);box-shadow:0 0 0 1px rgba(255,155,61,.06) inset}
+.hero{padding:34px 0 22px}
+.hero-shell{
+  position:relative;overflow:hidden;border-radius:var(--radius-lg);
+  border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);
+  min-height:760px;
+  background:
+    linear-gradient(180deg, rgba(6,11,20,.72), rgba(6,11,20,.78)),
+    radial-gradient(circle at 50% 52%, rgba(255,166,61,.22), transparent 18%),
+    radial-gradient(circle at 36% 46%, rgba(44,167,255,.15), transparent 24%),
+    radial-gradient(circle at 64% 46%, rgba(168,125,255,.12), transparent 20%),
+    linear-gradient(180deg,#08101b,#04070d);
+}
+.hero-shell::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(255,184,77,.28), transparent 12%),
+    radial-gradient(circle at 49% 50%, rgba(255,255,255,.08), transparent 5%),
+    radial-gradient(circle at 17% 12%, rgba(255,255,255,.06), transparent 12%);
+  pointer-events:none;
+}
+.hero-shell::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(120deg, transparent 20%, rgba(255,255,255,.04) 48%, transparent 74%);
+  mix-blend-mode:screen;opacity:.45;
+}
+.arc-layer,.energy-orbs,.organic-textures{position:absolute;inset:0;pointer-events:none}
+.arc-layer{
+  background:
+    radial-gradient(circle at 18% 48%, rgba(44,167,255,.38), transparent 2.3%),
+    radial-gradient(circle at 82% 40%, rgba(255,155,61,.28), transparent 2.4%),
+    radial-gradient(circle at 50% 50%, rgba(255,210,94,.26), transparent 3%),
+    linear-gradient(110deg, transparent 25%, rgba(44,167,255,.10) 35%, transparent 43%),
+    linear-gradient(68deg, transparent 45%, rgba(255,155,61,.12) 54%, transparent 61%),
+    linear-gradient(92deg, transparent 48%, rgba(255,255,255,.07) 50%, transparent 52%);
+  filter:blur(1px) saturate(130%);
+  opacity:.95;
+}
+.energy-orbs{
+  background:
+    radial-gradient(circle at 24% 24%, rgba(255,155,61,.70), transparent 4.5%),
+    radial-gradient(circle at 77% 26%, rgba(110,200,255,.62), transparent 4.8%),
+    radial-gradient(circle at 72% 74%, rgba(255,210,94,.54), transparent 4.2%),
+    radial-gradient(circle at 28% 76%, rgba(168,125,255,.48), transparent 4.5%),
+    radial-gradient(circle at 50% 50%, rgba(255,166,61,.95), transparent 10%);
+  mix-blend-mode:screen;opacity:.9;
+}
+.organic-textures{
+  background:
+    radial-gradient(circle at 6% 40%, rgba(46,75,38,.26), transparent 18%),
+    radial-gradient(circle at 94% 58%, rgba(53,77,61,.24), transparent 18%),
+    radial-gradient(circle at 20% 80%, rgba(88,52,14,.14), transparent 15%),
+    radial-gradient(circle at 82% 14%, rgba(88,52,14,.12), transparent 16%);
+  opacity:.8;
+}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch;padding:36px}
+.hero-copy,.hero-panel{
+  background:linear-gradient(180deg, rgba(10,16,28,.72), rgba(10,16,28,.78));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:28px;backdrop-filter: blur(10px);
+}
+.hero-copy{padding:38px}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;background:rgba(110,200,255,.08);border:1px solid rgba(110,200,255,.18);color:#e3fbff;font-size:13px;margin-bottom:18px}
+.badge-dot{width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 12px var(--yellow);flex:0 0 auto}
+h1{margin:0 0 16px;font-size:clamp(42px,6vw,74px);line-height:.95;letter-spacing:-.05em}
+.accent{background:linear-gradient(90deg,var(--blue),#fff 28%,var(--yellow) 58%,var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{margin:0;color:var(--muted);font-size:18px;line-height:1.75;max-width:760px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:12px;text-decoration:none;font-weight:bold;transition:.2s ease;border:1px solid transparent;white-space:nowrap;width:auto}
+.btn-primary{background:linear-gradient(135deg,var(--blue-2),var(--violet) 42%,var(--yellow) 88%);color:#081019;box-shadow:0 10px 24px rgba(44,167,255,.18), 0 0 20px rgba(255,155,61,.12)}
+.btn-primary:hover{transform:translateY(-2px);filter:brightness(1.03)}
+.btn-secondary{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.10);color:#eef5ff}
+.btn-secondary:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.hero-stats{margin-top:28px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:16px}
+.stat strong{display:block;font-size:20px;margin-bottom:6px}
+.stat span{color:var(--muted);font-size:14px;line-height:1.45}
+.hero-panel{padding:24px;position:relative;overflow:hidden}
+.hero-panel-grid{display:grid;grid-template-columns:1fr;gap:14px;height:100%}
+.panel-block{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:18px}
+.panel-block h3{margin:0 0 8px;font-size:19px}
+.panel-block p{margin:0;color:var(--muted);line-height:1.62;font-size:14px}
+.icon-list{display:grid;gap:12px;margin-top:10px}
+.icon-row{display:grid;grid-template-columns:54px 1fr;gap:14px;align-items:start;padding:12px 0;border-top:1px solid rgba(255,255,255,.06)}
+.icon-row:first-child{border-top:none;padding-top:0}
+.icon-badge{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);font-size:22px}
+.icon-row strong{display:block;margin-bottom:4px;font-size:15px}
+.icon-row span{display:block;color:var(--muted);line-height:1.5;font-size:13px}
+.section{padding:58px 0 10px}
+.section-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;flex-wrap:wrap;margin-bottom:22px}
+.eyebrow{display:inline-block;margin-bottom:10px;color:var(--blue);text-transform:uppercase;font-size:12px;letter-spacing:.16em}
+h2{margin:0;font-size:clamp(30px,4vw,46px);letter-spacing:-.04em}
+.section-head p{margin:0;color:var(--muted);max-width:820px;line-height:1.72}
+.page-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.page-card,.offer-card,.sub-card,.why-card,.step-card,.faq-item,.news-card,.contact-card,.chat-card,.cta-band{
+  background:linear-gradient(180deg, rgba(15,23,40,.95), rgba(10,16,28,.96));
+  border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow)
+}
+.page-card{grid-column:span 4;padding:22px;position:relative;overflow:hidden}
+.page-card::before,.offer-card::before,.sub-card::before{
+  content:"";position:absolute;width:160px;height:160px;right:-60px;top:-60px;
+  background:radial-gradient(circle, rgba(255,155,61,.14), transparent 58%);
+  pointer-events:none;
+}
+.page-card h3{margin:0 0 8px;font-size:22px}
+.page-card p{margin:0 0 16px;color:var(--muted);line-height:1.7}
+.meta-list{display:grid;gap:10px;margin-top:14px}
+.meta-item{padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.05);font-size:14px;color:#dce9ff}
+.shop-section{margin-top:8px}
+.shop-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.shop-chip{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:#eef5ff;font-weight:bold}
+.offer-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.offer-card,.sub-card{padding:18px;display:flex;flex-direction:column;min-height:100%;position:relative;overflow:hidden}
+.offer-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:10px}
+.offer-top h3{margin:0;font-size:18px;letter-spacing:-.02em}
+.tag{display:inline-flex;padding:7px 10px;border-radius:999px;font-size:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:#e8f6ff;white-space:nowrap}
+.offer-desc{color:var(--muted);font-size:14px;line-height:1.6;min-height:70px;margin:0 0 12px}
+.tier{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:14px;margin-top:10px}
+.tier-head{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin-bottom:8px}
+.tier-head strong{font-size:15px}
+.tier-price{color:#fff;font-weight:bold;font-size:14px}
+.tier p{margin:0 0 10px;color:var(--muted);font-size:13px;line-height:1.55}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.chip{font-size:11px;padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);color:#dce9ff}
+.buy-link{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 14px;border-radius:12px;text-decoration:none;font-weight:bold;font-size:14px;background:linear-gradient(135deg,var(--blue-2),var(--violet) 48%,var(--yellow));color:#081019;width:auto;box-shadow:0 8px 18px rgba(44,167,255,.14), 0 0 14px rgba(255,155,61,.10)}
+.buy-link:hover{filter:brightness(1.03);transform:translateY(-1px)}
+.subs-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.sub-badge{display:inline-flex;padding:7px 10px;border-radius:999px;font-size:12px;color:#e8faff;background:rgba(110,200,255,.08);border:1px solid rgba(110,200,255,.16);margin-bottom:12px}
+.sub-card h3{margin:0 0 8px;font-size:18px}
+.sub-price{font-size:22px;font-weight:bold;line-height:1.15;margin-bottom:10px}
+.sub-price span{display:block;font-size:13px;color:var(--muted);font-weight:normal;margin-top:4px}
+.sub-card p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.65}
+.list{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:8px}
+.list li{position:relative;padding-left:16px;color:#deebff;font-size:14px;line-height:1.5}
+.list li::before{content:"";position:absolute;left:0;top:7px;width:7px;height:7px;border-radius:50%;background:linear-gradient(180deg,var(--blue),var(--yellow));box-shadow:0 0 10px rgba(110,200,255,.45)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.why-card{padding:22px}
+.why-card p{margin:0;color:var(--muted);line-height:1.7}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step-card{padding:22px}
+.step-number{width:40px;height:40px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--blue-2),var(--violet),var(--yellow));color:#081019;font-weight:bold;margin-bottom:12px}
+.step-card p{margin:0;color:var(--muted);line-height:1.66;font-size:14px}
+.faq-wrap{display:grid;gap:12px}
+.faq-item{padding:18px;overflow:hidden}
+.faq-button{width:100%;background:none;border:none;color:#fff;font:inherit;text-align:left;cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:center;padding:0;font-weight:bold}
+.faq-answer{display:none;margin-top:12px;color:var(--muted);font-size:14px;line-height:1.7}
+.faq-item.open .faq-answer{display:block}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.news-card{padding:22px}
+.news-card .k{display:inline-block;color:var(--blue);font-size:12px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:10px}
+.news-card p{margin:0;color:var(--muted);line-height:1.66}
+.contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}
+.contact-card,.chat-card{padding:24px}
+.contact-card p,.chat-card p{margin:0 0 16px;color:var(--muted);line-height:1.7}
+.contact-links{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.contact-link{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;text-decoration:none;color:#eaf5ff;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.contact-link:hover{background:rgba(255,255,255,.07)}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.field{display:flex;flex-direction:column;gap:8px}.field.full{grid-column:1 / -1}
+.field label{font-size:14px;color:#d9e6f8}
+.field input,.field select,.field textarea{width:100%;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:#fff;font:inherit;outline:none}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(110,200,255,.24);box-shadow:0 0 0 3px rgba(110,200,255,.08)}
+.form-note{margin-top:12px;color:var(--muted);font-size:13px;line-height:1.6}
+.chat-window{display:grid;gap:10px;margin-top:10px}.chat-bubble{max-width:88%;padding:12px 14px;border-radius:16px;line-height:1.6;font-size:14px;border:1px solid rgba(255,255,255,.07)}
+.chat-ai{background:rgba(110,200,255,.08);color:#eafcff;justify-self:start}.chat-user{background:rgba(255,255,255,.05);color:#eef5ff;justify-self:end}
+.chat-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.cta-band{padding:26px}.cta-band h3{margin:0 0 8px;font-size:30px;letter-spacing:-.04em}.cta-band p{margin:0;color:var(--muted);line-height:1.7;max-width:840px}
+.footer{padding:30px 0 46px}.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:20px;border-top:1px solid rgba(255,255,255,.06)}
+.footer-left strong{display:block;margin-bottom:4px}.footer-left span{color:var(--muted);font-size:14px}.footer-links{display:flex;gap:10px 14px;flex-wrap:wrap}.footer-links a{text-decoration:none;color:#c6d7ef}
+.floating-contact{position:fixed;right:18px;bottom:18px;z-index:95;display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:999px;text-decoration:none;color:#081019;font-weight:bold;background:linear-gradient(135deg,var(--blue-2),var(--violet) 45%,var(--yellow));box-shadow:0 16px 36px rgba(50,169,255,.18)}
+@media (max-width:1280px){.offer-grid,.subs-grid{grid-template-columns:repeat(3,1fr)} .page-card{grid-column:span 6}}
+@media (max-width:1080px){.hero-grid,.why-grid,.contact-grid{grid-template-columns:1fr}.hero-stats,.news-grid,.process-grid{grid-template-columns:repeat(2,1fr)} .page-card{grid-column:span 12}}
+@media (max-width:760px){.topbar-inner{flex-direction:column;align-items:flex-start;padding:10px 0}.nav{width:100%;justify-content:flex-start}.hero-shell{min-height:auto}.hero-grid{padding:18px}.hero-copy{padding:24px}.offer-grid,.subs-grid,.hero-stats,.news-grid,.process-grid,.form-grid{grid-template-columns:1fr}.floating-contact span:last-child{display:none}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="wrap topbar-inner">
+        <a href="index.html" class="brand">
+          <div class="brand-mark"></div>
+          <div class="brand-text">
+            <strong>System Auto Lab</strong>
+            <span>Énergie vivante, automatisation organique.</span>
+          </div>
+        </a>
+        <nav class="nav">
+          <a href="shop.html">Shop</a>
+          <a href="entreprise.html">Entreprise</a>
+          <a href="actualites.html">Actualités</a>
+          <a href="faq.html">FAQ</a>
+          <a href="chatbot.html" class="nav-cta">Chatbot</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <div class="hero-shell">
+          <div class="organic-textures"></div>
+          <div class="energy-orbs"></div>
+          <div class="arc-layer"></div>
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <div class="badge"><span class="badge-dot"></span>Interface d entrée immersive • 5 systèmes • 15 offres • 5 abonnements</div>
+              <h1>Entrez dans un <span class="accent">univers d’automatisation vivante</span></h1>
+              <p class="lead">System Auto Lab rassemble des systèmes IA pensés pour accueillir, produire, convertir, soutenir et organiser. Une façade plus organique, énergétique et premium, où chaque module devient une source d’activation concrète.</p>
+              <div class="hero-actions">
+                <a href="shop.html" class="btn btn-primary">Entrer dans le shop</a>
+                <a href="entreprise.html" class="btn btn-secondary">Voir l’entreprise</a>
+              </div>
+              <div class="hero-stats">
+                <div class="stat"><strong>24/7</strong><span>Accueil, traitement et orientation continus.</span></div>
+                <div class="stat"><strong>15 offres</strong><span>Trois niveaux pour cinq systèmes principaux.</span></div>
+                <div class="stat"><strong>5 abonnements</strong><span>Évolution continue et montée en puissance.</span></div>
+                <div class="stat"><strong>1 tunnel</strong><span>Site → paiement → livraison automatisée.</span></div>
+              </div>
+            </div>
+
+            <div class="hero-panel">
+              <div class="hero-panel-grid">
+                <div class="panel-block">
+                  <h3>Noyau vivant</h3>
+                  <p>La page d’accueil joue le rôle de portail. Elle introduit l’univers, rassure, oriente et prépare le passage vers les pages du shop, de l’entreprise, des actualités, de la FAQ et du chatbot connecté à Make.</p>
+                </div>
+                <div class="panel-block">
+                  <div class="icon-list">
+                    <div class="icon-row"><div class="icon-badge">💬</div><div><strong>Accueil 24/7</strong><span>Répond, oriente, filtre et ouvre le bon chemin.</span></div></div>
+                    <div class="icon-row"><div class="icon-badge">⚙️</div><div><strong>Modules activables</strong><span>Des cartes reliées à vos 20 liens et à votre logique existante.</span></div></div>
+                    <div class="icon-row"><div class="icon-badge">📈</div><div><strong>Tunnel intégré</strong><span>Vitrine immersive, shop structuré, achat, livraison automatisée.</span></div></div>
+                    <div class="icon-row"><div class="icon-badge">🌿</div><div><strong>Style organique</strong><span>Bleu, violet, jaune, blanc et orange, arcs électriques et textures naturelles.</span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">architecture</span>
+            <h2>Une structure en plusieurs pages, pensée comme un système complet</h2>
+          </div>
+          <p>Le site n’est plus seulement une vitrine. Il devient un écosystème : accueil immersif, shop séparé, entreprise, actualités réelles, FAQ, chatbot connecté à Make et démonstrations visuelles.</p>
+        </div>
+
+        <div class="page-grid">
+          <article class="page-card">
+            <h3>Page d’accueil</h3>
+            <p>Une entrée visuelle forte, inspirée de l’image de référence. Arcs, noyau d’énergie, organique vivant et orientation claire vers les autres pages.</p>
+            <div class="meta-list">
+              <div class="meta-item">Rôle : immersion + orientation</div>
+              <div class="meta-item">Tunnel : premier contact + redirection</div>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <h3>Shop structuré</h3>
+            <p>Deux sections nettes : <strong>Automatisation</strong> pour les 15 offres et <strong>Abonnements</strong> pour les 5 évolutions. Tous les paiements restent portés par le site.</p>
+            <div class="meta-list">
+              <div class="meta-item">Rôle : conversion directe</div>
+              <div class="meta-item">Tunnel : page clé de vente</div>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <h3>Entreprise</h3>
+            <p>Présentation de la vision, graphiques, démonstrations, logique produit et place de System Auto Lab dans l’ensemble de vos projets.</p>
+            <div class="meta-list">
+              <div class="meta-item">Rôle : crédibilité + compréhension</div>
+              <div class="meta-item">Tunnel : rassurance avant achat</div>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <h3>Actualités</h3>
+            <p>Une page dédiée à l’actualité réelle du moment, pensée pour être branchée ensuite à une source ou à un scénario d’alimentation.</p>
+            <div class="meta-list">
+              <div class="meta-item">Rôle : fraîcheur + ancrage réel</div>
+              <div class="meta-item">Tunnel : autorité + retour fréquent</div>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <h3>FAQ</h3>
+            <p>Une page entière de réponses, plus riche que le simple bloc actuel, pour filtrer les objections et clarifier le parcours d’achat.</p>
+            <div class="meta-list">
+              <div class="meta-item">Rôle : réduction des frictions</div>
+              <div class="meta-item">Tunnel : décision plus nette</div>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <h3>Chatbot connecté à Make</h3>
+            <p>Une page chat dédiée, pensée pour être reliée à votre réceptionniste IA via webhook Make, et jouer un rôle conversationnel réel sur le site.</p>
+            <div class="meta-list">
+              <div class="meta-item">Rôle : discussion + orientation</div>
+              <div class="meta-item">Tunnel : aide au choix + relance</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-band">
+          <h3>Le site devient maintenant un vrai système visuel et stratégique.</h3>
+          <p>Base immersive, pages distinctes, shop propre, tunnel cohérent, identité énergétique et organique : tu as maintenant une architecture cohérente avec tes scénarios, tes liens et tes objectifs.</p>
+          <div class="hero-actions">
+            <a href="shop.html" class="btn btn-primary">Aller au shop</a>
+            <a href="chatbot.html" class="btn btn-secondary">Tester le chatbot</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-left">
+            <strong>System Auto Lab</strong>
+            <span>Énergie vivante, logique réelle.</span>
+          </div>
+          <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="shop.html">Shop</a>
+            <a href="entreprise.html">Entreprise</a>
+            <a href="actualites.html">Actualités</a>
+            <a href="faq.html">FAQ</a>
+            <a href="chatbot.html">Chatbot</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <a href="chatbot.html" class="floating-contact">
+      <span>⚡</span>
+      <span>Chatbot</span>
+    </a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-button').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var item = button.closest('.faq-item');
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

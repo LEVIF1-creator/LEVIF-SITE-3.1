@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Auto Lab — Chatbot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="wrap topbar-inner">
+        <a href="index.html" class="brand">
+          <div class="brand-mark"></div>
+          <div class="brand-text">
+            <strong>System Auto Lab</strong>
+            <span>Énergie vivante, automatisation organique.</span>
+          </div>
+        </a>
+        <nav class="nav">
+          <a href="index.html">Accueil</a>
+          <a href="shop.html">Shop</a>
+          <a href="entreprise.html">Entreprise</a>
+          <a href="actualites.html">Actualités</a>
+          <a href="faq.html">FAQ</a>
+          <a href="chatbot.html" class="nav-cta">Chatbot</a>
+        </nav>
+      </div>
+    </header>
+    <main class="wrap">
+<section class="section hero"><div class="hero-shell" style="min-height:360px;"><div class="organic-textures"></div><div class="energy-orbs"></div><div class="arc-layer"></div><div class="hero-grid"><div class="hero-copy"><div class="badge"><span class="badge-dot"></span>Chatbot relié à Make</div><h1>Discussion <span class="accent">temps réel</span></h1><p class="lead">Cette page est prévue pour être branchée à ton scénario Make via webhook. Tu remplaces simplement l’URL du webhook dans le script ci-dessous.</p></div><div class="hero-panel"><div class="panel-block"><h3>Logique</h3><p>Message → webhook Make → réceptionniste IA → réponse JSON → retour dans le chat du site.</p></div></div></div></div></section><section class="section"><div class="contact-grid"><article class="chat-card" style="min-height:520px;"><h3>Assistant System Auto Lab</h3><p>Version prête à connecter à Make.</p><div id="chat-messages" class="chat-window" style="height:320px;overflow:auto;"><div class="chat-bubble chat-ai">Bonjour. Quelle zone souhaitez-vous automatiser en priorité ?</div></div><div class="form-grid" style="margin-top:16px;grid-template-columns:1fr auto;"><input id="chat-input" type="text" placeholder="Écrivez votre message..."/><button class="btn btn-primary" id="send-btn" type="button">Envoyer</button></div><div class="form-note">Remplace <strong>MAKE_WEBHOOK_URL</strong> dans le script avant mise en ligne finale.</div></article><article class="contact-card"><h3>Connexion Make</h3><p>Le scénario conseillé : webhook custom → GPT / réceptionniste → réponse JSON {"reply":"..."} → retour front.</p><div class="meta-list"><div class="meta-item">Étape 1 : créer le webhook dans Make</div><div class="meta-item">Étape 2 : faire répondre le scénario en JSON</div><div class="meta-item">Étape 3 : remplacer l’URL dans le script</div></div></article></div></section><script>const webhookUrl='MAKE_WEBHOOK_URL';const input=document.getElementById('chat-input');const sendBtn=document.getElementById('send-btn');const messages=document.getElementById('chat-messages');async function sendChatMessage(){const text=input.value.trim();if(!text)return;messages.innerHTML+=`<div class="chat-bubble chat-user">${text}</div>`;input.value='';try{if(webhookUrl==='MAKE_WEBHOOK_URL'){messages.innerHTML+=`<div class="chat-bubble chat-ai">Webhook Make à renseigner. Le chatbot visuel est prêt, il ne reste que l’URL réelle.</div>`;messages.scrollTop=messages.scrollHeight;return;}const res=await fetch(webhookUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text,source:'site-chatbot'})});const data=await res.json();messages.innerHTML+=`<div class="chat-bubble chat-ai">${data.reply || 'Aucune réponse reçue.'}</div>`;}catch(e){messages.innerHTML+=`<div class="chat-bubble chat-ai">Connexion Make indisponible pour le moment.</div>`;}messages.scrollTop=messages.scrollHeight;}sendBtn?.addEventListener('click',sendChatMessage);input?.addEventListener('keydown',(e)=>{if(e.key==='Enter')sendChatMessage();});</script>
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-left">
+            <strong>System Auto Lab</strong>
+            <span>Énergie vivante, logique réelle.</span>
+          </div>
+          <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="shop.html">Shop</a>
+            <a href="entreprise.html">Entreprise</a>
+            <a href="actualites.html">Actualités</a>
+            <a href="faq.html">FAQ</a>
+            <a href="chatbot.html">Chatbot</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <a href="chatbot.html" class="floating-contact"><span>⚡</span><span>Chatbot</span></a>
+  </div>
+  <script>
+    document.querySelectorAll('.faq-button').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var item = button.closest('.faq-item');
+        if (item) item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
