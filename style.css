@@ -856,3 +856,40 @@ body::before {
   .focus-copy, .hero-feature-card span, .hero-bottom-card p { font-size: 14px; }
   .floating-contact span:last-child { display: none; }
 }
+
+
+.hero-sublead {
+  margin-top: 10px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.offer-proof,
+.news-impact,
+.why-result,
+.footer-note {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #dce8ff;
+}
+
+.offer-proof {
+  margin: -2px 0 10px;
+}
+
+.news-impact,
+.why-result {
+  margin-top: 12px;
+}
+
+.footer-note {
+  width: 100%;
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+.faq-answer strong {
+  display: inline-block;
+  margin-top: 10px;
+  color: #ffffff;
+}
