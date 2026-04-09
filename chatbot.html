@@ -1,16 +1,148 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>System Auto Lab — Assistant</title><link rel="stylesheet" href="style.css"><style>.chat-shell{display:grid;grid-template-columns:1fr .9fr;gap:18px}.chat-live{padding:24px;border-radius:24px;background:linear-gradient(180deg, rgba(10,18,32,0.94), rgba(8,14,26,0.96));border:1px solid rgba(255,255,255,0.08);box-shadow:var(--shadow)}.live-window{display:grid;gap:10px;min-height:340px;max-height:440px;overflow:auto;padding:12px;border-radius:18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06)}.live-input{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:14px}.live-input input{padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:#fff}.helper-card{padding:24px;border-radius:24px;background:linear-gradient(180deg, rgba(10,18,32,0.94), rgba(8,14,26,0.96));border:1px solid rgba(255,255,255,0.08);box-shadow:var(--shadow)}@media(max-width:980px){.chat-shell{grid-template-columns:1fr}}</style></head><body><div class="page"><header class="topbar"><div class="wrap topbar-inner"><a href="index.html" class="brand"><div class="brand-mark"></div><div class="brand-text"><strong>System Auto Lab</strong><span>Assistant d orientation.</span></div></a><nav class="nav"><a href="index.html">Accueil</a><a href="shop.html">Shop</a><a href="entreprise.html">Entreprise</a><a href="actualites.html">Actualites</a><a href="faq.html">FAQ</a></nav></div></header><main class="wrap"><section class="section"><div class="section-head"><div><span class="eyebrow">assistant</span><h2>Parlez a l assistant</h2></div><p>Cette page est conçue pour orienter le client vers le bon systeme, clarifier son besoin et réduire l hésitation avant achat.</p></div><div class="chat-shell"><div class="chat-live"><h3>Conversation</h3><div id="liveWindow" class="live-window"><div class="chat-bubble chat-ai">Bonjour. Dites-moi ce que vous voulez automatiser en priorite et je vous oriente.</div></div><div class="live-input"><input id="userMessage" type="text" placeholder="Expliquez votre besoin..."><button class="btn btn-primary" id="sendBtn">Envoyer</button></div><p class="form-note">Pour le brancher a Make, remplacez simplement la constante <strong>MAKE_WEBHOOK_URL</strong> dans le script par votre vrai webhook.</p></div><div class="helper-card"><h3>Ce que fait cette page</h3><ul class="list"><li>Accueille le visiteur dans un cadre simple</li><li>Comprend le besoin avant de pousser vers le shop</li><li>Oriente vers le bon systeme ou la bonne section</li><li>Peut etre reliée a Make avec une simple reponse JSON</li></ul><div class="hero-actions"><a href="shop.html#automatisation" class="btn btn-secondary">Voir les systemes</a><a href="shop.html#abonnements" class="btn btn-secondary">Voir les abonnements</a></div></div></div></section><footer class="footer"><div class="footer-inner"><div class="footer-left"><strong>System Auto Lab</strong><span>Assistant oriente, puis le shop prend le relais.</span></div><div class="footer-links"><a href="index.html">Accueil</a><a href="shop.html">Shop</a><a href="entreprise.html">Entreprise</a><a href="actualites.html">Actualites</a><a href="faq.html">FAQ</a></div></div></footer></main><script>const MAKE_WEBHOOK_URL = "MAKE_WEBHOOK_URL";const liveWindow = document.getElementById('liveWindow');const input = document.getElementById('userMessage');const button = document.getElementById('sendBtn');function addBubble(text, who){const div=document.createElement('div');div.className='chat-bubble '+(who==='user'?'chat-user':'chat-ai');div.textContent=text;liveWindow.appendChild(div);liveWindow.scrollTop=liveWindow.scrollHeight;}async function sendMessage(){const message=input.value.trim();if(!message)return;addBubble(message,'user');input.value='';if(MAKE_WEBHOOK_URL==='MAKE_WEBHOOK_URL'){addBubble("Le webhook Make n est pas encore branché. Remplacez MAKE_WEBHOOK_URL dans le script par votre vrai lien Make.",'ai');return;}try{const res=await fetch(MAKE_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message})});const data=await res.json();addBubble(data.reply || 'Réponse reçue.', 'ai');}catch(e){addBubble("Impossible de joindre l assistant pour le moment.",'ai');}}button.addEventListener('click',sendMessage);input.addEventListener('keydown',function(e){if(e.key==='Enter')sendMessage();});<script>
-async function sendMessage(message) {
-  const response = await fetch("TON_WEBHOOK_ICI", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ message: message })
-  });
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Auto Lab — Assistant</title>
+  <meta name="description" content="L'assistant System Auto Lab vous aide à identifier le bon système d'automatisation selon votre besoin principal.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-text">
+        <strong>System Auto Lab</strong>
+        <span>Orientation simple avant décision.</span>
+      </div>
+    </a>
+    <nav class="nav">
+      <a href="index.html" class="">Accueil</a>
+      <a href="shop.html" class="">Shop</a>
+      <a href="entreprise.html" class="">Entreprise</a>
+      <a href="actualites.html" class="">Actualités</a>
+      <a href="faq.html" class="">FAQ</a>
+      <a href="chatbot.html" class="nav-cta active">Assistant</a>
+    </nav>
+  </div>
+</header>
+  <main class="wrap">
+    <section class="page-hero section">
+      <div class="page-hero-box">
+        <div class="page-hero-copy">
+          <span class="eyebrow">assistant</span>
+          <h1>Décrivez votre besoin. L'assistant vous oriente vers le bon système.</h1>
+          <p class="page-intro">Cette page est conçue pour clarifier le bon point d'entrée avant achat. Vous expliquez ce que vous voulez améliorer et l'assistant vous guide vers le système le plus cohérent.</p>
+          <div class="page-actions">
+            <a href="shop.html#automatisation" class="btn btn-primary">Voir tous les systèmes</a>
+            <a href="faq.html" class="btn btn-secondary">Lire la FAQ</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  const data = await response.json();
+    <section class="section">
+      <div class="chat-shell">
+        <div class="chat-live">
+          <h3>Conversation</h3>
+          <div id="liveWindow" class="live-window">
+            <div class="chat-bubble chat-ai">Bonjour. Dites-moi ce que vous voulez améliorer dans votre activité et je vous oriente.</div>
+            <div class="chat-bubble chat-ai">Vous pouvez repartir avec une direction claire en quelques minutes.</div>
+          </div>
+          <div class="live-input">
+            <input id="userMessage" type="text" placeholder="Exemple : je réponds trop tard aux messages / je publie de manière irrégulière / mon tunnel convertit mal...">
+            <button class="btn btn-primary" id="sendBtn">Envoyer</button>
+          </div>
+          <p class="form-note">Pour brancher cette page à Make, remplacez simplement la constante <strong>MAKE_WEBHOOK_URL</strong> dans le script par votre webhook réel.</p>
+        </div>
 
-  displayBotMessage(data.reply);
-}
-</script>
-  <span>✦</span><span>Shop</span></a></div></body></html>
+        <div class="helper-card">
+          <h3>Ce que fait cette page</h3>
+          <ul class="list">
+            <li>Clarifie le besoin avant de pousser vers une offre</li>
+            <li>Réduit l'hésitation quand le client ne sait pas par où commencer</li>
+            <li>Guide vers le système ou l'abonnement cohérent</li>
+            <li>Peut être reliée à Make, GPT et vos scénarios internes</li>
+          </ul>
+          <div class="divider"></div>
+          <p class="assistant-copy">Un bon assistant ne remplace pas la vente : il retire les blocages avant la vente.</p>
+          <div class="hero-actions">
+            <a href="shop.html#automatisation" class="btn btn-secondary">Voir les systèmes</a>
+            <a href="shop.html#abonnements" class="btn btn-secondary">Voir les abonnements</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="notice-grid">
+        <article class="assistant-card"><h3>Quand l'utiliser</h3><p class="muted-copy">Quand vous hésitez entre plusieurs systèmes ou quand votre problème est réel mais encore difficile à nommer précisément.</p></article>
+        <article class="assistant-card"><h3>Ce qu'il doit produire</h3><p class="muted-copy">Une orientation claire, une recommandation logique et, si besoin, un renvoi direct vers la bonne page du shop.</p></article>
+        <article class="assistant-card"><h3>Ce qu'il évite</h3><p class="muted-copy">Les longues hésitations, les demandes mal qualifiées et les visiteurs qui repartent sans comprendre quel système choisir.</p></article>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-left">
+      <strong>System Auto Lab</strong>
+      <span>Systèmes IA pensés pour gagner du temps, clarifier les parcours et soutenir la croissance.</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="shop.html">Shop</a>
+      <a href="entreprise.html">Entreprise</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="faq.html">FAQ</a>
+      <a href="chatbot.html">Assistant</a>
+    </div>
+  </div>
+</footer>
+  </main>
+  <script>
+    const MAKE_WEBHOOK_URL = "MAKE_WEBHOOK_URL";
+    const liveWindow = document.getElementById('liveWindow');
+    const input = document.getElementById('userMessage');
+    const button = document.getElementById('sendBtn');
+
+    function addBubble(text, who) {
+      const div = document.createElement('div');
+      div.className = 'chat-bubble ' + (who === 'user' ? 'chat-user' : 'chat-ai');
+      div.textContent = text;
+      liveWindow.appendChild(div);
+      liveWindow.scrollTop = liveWindow.scrollHeight;
+    }
+
+    async function sendMessage() {
+      const message = input.value.trim();
+      if (!message) return;
+      addBubble(message, 'user');
+      input.value = '';
+
+      if (MAKE_WEBHOOK_URL === 'MAKE_WEBHOOK_URL') {
+        addBubble("Le webhook Make n'est pas encore branché. Remplacez MAKE_WEBHOOK_URL dans le script par votre vrai lien Make.", 'ai');
+        return;
+      }
+
+      try {
+        const res = await fetch(MAKE_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message })
+        });
+        const data = await res.json();
+        addBubble(data.reply || 'Réponse reçue.', 'ai');
+      } catch (e) {
+        addBubble("Impossible de joindre l'assistant pour le moment.", 'ai');
+      }
+    }
+
+    button.addEventListener('click', sendMessage);
+    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') sendMessage(); });
+  </script>
+  <a href="shop.html" class="floating-contact"><span>✦</span><span>Shop</span></a>
+</div>
+</body>
+</html>
