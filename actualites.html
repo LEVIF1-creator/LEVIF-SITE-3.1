@@ -3,139 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>System Auto Lab — Actualités</title>
-  <meta name="description" content="Veille, insights et tendances sur l'automatisation IA, la relation client, le contenu et les tunnels de conversion.">
-  <link rel="stylesheet" href="style.css">
+  <title>Actualités IA</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b0f1a;
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #actus-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .actu-card {
+      background: #111b2e;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .actu-card h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .actu-card p {
+      color: #aab4c7;
+    }
+  </style>
 </head>
+
 <body>
-<div class="page">
-  <header class="topbar">
-  <div class="wrap topbar-inner">
-    <a href="index.html" class="brand">
-      <div class="brand-mark"></div>
-      <div class="brand-text">
-        <strong>System Auto Lab</strong>
-        <span>Veille, insights et mouvement.</span>
-      </div>
-    </a>
-    <nav class="nav">
-      <a href="index.html" class="">Accueil</a>
-      <a href="shop.html" class="">Shop</a>
-      <a href="entreprise.html" class="">Entreprise</a>
-      <a href="actualites.html" class="active">Actualités</a>
-      <a href="faq.html" class="">FAQ</a>
-      <a href="chatbot.html" class="nav-cta ">Assistant</a>
-    </nav>
-  </div>
-</header>
-  <main class="wrap">
-    <section class="page-hero section">
-      <div class="page-hero-box">
-        <div class="page-hero-copy">
-          <span class="eyebrow">actualités</span>
-          <h1>Les signaux à surveiller quand on veut automatiser intelligemment</h1>
-          <p class="page-intro">Cette page accueille des contenus utiles pour comprendre ce qui change : nouveaux usages en relation client, évolution des attentes sur le contenu, montée des parcours plus fluides et exigence croissante sur la réactivité.</p>
-          <div class="page-actions">
-            <a href="shop.html" class="btn btn-primary">Voir les systèmes</a>
-            <a href="entreprise.html" class="btn btn-secondary">Voir la méthode</a>
-          </div>
+
+  <h1>Actualités IA</h1>
+
+  <!-- 🔥 CONTENEUR IMPORTANT -->
+  <div id="actus-container"></div>
+
+  <!-- 🔥 CHARGEMENT DU FICHIER ACTUALITES -->
+  <script src="actualites.js"></script>
+
+  <!-- 🔥 SCRIPT QUI AFFICHE -->
+  <script>
+    const container = document.getElementById("actus-container");
+
+    if (window.ACTUALITES && container) {
+      container.innerHTML = window.ACTUALITES.map(actu => `
+        <div class="actu-card">
+          <h2>${actu.title}</h2>
+          <p>${actu.excerpt}</p>
         </div>
-      </div>
-    </section>
+      `).join('');
+    } else {
+      container.innerHTML = "<p>Aucune actualité disponible.</p>";
+    }
+  </script>
 
-    <section class="section">
-      <div class="section-head">
-        <div><span class="eyebrow">à retenir</span><h2>Ce que les entreprises attendent de plus en plus</h2></div>
-        <p>Les activités qui avancent le mieux ne cherchent pas forcément “plus d'outils”. Elles cherchent un parcours plus simple, une meilleure vitesse d'exécution et moins de chaos dans les zones critiques.</p>
-      </div>
-      <div class="news-grid">
-        <article class="news-card glow-card">
-          <span class="k">relation client</span>
-          <h3>La réactivité est devenue une part de l'image de marque</h3>
-          <p>Quand un prospect écrit, le délai de réponse influence directement sa perception du sérieux de l'entreprise.</p>
-          <p><strong>Impact :</strong> l'accueil automatisé devient un avantage concurrentiel, pas seulement un confort interne.</p>
-        </article>
-        <article class="news-card glow-card">
-          <span class="k">contenu</span>
-          <h3>La régularité pèse souvent plus que l'inspiration du moment</h3>
-          <p>Dans un environnement saturé, les structures qui tiennent un rythme propre deviennent plus crédibles et plus mémorables.</p>
-          <p><strong>Impact :</strong> une machine à contenu bien pensée soutient visibilité et confiance sur la durée.</p>
-        </article>
-        <article class="news-card glow-card">
-          <span class="k">conversion</span>
-          <h3>Le meilleur tunnel n'ajoute pas, il retire</h3>
-          <p>Les parcours efficaces ne multiplient pas les étapes : ils rendent la suite évidente et enlèvent les zones de doute.</p>
-          <p><strong>Impact :</strong> la conversion progresse souvent dès que le chemin devient lisible.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="split-grid" style="grid-template-columns:1.1fr .9fr;">
-        <article class="news-feature">
-          <span class="k">insight</span>
-          <h3>L'automatisation devient plus crédible quand elle reste centrée sur l'usage</h3>
-          <p class="muted-copy">Le vrai sujet n'est plus “est-ce qu'il faut utiliser l'IA ?”. Le vrai sujet est : quelle zone faut-il fluidifier en premier pour obtenir un effet visible sans casser l'expérience humaine ?</p>
-          <p class="muted-copy">C'est précisément pour cela que nous découpons l'offre en systèmes clairs : accueil, contenu, tunnel, support et interne. Le client peut entrer par son problème réel, pas par une technologie abstraite.</p>
-          <div class="hero-actions">
-            <a href="shop.html" class="btn btn-primary">Voir les systèmes liés</a>
-            <a href="chatbot.html" class="btn btn-secondary">Être guidé</a>
-          </div>
-        </article>
-        <article class="notice-card">
-          <strong>Ce qu'un bon système doit produire</strong>
-          <ul class="list">
-            <li>Une réponse plus rapide</li>
-            <li>Un parcours plus simple à comprendre</li>
-            <li>Une réduction des tâches répétitives</li>
-            <li>Une meilleure perception de sérieux</li>
-          </ul>
-          <p class="muted-copy">Si ces effets ne sont pas visibles, la technologie n'apporte pas assez de valeur.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <div><span class="eyebrow">veille utile</span><h2>Pourquoi cette page compte</h2></div>
-        <p>Une page d'actualités bien pensée ne sert pas seulement au référencement. Elle sert aussi à montrer qu'une entreprise comprend le terrain, les évolutions du marché et les attentes de ses clients.</p>
-      </div>
-      <div class="notice-grid">
-        <article class="notice-card"><strong>Rassurer</strong><p class="muted-copy">Montrer que votre approche repose sur une lecture claire du marché, pas sur une mode.</p></article>
-        <article class="notice-card"><strong>Éduquer</strong><p class="muted-copy">Aider le client à comprendre ce qu'il doit prioriser dans sa propre activité.</p></article>
-        <article class="notice-card"><strong>Positionner</strong><p class="muted-copy">Installer une image de structure sérieuse, attentive et déjà engagée sur ces enjeux.</p></article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="cta-band">
-        <h3>Vous voulez transformer ces constats en action ?</h3>
-        <p>Le shop vous permet de choisir un système directement. L'assistant vous aide si vous souhaitez d'abord clarifier le bon point d'entrée.</p>
-        <div class="hero-actions">
-          <a href="shop.html" class="btn btn-primary">Voir le shop</a>
-          <a href="chatbot.html" class="btn btn-secondary">Parler à l'assistant</a>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-  <div class="wrap footer-inner">
-    <div class="footer-left">
-      <strong>System Auto Lab</strong>
-      <span>Systèmes IA pensés pour gagner du temps, clarifier les parcours et soutenir la croissance.</span>
-    </div>
-    <div class="footer-links">
-      <a href="index.html">Accueil</a>
-      <a href="shop.html">Shop</a>
-      <a href="entreprise.html">Entreprise</a>
-      <a href="actualites.html">Actualités</a>
-      <a href="faq.html">FAQ</a>
-      <a href="chatbot.html">Assistant</a>
-    </div>
-  </div>
-</footer>
-  </main>
-  <a href="chatbot.html" class="floating-contact"><span>✦</span><span>Assistant</span></a>
-</div>
 </body>
 </html>
