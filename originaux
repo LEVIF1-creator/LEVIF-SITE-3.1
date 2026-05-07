@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Originaux — Carickat</title>
+
+  <meta name="description" content="Œuvres originales premium Carickat, collections temporaires, prints numérotés associés et affiches digitales limitées." />
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+  <nav class="nav">
+    <a href="index.html" class="logo">Carickat</a>
+
+    <div class="menu">
+      <a href="galerie.html">Galerie</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="commande.html">Commande</a>
+      <a href="process.html">Process</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="soutien.html">Soutenir</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="container split">
+
+      <div>
+        <div class="kicker">vitrine 01 / originaux</div>
+
+        <h1>Originaux & collections temporaires.</h1>
+
+        <p style="max-width:760px; margin-top:25px;">
+          Cette vitrine regroupe les œuvres originales premium Carickat :
+          pièces uniques, collections liées, prints numérotés et affiches digitales
+          disponibles uniquement pendant une période précise.
+        </p>
+
+        <p style="max-width:760px;">
+          Lorsqu’un original quitte l’atelier, les dérivés associés à cette œuvre
+          s’arrêtent aussi. Chaque collection devient alors un chapitre fermé du carnet.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#collection-01" class="btn dark">Voir Collection 01</a>
+          <a href="commande.html" class="btn">Demander une œuvre</a>
+        </div>
+      </div>
+
+      <div class="paper-card tilt-right">
+        <div class="kicker">note de collection</div>
+
+        <h2>Une pièce centrale. Des fragments accessibles.</h2>
+
+        <p>
+          L’original porte la valeur principale : le temps, le geste, les mois de
+          construction et l’histoire complète. Les prints et posters permettent
+          d’en posséder un fragment tant que l’œuvre reste disponible.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+
+      <div class="paper-card tilt-left">
+        <div class="kicker">règle de la vitrine</div>
+
+        <h2>L’original commande toute la collection.</h2>
+
+        <p>
+          Les éditions associées ne sont pas pensées comme des produits permanents.
+          Elles existent pendant la vie de l’œuvre dans l’atelier.
+        </p>
+      </div>
+
+      <div>
+        <ul class="list-sketch">
+          <li>Une seule œuvre originale physique</li>
+          <li>Prix premium selon format, temps et importance</li>
+          <li>Prints numérotés tant que l’original est disponible</li>
+          <li>Posters digitaux associés à la même œuvre</li>
+          <li>Arrêt des dérivés après vente de l’original</li>
+          <li>Chaque collection devient une archive de période</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="collection-01">
+    <div class="container">
+
+      <div class="kicker">collection 01 / en construction</div>
+
+      <h2>Premier original premium.</h2>
+
+      <p style="max-width:850px;">
+        La première œuvre est actuellement en construction. Elle est liée à plusieurs
+        mois de recherches, de vidéos, de croquis et d’évolution visible publiquement.
+        Elle deviendra la pièce centrale de la première collection Carickat.
+      </p>
+
+      <div class="gallery-grid">
+
+        <article class="art-card">
+          <img src="./shop-makingof-1.jpg" alt="Making-of de la première œuvre originale">
+
+          <h3>Début du chapitre</h3>
+
+          <p class="art-meta">
+            recherches / composition / suivi
+          </p>
+        </article>
+
+        <article class="art-card">
+          <img src="./shop-makingof-2.jpg" alt="Détails de construction de l’œuvre originale">
+
+          <h3>Matière & construction</h3>
+
+          <p class="art-meta">
+            détail / texture / patience
+          </p>
+        </article>
+
+        <article class="art-card">
+          <img src="./shop-makingof-3.jpg" alt="Carnet vivant autour de l’œuvre originale">
+
+          <h3>Œuvre en évolution</h3>
+
+          <p class="art-meta">
+            carnet / mois de travail / étape
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="kicker">offres liées à l’original</div>
+
+      <h2>Ce qui sera disponible à l’ouverture.</h2>
+
+      <div class="offer-grid">
+
+        <article class="offer-card">
+          <div class="kicker">pièce unique</div>
+
+          <h3>Original premium</h3>
+
+          <p>
+            L’œuvre physique unique, vendue comme pièce centrale de collection.
+            Elle porte l’histoire complète du chapitre.
+          </p>
+
+          <div class="price">prochainement</div>
+
+          <ul class="list-sketch">
+            <li>Œuvre originale physique</li>
+            <li>Pièce unique</li>
+            <li>Valeur liée au processus documenté</li>
+            <li>Fin des dérivés après vente</li>
+          </ul>
+
+          <a href="contact.html" class="btn dark">Demander les infos</a>
+        </article>
+
+        <article class="offer-card">
+          <div class="kicker">édition limitée</div>
+
+          <h3>Prints numérotés</h3>
+
+          <p>
+            Tirages associés à l’original, disponibles uniquement tant que
+            l’œuvre centrale reste dans l’atelier.
+          </p>
+
+          <div class="price">bientôt</div>
+
+          <ul class="list-sketch">
+            <li>Quantité limitée</li>
+            <li>Numérotation prévue</li>
+            <li>Liés à Collection 01</li>
+            <li>Disponibilité temporaire</li>
+          </ul>
+
+          <a href="contact.html" class="btn dark">Être prévenu</a>
+        </article>
+
+        <article class="offer-card">
+          <div class="kicker">digital</div>
+
+          <h3>Posters digitaux</h3>
+
+          <p>
+            Versions digitales et affiches liées à la collection,
+            pensées comme accès plus léger au chapitre.
+          </p>
+
+          <div class="price">en préparation</div>
+
+          <ul class="list-sketch">
+            <li>Formats digitaux</li>
+            <li>Affiches imprimables</li>
+            <li>Accès plus accessible</li>
+            <li>Arrêt avec la collection</li>
+          </ul>
+
+          <a href="contact.html" class="btn dark">Suivre l’ouverture</a>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+
+      <div>
+        <div class="kicker">commande spéciale</div>
+
+        <h2>Demander une œuvre originale.</h2>
+
+        <p>
+          En plus des collections temporaires, il sera possible de discuter d’une
+          œuvre originale personnalisée : portrait, caricature, composition, idée
+          spéciale ou dessin plus ambitieux.
+        </p>
+
+        <div class="hero-actions">
+          <a href="commande.html" class="btn dark">Faire une demande</a>
+          <a href="boutique.html" class="btn">Retour boutique</a>
+        </div>
+      </div>
+
+      <div class="paper-card tilt-right">
+        <div class="kicker">note importante</div>
+
+        <h3>Cette vitrine est en construction.</h3>
+
+        <p>
+          Les prix, quantités, formats et ouvertures seront ajoutés progressivement,
+          au rythme de la finalisation des œuvres et des collections.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="logo">Carickat</div>
+
+      <p>
+        Originaux premium · Collections temporaires · Prints associés.
+      </p>
+    </div>
+
+    <div>
+      <p>
+        Original · Prints · Posters · Collection 01
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
