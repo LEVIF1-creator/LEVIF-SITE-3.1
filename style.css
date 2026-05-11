@@ -1,494 +1,156 @@
 /* =========================================================
-   CARICKAT 1.1 — Carnet de croquis vivant / atelier papier
+   PATCH DA CARNET — cadres dessinés, scotch, punaises, respiration
    ========================================================= */
 
-:root {
-  --paper: #f7efe2;
-  --paper-light: #fffaf0;
-  --paper-dark: #e6d7bd;
-  --ink: #17130f;
-  --ink-soft: #4c4036;
-  --brown: #8a5a35;
-  --red: #9d2f22;
-  --blue-pencil: #263f70;
-  --shadow: rgba(30, 20, 10, 0.16);
-  --max-width: 1160px;
+/* Sections plus lisibles et moins éclatées */
+.section {
+  padding: 78px 0;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  color: var(--ink);
-  font-family: "Inter", Arial, sans-serif;
-  line-height: 1.6;
-  background:
-    radial-gradient(circle at 15% 15%, rgba(157,47,34,0.055), transparent 20%),
-    radial-gradient(circle at 85% 30%, rgba(38,63,112,0.05), transparent 22%),
-    linear-gradient(90deg, rgba(23,19,15,0.035) 1px, transparent 1px),
-    linear-gradient(rgba(23,19,15,0.025) 1px, transparent 1px),
-    var(--paper);
-  background-size: 900px 900px, 800px 800px, 34px 34px, 34px 34px, auto;
-}
-
-/* ---------- Global ---------- */
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-main {
-  overflow: hidden;
+.section + .section {
+  padding-top: 55px;
 }
 
 .container {
-  width: min(91%, var(--max-width));
-  margin: auto;
-}
-
-.section {
-  padding: 100px 0;
   position: relative;
 }
 
-.section::before {
+/* Encadrés façon dessin rapide */
+.paper-card,
+.art-card,
+.offer-card {
+  border: 2px solid rgba(23, 19, 15, 0.75);
+  border-radius: 18px 7px 16px 9px;
+  box-shadow: 
+    5px 6px 0 rgba(23, 19, 15, 0.75),
+    12px 16px 28px rgba(30, 20, 10, 0.12);
+}
+
+/* Double trait irrégulier intérieur */
+.paper-card::before,
+.art-card::after,
+.offer-card::before {
   content: "";
   position: absolute;
-  left: 4%;
-  right: 4%;
-  top: 0;
-  border-top: 1px dashed rgba(23, 19, 15, 0.12);
-}
-
-.kicker {
-  font-family: "Caveat", cursive;
-  font-size: 1.75rem;
-  color: var(--red);
-  margin-bottom: 12px;
-  transform: rotate(-1deg);
-}
-
-h1, h2, h3 {
-  line-height: 1.04;
-  margin: 0;
-  letter-spacing: -0.045em;
-}
-
-h1 {
-  font-size: clamp(3.2rem, 8vw, 7.4rem);
-}
-
-h2 {
-  font-size: clamp(2.25rem, 5.4vw, 4.7rem);
-}
-
-h3 {
-  font-size: clamp(1.35rem, 2.4vw, 2rem);
-}
-
-p {
-  color: var(--ink-soft);
-  font-size: 1.02rem;
-}
-
-/* ---------- Header ---------- */
-
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(247, 239, 226, 0.88);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(23, 19, 15, 0.12);
-}
-
-.nav {
-  width: min(94%, var(--max-width));
-  margin: auto;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-family: "Caveat", cursive;
-  font-size: 2.15rem;
-  font-weight: 700;
-}
-
-.menu {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-  font-size: 0.93rem;
-}
-
-.menu a {
-  position: relative;
-}
-
-.menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: var(--red);
-  transition: 0.25s;
-}
-
-.menu a:hover::after {
-  width: 100%;
-}
-
-/* ---------- Buttons ---------- */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 20px;
-  border: 1.8px solid var(--ink);
-  border-radius: 999px;
-  font-weight: 800;
-  box-shadow: 3px 3px 0 var(--ink);
-  transition: 0.2s;
-  background: var(--paper-light);
-}
-
-.btn:hover {
-  transform: translate(3px, 3px) rotate(-1deg);
-  box-shadow: 1px 1px 0 var(--ink);
-}
-
-.btn.dark {
-  background: var(--ink);
-  color: var(--paper);
-}
-
-/* ---------- Hero ---------- */
-
-.hero {
-  min-height: calc(100vh - 72px);
-  display: grid;
-  align-items: center;
-  padding: 80px 0;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 70px;
-  align-items: center;
-}
-
-.hero-text p {
-  max-width: 620px;
-  font-size: 1.18rem;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 32px;
-}
-
-.sketch-note {
-  font-family: "Caveat", cursive;
-  font-size: 1.65rem;
-  color: var(--red);
-  transform: rotate(-3deg);
-}
-
-/* ---------- Paper cards ---------- */
-
-.paper-card {
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.56), rgba(255,250,240,0.32));
-  border: 1px solid rgba(23, 19, 15, 0.18);
-  box-shadow: 10px 14px 30px var(--shadow);
-  padding: 28px;
-  position: relative;
-  border-radius: 3px 18px 5px 14px;
-}
-
-.paper-card.tilt-left {
-  transform: rotate(-1.7deg);
-}
-
-.paper-card.tilt-right {
-  transform: rotate(1.7deg);
-}
-
-.paper-card::before {
-  content: "";
-  position: absolute;
-  inset: 12px;
-  border: 1px dashed rgba(23, 19, 15, 0.16);
+  inset: 10px;
+  border: 1.5px dashed rgba(23, 19, 15, 0.32);
+  border-radius: 14px 6px 13px 8px;
   pointer-events: none;
-  border-radius: 2px 14px 4px 12px;
 }
 
+/* Scotch sur les fiches */
+.art-card::before,
+.offer-card::after,
 .paper-card::after {
   content: "";
   position: absolute;
-  width: 70px;
-  height: 20px;
-  top: -12px;
-  left: 28px;
-  background: rgba(230, 215, 189, 0.7);
-  transform: rotate(-4deg);
-  box-shadow: 0 2px 6px rgba(30, 20, 10, 0.08);
+  width: 76px;
+  height: 22px;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  background: rgba(230, 215, 189, 0.78);
+  border: 1px solid rgba(23, 19, 15, 0.08);
+  box-shadow: 0 3px 8px rgba(30, 20, 10, 0.12);
+  z-index: 3;
 }
 
-/* ---------- Gallery grid ---------- */
+/* Variations de scotch */
+.art-card:nth-child(2n)::before,
+.offer-card:nth-child(2n)::after {
+  transform: translateX(-50%) rotate(5deg);
+}
 
+.art-card:nth-child(3n)::before,
+.offer-card:nth-child(3n)::after {
+  left: 24%;
+  transform: rotate(-7deg);
+}
+
+/* Punaises sur certaines fiches */
+.art-card:nth-child(4n)::before,
+.offer-card:nth-child(4n)::after {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  left: 50%;
+  top: -9px;
+  background: var(--red);
+  border: 2px solid rgba(23, 19, 15, 0.75);
+  box-shadow: 2px 3px 0 rgba(23, 19, 15, 0.55);
+}
+
+/* Plus d’air dans les grilles */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 38px;
+  gap: 52px 46px;
+  margin-top: 60px;
+}
+
+.offer-grid {
+  gap: 48px;
   margin-top: 54px;
 }
 
+/* Fiches plus légères */
 .art-card {
-  background: var(--paper-light);
-  padding: 12px 12px 22px;
-  box-shadow: 7px 10px 22px var(--shadow);
-  border: 1px solid rgba(23, 19, 15, 0.13);
-  transition: 0.25s ease;
-  position: relative;
-  border-radius: 2px 14px 4px 10px;
-}
-
-.art-card::before {
-  content: "";
-  position: absolute;
-  width: 58px;
-  height: 16px;
-  top: -9px;
-  left: 22px;
-  background: rgba(232, 220, 201, 0.75);
-  transform: rotate(-5deg);
-}
-
-.art-card:nth-child(odd) {
-  transform: rotate(-1.2deg);
-}
-
-.art-card:nth-child(even) {
-  transform: rotate(1deg);
-}
-
-.art-card:hover {
-  transform: rotate(0deg) translateY(-7px);
-}
-
-.art-card img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  background: var(--paper-dark);
-  border: 1px solid rgba(23, 19, 15, 0.1);
-  filter: contrast(1.02);
-}
-
-.art-card h3 {
-  margin-top: 18px;
-}
-
-.art-meta {
-  font-family: "Caveat", cursive;
-  color: var(--red);
-  font-size: 1.35rem;
-  margin-bottom: 0;
-}
-
-/* ---------- Split sections ---------- */
-
-.split {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 70px;
-  align-items: center;
-}
-
-.list-sketch {
-  list-style: none;
-  padding: 0;
-  margin: 30px 0 0;
-}
-
-.list-sketch li {
-  padding: 14px 0 14px 34px;
-  border-bottom: 1px dashed rgba(23, 19, 15, 0.18);
-  position: relative;
-}
-
-.list-sketch li::before {
-  content: "✎";
-  position: absolute;
-  left: 0;
-  color: var(--red);
-}
-
-/* ---------- Shop / offers ---------- */
-
-.offer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 34px;
-  margin-top: 56px;
-  align-items: start;
+  padding: 13px 13px 20px;
 }
 
 .offer-card {
-  padding: 24px;
-  border: 1.6px solid rgba(23, 19, 15, 0.82);
-  background:
-    linear-gradient(145deg, rgba(255,250,240,0.74), rgba(246,240,229,0.42));
-  box-shadow: 4px 4px 0 var(--ink);
-  border-radius: 3px 16px 4px 12px;
-  position: relative;
-  transition: 0.22s ease;
+  padding: 24px 22px;
+  min-height: auto;
 }
 
-.offer-card:nth-child(odd) {
-  transform: rotate(-0.7deg);
+/* Images un peu moins énormes dans les pages boutique/offres */
+.art-card img {
+  border-radius: 10px 4px 10px 5px;
 }
 
-.offer-card:nth-child(even) {
-  transform: rotate(0.6deg);
+/* Regrouper les textes de section */
+.section h1 + p,
+.section h2 + p {
+  margin-top: 20px;
 }
 
-.offer-card:hover {
-  transform: rotate(0deg) translateY(-5px);
-  box-shadow: 6px 8px 18px var(--shadow);
+.section p {
+  max-width: 760px;
 }
 
-.offer-card .kicker {
-  font-size: 1.35rem;
+/* Meilleure respiration dans les blocs split */
+.split {
+  gap: 54px;
 }
 
+/* Titres plus carnet, moins catalogue */
+.art-card h3,
 .offer-card h3 {
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  margin-top: 16px;
 }
 
-.offer-card p {
-  font-size: 0.95rem;
+.art-meta {
+  margin-top: 8px;
 }
 
-.price {
-  font-size: 1.45rem;
-  font-weight: 900;
-  margin: 16px 0;
-}
-
-/* ---------- Boutique images / cards tighter ---------- */
-
-.boutique .gallery-grid,
-.shop .gallery-grid,
-#boutique .gallery-grid {
-  grid-template-columns: repeat(3, minmax(0, 0.82fr));
-  justify-content: center;
-  gap: 42px;
-}
-
-.boutique .art-card,
-.shop .art-card,
-#boutique .art-card {
-  max-width: 310px;
-  margin: auto;
-}
-
-.boutique .art-card img,
-.shop .art-card img,
-#boutique .art-card img {
-  aspect-ratio: 4 / 5;
-}
-
-.boutique .offer-grid,
-.shop .offer-grid,
-#boutique .offer-grid {
-  gap: 40px;
-}
-
-.boutique .offer-card,
-.shop .offer-card,
-#boutique .offer-card {
-  padding: 22px;
-}
-
-/* ---------- Footer ---------- */
-
-.footer {
-  padding: 56px 0;
-  border-top: 1px dashed rgba(23, 19, 15, 0.2);
-  background: rgba(232, 220, 201, 0.24);
-}
-
-.footer-inner {
-  width: min(92%, var(--max-width));
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.footer .logo {
-  font-size: 2.45rem;
-}
-
-/* ---------- Mobile ---------- */
-
+/* Mobile propre */
 @media (max-width: 950px) {
-  .menu {
-    display: none;
+  .section {
+    padding: 60px 0;
   }
 
-  .hero-grid,
-  .split {
-    grid-template-columns: 1fr;
+  .section + .section {
+    padding-top: 35px;
   }
 
   .gallery-grid,
-  .offer-grid,
-  .boutique .gallery-grid,
-  .shop .gallery-grid,
-  #boutique .gallery-grid {
-    grid-template-columns: 1fr;
+  .offer-grid {
+    gap: 38px;
   }
 
-  .section {
-    padding: 70px 0;
-  }
-
-  .paper-card.tilt-left,
-  .paper-card.tilt-right,
-  .art-card:nth-child(odd),
-  .art-card:nth-child(even),
-  .offer-card:nth-child(odd),
-  .offer-card:nth-child(even) {
-    transform: none;
-  }
-
+  .paper-card,
   .art-card,
-  .offer-card,
-  .boutique .art-card,
-  .shop .art-card,
-  #boutique .art-card {
-    max-width: 420px;
-    margin: auto;
+  .offer-card {
+    box-shadow:
+      4px 5px 0 rgba(23, 19, 15, 0.75),
+      8px 10px 20px rgba(30, 20, 10, 0.1);
   }
 }
