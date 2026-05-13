@@ -1,5 +1,5 @@
 /* =========================================================
-   CARICKAT 1.4 — Carnet de croquis vivant / cadres adaptatifs
+   CARICKAT 1.5 — Carnet vivant / DA accueil illustrée
    ========================================================= */
 
 :root {
@@ -11,6 +11,7 @@
   --brown: #8a5a35;
   --red: #9d2f22;
   --blue-pencil: #263f70;
+  --green-pencil: #315f3b;
   --shadow: rgba(30, 20, 10, 0.16);
   --max-width: 1160px;
 }
@@ -117,10 +118,11 @@ p {
 .nav {
   width: min(94%, var(--max-width));
   margin: auto;
-  height: 72px;
+  min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 22px;
 }
 
 .logo {
@@ -131,13 +133,15 @@ p {
 
 .menu {
   display: flex;
-  gap: 24px;
+  gap: 22px;
   align-items: center;
   font-size: 0.93rem;
+  flex-wrap: wrap;
 }
 
 .menu a {
   position: relative;
+  font-weight: 700;
 }
 
 .menu a::after {
@@ -182,7 +186,7 @@ p {
   color: var(--paper);
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero Carnet ---------- */
 
 .hero {
   min-height: calc(100vh - 72px);
@@ -191,16 +195,114 @@ p {
   padding: 76px 0;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 70px;
-  align-items: center;
+.hero-carnet {
+  padding: 54px 0 72px;
 }
 
-.hero-text p {
-  max-width: 620px;
-  font-size: 1.18rem;
+.carnet-frame {
+  position: relative;
+  min-height: 720px;
+  padding: 34px;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 26px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,250,240,0.25)),
+    radial-gradient(circle at 50% 20%, rgba(157,47,34,0.05), transparent 28%),
+    rgba(255,250,240,0.35);
+  border-radius: 32px 14px 28px 16px;
+  box-shadow:
+    7px 8px 0 rgba(23, 19, 15, 0.75),
+    20px 26px 46px rgba(30, 20, 10, 0.13);
+}
+
+.carnet-frame::before {
+  content: "";
+  position: absolute;
+  inset: -16px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='680' viewBox='0 0 900 680'%3E%3Cpath d='M27 38 C115 15 196 29 291 22 C430 13 591 29 859 34 C883 112 867 195 875 302 C884 437 867 559 858 638 C722 662 590 645 448 654 C292 665 142 646 42 636 C19 504 33 394 23 269 C13 154 31 91 27 38 Z' fill='none' stroke='%2317130f' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M43 55 C169 34 311 43 444 37 C596 31 701 44 838 50 C851 154 844 252 851 351 C858 461 844 541 836 620 C697 635 587 623 444 631 C298 639 157 623 59 614 C44 498 55 392 44 277 C35 174 48 105 43 55 Z' fill='none' stroke='%2317130f' stroke-width='1.4' stroke-dasharray='9 11' opacity='0.32'/%3E%3C/svg%3E")
+    center / 100% 100% no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.carnet-frame::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  top: -18px;
+  width: 112px;
+  height: 28px;
+  background: rgba(232, 220, 201, 0.82);
+  border: 1px solid rgba(23, 19, 15, 0.1);
+  box-shadow: 0 4px 10px rgba(30, 20, 10, 0.12);
+  transform: rotate(4deg);
+  z-index: 4;
+}
+
+.carnet-frame > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-topbar {
+  grid-column: 1 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding-bottom: 12px;
+}
+
+.hero-logo-script {
+  font-family: "Caveat", cursive;
+  font-size: clamp(2.2rem, 4vw, 4.2rem);
+  font-weight: 700;
+  color: var(--ink);
+  transform: rotate(-2deg);
+}
+
+.hero-menu-sketch {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.hero-menu-sketch a {
+  font-family: "Caveat", cursive;
+  font-size: 1.35rem;
+  padding: 7px 15px;
+  border: 1.5px solid rgba(23, 19, 15, 0.75);
+  background: rgba(255, 250, 240, 0.8);
+  border-radius: 14px 6px 15px 7px;
+  box-shadow: 2px 3px 0 rgba(23, 19, 15, 0.65);
+  transform: rotate(-1deg);
+}
+
+.hero-menu-sketch a:nth-child(even) {
+  transform: rotate(1.5deg);
+}
+
+.hero-left {
+  align-self: center;
+  padding: 20px 0 20px 10px;
+}
+
+.hero-title-sketch {
+  font-family: "Caveat", cursive;
+  font-size: clamp(4.4rem, 11vw, 9rem);
+  letter-spacing: -0.035em;
+  transform: rotate(-3deg);
+  margin-bottom: 20px;
+}
+
+.hero-big-text {
+  max-width: 430px;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-weight: 700;
 }
 
 .hero-actions {
@@ -208,6 +310,165 @@ p {
   gap: 16px;
   flex-wrap: wrap;
   margin-top: 32px;
+}
+
+.hero-center {
+  align-self: center;
+  justify-self: center;
+}
+
+.hero-character-circle {
+  width: min(330px, 28vw);
+  min-width: 250px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255,250,240,0.9), rgba(230,215,189,0.55));
+  border: 3px solid var(--ink);
+  box-shadow:
+    5px 6px 0 rgba(23, 19, 15, 0.74),
+    14px 18px 30px rgba(30, 20, 10, 0.13);
+  padding: 18px;
+  display: grid;
+  place-items: center;
+  transform: rotate(1.5deg);
+  overflow: hidden;
+}
+
+.hero-character-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-right {
+  align-self: center;
+}
+
+.note-card,
+.hero-shop-box,
+.hero-gallery-box,
+.hero-center-text {
+  background:
+    linear-gradient(145deg, rgba(255,250,240,0.86), rgba(246,240,229,0.52));
+  border-radius: 18px 7px 16px 9px;
+  padding: 26px;
+  box-shadow:
+    4px 5px 0 rgba(23, 19, 15, 0.7),
+    12px 15px 25px rgba(30, 20, 10, 0.1);
+  position: relative;
+}
+
+.note-card::before,
+.hero-shop-box::before,
+.hero-gallery-box::before,
+.hero-center-text::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='390' height='270' viewBox='0 0 390 270'%3E%3Cpath d='M17 25 C56 11 94 20 136 17 C211 12 287 20 366 23 C377 63 371 107 374 149 C379 201 371 233 367 249 C304 261 244 252 185 256 C111 261 60 253 24 247 C12 207 20 163 15 119 C10 75 18 50 17 25 Z' fill='none' stroke='%2317130f' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / 100% 100% no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.note-card::after,
+.hero-shop-box::after,
+.hero-gallery-box::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 28px;
+  width: 72px;
+  height: 21px;
+  background: rgba(232, 220, 201, 0.82);
+  border: 1px solid rgba(23, 19, 15, 0.08);
+  transform: rotate(-5deg);
+  z-index: 3;
+}
+
+.note-card > *,
+.hero-shop-box > *,
+.hero-gallery-box > *,
+.hero-center-text > * {
+  position: relative;
+  z-index: 2;
+}
+
+.note-card {
+  transform: rotate(1.4deg);
+}
+
+.hero-gallery-box {
+  grid-column: 1 / 2;
+  align-self: end;
+  transform: rotate(-1deg);
+}
+
+.hero-center-text {
+  grid-column: 2 / 3;
+  align-self: end;
+  text-align: center;
+  transform: rotate(1deg);
+}
+
+.hero-center-text p {
+  font-family: "Caveat", cursive;
+  color: var(--red);
+  font-size: 1.65rem;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.hero-shop-box {
+  grid-column: 3 / 4;
+  align-self: end;
+  transform: rotate(1.2deg);
+}
+
+.gallery-title-sketch {
+  font-family: "Caveat", cursive;
+  font-size: 2.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 16px;
+  transform: rotate(-2deg);
+}
+
+.mini-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11px;
+}
+
+.mini-art {
+  background: var(--paper-light);
+  border: 1px solid rgba(23, 19, 15, 0.18);
+  padding: 8px;
+  border-radius: 10px 4px 10px 5px;
+  transform: rotate(-1deg);
+}
+
+.mini-art:nth-child(even) {
+  transform: rotate(1.5deg);
+}
+
+.mini-art img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--paper-dark);
+  border-radius: 7px 3px 7px 4px;
+}
+
+.mini-art span {
+  display: block;
+  margin-top: 6px;
+  font-family: "Caveat", cursive;
+  font-size: 1.05rem;
+  color: var(--red);
+  text-align: center;
 }
 
 .sketch-note {
@@ -326,17 +587,6 @@ p {
 .art-card:nth-child(3n)::before {
   left: 28%;
   transform: rotate(-7deg);
-}
-
-.art-card:nth-child(4n)::before {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  top: -10px;
-  left: 50%;
-  background: var(--red);
-  border: 2px solid rgba(23, 19, 15, 0.75);
-  box-shadow: 2px 3px 0 rgba(23, 19, 15, 0.55);
 }
 
 .art-card:nth-child(odd) {
@@ -460,17 +710,6 @@ p {
   transform: translateX(-50%) rotate(5deg);
 }
 
-.offer-card:nth-child(4n)::after {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  top: -10px;
-  left: 50%;
-  background: var(--red);
-  border: 2px solid rgba(23, 19, 15, 0.75);
-  box-shadow: 2px 3px 0 rgba(23, 19, 15, 0.55);
-}
-
 .offer-card:nth-child(odd) {
   transform: rotate(-0.5deg);
 }
@@ -565,7 +804,46 @@ p {
   font-size: 2.45rem;
 }
 
-/* ---------- Mobile ---------- */
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1100px) {
+  .carnet-frame {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .hero-topbar {
+    grid-column: 1 / 3;
+  }
+
+  .hero-left {
+    grid-column: 1 / 2;
+  }
+
+  .hero-center {
+    grid-column: 2 / 3;
+  }
+
+  .hero-right {
+    grid-column: 1 / 3;
+  }
+
+  .hero-gallery-box {
+    grid-column: 1 / 2;
+  }
+
+  .hero-center-text {
+    grid-column: 2 / 3;
+  }
+
+  .hero-shop-box {
+    grid-column: 1 / 3;
+  }
+
+  .hero-character-circle {
+    width: min(310px, 36vw);
+  }
+}
 
 @media (max-width: 950px) {
   .menu {
@@ -634,5 +912,70 @@ p {
     box-shadow:
       4px 5px 0 rgba(23, 19, 15, 0.72),
       8px 10px 20px rgba(30, 20, 10, 0.1);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-carnet {
+    padding: 34px 0 54px;
+  }
+
+  .carnet-frame {
+    min-height: auto;
+    padding: 24px 18px;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-topbar,
+  .hero-left,
+  .hero-center,
+  .hero-right,
+  .hero-gallery-box,
+  .hero-center-text,
+  .hero-shop-box {
+    grid-column: 1 / 2;
+  }
+
+  .hero-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-menu-sketch {
+    justify-content: flex-start;
+  }
+
+  .hero-menu-sketch a {
+    font-size: 1.2rem;
+    padding: 6px 12px;
+  }
+
+  .hero-title-sketch {
+    font-size: clamp(4rem, 22vw, 6.4rem);
+  }
+
+  .hero-character-circle {
+    width: min(280px, 82vw);
+    min-width: auto;
+  }
+
+  .mini-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .note-card,
+  .hero-shop-box,
+  .hero-gallery-box,
+  .hero-center-text {
+    transform: none;
+  }
+
+  .nav {
+    min-height: 64px;
+  }
+
+  .logo {
+    font-size: 2rem;
   }
 }
