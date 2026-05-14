@@ -40,8 +40,6 @@ img {
     var(--paper);
 }
 
-/* CADRE FIXE */
-
 .fixed-carickat-frame {
   position: fixed;
   inset: 0;
@@ -56,8 +54,6 @@ img {
   pointer-events: none;
 }
 
-/* IMAGE PRINCIPALE */
-
 .home-image-section {
   position: relative;
   width: 100%;
@@ -68,8 +64,6 @@ img {
   width: 100%;
   height: auto;
 }
-
-/* LOGO */
 
 .carickat-logo {
   position: absolute;
@@ -92,63 +86,48 @@ img {
   display: none;
 }
 
-/* FLÈCHES DESSINÉES */
+/* FLÈCHES CALÉES SUR LES HOTSPOTS */
 
 .draw-arrow {
   position: absolute;
   z-index: 30;
   pointer-events: none;
-  width: 5.2%;
+  width: 5%;
   transform-origin: center center;
-  animation: arrowPulse 1.6s ease-in-out infinite;
+  animation: arrowFloat 1.6s ease-in-out infinite;
 }
 
-@keyframes arrowPulse {
-  0% {
-    transform: translateX(0) rotate(var(--rot));
-  }
-
-  50% {
-    transform: translateX(8px) rotate(var(--rot));
-  }
-
-  100% {
-    transform: translateX(0) rotate(var(--rot));
-  }
+@keyframes arrowFloat {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(7px); }
+  100% { transform: translateX(0); }
 }
 
 .arrow-galerie {
-  left: 56.5%;
+  left: 56.6%;
   top: 5.8%;
-  --rot: 0deg;
 }
 
 .arrow-boutique {
-  left: 65.8%;
+  left: 65.5%;
   top: 5.8%;
-  --rot: 0deg;
 }
 
 .arrow-apropos {
-  left: 75.3%;
+  left: 74.8%;
   top: 5.8%;
-  --rot: 0deg;
 }
 
 .arrow-contact {
-  left: 84.5%;
+  left: 83.8%;
   top: 5.8%;
-  --rot: 0deg;
 }
 
 .arrow-decouvrir {
-  width: 6.5%;
-  left: 6.5%;
-  top: 43.7%;
-  --rot: 0deg;
+  width: 7%;
+  left: 5.8%;
+  top: 43.2%;
 }
-
-/* MENU CLIQUABLE */
 
 .fixed-carickat-menu {
   position: fixed;
@@ -199,8 +178,6 @@ img {
   width: 10.2%;
   height: 6.2%;
 }
-
-/* HOTSPOTS */
 
 .hotspot {
   position: absolute;
@@ -268,10 +245,7 @@ img {
   border-radius: 40%;
 }
 
-/* MOBILE */
-
 @media (max-width: 680px) {
-
   html,
   body {
     overflow-x: auto;
