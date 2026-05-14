@@ -119,11 +119,8 @@ img {
 }
 
 .carickat-logo img {
-  position: absolute;
-  width: 142%;
-  height: 142%;
-  left: -21%;
-  top: -21%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
