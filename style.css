@@ -40,6 +40,74 @@ img {
     var(--paper);
 }
 
+/* Cadre fixe Carickat */
+
+.fixed-carickat-frame {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.fixed-carickat-frame img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+/* Menu cliquable du cadre fixe */
+
+.fixed-carickat-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+}
+
+.frame-link {
+  position: absolute;
+  display: block;
+  pointer-events: auto;
+  background: rgba(255, 0, 0, 0);
+  border-radius: 12px;
+}
+
+.frame-link-accueil {
+  left: 29.2%;
+  top: 7.8%;
+  width: 9.8%;
+  height: 6.2%;
+}
+
+.frame-link-boutique {
+  left: 39.3%;
+  top: 7.8%;
+  width: 11.2%;
+  height: 6.2%;
+}
+
+.frame-link-soutenir {
+  left: 50.7%;
+  top: 7.8%;
+  width: 11.5%;
+  height: 6.2%;
+}
+
+.frame-link-apropos {
+  left: 62.5%;
+  top: 7.8%;
+  width: 11.2%;
+  height: 6.2%;
+}
+
+.frame-link-contact {
+  left: 73.8%;
+  top: 7.8%;
+  width: 10.2%;
+  height: 6.2%;
+}
+
 /* Image principale */
 
 .home-image-section {
@@ -130,7 +198,8 @@ img {
 }
 
 /* Debug temporaire si besoin :
-.hotspot {
+.hotspot,
+.frame-link {
   background: rgba(255, 0, 0, 0.18);
 }
 */
@@ -156,5 +225,18 @@ img {
   .home-bg {
     width: 1200px;
     height: auto;
+  }
+
+  .fixed-carickat-frame,
+  .fixed-carickat-menu {
+    width: 1200px;
+    height: 100vh;
+    left: 0;
+    right: auto;
+  }
+
+  .fixed-carickat-frame img {
+    width: 1200px;
+    height: 100vh;
   }
 }
