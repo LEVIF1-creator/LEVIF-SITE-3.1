@@ -92,58 +92,60 @@ img {
   display: none;
 }
 
-/* FLÈCHES */
+/* FLÈCHES DESSINÉES */
 
 .draw-arrow {
   position: absolute;
   z-index: 30;
   pointer-events: none;
-  animation: floatArrow 2s ease-in-out infinite;
+  width: 5.2%;
+  transform-origin: center center;
+  animation: arrowPulse 1.6s ease-in-out infinite;
 }
 
-@keyframes floatArrow {
-
+@keyframes arrowPulse {
   0% {
-    transform: translateX(0px);
+    transform: translateX(0) rotate(var(--rot));
   }
 
   50% {
-    transform: translateX(10px);
+    transform: translateX(8px) rotate(var(--rot));
   }
 
   100% {
-    transform: translateX(0px);
+    transform: translateX(0) rotate(var(--rot));
   }
 }
 
 .arrow-galerie {
-  width: 4.2%;
-  left: 58%;
-  top: 5%;
+  left: 56.5%;
+  top: 5.8%;
+  --rot: 0deg;
 }
 
 .arrow-boutique {
-  width: 4.2%;
-  left: 67.5%;
-  top: 5%;
+  left: 65.8%;
+  top: 5.8%;
+  --rot: 0deg;
 }
 
 .arrow-apropos {
-  width: 4.2%;
-  left: 77%;
-  top: 5%;
+  left: 75.3%;
+  top: 5.8%;
+  --rot: 0deg;
 }
 
 .arrow-contact {
-  width: 4.2%;
-  left: 86.5%;
-  top: 5%;
+  left: 84.5%;
+  top: 5.8%;
+  --rot: 0deg;
 }
 
 .arrow-decouvrir {
-  width: 6%;
-  left: 26%;
-  top: 41%;
+  width: 6.5%;
+  left: 6.5%;
+  top: 43.7%;
+  --rot: 0deg;
 }
 
 /* MENU CLIQUABLE */
