@@ -69,7 +69,7 @@ img {
   height: auto;
 }
 
-/* LOGO DANS LE ROND */
+/* LOGO */
 
 .carickat-logo {
   position: absolute;
@@ -90,6 +90,60 @@ img {
 
 .carickat-logo img {
   display: none;
+}
+
+/* FLÈCHES */
+
+.draw-arrow {
+  position: absolute;
+  z-index: 30;
+  pointer-events: none;
+  animation: floatArrow 2s ease-in-out infinite;
+}
+
+@keyframes floatArrow {
+
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.arrow-galerie {
+  width: 4.2%;
+  left: 58%;
+  top: 5%;
+}
+
+.arrow-boutique {
+  width: 4.2%;
+  left: 67.5%;
+  top: 5%;
+}
+
+.arrow-apropos {
+  width: 4.2%;
+  left: 77%;
+  top: 5%;
+}
+
+.arrow-contact {
+  width: 4.2%;
+  left: 86.5%;
+  top: 5%;
+}
+
+.arrow-decouvrir {
+  width: 6%;
+  left: 26%;
+  top: 41%;
 }
 
 /* MENU CLIQUABLE */
