@@ -103,13 +103,13 @@ img {
   height: auto;
 }
 
-/* LOGO ACCROCHÉ AU ROND DE LA PAGE D'ACCUEIL */
+/* LOGO DANS LE ROND */
 
 .carickat-logo {
   position: absolute;
-  left: 39.6%;
-  top: 42.2%;
-  width: 30.8%;
+  left: 50%;
+  top: 16.15%;
+  width: 22%;
   aspect-ratio: 1 / 1;
   transform: translate(-50%, -50%);
   z-index: 12;
@@ -282,9 +282,9 @@ img {
   }
 
   .carickat-logo {
-    left: 39.6%;
-    top: 42.2%;
-    width: 370px;
+    left: 50%;
+    top: 16.15%;
+    width: 22%;
   }
 
   .carickat-title-1 {
