@@ -40,6 +40,10 @@ img {
     var(--paper);
 }
 
+/* =========================================================
+   CADRE FIXE
+   ========================================================= */
+
 .fixed-carickat-frame {
   position: fixed;
   inset: 0;
@@ -53,6 +57,10 @@ img {
   object-fit: fill;
   pointer-events: none;
 }
+
+/* =========================================================
+   TITRES
+   ========================================================= */
 
 .carickat-title-1 {
   position: fixed;
@@ -86,6 +94,10 @@ img {
   height: auto;
 }
 
+/* =========================================================
+   SECTION ACCUEIL
+   ========================================================= */
+
 .home-image-section {
   position: relative;
   width: 100%;
@@ -97,11 +109,15 @@ img {
   height: auto;
 }
 
+/* =========================================================
+   LOGO DANS LE ROND
+   ========================================================= */
+
 .carickat-logo {
   position: absolute;
-  left: 33.7%;
-  top: 9.2%;
-  width: 32%;
+  left: 18.7%;
+  top: 16.2%;
+  width: 22.8%;
   aspect-ratio: 1 / 1;
   z-index: 12;
   border-radius: 50%;
@@ -114,6 +130,10 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
+/* =========================================================
+   MENU CLIQUABLE
+   ========================================================= */
 
 .fixed-carickat-menu {
   position: fixed;
@@ -165,6 +185,10 @@ img {
   height: 6.2%;
 }
 
+/* =========================================================
+   HOTSPOTS
+   ========================================================= */
+
 .hotspot {
   position: absolute;
   display: block;
@@ -172,6 +196,8 @@ img {
   background: rgba(255, 0, 0, 0);
   border-radius: 8px;
 }
+
+/* MENU HAUT */
 
 .hotspot-accueil {
   left: 54.5%;
@@ -208,6 +234,8 @@ img {
   height: 4.9%;
 }
 
+/* BOUTON DÉCOUVRIR */
+
 .hotspot-decouvrir {
   left: 13%;
   top: 43%;
@@ -216,12 +244,16 @@ img {
   border-radius: 999px;
 }
 
+/* GALERIE */
+
 .hotspot-galerie-box {
   left: 4%;
   top: 55%;
   width: 36%;
   height: 38%;
 }
+
+/* BOUTIQUE */
 
 .hotspot-boutique-box {
   left: 70%;
@@ -230,6 +262,10 @@ img {
   height: 25%;
   border-radius: 40%;
 }
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 680px) {
 
@@ -267,9 +303,7 @@ img {
   }
 
   .carickat-logo {
-    left: 405px;
-    top: 110px;
-    width: 384px;
+    width: 260px;
   }
 
   .carickat-title-1 {
