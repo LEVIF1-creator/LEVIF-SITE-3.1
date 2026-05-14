@@ -40,6 +40,8 @@ img {
     var(--paper);
 }
 
+/* CADRE FIXE */
+
 .fixed-carickat-frame {
   position: fixed;
   inset: 0;
@@ -54,6 +56,8 @@ img {
   pointer-events: none;
 }
 
+/* IMAGE PRINCIPALE */
+
 .home-image-section {
   position: relative;
   width: 100%;
@@ -64,6 +68,8 @@ img {
   width: 100%;
   height: auto;
 }
+
+/* LOGO */
 
 .carickat-logo {
   position: absolute;
@@ -86,48 +92,63 @@ img {
   display: none;
 }
 
-/* FLÈCHES CALÉES SUR LES HOTSPOTS */
+/* FLÈCHES DESSINÉES */
 
 .draw-arrow {
   position: absolute;
   z-index: 30;
   pointer-events: none;
-  width: 5%;
-  transform-origin: center center;
+  width: 4.5%;
+  height: auto;
+  max-width: none;
   animation: arrowFloat 1.6s ease-in-out infinite;
 }
 
 @keyframes arrowFloat {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(7px); }
-  100% { transform: translateX(0); }
+  0% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -8px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
 }
 
+/* flèches posées sur les boutons du haut */
+
 .arrow-galerie {
-  left: 56.6%;
-  top: 5.8%;
+  left: 64.2%;
+  top: 5.1%;
 }
 
 .arrow-boutique {
-  left: 65.5%;
-  top: 5.8%;
+  left: 73.1%;
+  top: 5.1%;
 }
 
 .arrow-apropos {
-  left: 74.8%;
-  top: 5.8%;
+  left: 82.3%;
+  top: 5.1%;
 }
 
 .arrow-contact {
-  left: 83.8%;
-  top: 5.8%;
+  left: 91.1%;
+  top: 5.1%;
 }
 
+/* flèche bouton découvrir */
+
 .arrow-decouvrir {
-  width: 7%;
-  left: 5.8%;
-  top: 43.2%;
+  width: 6%;
+  left: 18.5%;
+  top: 44%;
 }
+
+/* MENU CLIQUABLE */
 
 .fixed-carickat-menu {
   position: fixed;
@@ -178,6 +199,8 @@ img {
   width: 10.2%;
   height: 6.2%;
 }
+
+/* HOTSPOTS */
 
 .hotspot {
   position: absolute;
@@ -245,7 +268,10 @@ img {
   border-radius: 40%;
 }
 
+/* MOBILE */
+
 @media (max-width: 680px) {
+
   html,
   body {
     overflow-x: auto;
