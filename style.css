@@ -40,9 +40,7 @@ img {
     var(--paper);
 }
 
-/* =========================================================
-   CADRE FIXE
-   ========================================================= */
+/* CADRE FIXE */
 
 .fixed-carickat-frame {
   position: fixed;
@@ -58,9 +56,7 @@ img {
   pointer-events: none;
 }
 
-/* =========================================================
-   TITRES
-   ========================================================= */
+/* TITRES */
 
 .carickat-title-1 {
   position: fixed;
@@ -94,9 +90,7 @@ img {
   height: auto;
 }
 
-/* =========================================================
-   IMAGE PRINCIPALE
-   ========================================================= */
+/* IMAGE PRINCIPALE */
 
 .home-image-section {
   position: relative;
@@ -109,33 +103,30 @@ img {
   height: auto;
 }
 
-/* =========================================================
-   LOGO DANS LE ROND
-   ========================================================= */
+/* LOGO DANS LE ROND */
 
 .carickat-logo {
   position: absolute;
-  left: 49.7055%;
-  top: 17.2339%;
-  width: 32.2733%;
+  left: 49.8%;
+  top: 17.25%;
+  width: 31.9%;
   aspect-ratio: 1 / 1;
   transform: translate(-50%, -50%);
   z-index: 12;
   border-radius: 50%;
   overflow: hidden;
   pointer-events: none;
+  background-image: url("logo.jpg");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .carickat-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
+  display: none;
 }
 
-/* =========================================================
-   MENU CLIQUABLE
-   ========================================================= */
+/* MENU CLIQUABLE */
 
 .fixed-carickat-menu {
   position: fixed;
@@ -187,9 +178,7 @@ img {
   height: 6.2%;
 }
 
-/* =========================================================
-   HOTSPOTS
-   ========================================================= */
+/* HOTSPOTS */
 
 .hotspot {
   position: absolute;
@@ -257,9 +246,7 @@ img {
   border-radius: 40%;
 }
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* MOBILE */
 
 @media (max-width: 680px) {
 
@@ -297,9 +284,9 @@ img {
   }
 
   .carickat-logo {
-    left: 49.7055%;
-    top: 17.2339%;
-    width: 32.2733%;
+    left: 49.8%;
+    top: 17.25%;
+    width: 31.9%;
   }
 
   .carickat-title-1 {
