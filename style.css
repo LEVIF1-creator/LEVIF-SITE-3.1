@@ -56,6 +56,64 @@ img {
   pointer-events: none;
 }
 
+/* =========================================================
+   AJOUTS LOGO + TITRES
+   ========================================================= */
+
+.carickat-logo {
+  position: fixed;
+  left: 12.9%;
+  top: 32%;
+  width: 18vw;
+  height: 18vw;
+  max-width: 340px;
+  max-height: 340px;
+  min-width: 170px;
+  min-height: 170px;
+  z-index: 70;
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.carickat-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carickat-title-1 {
+  position: fixed;
+  top: 10.8%;
+  left: 6%;
+  width: 26vw;
+  max-width: 520px;
+  min-width: 220px;
+  z-index: 75;
+  pointer-events: none;
+}
+
+.carickat-title-1 img {
+  width: 100%;
+  height: auto;
+}
+
+.carickat-title-2 {
+  position: fixed;
+  top: 19%;
+  left: 8%;
+  width: 18vw;
+  max-width: 360px;
+  min-width: 170px;
+  z-index: 75;
+  pointer-events: none;
+}
+
+.carickat-title-2 img {
+  width: 100%;
+  height: auto;
+}
+
 /* Menu cliquable du cadre fixe */
 
 .fixed-carickat-menu {
@@ -197,16 +255,10 @@ img {
   border-radius: 40%;
 }
 
-/* Debug temporaire si besoin :
-.hotspot,
-.frame-link {
-  background: rgba(255, 0, 0, 0.18);
-}
-*/
-
-/* Mobile : image plus grande, scroll horizontal possible */
+/* Mobile */
 
 @media (max-width: 680px) {
+
   html,
   body {
     overflow-x: auto;
@@ -238,5 +290,18 @@ img {
   .fixed-carickat-frame img {
     width: 1200px;
     height: 100vh;
+  }
+
+  .carickat-logo {
+    width: 250px;
+    height: 250px;
+  }
+
+  .carickat-title-1 {
+    width: 330px;
+  }
+
+  .carickat-title-2 {
+    width: 220px;
   }
 }
