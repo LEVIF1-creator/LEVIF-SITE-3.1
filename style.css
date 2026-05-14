@@ -40,7 +40,9 @@ img {
     var(--paper);
 }
 
-/* Cadre fixe Carickat */
+/* =========================================================
+   CADRE FIXE
+   ========================================================= */
 
 .fixed-carickat-frame {
   position: fixed;
@@ -57,19 +59,21 @@ img {
 }
 
 /* =========================================================
-   AJOUTS LOGO + TITRES
+   LOGO + TITRES
    ========================================================= */
+
+/* LOGO DANS LE GRAND ROND */
 
 .carickat-logo {
   position: fixed;
-  left: 12.9%;
-  top: 32%;
-  width: 18vw;
-  height: 18vw;
-  max-width: 340px;
-  max-height: 340px;
-  min-width: 170px;
-  min-height: 170px;
+  left: 46.2%;
+  top: 27.5%;
+  width: 31vw;
+  height: 31vw;
+  max-width: 520px;
+  max-height: 520px;
+  min-width: 280px;
+  min-height: 280px;
   z-index: 70;
   border-radius: 50%;
   overflow: hidden;
@@ -81,6 +85,8 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
+/* TITRE 1 */
 
 .carickat-title-1 {
   position: fixed;
@@ -98,6 +104,8 @@ img {
   height: auto;
 }
 
+/* TITRE 2 */
+
 .carickat-title-2 {
   position: fixed;
   top: 19%;
@@ -114,7 +122,9 @@ img {
   height: auto;
 }
 
-/* Menu cliquable du cadre fixe */
+/* =========================================================
+   MENU CLIQUABLE
+   ========================================================= */
 
 .fixed-carickat-menu {
   position: fixed;
@@ -166,7 +176,9 @@ img {
   height: 6.2%;
 }
 
-/* Image principale */
+/* =========================================================
+   IMAGE PRINCIPALE
+   ========================================================= */
 
 .home-image-section {
   position: relative;
@@ -179,7 +191,9 @@ img {
   height: auto;
 }
 
-/* Zones cliquables invisibles */
+/* =========================================================
+   HOTSPOTS
+   ========================================================= */
 
 .hotspot {
   position: absolute;
@@ -189,7 +203,7 @@ img {
   border-radius: 8px;
 }
 
-/* Menu haut */
+/* MENU HAUT */
 
 .hotspot-accueil {
   left: 54.5%;
@@ -226,7 +240,7 @@ img {
   height: 4.9%;
 }
 
-/* Bouton découvrir gauche */
+/* BOUTON DÉCOUVRIR */
 
 .hotspot-decouvrir {
   left: 13%;
@@ -236,7 +250,7 @@ img {
   border-radius: 999px;
 }
 
-/* Bloc galerie bas gauche */
+/* GALERIE */
 
 .hotspot-galerie-box {
   left: 4%;
@@ -245,7 +259,7 @@ img {
   height: 38%;
 }
 
-/* Bloc boutique bas droite */
+/* BOUTIQUE */
 
 .hotspot-boutique-box {
   left: 70%;
@@ -255,7 +269,9 @@ img {
   border-radius: 40%;
 }
 
-/* Mobile */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 680px) {
 
@@ -293,8 +309,8 @@ img {
   }
 
   .carickat-logo {
-    width: 250px;
-    height: 250px;
+    width: 320px;
+    height: 320px;
   }
 
   .carickat-title-1 {
