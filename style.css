@@ -56,40 +56,6 @@ img {
   pointer-events: none;
 }
 
-/* TITRES */
-
-.carickat-title-1 {
-  position: fixed;
-  top: 10.8%;
-  left: 6%;
-  width: 26vw;
-  max-width: 520px;
-  min-width: 220px;
-  z-index: 75;
-  pointer-events: none;
-}
-
-.carickat-title-1 img {
-  width: 100%;
-  height: auto;
-}
-
-.carickat-title-2 {
-  position: fixed;
-  top: 19%;
-  left: 8%;
-  width: 18vw;
-  max-width: 360px;
-  min-width: 170px;
-  z-index: 75;
-  pointer-events: none;
-}
-
-.carickat-title-2 img {
-  width: 100%;
-  height: auto;
-}
-
 /* IMAGE PRINCIPALE */
 
 .home-image-section {
@@ -287,13 +253,5 @@ img {
     left: 49.8%;
     top: 17.25%;
     width: 31.9%;
-  }
-
-  .carickat-title-1 {
-    width: 330px;
-  }
-
-  .carickat-title-2 {
-    width: 220px;
   }
 }
