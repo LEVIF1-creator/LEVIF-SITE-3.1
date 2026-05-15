@@ -1021,3 +1021,125 @@ p {
     font-size: 1.1rem;
   }
 }
+/* =========================================================
+   PATCH — BULLE FIXE RÉSEAUX ANIMÉE
+   ========================================================= */
+
+.social-orbit {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 1300;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.social-orbit-main {
+  width: 96px;
+  height: 82px;
+  border: 1px solid rgba(23, 60, 143, 0.22);
+  border-radius: 58% 42% 52% 48% / 45% 56% 44% 55%;
+  cursor: pointer;
+  color: var(--bic-blue);
+  font-family: "Caveat", cursive;
+  font-size: 1.35rem;
+  font-weight: 700;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255,255,255,1), transparent 32%),
+    radial-gradient(circle at 84% 78%, rgba(47,122,69,0.08), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,0.96), rgba(247,250,255,0.86), rgba(255,247,245,0.82));
+  box-shadow:
+    0 22px 44px rgba(20,16,13,0.16),
+    8px 10px 0 rgba(23,60,143,0.06),
+    inset 0 0 20px rgba(255,255,255,0.8);
+  animation: socialBubbleFloat 3.6s ease-in-out infinite;
+  transition: 0.24s ease;
+}
+
+.social-orbit-main:hover {
+  transform: translateY(-5px) rotate(-2deg);
+  color: var(--note-red);
+}
+
+.social-orbit-links {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-10px) translateY(8px) scale(0.96);
+  transition: 0.25s ease;
+}
+
+.social-orbit:hover .social-orbit-links,
+.social-orbit:focus-within .social-orbit-links {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+.social-orbit-links a {
+  width: max-content;
+  min-width: 116px;
+  padding: 9px 13px;
+  border-radius: 58% 42% 52% 48% / 45% 56% 44% 55%;
+  font-size: 0.84rem;
+  font-weight: 900;
+  color: var(--bic-blue);
+  background:
+    radial-gradient(circle at 18% 16%, rgba(255,255,255,1), transparent 30%),
+    linear-gradient(135deg, rgba(255,255,255,0.96), rgba(247,250,255,0.86), rgba(255,247,245,0.82));
+  border: 1px solid rgba(23,60,143,0.16);
+  box-shadow:
+    0 12px 22px rgba(20,16,13,0.10),
+    5px 7px 0 rgba(23,60,143,0.045),
+    inset 0 0 14px rgba(255,255,255,0.8);
+  transition: 0.22s ease;
+}
+
+.social-orbit-links a:nth-child(2n) {
+  color: var(--note-red);
+  border-radius: 44% 56% 49% 51% / 56% 42% 58% 44%;
+}
+
+.social-orbit-links a:nth-child(3n) {
+  color: var(--organic-green);
+  border-radius: 62% 38% 56% 44% / 44% 58% 42% 56%;
+}
+
+.social-orbit-links a:hover {
+  transform: translateY(-3px) rotate(-1deg);
+  box-shadow:
+    0 16px 28px rgba(20,16,13,0.14),
+    7px 9px 0 rgba(178,43,34,0.05);
+}
+
+@keyframes socialBubbleFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@media (max-width: 680px) {
+  .social-orbit {
+    left: 14px;
+    bottom: 14px;
+  }
+
+  .social-orbit-main {
+    width: 82px;
+    height: 70px;
+    font-size: 1.15rem;
+  }
+
+  .social-orbit-links a {
+    min-width: 98px;
+    font-size: 0.78rem;
+    padding: 8px 11px;
+  }
+}
