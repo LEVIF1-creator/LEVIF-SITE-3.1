@@ -1143,3 +1143,163 @@ p {
     padding: 8px 11px;
   }
 }
+/* =========================================================
+   PATCH — LUMIÈRE GUIDANTE + FLÈCHES DOUCES
+   ========================================================= */
+
+.hero-actions,
+.portal-card,
+.showcase-card,
+.final-card {
+  position: relative;
+}
+
+/* Halo lumineux discret autour des zones importantes */
+
+.hero-actions::after,
+.final-card::after {
+  content: "";
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.95), rgba(23,60,143,0.20) 36%, transparent 70%);
+  filter: blur(1px);
+  opacity: 0.75;
+  animation: guideLightMove 4.8s ease-in-out infinite;
+}
+
+.hero-actions::after {
+  left: -18px;
+  top: -18px;
+}
+
+.final-card::after {
+  right: 24px;
+  top: 24px;
+}
+
+/* Petites flèches dessinées en CSS */
+
+.portal-card::marker {
+  display: none;
+}
+
+.portal-card::after,
+.showcase-card::after {
+  content: "➜";
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  z-index: 3;
+  color: var(--note-red);
+  font-family: "Caveat", cursive;
+  font-size: 1.6rem;
+  font-weight: 700;
+  opacity: 0.78;
+  transform: rotate(-8deg);
+  animation: softArrowPulse 2.2s ease-in-out infinite;
+}
+
+/* Direction plus douce sur les cartes importantes */
+
+.portal-blue::after {
+  color: var(--bic-blue);
+}
+
+.portal-red::after {
+  color: var(--note-red);
+}
+
+.portal-green::after {
+  color: var(--organic-green);
+}
+
+/* Petit texte-guide au survol */
+
+.portal-card strong,
+.showcase-card h3 {
+  position: relative;
+  z-index: 4;
+}
+
+.portal-card:hover::after,
+.showcase-card:hover::after {
+  opacity: 1;
+  transform: translateX(4px) rotate(-4deg);
+}
+
+/* Animation lumière */
+
+@keyframes guideLightMove {
+  0%, 100% {
+    transform: translate(0, 0) scale(0.9);
+    opacity: 0.35;
+  }
+
+  35% {
+    transform: translate(28px, 10px) scale(1.15);
+    opacity: 0.85;
+  }
+
+  70% {
+    transform: translate(70px, -4px) scale(0.95);
+    opacity: 0.55;
+  }
+}
+
+/* Animation flèche */
+
+@keyframes softArrowPulse {
+  0%, 100% {
+    transform: translateX(0) rotate(-8deg);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translateX(6px) rotate(-2deg);
+    opacity: 1;
+  }
+}
+
+/* Mini signal autour du bouton principal */
+
+.btn-primary {
+  isolation: isolate;
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  z-index: -1;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255,255,255,0.85), transparent 28%),
+    linear-gradient(135deg, rgba(23,60,143,0.22), rgba(47,122,69,0.10));
+  opacity: 0;
+  filter: blur(7px);
+  transition: 0.25s ease;
+}
+
+.btn-primary:hover::after {
+  opacity: 1;
+}
+
+/* Accessibilité mobile : effets plus calmes */
+
+@media (max-width: 680px) {
+  .hero-actions::after,
+  .final-card::after {
+    display: none;
+  }
+
+  .portal-card::after,
+  .showcase-card::after {
+    font-size: 1.3rem;
+    right: 18px;
+    bottom: 14px;
+  }
+}
