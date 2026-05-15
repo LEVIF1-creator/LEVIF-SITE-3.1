@@ -1921,3 +1921,24 @@ body.page-leave {
     opacity: 0.045;
   }
 }
+/* CORRECTION SCROLL — CARICKAT VIVANT */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.carickat-reveal {
+  will-change: opacity, transform;
+}
+
+.portal-card,
+.showcase-card,
+.paper-panel,
+.paper-card,
+.offer-card,
+.art-card,
+.sketch-frame,
+.final-card {
+  will-change: auto;
+}
