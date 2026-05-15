@@ -37,6 +37,24 @@
 <main>
 
   <section class="hero-carnet">
+
+    <!-- TRACE VIVANTE -->
+
+    <div class="trace-counter-widget">
+
+      <button
+        id="traceClickButton"
+        class="trace-click-button"
+        type="button">
+        +1
+      </button>
+
+      <div class="trace-count-display">
+        <span id="traceCountNumber">1542</span>
+      </div>
+
+    </div>
+
     <div class="container hero-grid">
 
       <div class="hero-content">
@@ -342,6 +360,45 @@
   <span class="wandering-arrow arrow-blue arrow-d">➜</span>
   <span class="wandering-arrow arrow-red arrow-e">➜</span>
 </div>
+
+<script>
+const traceButton = document.getElementById("traceClickButton");
+const traceCount = document.getElementById("traceCountNumber");
+
+let count = localStorage.getItem("carickatTraceCount")
+  ? parseInt(localStorage.getItem("carickatTraceCount"))
+  : 1542;
+
+traceCount.textContent = count;
+
+const alreadyClicked = localStorage.getItem("carickatTraceClicked");
+
+if (alreadyClicked === "true") {
+  traceButton.disabled = true;
+  traceButton.innerText = "✓";
+}
+
+traceButton.addEventListener("click", () => {
+
+  if (localStorage.getItem("carickatTraceClicked") === "true") return;
+
+  count++;
+
+  traceCount.textContent = count;
+
+  localStorage.setItem("carickatTraceCount", count);
+  localStorage.setItem("carickatTraceClicked", "true");
+
+  traceButton.innerText = "✓";
+
+  traceButton.classList.add("trace-clicked");
+
+  setTimeout(() => {
+    traceButton.disabled = true;
+  }, 220);
+
+});
+</script>
 
 </body>
 </html>
