@@ -365,13 +365,13 @@
 const traceButton = document.getElementById("traceClickButton");
 const traceCount = document.getElementById("traceCountNumber");
 
-let count = localStorage.getItem("carickatTraceCount")
-  ? parseInt(localStorage.getItem("carickatTraceCount"))
-  : 1542;
+let count = localStorage.getItem("carickatTraceCountV2")
+  ? parseInt(localStorage.getItem("carickatTraceCountV2"))
+  : 0;
 
 traceCount.textContent = count;
 
-const alreadyClicked = localStorage.getItem("carickatTraceClicked");
+const alreadyClicked = localStorage.getItem("carickatTraceClickedV2");
 
 if (alreadyClicked === "true") {
   traceButton.disabled = true;
@@ -380,14 +380,14 @@ if (alreadyClicked === "true") {
 
 traceButton.addEventListener("click", () => {
 
-  if (localStorage.getItem("carickatTraceClicked") === "true") return;
+  if (localStorage.getItem("carickatTraceClickedV2") === "true") return;
 
   count++;
 
   traceCount.textContent = count;
 
-  localStorage.setItem("carickatTraceCount", count);
-  localStorage.setItem("carickatTraceClicked", "true");
+  localStorage.setItem("carickatTraceCountV2", count);
+  localStorage.setItem("carickatTraceClickedV2", "true");
 
   traceButton.innerText = "✓";
 
