@@ -1921,59 +1921,51 @@ body.page-leave {
     opacity: 0.045;
   }
 }
-/* CORRECTION SCROLL — CARICKAT VIVANT */
+/* =========================================================
+   FIX FORT — SUPPRESSION PAGE DANS PAGE / DOUBLE SCROLL
+   ========================================================= */
 
 html,
 body {
-  overflow-x: hidden;
-}
-
-.carickat-reveal {
-  will-change: opacity, transform;
-}
-
-.portal-card,
-.showcase-card,
-.paper-panel,
-.paper-card,
-.offer-card,
-.art-card,
-.sketch-frame,
-.final-card {
-  will-change: auto;
-}
-/* =========================================================
-   FIX — SUPPRESSION DOUBLE SCROLL / PAGE DANS PAGE
-   ========================================================= */
-
-html {
-  overflow-y: auto;
-  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip !important;
 }
 
 body {
-  overflow-x: hidden;
-  overflow-y: visible;
-  min-height: 100%;
+  position: relative;
 }
 
-/* Les systèmes décoratifs ne doivent jamais créer leur propre scroll */
+/* Les systèmes décoratifs ne doivent plus créer de surface scrollable */
 
 .guide-lights-system,
 .guide-arrows-system {
-  overflow: visible;
-  height: 0;
-  min-height: 0;
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-height: 0 !important;
+  max-height: 100vh !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
 }
 
-/* Les lumières/flèches restent visibles mais ne créent plus de hauteur fantôme */
+/* On évite que les éléments placés très bas en vh agrandissent la page */
 
 .wandering-light,
 .wandering-arrow {
-  pointer-events: none;
+  position: fixed !important;
 }
 
-/* Sécurité sur les animations d’apparition */
+/* On remet les flèches dans l’écran sans créer de hauteur fantôme */
+
+.arrow-a { left: 18vw !important; top: 48vh !important; }
+.arrow-b { left: 34vw !important; top: 48vh !important; }
+.arrow-c { left: 26vw !important; top: 72vh !important; }
+.arrow-d { left: 72vw !important; top: 72vh !important; }
+.arrow-e { left: 66vw !important; top: 84vh !important; }
+
+/* Sécurité animations */
 
 .carickat-reveal {
   will-change: opacity, transform;
@@ -1987,5 +1979,5 @@ body {
 .art-card,
 .sketch-frame,
 .final-card {
-  will-change: auto;
+  will-change: auto !important;
 }
