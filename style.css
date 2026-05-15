@@ -94,6 +94,13 @@ img {
 
 /* FLÈCHES DESSINÉES */
 
+.home-arrows-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+}
+
 .draw-arrow {
   position: absolute;
   z-index: 30;
@@ -101,20 +108,21 @@ img {
   width: 4.5%;
   height: auto;
   max-width: none;
+  transform-origin: center center;
   animation: arrowFloat 1.6s ease-in-out infinite;
 }
 
 @keyframes arrowFloat {
   0% {
-    margin-top: 0;
+    transform: translateY(0) rotate(-3deg);
   }
 
   50% {
-    margin-top: -8px;
+    transform: translateY(-8px) rotate(3deg);
   }
 
   100% {
-    margin-top: 0;
+    transform: translateY(0) rotate(-3deg);
   }
 }
 
@@ -205,7 +213,7 @@ img {
 .hotspot {
   position: absolute;
   display: block;
-  z-index: 5;
+  z-index: 40;
   background: rgba(255, 0, 0, 0);
   border-radius: 8px;
 }
