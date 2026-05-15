@@ -1,67 +1,662 @@
 /* =========================================================
-   CARICKAT — Accueil image dessinée cliquable avec scroll
+   CARICKAT 2.0 — Carnet vivant professionnel
+   Base globale harmonisée
    ========================================================= */
 
 :root {
-  --paper: #f8f0df;
-  --ink: #14100d;
+
+  --paper: #f7efe2;
+  --paper-light: #fffaf3;
+  --paper-dark: #e7d8bf;
+
+  --ink: #17130f;
+  --ink-soft: #4d4034;
+
+  --brown: #8b5a36;
+  --red: #9f2f23;
+  --blue: #314a79;
+
+  --line: rgba(20,16,13,0.12);
+  --shadow: rgba(30,20,10,0.14);
+
+  --radius: 28px;
+
+  --container: 1180px;
 }
+
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
-  min-height: 100%;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: "Inter", Arial, sans-serif;
+  padding: 0;
   overflow-x: hidden;
 }
 
+body {
+
+  color: var(--ink);
+
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 1.65;
+
+  background:
+    radial-gradient(circle at 12% 18%, rgba(159,47,35,0.05), transparent 24%),
+    radial-gradient(circle at 82% 14%, rgba(49,74,121,0.05), transparent 26%),
+    var(--paper);
+
+  position: relative;
+}
+
+/* texture légère */
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.05;
+
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.03) 0px,
+      rgba(0,0,0,0.03) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+
+  z-index: -1;
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
 img {
   display: block;
-  max-width: none;
+  width: 100%;
 }
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  width: min(var(--container), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.split {
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 60px;
+  align-items: center;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+
+  position: sticky;
+  top: 0;
+
+  z-index: 200;
+
+  backdrop-filter: blur(14px);
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(247,239,226,0.92),
+      rgba(247,239,226,0.78)
+    );
+
+  border-bottom: 1px solid rgba(20,16,13,0.08);
+}
+
+.nav {
+
+  width: min(var(--container), calc(100% - 48px));
+  margin-inline: auto;
+
+  min-height: 86px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.logo {
+
+  font-family: "Caveat", cursive;
+
+  font-size: 2.4rem;
+  font-weight: 700;
+
+  color: var(--ink);
+
+  transform: rotate(-1deg);
+}
+
+.menu {
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  flex-wrap: wrap;
+}
+
+.menu a {
+
+  position: relative;
+
+  padding: 10px 14px;
+
+  border-radius: 999px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.menu a:hover {
+
+  background: rgba(20,16,13,0.06);
+
+  transform: translateY(-2px);
+}
+
+.menu a::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 14px;
+  right: 14px;
+  bottom: 8px;
+
+  height: 2px;
+
+  background: var(--red);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.22s ease;
+}
+
+.menu a:hover::after {
+  transform: scaleX(1);
+}
+
+/* =========================================================
+   TYPO
+   ========================================================= */
+
+.kicker {
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: var(--brown);
+
+  margin-bottom: 18px;
+}
+
+h1,
+h2,
+h3 {
+
+  line-height: 1.08;
+
+  margin: 0;
+  color: var(--ink);
+}
+
+h1 {
+
+  font-size: clamp(3rem, 6vw, 5.6rem);
+
+  max-width: 900px;
+}
+
+h2 {
+
+  font-size: clamp(2rem, 4vw, 3.4rem);
+
+  margin-bottom: 24px;
+}
+
+h3 {
+
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+}
+
+p {
+  color: var(--ink-soft);
+}
+
+/* =========================================================
+   BOUTONS
+   ========================================================= */
+
+.hero-actions {
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+  margin-top: 36px;
+}
+
+.btn {
+
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 54px;
+
+  padding: 0 26px;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(20,16,13,0.1);
+
+  background: rgba(255,255,255,0.52);
+
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.btn:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 34px rgba(20,16,13,0.12);
+}
+
+.btn.dark {
+
+  background: var(--ink);
+  color: white;
+}
+
+.btn.dark:hover {
+  background: #000;
+}
+
+.btn.disabled {
+
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* =========================================================
+   PAPER CARD
+   ========================================================= */
+
+.paper-card {
+
+  position: relative;
+
+  padding: 42px;
+
+  border-radius: var(--radius);
+
+  background:
+    linear-gradient(
+      to bottom right,
+      rgba(255,255,255,0.76),
+      rgba(255,248,238,0.72)
+    );
+
+  border: 1px solid rgba(20,16,13,0.08);
+
+  box-shadow:
+    0 18px 40px rgba(30,20,10,0.08);
+
+  overflow: hidden;
+}
+
+.paper-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at top left, rgba(159,47,35,0.06), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(49,74,121,0.05), transparent 30%);
+}
+
+.tilt-left {
+  transform: rotate(-1deg);
+}
+
+.tilt-right {
+  transform: rotate(1deg);
+}
+
+/* =========================================================
+   LISTE CARNET
+   ========================================================= */
+
+.list-sketch {
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding-left: 18px;
+}
+
+.list-sketch li {
+
+  color: var(--ink-soft);
+
+  position: relative;
+}
+
+/* =========================================================
+   GALLERY GRID
+   ========================================================= */
+
+.gallery-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(240px, 1fr));
+
+  gap: 28px;
+
+  margin-top: 46px;
+}
+
+.art-card {
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.74),
+      rgba(255,248,238,0.72)
+    );
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(20,16,13,0.08);
+
+  box-shadow:
+    0 12px 30px rgba(20,16,13,0.08);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.art-card:hover {
+
+  transform: translateY(-8px) rotate(-0.4deg);
+
+  box-shadow:
+    0 24px 46px rgba(20,16,13,0.12);
+}
+
+.art-card img {
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+}
+
+.art-card h3 {
+
+  padding:
+    22px 22px 0;
+}
+
+.art-meta {
+
+  padding:
+    0 22px 22px;
+
+  font-size: 0.92rem;
+
+  color: var(--brown);
+}
+
+/* =========================================================
+   OFFERS
+   ========================================================= */
+
+.offer-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 30px;
+
+  margin-top: 48px;
+}
+
+.offer-card {
+
+  position: relative;
+
+  padding: 34px;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.78),
+      rgba(255,248,238,0.72)
+    );
+
+  border: 1px solid rgba(20,16,13,0.08);
+
+  box-shadow:
+    0 18px 38px rgba(20,16,13,0.08);
+
+  overflow: hidden;
+}
+
+.offer-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 6px;
+
+  background:
+    linear-gradient(
+      to right,
+      var(--red),
+      var(--brown),
+      var(--blue)
+    );
+}
+
+.price {
+
+  margin:
+    22px 0;
+
+  font-size: 1.5rem;
+  font-weight: 900;
+
+  color: var(--red);
+}
+
+/* =========================================================
+   FORMULAIRE
+   ========================================================= */
+
+.contact-form {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+
+  margin-top: 32px;
+}
+
+.contact-form label {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+
+  width: 100%;
+
+  border: 1px solid rgba(20,16,13,0.12);
+
+  background: rgba(255,255,255,0.72);
+
+  border-radius: 18px;
+
+  padding: 18px;
+
+  font: inherit;
+
+  color: var(--ink);
+}
+
+.contact-form textarea {
+
+  min-height: 180px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+
+  outline: none;
+
+  border-color: var(--brown);
+
+  box-shadow:
+    0 0 0 4px rgba(139,90,54,0.08);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+
+  margin-top: 120px;
+
+  padding: 70px 0;
+
+  border-top: 1px solid rgba(20,16,13,0.08);
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.18),
+      rgba(255,255,255,0.05)
+    );
+}
+
+.footer-inner {
+
+  width: min(var(--container), calc(100% - 48px));
+  margin-inline: auto;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   ACCUEIL IMMERSIVE CONSERVÉE
+   ========================================================= */
 
 .home-screen {
   width: 100%;
   min-height: 100vh;
-  background:
-    radial-gradient(circle at 15% 20%, rgba(157, 47, 34, 0.06), transparent 28%),
-    radial-gradient(circle at 80% 15%, rgba(38, 63, 112, 0.055), transparent 30%),
-    var(--paper);
 }
-
-/* CADRE FIXE */
-
-.fixed-carickat-frame {
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  pointer-events: none;
-}
-
-.fixed-carickat-frame img {
-  width: 100vw;
-  height: 100vh;
-  object-fit: fill;
-  pointer-events: none;
-}
-
-/* IMAGE PRINCIPALE */
 
 .home-image-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
 }
 
 .home-bg {
@@ -69,52 +664,94 @@ img {
   height: auto;
 }
 
-/* LOGO */
+/* =========================================================
+   FRAME + HOTSPOTS
+   ========================================================= */
 
-.carickat-logo {
-  position: absolute;
-  left: 49.8%;
-  top: 17.25%;
-  width: 31.9%;
-  aspect-ratio: 1 / 1;
-  transform: translate(-50%, -50%);
-  z-index: 12;
-  border-radius: 50%;
-  overflow: hidden;
+.fixed-carickat-frame {
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 50;
+
   pointer-events: none;
-  background-image: url("logo.jpg");
-  background-size: 100% 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 
-.carickat-logo img {
-  display: none;
+.fixed-carickat-frame img {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: fill;
 }
 
-/* FLÈCHES DESSINÉES */
+.fixed-carickat-menu {
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 100;
+
+  pointer-events: none;
+}
+
+.frame-link,
+.hotspot {
+
+  position: absolute;
+
+  display: block;
+
+  border-radius: 12px;
+
+  pointer-events: auto;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.frame-link:hover,
+.hotspot:hover {
+
+  background: rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.2);
+
+  transform: scale(1.03);
+}
+
+/* =========================================================
+   FLÈCHES
+   ========================================================= */
 
 .home-arrows-layer {
+
   position: absolute;
   inset: 0;
-  z-index: 30;
+
+  z-index: 40;
+
   pointer-events: none;
 }
 
 .draw-arrow {
+
   position: absolute;
-  z-index: 30;
-  pointer-events: none;
-  width: 4.5%;
-  height: auto;
-  max-width: none;
-  transform-origin: center center;
-  animation: arrowFloat 1.6s ease-in-out infinite;
+
+  animation:
+    arrowFloat 1.6s ease-in-out infinite;
+
+  transform-origin: center;
 }
 
 @keyframes arrowFloat {
+
   0% {
-    transform: translateY(0) rotate(-3deg);
+    transform: translateY(0px) rotate(-3deg);
   }
 
   50% {
@@ -122,200 +759,84 @@ img {
   }
 
   100% {
-    transform: translateY(0) rotate(-3deg);
+    transform: translateY(0px) rotate(-3deg);
   }
 }
 
-/* flèches posées sur les boutons du haut */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-.arrow-galerie {
-  left: 64.2%;
-  top: 5.1%;
+@media (max-width: 980px) {
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 90px 0;
+  }
+
+  .paper-card {
+
+    transform: none !important;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 12vw, 4.5rem);
+  }
+
+  .nav {
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding:
+      18px 0;
+  }
+
+  .menu {
+
+    justify-content: center;
+  }
 }
-
-.arrow-boutique {
-  left: 73.1%;
-  top: 5.1%;
-}
-
-.arrow-apropos {
-  left: 82.3%;
-  top: 5.1%;
-}
-
-.arrow-contact {
-  left: 91.1%;
-  top: 5.1%;
-}
-
-/* flèche bouton découvrir */
-
-.arrow-decouvrir {
-  width: 6%;
-  left: 18.5%;
-  top: 44%;
-}
-
-/* MENU CLIQUABLE */
-
-.fixed-carickat-menu {
-  position: fixed;
-  inset: 0;
-  z-index: 80;
-  pointer-events: none;
-}
-
-.frame-link {
-  position: absolute;
-  display: block;
-  pointer-events: auto;
-  background: rgba(255, 0, 0, 0);
-  border-radius: 12px;
-}
-
-.frame-link-accueil {
-  left: 29.2%;
-  top: 7.8%;
-  width: 9.8%;
-  height: 6.2%;
-}
-
-.frame-link-boutique {
-  left: 39.3%;
-  top: 7.8%;
-  width: 11.2%;
-  height: 6.2%;
-}
-
-.frame-link-soutenir {
-  left: 50.7%;
-  top: 7.8%;
-  width: 11.5%;
-  height: 6.2%;
-}
-
-.frame-link-apropos {
-  left: 62.5%;
-  top: 7.8%;
-  width: 11.2%;
-  height: 6.2%;
-}
-
-.frame-link-contact {
-  left: 73.8%;
-  top: 7.8%;
-  width: 10.2%;
-  height: 6.2%;
-}
-
-/* HOTSPOTS */
-
-.hotspot {
-  position: absolute;
-  display: block;
-  z-index: 40;
-  background: rgba(255, 0, 0, 0);
-  border-radius: 8px;
-}
-
-.hotspot-accueil {
-  left: 54.5%;
-  top: 4.6%;
-  width: 7.2%;
-  height: 4.9%;
-}
-
-.hotspot-galerie-menu {
-  left: 62%;
-  top: 4.6%;
-  width: 8.8%;
-  height: 4.9%;
-}
-
-.hotspot-boutique-menu {
-  left: 70.9%;
-  top: 4.6%;
-  width: 8.9%;
-  height: 4.9%;
-}
-
-.hotspot-apropos-menu {
-  left: 80.2%;
-  top: 4.6%;
-  width: 8.7%;
-  height: 4.9%;
-}
-
-.hotspot-contact-menu {
-  left: 89.1%;
-  top: 4.6%;
-  width: 8.5%;
-  height: 4.9%;
-}
-
-.hotspot-decouvrir {
-  left: 13%;
-  top: 43%;
-  width: 15%;
-  height: 7%;
-  border-radius: 999px;
-}
-
-.hotspot-galerie-box {
-  left: 4%;
-  top: 55%;
-  width: 36%;
-  height: 38%;
-}
-
-.hotspot-boutique-box {
-  left: 70%;
-  top: 63%;
-  width: 27%;
-  height: 25%;
-  border-radius: 40%;
-}
-
-/* MOBILE */
 
 @media (max-width: 680px) {
 
-  html,
-  body {
-    overflow-x: auto;
+  .container,
+  .footer-inner,
+  .nav {
+    width: min(100% - 26px, 100%);
   }
 
-  .home-screen {
-    width: max-content;
-    min-width: 100%;
+  .section {
+    padding: 72px 0;
   }
 
-  .home-image-section {
-    width: 1200px;
-    max-width: none;
+  .paper-card,
+  .offer-card {
+
+    padding: 26px;
   }
 
-  .home-bg {
-    width: 1200px;
-    height: auto;
+  .hero-actions {
+
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .fixed-carickat-frame,
-  .fixed-carickat-menu {
-    width: 1200px;
-    height: 100vh;
-    left: 0;
-    right: auto;
+  .btn {
+    width: 100%;
   }
 
-  .fixed-carickat-frame img {
-    width: 1200px;
-    height: 100vh;
+  .gallery-grid,
+  .offer-grid {
+
+    grid-template-columns: 1fr;
   }
 
-  .carickat-logo {
-    left: 49.8%;
-    top: 17.25%;
-    width: 31.9%;
+  .logo {
+    font-size: 2rem;
   }
 }
