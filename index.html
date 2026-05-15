@@ -400,5 +400,52 @@ traceButton.addEventListener("click", () => {
 });
 </script>
 
+<script>
+document.body.classList.add("page-enter");
+
+const revealTargets = document.querySelectorAll(
+  ".section, .portal-card, .showcase-card, .paper-panel, .paper-card, .offer-card, .art-card, .final-card"
+);
+
+revealTargets.forEach((element) => {
+  element.classList.add("carickat-reveal");
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.14
+});
+
+revealTargets.forEach((element) => {
+  revealObserver.observe(element);
+});
+
+document.querySelectorAll("a[href]").forEach((link) => {
+  const href = link.getAttribute("href");
+
+  if (
+    !href ||
+    href.startsWith("#") ||
+    link.target === "_blank"
+  ) return;
+
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    document.body.classList.add("page-leave");
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 260);
+  });
+});
+</script>
+
 </body>
 </html>
