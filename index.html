@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Carickat — Carnet de croquis vivant</title>
+  <title>Carickat — Galerie & boutique d’art vivant</title>
 
-  <meta name="description" content="Carickat, galerie d’artiste et carnet de croquis vivant : caricatures, dessins au stylo, prints, commandes personnalisées et process art." />
+  <meta name="description" content="Carickat, galerie d’artiste et boutique d’art vivant : caricatures, dessins au stylo Bic, originaux, prints, commandes personnalisées et process art." />
 
   <link rel="stylesheet" href="style.css" />
 
@@ -18,50 +18,227 @@
 
 <body>
 
-<div class="fixed-carickat-frame" aria-hidden="true">
-  <img src="cadre-menu-carickat.png" alt="">
-</div>
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="index.html" class="site-logo">Carickat</a>
 
-<nav class="fixed-carickat-menu" aria-label="Navigation principale">
-  <a href="index.html" class="frame-link frame-link-accueil" aria-label="Accueil"></a>
-  <a href="boutique.html" class="frame-link frame-link-boutique" aria-label="Boutique"></a>
-  <a href="soutenir.html" class="frame-link frame-link-soutenir" aria-label="Soutenir"></a>
-  <a href="a-propos.html" class="frame-link frame-link-apropos" aria-label="À propos"></a>
-  <a href="contact.html" class="frame-link frame-link-contact" aria-label="Contact"></a>
-</nav>
+    <div class="site-menu">
+      <a href="galerie.html">Galerie</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="commande.html">Commande</a>
+      <a href="process.html">Process</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="soutien.html">Soutenir</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
 
-<main class="home-screen">
+<main>
 
-  <section class="home-image-section" aria-label="Accueil Carickat">
+  <section class="hero-carnet">
+    <div class="hero-bg-note note-red">traits visibles · erreurs gardées · carnet vivant</div>
+    <div class="hero-bg-note note-blue">bic bleu / rouge / vert</div>
 
-    <img src="accueil-carickat.png" alt="Accueil illustré Carickat" class="home-bg">
+    <div class="container hero-grid">
 
-    <div class="carickat-logo">
-      <img src="logo.jpg" alt="Logo Carickat">
+      <div class="hero-content">
+        <div class="kicker">galerie · boutique · carnet vivant</div>
+
+        <h1>
+          Dessins au stylo, visages tordus, œuvres vivantes.
+        </h1>
+
+        <p>
+          Carickat est une galerie d’artiste construite comme un carnet vivant :
+          caricatures, recherches au Bic, originaux, prints temporaires,
+          commandes personnalisées et fragments d’atelier.
+        </p>
+
+        <div class="hero-actions">
+          <a href="galerie.html" class="btn btn-primary">
+            Explorer la galerie
+            <span class="btn-arrow">↗</span>
+          </a>
+
+          <a href="boutique.html" class="btn btn-secondary">
+            Voir la boutique
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <span>Originaux</span>
+          <span>Prints limités</span>
+          <span>Commandes ouvertes</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="sketch-frame main-frame">
+          <img src="logo.jpg" alt="Logo Carickat">
+        </div>
+
+        <div class="floating-label label-one">visage → histoire</div>
+        <div class="floating-label label-two">trait Bic vivant</div>
+
+        <img src="fleche-1.png" alt="" class="floating-arrow arrow-one">
+        <img src="fleche-2.png" alt="" class="floating-arrow arrow-two">
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container section-intro">
+      <div class="kicker">entrées principales</div>
+      <h2>Choisir une porte d’entrée.</h2>
+      <p>
+        Le site fonctionne comme un atelier ouvert : voir les œuvres, acheter,
+        commander, suivre le processus ou soutenir les prochains chapitres.
+      </p>
     </div>
 
-    <!-- FLÈCHES VISUELLES -->
-    <div class="home-arrows-layer" aria-hidden="true">
-      <img src="fleche-1.png" class="draw-arrow arrow-galerie" alt="">
-      <img src="fleche-2.png" class="draw-arrow arrow-boutique" alt="">
-      <img src="fleche-3.png" class="draw-arrow arrow-apropos" alt="">
-      <img src="fleche-4.png" class="draw-arrow arrow-contact" alt="">
-      <img src="fleche-5.png" class="draw-arrow arrow-decouvrir" alt="">
+    <div class="container portal-grid">
+
+      <a href="galerie.html" class="portal-card portal-blue">
+        <span class="portal-number">01</span>
+        <h3>Galerie</h3>
+        <p>Caricatures, dessins au stylo, recherches, visages, corps et créatures.</p>
+        <strong>Voir les œuvres</strong>
+      </a>
+
+      <a href="boutique.html" class="portal-card portal-red">
+        <span class="portal-number">02</span>
+        <h3>Boutique</h3>
+        <p>Originaux premium, prints numérotés, collections temporaires et affiches.</p>
+        <strong>Découvrir les offres</strong>
+      </a>
+
+      <a href="commande.html" class="portal-card portal-green">
+        <span class="portal-number">03</span>
+        <h3>Commande</h3>
+        <p>Demander une caricature, un portrait, une créature ou une idée spéciale.</p>
+        <strong>Lancer une demande</strong>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="section shop-preview">
+    <div class="container split">
+
+      <div>
+        <div class="kicker">système de vente</div>
+
+        <h2>Une œuvre originale. Une collection temporaire.</h2>
+
+        <p>
+          Chaque grosse œuvre originale peut ouvrir une collection :
+          prints numérotés, posters digitaux et fragments associés.
+          Quand l’original quitte l’atelier, les dérivés liés s’arrêtent aussi.
+        </p>
+
+        <ul class="sketch-list">
+          <li>Œuvres originales premium</li>
+          <li>Prints limités liés à une pièce centrale</li>
+          <li>Commandes personnalisées déjà ouvertes</li>
+          <li>Collections évolutives par chapitre</li>
+        </ul>
+
+        <div class="hero-actions">
+          <a href="boutique.html" class="btn btn-primary">Entrer dans la boutique</a>
+          <a href="originaux.html" class="btn btn-secondary">Voir les originaux</a>
+        </div>
+      </div>
+
+      <div class="paper-panel">
+        <div class="kicker">note de carnet</div>
+        <h3>La rareté vient du temps visible.</h3>
+        <p>
+          Les œuvres ne sont pas seulement des images finales :
+          elles portent les recherches, les vidéos, les erreurs,
+          les détails et les mois de construction.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container section-intro">
+      <div class="kicker">vitrines</div>
+      <h2>Les mondes Carickat.</h2>
+      <p>
+        Chaque vitrine devient une branche du carnet : originaux, animaux,
+        corps, caricatures et héros revisités.
+      </p>
     </div>
 
-    <a href="index.html" class="hotspot hotspot-accueil" aria-label="Accueil"></a>
-    <a href="galerie.html" class="hotspot hotspot-galerie-menu" aria-label="Galerie"></a>
-    <a href="boutique.html" class="hotspot hotspot-boutique-menu" aria-label="Boutique"></a>
-    <a href="a-propos.html" class="hotspot hotspot-apropos-menu" aria-label="À propos"></a>
-    <a href="contact.html" class="hotspot hotspot-contact-menu" aria-label="Contact"></a>
+    <div class="container showcase-grid">
 
-    <a href="galerie.html" class="hotspot hotspot-decouvrir" aria-label="Découvrir la galerie"></a>
-    <a href="galerie.html" class="hotspot hotspot-galerie-box" aria-label="Voir toute la galerie"></a>
-    <a href="boutique.html" class="hotspot hotspot-boutique-box" aria-label="Découvrir la boutique"></a>
+      <a href="originaux.html" class="showcase-card">
+        <h3>Originaux</h3>
+        <p>Pièces uniques, collections temporaires et prints associés.</p>
+      </a>
 
+      <a href="animaux.html" class="showcase-card">
+        <h3>Animaux & créatures</h3>
+        <p>Instinct, vivant, formes organiques et recherches animales.</p>
+      </a>
+
+      <a href="expression-corporelle.html" class="showcase-card">
+        <h3>Expression corporelle</h3>
+        <p>Gestes, postures, tensions, silhouettes et corps vivants.</p>
+      </a>
+
+      <a href="caricatures.html" class="showcase-card">
+        <h3>Caricatures</h3>
+        <p>Visages, grimaces, portraits déformés et commandes possibles.</p>
+      </a>
+
+      <a href="heros.html" class="showcase-card">
+        <h3>Héros & inspirations</h3>
+        <p>Manga, cinéma, pop culture et réinterprétations personnelles.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="section final-cta">
+    <div class="container final-card">
+      <div>
+        <div class="kicker">commande ouverte</div>
+        <h2>Une idée, un visage, une grimace ?</h2>
+        <p>
+          Tu peux déjà demander une caricature personnalisée,
+          un portrait expressif, une créature ou une œuvre spéciale.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a href="commande.html" class="btn btn-primary">Commander un dessin</a>
+        <a href="contact.html" class="btn btn-secondary">Contacter l’atelier</a>
+      </div>
+    </div>
   </section>
 
 </main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="site-logo">Carickat</div>
+      <p>Galerie d’artiste · Carnet vivant · Boutique d’art.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="galerie.html">Galerie</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="commande.html">Commande</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
