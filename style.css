@@ -1933,3 +1933,73 @@ body.page-leave .page-transition-layer {
       inset 0 0 24px rgba(255,255,255,0.54);
   }
 }
+/* =========================================================
+   TRACE GUIDE — GROSSE FLÈCHE ROUGE
+   ========================================================= */
+
+.trace-counter-widget {
+  overflow: visible;
+}
+
+.trace-guide {
+  position: absolute;
+  left: -120px;
+  top: -8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none;
+  animation: traceGuideMove 2.4s ease-in-out infinite;
+}
+
+.trace-guide-arrow {
+  color: var(--note-red);
+  font-size: 4.2rem;
+  line-height: 1;
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  text-shadow:
+    0 0 14px rgba(255,255,255,0.95),
+    0 8px 22px rgba(178,43,34,0.28);
+}
+
+.trace-guide-text {
+  color: var(--note-red);
+  font-family: "Caveat", cursive;
+  font-size: 2rem;
+  font-weight: 700;
+  transform: rotate(-6deg);
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.95),
+    0 6px 14px rgba(178,43,34,0.18);
+}
+
+@keyframes traceGuideMove {
+
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.72;
+  }
+
+  50% {
+    transform: translateX(12px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 680px) {
+
+  .trace-guide {
+    left: -82px;
+    top: -2px;
+    gap: 6px;
+  }
+
+  .trace-guide-arrow {
+    font-size: 2.8rem;
+  }
+
+  .trace-guide-text {
+    font-size: 1.35rem;
+  }
+}
