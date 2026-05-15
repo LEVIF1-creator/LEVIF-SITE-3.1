@@ -1942,3 +1942,50 @@ body {
 .final-card {
   will-change: auto;
 }
+/* =========================================================
+   FIX — SUPPRESSION DOUBLE SCROLL / PAGE DANS PAGE
+   ========================================================= */
+
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: visible;
+  min-height: 100%;
+}
+
+/* Les systèmes décoratifs ne doivent jamais créer leur propre scroll */
+
+.guide-lights-system,
+.guide-arrows-system {
+  overflow: visible;
+  height: 0;
+  min-height: 0;
+}
+
+/* Les lumières/flèches restent visibles mais ne créent plus de hauteur fantôme */
+
+.wandering-light,
+.wandering-arrow {
+  pointer-events: none;
+}
+
+/* Sécurité sur les animations d’apparition */
+
+.carickat-reveal {
+  will-change: opacity, transform;
+}
+
+.portal-card,
+.showcase-card,
+.paper-panel,
+.paper-card,
+.offer-card,
+.art-card,
+.sketch-frame,
+.final-card {
+  will-change: auto;
+}
