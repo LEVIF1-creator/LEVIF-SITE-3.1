@@ -44,21 +44,14 @@
 
   <section class="hero-carnet">
 
-    <!-- TRACE VIVANTE -->
-
     <div class="trace-counter-widget">
 
-      <!-- FLECHE CLIQUE -->
-
-      <div class="trace-arrow-call">
-        <span class="trace-arrow-text">clique</span>
-        <span class="trace-arrow-shape">➜</span>
+      <div class="trace-guide">
+        <span class="trace-guide-text">clique</span>
+        <span class="trace-guide-arrow">➜</span>
       </div>
 
-      <button
-        id="traceClickButton"
-        class="trace-click-button"
-        type="button">
+      <button id="traceClickButton" class="trace-click-button" type="button">
         +1
       </button>
 
@@ -367,8 +360,6 @@
 
 </main>
 
-<!-- BULLE FIXE RÉSEAUX -->
-
 <div class="social-orbit">
 
   <button class="social-orbit-main" type="button">
@@ -417,8 +408,6 @@
   </div>
 </footer>
 
-<!-- LUMIÈRES GUIDEUSES MULTIPLES -->
-
 <div class="guide-lights-system" aria-hidden="true">
   <span class="wandering-light light-xl"></span>
   <span class="wandering-light light-lg"></span>
@@ -428,8 +417,6 @@
   <span class="wandering-light light-green"></span>
   <span class="wandering-light light-red"></span>
 </div>
-
-<!-- FLÈCHES GUIDEUSES ORGANIQUES -->
 
 <div class="guide-arrows-system" aria-hidden="true">
   <span class="wandering-arrow arrow-blue arrow-a">➜</span>
@@ -447,7 +434,7 @@ let count = localStorage.getItem("carickatTraceCountV2")
   ? parseInt(localStorage.getItem("carickatTraceCountV2"))
   : 0;
 
-traceCount.textContent = count;
+traceCount.textContent = String(count).padStart(3, "0");
 
 const alreadyClicked = localStorage.getItem("carickatTraceClickedV2");
 
@@ -457,24 +444,21 @@ if (alreadyClicked === "true") {
 }
 
 traceButton.addEventListener("click", () => {
-
   if (localStorage.getItem("carickatTraceClickedV2") === "true") return;
 
   count++;
 
-  traceCount.textContent = count;
+  traceCount.textContent = String(count).padStart(3, "0");
 
   localStorage.setItem("carickatTraceCountV2", count);
   localStorage.setItem("carickatTraceClickedV2", "true");
 
   traceButton.innerText = "✓";
-
   traceButton.classList.add("trace-clicked");
 
   setTimeout(() => {
     traceButton.disabled = true;
   }, 220);
-
 });
 </script>
 
@@ -507,11 +491,7 @@ revealTargets.forEach((element) => {
 document.querySelectorAll("a[href]").forEach((link) => {
   const href = link.getAttribute("href");
 
-  if (
-    !href ||
-    href.startsWith("#") ||
-    link.target === "_blank"
-  ) return;
+  if (!href || href.startsWith("#") || link.target === "_blank") return;
 
   link.addEventListener("click", (event) => {
     event.preventDefault();
