@@ -2723,3 +2723,267 @@ h2::after {
     font-size: 2.35rem !important;
   }
 }
+/* =========================================================
+   PATCH BOOSTER — CARICKAT CROQUIS MAIN PLUS SALE
+   À COLLER APRÈS LE PATCH PRÉCÉDENT
+   ========================================================= */
+
+/* Contours moins parfaits */
+
+.portal-card,
+.showcase-card,
+.paper-panel,
+.paper-card,
+.art-card,
+.offer-card,
+.final-card,
+.social-spot,
+.sketch-frame,
+.btn,
+.site-menu a,
+.menu a {
+  outline: 1px solid rgba(20,16,13,0.18);
+  outline-offset: 3px;
+  filter: contrast(1.03);
+}
+
+/* Faux traits de stylo autour des cartes */
+
+.portal-card::before,
+.showcase-card::before,
+.paper-panel::before,
+.paper-card::before,
+.offer-card::before,
+.final-card::before,
+.social-spot::before {
+  border-style: solid !important;
+  border-width: 2px !important;
+  border-color: rgba(20,16,13,0.42) !important;
+  box-shadow:
+    3px -2px 0 rgba(23,60,143,0.15),
+    -2px 3px 0 rgba(178,43,34,0.10),
+    inset 4px 0 0 rgba(47,122,69,0.06);
+}
+
+/* Hachures visibles dans les fonds */
+
+.portal-card,
+.showcase-card,
+.paper-panel,
+.paper-card,
+.offer-card,
+.final-card,
+.social-spot {
+  background:
+    repeating-linear-gradient(
+      -18deg,
+      rgba(23,60,143,0.035) 0 1px,
+      transparent 2px 8px
+    ),
+    repeating-linear-gradient(
+      22deg,
+      rgba(178,43,34,0.026) 0 1px,
+      transparent 2px 11px
+    ),
+    linear-gradient(135deg, #fffefa 0%, #ffffff 58%, #fffdf7 100%) !important;
+}
+
+/* Coins griffés */
+
+.portal-card::after,
+.showcase-card::after,
+.paper-panel::after,
+.paper-card::after,
+.offer-card::after,
+.final-card::after,
+.social-spot::after {
+  width: 85px !important;
+  height: 85px !important;
+  right: 12px !important;
+  bottom: 10px !important;
+  border-radius: 0 !important;
+  opacity: 0.38 !important;
+  background:
+    repeating-linear-gradient(
+      -35deg,
+      rgba(20,16,13,0.36) 0 2px,
+      transparent 3px 7px
+    ) !important;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* Boutons plus griffonnés */
+
+.btn {
+  letter-spacing: 0.02em;
+  text-shadow:
+    1px 0 0 rgba(255,255,255,0.45),
+    -1px 0 0 rgba(20,16,13,0.08);
+}
+
+.btn-primary {
+  background:
+    repeating-linear-gradient(
+      -18deg,
+      #0d2b6e 0 5px,
+      #173c8f 6px 9px,
+      #2457b8 10px 13px,
+      #0d2b6e 14px 18px
+    ) !important;
+}
+
+.btn-secondary {
+  background:
+    repeating-linear-gradient(
+      -16deg,
+      #ffffff 0 8px,
+      #fff8f4 9px 12px,
+      #ffffff 13px 19px
+    ) !important;
+}
+
+/* Menu moins propre */
+
+.site-menu a,
+.menu a {
+  border-width: 2px !important;
+  box-shadow:
+    2px 2px 0 rgba(20,16,13,0.12),
+    -1px -1px 0 rgba(23,60,143,0.08) !important;
+}
+
+.site-menu a::after,
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 4px;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.28;
+  transform: rotate(-1.5deg);
+}
+
+/* Titres avec soulignage plus manuel */
+
+h1::after,
+h2::after {
+  height: 13px !important;
+  background:
+    repeating-linear-gradient(
+      -12deg,
+      rgba(178,43,34,0.95) 0 5px,
+      transparent 6px 8px,
+      rgba(178,43,34,0.55) 9px 12px,
+      transparent 13px 18px
+    ) !important;
+  clip-path: polygon(0 35%, 92% 0, 100% 55%, 9% 100%);
+}
+
+/* Petits traits parasites sur sections */
+
+.section-intro::before,
+.hero-content::before,
+.paper-panel::after {
+  content: "";
+  display: block;
+  width: 74px;
+  height: 42px;
+  margin-bottom: 12px;
+  opacity: 0.32;
+  background:
+    repeating-linear-gradient(
+      -24deg,
+      rgba(178,43,34,0.75) 0 3px,
+      transparent 4px 8px
+    );
+  clip-path: polygon(0 18%, 100% 0, 72% 38%, 96% 70%, 20% 100%);
+  transform: rotate(-6deg);
+}
+
+/* Images plus “posées sur feuille” */
+
+.art-card img,
+.main-frame img {
+  box-shadow:
+    0 0 0 2px rgba(20,16,13,0.22),
+    6px 7px 0 rgba(20,16,13,0.055),
+    -3px -2px 0 rgba(23,60,143,0.06) !important;
+}
+
+/* Pastilles moins rondes */
+
+.kicker,
+.hero-trust span,
+.floating-label,
+.social-orbit-main,
+.social-orbit-links a {
+  outline: 1px solid rgba(20,16,13,0.16);
+  outline-offset: 3px;
+  transform: rotate(-0.8deg);
+}
+
+.kicker:nth-child(2n),
+.hero-trust span:nth-child(2n) {
+  transform: rotate(0.9deg);
+}
+
+/* Papier avec salissures légères */
+
+.paper-grain-layer {
+  opacity: 0.19 !important;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(20,16,13,0.07), transparent 8%),
+    radial-gradient(circle at 82% 22%, rgba(178,43,34,0.055), transparent 10%),
+    radial-gradient(circle at 32% 74%, rgba(23,60,143,0.05), transparent 12%),
+    repeating-linear-gradient(
+      96deg,
+      rgba(20,16,13,0.035) 0,
+      rgba(20,16,13,0.035) 1px,
+      transparent 1px,
+      transparent 6px
+    ) !important;
+}
+
+/* Flèches plus dessinées */
+
+.wandering-arrow {
+  font-size: 3rem !important;
+  -webkit-text-stroke: 1px rgba(20,16,13,0.18);
+  filter: drop-shadow(2px 3px 0 rgba(20,16,13,0.10));
+}
+
+/* Social orbit plus carnet */
+
+.social-orbit-main::after {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 1.5px dashed rgba(178,43,34,0.35);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Mobile : réduire le chaos */
+
+@media (max-width: 680px) {
+  .portal-card::after,
+  .showcase-card::after,
+  .paper-panel::after,
+  .paper-card::after,
+  .offer-card::after,
+  .final-card::after,
+  .social-spot::after {
+    width: 54px !important;
+    height: 54px !important;
+    opacity: 0.24 !important;
+  }
+
+  .section-intro::before,
+  .hero-content::before {
+    width: 52px;
+    height: 30px;
+    opacity: 0.22;
+  }
+}
