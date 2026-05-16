@@ -3137,215 +3137,206 @@ body{
   }
 }
 /* =========================================================
-   FIX FINAL HEADER IMAGE CARICKAT
+   HEADER CARICKAT — IMAGE FIXE PROPRE
+   Correction intégrée : un seul système de header
    ========================================================= */
-
-/* RESET anciens systèmes */
 
 .site-header::before,
 .site-header::after,
 .header::before,
 .header::after,
 .site-menu::before,
-.site-menu::after {
+.site-menu::after,
+.menu::before,
+.menu::after {
   display: none !important;
   content: none !important;
 }
 
-/* HEADER FIXE */
-
-.site-header{
+.site-header,
+.header {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
-
   width: 100% !important;
   height: 170px !important;
-
   z-index: 999999 !important;
-
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-
+  backdrop-filter: none !important;
   overflow: visible !important;
-
-  pointer-events: none !important;
 }
 
-/* IMAGE DU BANDEAU */
-
-.header-art{
+.header-art {
+  display: block !important;
   position: absolute !important;
-
   top: 0 !important;
   left: 0 !important;
-
   width: 100% !important;
   height: 170px !important;
-
   z-index: 1 !important;
-
-  background-image: url("assets/ui/header-carickat-desktop.png") !important;
-
+  background-image:
+    url("assets/ui/header-carickat-desktop.png"),
+    url("./assets/ui/header-carickat-desktop.png"),
+    url("header-carickat-desktop.png") !important;
   background-repeat: no-repeat !important;
   background-position: top center !important;
-
-  background-size: 100% auto !important;
-
+  background-size: contain !important;
   pointer-events: none !important;
 }
 
-/* NAVIGATION */
-
-.site-nav{
+.site-nav,
+.nav {
   position: relative !important;
-
-  z-index: 20 !important;
-
-  width: 100% !important;
+  z-index: 10 !important;
+  width: min(1020px, 94vw) !important;
   height: 170px !important;
-
+  min-height: 0 !important;
+  margin: 0 auto !important;
+  padding: 58px 0 0 !important;
   display: flex !important;
-  justify-content: center !important;
   align-items: flex-start !important;
-
-  padding-top: 56px !important;
-
+  justify-content: center !important;
   background: transparent !important;
-  box-shadow: none !important;
   border: none !important;
-
+  box-shadow: none !important;
   pointer-events: auto !important;
 }
 
-/* LOGO */
-
-.site-logo{
+.site-logo {
   display: none !important;
 }
 
-/* MENU */
-
-.site-menu{
+.site-menu,
+.menu {
   display: flex !important;
-  justify-content: center !important;
   align-items: center !important;
-
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
   gap: 0 !important;
-
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-
+  outline: none !important;
   overflow: visible !important;
 }
 
-/* LIENS MENU */
-
-.site-menu a{
-
-  width: 145px !important;
-  height: 52px !important;
-
+.site-menu a,
+.menu a {
+  position: relative !important;
+  width: 125px !important;
+  height: 43px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-
   padding: 0 !important;
   margin: 0 !important;
-
   background: transparent !important;
-
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
-
   border-radius: 0 !important;
-
   color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
   text-shadow: none !important;
-
   transform: none !important;
-
-  position: relative !important;
+  filter: none !important;
 }
 
-/* HOVER LEGER */
+.site-menu a::before,
+.site-menu a::after,
+.menu a::before,
+.menu a::after {
+  display: none !important;
+  content: none !important;
+}
 
-.site-menu a:hover{
-  transform: translateY(-2px) !important;
-
+.site-menu a:hover,
+.menu a:hover {
   background: rgba(255,255,255,0.08) !important;
-
-  filter:
-    drop-shadow(0 0 6px rgba(37,71,255,0.25)) !important;
+  transform: translateY(-2px) !important;
+  filter: drop-shadow(0 0 6px rgba(23,60,143,0.24)) !important;
 }
 
-/* CONTENU SOUS LE HEADER */
-
-body{
+body {
   padding-top: 160px !important;
 }
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 900px){
-
-  .site-header{
-    height: 205px !important;
+@media (max-width: 900px) {
+  .site-header,
+  .header {
+    height: 185px !important;
   }
 
-  .header-art{
-    height: 205px !important;
-
-    background-size: auto 175px !important;
+  .header-art {
+    height: 185px !important;
+    background-image:
+      url("assets/ui/header-carickat-desktop.png"),
+      url("./assets/ui/header-carickat-desktop.png"),
+      url("header-carickat-desktop.png") !important;
+    background-size: 980px auto !important;
   }
 
-  .site-nav{
-    height: 205px !important;
-
-    padding-top: 60px !important;
+  .site-nav,
+  .nav {
+    height: 185px !important;
+    padding-top: 62px !important;
   }
 
-  .site-menu{
-    width: 85% !important;
-
+  .site-menu,
+  .menu {
+    width: min(560px, 92vw) !important;
     flex-wrap: wrap !important;
-
-    gap: 4px !important;
+    gap: 2px !important;
   }
 
-  .site-menu a{
-    width: 31% !important;
-    height: 40px !important;
-  }
-
-  body{
-    padding-top: 200px !important;
-  }
-}
-
-/* PETIT MOBILE */
-
-@media (max-width: 600px){
-
-  .header-art{
-    background-size: auto 150px !important;
-  }
-
-  .site-menu{
-    width: 94% !important;
-  }
-
-  .site-menu a{
-    width: 45% !important;
+  .site-menu a,
+  .menu a {
+    width: 95px !important;
     height: 34px !important;
   }
 
-  body{
-    padding-top: 185px !important;
+  body {
+    padding-top: 178px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header,
+  .header {
+    height: 170px !important;
+  }
+
+  .header-art {
+    height: 170px !important;
+    background-size: 760px auto !important;
+  }
+
+  .site-nav,
+  .nav {
+    height: 170px !important;
+    padding-top: 56px !important;
+  }
+
+  .site-menu,
+  .menu {
+    width: 94vw !important;
+    flex-wrap: wrap !important;
+    gap: 2px !important;
+  }
+
+  .site-menu a,
+  .menu a {
+    width: 76px !important;
+    height: 30px !important;
+  }
+
+  body {
+    padding-top: 160px !important;
   }
 }
