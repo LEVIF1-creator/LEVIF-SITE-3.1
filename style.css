@@ -3137,117 +3137,20 @@ body{
   }
 }
 /* =========================================================
-   HEADER CARICKAT — IMAGE FIXE PROPRE
-   Correction intégrée : un seul système de header
+   HEADER CARICKAT — BARRE IMAGE FIXE GLOBALE
+   À GARDER COMME UNIQUE SYSTÈME HEADER
    ========================================================= */
 
 .site-header::before,
 .site-header::after,
 .header::before,
 .header::after,
+.header-art::before,
+.header-art::after,
 .site-menu::before,
 .site-menu::after,
 .menu::before,
-.menu::after {
-  display: none !important;
-  content: none !important;
-}
-
-.site-header,
-.header {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 170px !important;
-  z-index: 999999 !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  overflow: visible !important;
-}
-
-.header-art {
-  display: block !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 170px !important;
-  z-index: 1 !important;
-  background-image:
-    url("assets/ui/header-carickat-desktop.png"),
-    url("./assets/ui/header-carickat-desktop.png"),
-    url("header-carickat-desktop.png") !important;
-  background-repeat: no-repeat !important;
-  background-position: top center !important;
-  background-size: contain !important;
-  pointer-events: none !important;
-}
-
-.site-nav,
-.nav {
-  position: relative !important;
-  z-index: 10 !important;
-  width: min(1020px, 94vw) !important;
-  height: 170px !important;
-  min-height: 0 !important;
-  margin: 0 auto !important;
-  padding: 58px 0 0 !important;
-  display: flex !important;
-  align-items: flex-start !important;
-  justify-content: center !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  pointer-events: auto !important;
-}
-
-.site-logo {
-  display: none !important;
-}
-
-.site-menu,
-.menu {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-wrap: nowrap !important;
-  gap: 0 !important;
-  width: auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-  overflow: visible !important;
-}
-
-.site-menu a,
-.menu a {
-  position: relative !important;
-  width: 125px !important;
-  height: 43px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  color: transparent !important;
-  font-size: 0 !important;
-  line-height: 0 !important;
-  text-shadow: none !important;
-  transform: none !important;
-  filter: none !important;
-}
-
+.menu::after,
 .site-menu a::before,
 .site-menu a::after,
 .menu a::before,
@@ -3256,84 +3159,260 @@ body{
   content: none !important;
 }
 
+/* HEADER GLOBAL FIXE */
+
+.site-header,
+.header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 100vw !important;
+  height: 220px !important;
+
+  z-index: 999999 !important;
+
+  display: block !important;
+
+  background-color: transparent !important;
+  background-image: url("assets/ui/header-carickat-desktop.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: top center !important;
+  background-size: 100% 100% !important;
+
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+
+  overflow: visible !important;
+  pointer-events: none !important;
+}
+
+/* L’ancien div reste présent mais ne contrôle plus l’image */
+
+.header-art {
+  display: none !important;
+}
+
+/* NAVIGATION CLIQUABLE PAR-DESSUS L’IMAGE */
+
+.site-nav,
+.nav {
+  position: relative !important;
+  z-index: 20 !important;
+
+  width: 100vw !important;
+  max-width: none !important;
+  height: 220px !important;
+  min-height: 0 !important;
+
+  margin: 0 !important;
+  padding: 86px 0 0 0 !important;
+
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  pointer-events: auto !important;
+}
+
+/* LOGO TEXTE MASQUÉ, LE BANDEAU FAIT LE VISUEL */
+
+.site-logo {
+  display: none !important;
+}
+
+/* MENU INVISIBLE MAIS CLIQUABLE */
+
+.site-menu,
+.menu {
+  position: relative !important;
+  z-index: 30 !important;
+
+  width: min(1040px, 78vw) !important;
+  height: 58px !important;
+
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 0 !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+
+  overflow: visible !important;
+}
+
+/* LIENS : ZONES CLIQUABLES ALIGNÉES SUR LES BOUTONS DESSINÉS */
+
+.site-menu a,
+.menu a {
+  position: relative !important;
+
+  flex: 1 1 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  height: 58px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-shadow: none !important;
+
+  transform: none !important;
+  filter: none !important;
+
+  cursor: pointer !important;
+}
+
+/* HOVER DISCRET POUR SAVOIR QUE C’EST CLIQUABLE */
+
 .site-menu a:hover,
 .menu a:hover {
-  background: rgba(255,255,255,0.08) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
   transform: translateY(-2px) !important;
-  filter: drop-shadow(0 0 6px rgba(23,60,143,0.24)) !important;
+  filter: drop-shadow(0 0 8px rgba(23, 60, 143, 0.28)) !important;
 }
+
+/* ESPACE SOUS LE HEADER FIXE */
 
 body {
-  padding-top: 160px !important;
+  padding-top: 210px !important;
 }
 
-@media (max-width: 900px) {
+/* ÉVITE QUE LE CONTENU PASSE SOUS LE HEADER */
+
+main {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 980px) {
   .site-header,
   .header {
-    height: 185px !important;
-  }
-
-  .header-art {
-    height: 185px !important;
-    background-image:
-      url("assets/ui/header-carickat-desktop.png"),
-      url("./assets/ui/header-carickat-desktop.png"),
-      url("header-carickat-desktop.png") !important;
-    background-size: 980px auto !important;
+    height: 190px !important;
+    background-image: url("assets/ui/header-carickat-desktop.png") !important;
+    background-size: 100% 100% !important;
   }
 
   .site-nav,
   .nav {
-    height: 185px !important;
+    height: 190px !important;
+    padding-top: 74px !important;
+  }
+
+  .site-menu,
+  .menu {
+    width: 86vw !important;
+    height: 50px !important;
+  }
+
+  .site-menu a,
+  .menu a {
+    height: 50px !important;
+  }
+
+  body {
+    padding-top: 180px !important;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 680px) {
+  .site-header,
+  .header {
+    height: 170px !important;
+    background-image: url("assets/ui/header-carickat-desktop.png") !important;
+    background-size: 140% 100% !important;
+    background-position: top center !important;
+  }
+
+  .site-nav,
+  .nav {
+    height: 170px !important;
     padding-top: 62px !important;
   }
 
   .site-menu,
   .menu {
-    width: min(560px, 92vw) !important;
-    flex-wrap: wrap !important;
+    width: 92vw !important;
+    height: 82px !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    grid-auto-rows: 38px !important;
+
     gap: 2px !important;
   }
 
   .site-menu a,
   .menu a {
-    width: 95px !important;
-    height: 34px !important;
+    width: auto !important;
+    height: 38px !important;
   }
 
   body {
-    padding-top: 178px !important;
+    padding-top: 165px !important;
   }
 }
 
-@media (max-width: 600px) {
+/* =========================================================
+   TRÈS PETIT MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
   .site-header,
   .header {
-    height: 170px !important;
-  }
-
-  .header-art {
-    height: 170px !important;
-    background-size: 760px auto !important;
+    height: 165px !important;
+    background-size: 165% 100% !important;
   }
 
   .site-nav,
   .nav {
-    height: 170px !important;
-    padding-top: 56px !important;
+    height: 165px !important;
+    padding-top: 60px !important;
   }
 
   .site-menu,
   .menu {
     width: 94vw !important;
-    flex-wrap: wrap !important;
-    gap: 2px !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-auto-rows: 34px !important;
   }
 
   .site-menu a,
   .menu a {
-    width: 76px !important;
-    height: 30px !important;
+    height: 34px !important;
   }
 
   body {
