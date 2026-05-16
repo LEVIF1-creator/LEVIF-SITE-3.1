@@ -2980,3 +2980,159 @@ h2::after {
     opacity: 0.22;
   }
 }
+/* =========================================================
+   HEADER CARICKAT FIXE IMMERSIF
+   ========================================================= */
+
+.site-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+
+  pointer-events:none;
+}
+
+/* IMAGE DU BANDEAU */
+
+.header-art{
+  position:absolute;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:180px;
+
+  background-image:url("assets/ui/header-carickat-desktop.png");
+  background-repeat:no-repeat;
+  background-position:top center;
+  background-size:100% auto;
+
+  pointer-events:none;
+}
+
+/* NAVIGATION */
+
+.site-nav{
+  position:relative;
+  z-index:10;
+
+  width:min(900px,92%);
+  height:140px;
+
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+
+  padding-top:34px;
+
+  pointer-events:auto;
+}
+
+/* MENU */
+
+.site-menu{
+  display:flex;
+  gap:0;
+}
+
+/* BOUTONS */
+
+.site-menu a{
+  width:160px;
+  height:52px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-family:"Caveat",cursive;
+  font-size:2rem;
+  color:#1b33b7;
+
+  text-decoration:none;
+
+  background:transparent;
+  border:none;
+
+  transition:
+    transform .25s ease,
+    color .25s ease,
+    filter .25s ease;
+}
+
+/* HOVER */
+
+.site-menu a:hover{
+  transform:translateY(-3px) scale(1.03);
+  color:#b11f1f;
+
+  filter:
+    drop-shadow(0 0 6px rgba(37,71,255,.28));
+}
+
+/* ESPACE POUR LE CONTENU */
+
+body{
+  padding-top:150px;
+}
+
+/* =========================================================
+   VERSION MOBILE
+   ========================================================= */
+
+@media (max-width:900px){
+
+  .header-art{
+    height:170px;
+
+    background-image:url("assets/ui/header-carickat-mobile.png");
+    background-size:cover;
+  }
+
+  .site-nav{
+    height:160px;
+    padding-top:28px;
+  }
+
+  .site-menu{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:4px;
+    width:90%;
+  }
+
+  .site-menu a{
+    width:42%;
+    height:42px;
+
+    font-size:1.35rem;
+  }
+
+  body{
+    padding-top:170px;
+  }
+}
+
+/* PETIT MOBILE */
+
+@media (max-width:600px){
+
+  .header-art{
+    height:190px;
+  }
+
+  .site-menu a{
+    width:48%;
+    font-size:1.15rem;
+  }
+
+  body{
+    padding-top:190px;
+  }
+}
