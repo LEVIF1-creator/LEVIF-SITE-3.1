@@ -2946,13 +2946,6 @@ h2::after {
     ) !important;
 }
 
-/* Flèches plus dessinées */
-
-.wandering-arrow {
-  font-size: 3rem !important;
-  -webkit-text-stroke: 1px rgba(20,16,13,0.18);
-  filter: drop-shadow(2px 3px 0 rgba(20,16,13,0.10));
-}
 
 /* Social orbit plus carnet */
 
