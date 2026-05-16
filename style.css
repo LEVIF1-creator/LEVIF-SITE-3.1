@@ -2179,3 +2179,547 @@ body.page-leave .page-transition-layer {
     padding-top: 58px;
   }
 }
+/* =========================================================
+   PATCH — CARICKAT MAIN VIVANTE / STYLE DESSINÉ
+   À COLLER TOUT EN BAS DU CSS
+   ========================================================= */
+
+/* BASE PAPIER PLUS BLANCHE / CARNET */
+
+body {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(23,60,143,0.055), transparent 24%),
+    radial-gradient(circle at 88% 14%, rgba(178,43,34,0.045), transparent 22%),
+    radial-gradient(circle at 72% 84%, rgba(47,122,69,0.05), transparent 28%),
+    linear-gradient(135deg, #fffef9 0%, #ffffff 48%, #f9fbff 100%) !important;
+}
+
+body::before {
+  opacity: 0.11 !important;
+  background-image:
+    linear-gradient(rgba(20,16,13,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20,16,13,0.018) 1px, transparent 1px),
+    repeating-linear-gradient(
+      125deg,
+      transparent 0,
+      transparent 11px,
+      rgba(23,60,143,0.025) 12px
+    ) !important;
+  background-size: 38px 38px, 38px 38px, 90px 90px !important;
+}
+
+body::after {
+  opacity: 0.06 !important;
+  background:
+    repeating-linear-gradient(
+      -8deg,
+      transparent 0,
+      transparent 8px,
+      rgba(0,0,0,0.045) 9px,
+      transparent 10px
+    ) !important;
+}
+
+/* TITRES PLUS CARNET / PLUS ENCRE */
+
+h1,
+h2 {
+  color: var(--ink) !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  text-shadow:
+    1px 1px 0 rgba(23,60,143,0.08),
+    -1px 0 0 rgba(178,43,34,0.055);
+}
+
+h1::after,
+h2::after {
+  content: "";
+  display: block;
+  width: min(220px, 48vw);
+  height: 8px;
+  margin-top: 14px;
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(
+      -8deg,
+      rgba(178,43,34,0.95) 0 8px,
+      rgba(178,43,34,0.55) 9px 12px,
+      transparent 13px 18px
+    );
+  transform: rotate(-1.2deg);
+  opacity: 0.75;
+}
+
+/* HEADER : BANDEAU PLUS DESSINÉ */
+
+.site-header,
+.header {
+  background:
+    linear-gradient(180deg, rgba(255,255,250,0.96), rgba(255,255,255,0.88)) !important;
+  border-bottom: 2px solid rgba(23,60,143,0.38) !important;
+  box-shadow:
+    0 8px 0 rgba(23,60,143,0.035),
+    0 18px 38px rgba(20,16,13,0.08) !important;
+}
+
+.site-header::before,
+.header::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 5px;
+  height: 2px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(23,60,143,0.75) 0 18px,
+      transparent 19px 24px,
+      rgba(178,43,34,0.45) 25px 34px,
+      transparent 35px 42px
+    );
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.site-logo,
+.logo {
+  color: var(--note-red) !important;
+  font-size: 2.8rem !important;
+  text-shadow:
+    2px 2px 0 rgba(178,43,34,0.12),
+    -1px -1px 0 rgba(23,60,143,0.10) !important;
+}
+
+/* MENU : PETITS CARTOUCHES DESSINÉS */
+
+.site-menu a,
+.menu a {
+  background:
+    linear-gradient(135deg, #fffdf8, #ffffff) !important;
+  border: 2px solid rgba(23,60,143,0.45) !important;
+  border-radius: 10px 18px 12px 16px / 15px 10px 18px 12px !important;
+  box-shadow:
+    3px 4px 0 rgba(23,60,143,0.08),
+    inset 0 0 0 1px rgba(255,255,255,0.8) !important;
+  transform: rotate(-0.4deg);
+}
+
+.site-menu a:nth-child(2n),
+.menu a:nth-child(2n) {
+  transform: rotate(0.5deg);
+  border-color: rgba(178,43,34,0.38) !important;
+}
+
+.site-menu a:nth-child(3n),
+.menu a:nth-child(3n) {
+  border-color: rgba(47,122,69,0.42) !important;
+}
+
+.site-menu a:hover,
+.menu a:hover {
+  transform: translateY(-4px) rotate(-1.2deg) scale(1.03) !important;
+  background: #fffefa !important;
+}
+
+/* KICKERS / PASTILLES */
+
+.kicker {
+  background: #fffefa !important;
+  border: 1.5px solid rgba(178,43,34,0.45);
+  border-radius: 58% 42% 52% 48% / 42% 58% 44% 56% !important;
+  box-shadow:
+    3px 4px 0 rgba(178,43,34,0.08),
+    inset 0 0 18px rgba(255,255,255,0.8) !important;
+}
+
+/* BOUTONS : MORCEAUX DÉCOUPÉS / ENCRE */
+
+.btn {
+  border: 2px solid rgba(23,60,143,0.62) !important;
+  border-radius: 18px 34px 20px 30px / 28px 18px 32px 20px !important;
+  background: #fffefa !important;
+  box-shadow:
+    5px 6px 0 rgba(23,60,143,0.13),
+    inset 0 0 0 1px rgba(255,255,255,0.9) !important;
+}
+
+.btn::before {
+  background:
+    repeating-linear-gradient(
+      -18deg,
+      transparent 0 8px,
+      rgba(23,60,143,0.08) 9px 10px,
+      transparent 11px 16px
+    ) !important;
+  opacity: 0.7 !important;
+}
+
+.btn-primary {
+  color: #ffffff !important;
+  background:
+    repeating-linear-gradient(
+      -12deg,
+      var(--bic-blue-3) 0 8px,
+      var(--bic-blue) 9px 15px,
+      var(--bic-blue-2) 16px 20px
+    ) !important;
+  border-color: rgba(13,43,110,0.85) !important;
+}
+
+.btn-secondary {
+  color: var(--bic-blue) !important;
+  background:
+    linear-gradient(135deg, #ffffff, #fffefa) !important;
+}
+
+.btn:hover {
+  transform: translateY(-5px) rotate(-1.4deg) scale(1.02) !important;
+}
+
+/* CADRES / CARTES : PLUS CROQUIS, MOINS WEB */
+
+.portal-card,
+.showcase-card,
+.paper-panel,
+.paper-card,
+.art-card,
+.offer-card,
+.final-card,
+.social-spot,
+.sketch-frame {
+  background:
+    linear-gradient(135deg, #fffefa 0%, #ffffff 52%, #fbfcff 100%) !important;
+  border: 2px solid rgba(20,16,13,0.48) !important;
+  border-radius: 28px 42px 34px 50px / 42px 28px 48px 34px !important;
+  box-shadow:
+    7px 9px 0 rgba(20,16,13,0.055),
+    0 20px 46px rgba(20,16,13,0.075),
+    inset 0 0 0 1px rgba(255,255,255,0.9) !important;
+}
+
+.portal-card:nth-child(3n),
+.showcase-card:nth-child(3n),
+.art-card:nth-child(3n) {
+  border-radius: 42px 28px 46px 32px / 28px 48px 30px 44px !important;
+}
+
+.portal-card:nth-child(2n),
+.showcase-card:nth-child(2n),
+.art-card:nth-child(2n) {
+  border-radius: 34px 50px 26px 44px / 46px 30px 42px 28px !important;
+}
+
+/* FAUX DOUBLE CONTOUR DESSINÉ */
+
+.portal-card::before,
+.showcase-card::before,
+.paper-panel::before,
+.paper-card::before,
+.offer-card::before,
+.final-card::before,
+.social-spot::before {
+  inset: 9px !important;
+  border: 1.5px dashed rgba(23,60,143,0.32) !important;
+  border-radius: inherit !important;
+}
+
+.portal-card::after,
+.showcase-card::after,
+.paper-panel::after,
+.paper-card::after,
+.offer-card::after,
+.final-card::after,
+.social-spot::after {
+  content: "";
+  position: absolute;
+  right: -12%;
+  bottom: -20%;
+  width: 48%;
+  height: 48%;
+  background:
+    repeating-linear-gradient(
+      -35deg,
+      rgba(178,43,34,0.12) 0 2px,
+      transparent 3px 8px
+    ) !important;
+  border-radius: 50%;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* COULEURS DES CARTES PORTAILS */
+
+.portal-blue {
+  border-color: rgba(23,60,143,0.72) !important;
+}
+
+.portal-red {
+  border-color: rgba(178,43,34,0.72) !important;
+}
+
+.portal-green {
+  border-color: rgba(47,122,69,0.72) !important;
+}
+
+.portal-number {
+  font-size: 2.5rem !important;
+  text-shadow:
+    1px 1px 0 rgba(255,255,255,0.8),
+    3px 3px 0 rgba(20,16,13,0.06);
+}
+
+/* HACHURES INTERNES SUR CARTES */
+
+.portal-card h3::after,
+.showcase-card h3::after,
+.paper-panel h3::after,
+.art-card h3::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 6px;
+  margin-top: 10px;
+  background:
+    repeating-linear-gradient(
+      -12deg,
+      currentColor 0 5px,
+      transparent 6px 10px
+    );
+  opacity: 0.45;
+  border-radius: 999px;
+}
+
+/* HERO VISUEL : CADRE PLUS ENCADREMENT DESSIN */
+
+.sketch-frame {
+  padding: 18px !important;
+  border: 3px solid rgba(23,60,143,0.7) !important;
+  border-radius: 40px 58px 44px 64px / 58px 38px 62px 44px !important;
+}
+
+.sketch-frame::before {
+  border: 1.5px dashed rgba(178,43,34,0.48) !important;
+  inset: 12px !important;
+}
+
+.main-frame img {
+  border: 3px solid rgba(178,43,34,0.58) !important;
+  filter: contrast(1.06) saturate(1.04);
+}
+
+/* LABELS FLOTTANTS PLUS MANUSCRITS */
+
+.floating-label {
+  background: #fffefa !important;
+  border: 2px solid currentColor !important;
+  border-radius: 22px 34px 20px 38px / 34px 20px 38px 22px !important;
+  box-shadow:
+    4px 5px 0 rgba(20,16,13,0.055),
+    0 10px 22px rgba(20,16,13,0.08) !important;
+}
+
+/* TRUST TAGS */
+
+.hero-trust span {
+  background: #fffefa !important;
+  border: 1.6px dashed rgba(178,43,34,0.58) !important;
+  border-radius: 20px 34px 18px 28px / 28px 18px 34px 20px !important;
+}
+
+/* GALERIE : IMAGES COMME POSÉES DANS UN CARNET */
+
+.art-card {
+  padding-bottom: 8px;
+}
+
+.art-card img {
+  border: 2px solid rgba(20,16,13,0.38) !important;
+  border-radius: 22px 34px 24px 30px / 34px 22px 32px 24px !important;
+  transform: rotate(-0.6deg);
+}
+
+.art-card:nth-child(2n) img {
+  transform: rotate(0.7deg);
+}
+
+.art-card:hover img {
+  transform: scale(1.035) rotate(-1.2deg) !important;
+}
+
+/* LISTES : CRAYON PLUS PRÉSENT */
+
+.sketch-list li::before {
+  content: "➜" !important;
+  color: var(--organic-green) !important;
+  font-size: 1.2rem !important;
+  transform: rotate(-8deg);
+}
+
+/* COMPTEUR TRACE : PLUS OBJET DESSINÉ */
+
+.trace-counter-widget {
+  background: #fffefa !important;
+  border: 2px solid rgba(178,43,34,0.62) !important;
+  border-radius: 26px 42px 30px 46px / 40px 28px 46px 32px !important;
+  box-shadow:
+    6px 8px 0 rgba(178,43,34,0.12),
+    0 18px 38px rgba(20,16,13,0.12) !important;
+}
+
+.trace-click-button {
+  background:
+    repeating-linear-gradient(
+      -18deg,
+      var(--note-red-3) 0 8px,
+      var(--note-red) 9px 15px,
+      var(--note-red-2) 16px 21px
+    ) !important;
+  border: 2px solid rgba(134,30,26,0.75) !important;
+}
+
+.trace-count-display span {
+  color: var(--note-red) !important;
+}
+
+/* BULLE RÉSEAUX */
+
+.social-orbit-main,
+.social-orbit-links a {
+  background: #fffefa !important;
+  border: 2px solid rgba(23,60,143,0.52) !important;
+  border-radius: 28px 42px 26px 38px / 38px 24px 42px 28px !important;
+}
+
+/* FOOTER */
+
+.site-footer,
+.footer {
+  background:
+    linear-gradient(180deg, transparent, rgba(255,255,255,0.92)) !important;
+  border-top: 2px solid rgba(23,60,143,0.34) !important;
+}
+
+/* AJOUT DÉCORATIF : COINS GRIFFÉS SUR SECTIONS */
+
+.section {
+  isolation: isolate;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  right: 5vw;
+  top: 26px;
+  width: 90px;
+  height: 70px;
+  pointer-events: none;
+  opacity: 0.28;
+  background:
+    repeating-linear-gradient(
+      -32deg,
+      rgba(178,43,34,0.85) 0 3px,
+      transparent 4px 9px
+    );
+  clip-path: polygon(0 0, 100% 12%, 78% 100%, 18% 72%);
+  transform: rotate(7deg);
+  z-index: -1;
+}
+
+.section:nth-of-type(2n)::after {
+  left: 4vw;
+  right: auto;
+  background:
+    repeating-linear-gradient(
+      26deg,
+      rgba(23,60,143,0.82) 0 3px,
+      transparent 4px 9px
+    );
+  transform: rotate(-9deg);
+}
+
+.section:nth-of-type(3n)::after {
+  background:
+    repeating-linear-gradient(
+      -18deg,
+      rgba(47,122,69,0.8) 0 3px,
+      transparent 4px 9px
+    );
+}
+
+/* FLÈCHES GUIDEUSES PLUS DESSINÉES */
+
+.wandering-arrow {
+  font-family: "Caveat", cursive !important;
+  font-weight: 700 !important;
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.95),
+    2px 3px 0 rgba(20,16,13,0.08) !important;
+  transform: scale(1.3);
+}
+
+.arrow-blue {
+  color: var(--bic-blue) !important;
+}
+
+.arrow-red {
+  color: var(--note-red) !important;
+}
+
+.arrow-green {
+  color: var(--organic-green) !important;
+}
+
+/* FORMULAIRES AUSSI DANS LE STYLE */
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  background: #fffefa !important;
+  border: 2px solid rgba(23,60,143,0.45) !important;
+  border-radius: 18px 32px 20px 28px / 28px 18px 30px 20px !important;
+  box-shadow:
+    4px 5px 0 rgba(23,60,143,0.055),
+    inset 0 0 0 1px rgba(255,255,255,0.9) !important;
+}
+
+/* MOBILE : ON GARDE PROPRE */
+
+@media (max-width: 680px) {
+  h1::after,
+  h2::after {
+    width: 150px;
+  }
+
+  .site-header::before,
+  .header::before {
+    left: 12px;
+    right: 12px;
+  }
+
+  .portal-card,
+  .showcase-card,
+  .paper-panel,
+  .paper-card,
+  .art-card,
+  .offer-card,
+  .final-card,
+  .social-spot,
+  .sketch-frame {
+    border-radius: 24px 32px 26px 34px / 32px 24px 34px 26px !important;
+    border-width: 1.6px !important;
+  }
+
+  .section::after {
+    width: 56px;
+    height: 42px;
+    opacity: 0.18;
+  }
+
+  .site-logo,
+  .logo {
+    font-size: 2.35rem !important;
+  }
+}
