@@ -6,6 +6,8 @@
 
   <title>Contact — Carickat</title>
 
+  <meta name="description" content="Contacter l’atelier Carickat pour une commande, une caricature personnalisée, un print, une collaboration ou une demande artistique spéciale." />
+
   <link rel="stylesheet" href="style.css"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,24 +18,31 @@
 
 <body>
 
-<header class="header">
-  <nav class="nav">
-    <a href="index.html" class="logo">Carickat</a>
+<div class="page-transition-layer" aria-hidden="true"></div>
+<div class="paper-grain-layer" aria-hidden="true"></div>
+<div class="mobile-safe-glow" aria-hidden="true"></div>
 
-    <div class="menu">
+<header class="site-header">
+  <div class="header-art" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <a href="index.html" class="site-logo">Carickat</a>
+
+    <div class="site-menu">
       <a href="galerie.html">Galerie</a>
       <a href="boutique.html">Boutique</a>
       <a href="commande.html">Commande</a>
       <a href="process.html">Process</a>
       <a href="a-propos.html">À propos</a>
-      <a href="contact.html">Contact</a>
+      <a href="soutien.html">Soutenir</a>
+      <a href="contact.html" aria-current="page">Contact</a>
     </div>
   </nav>
 </header>
 
 <main>
 
-  <section class="section">
+  <section class="section section-shop-system">
     <div class="container split">
 
       <div>
@@ -41,18 +50,24 @@
 
         <h1>Entrer en contact.</h1>
 
-        <p style="max-width:700px; margin-top:25px;">
+        <p>
           Pour une commande, une question, un print,
           une collaboration ou simplement suivre l’univers
           Carickat.
         </p>
 
+        <p>
+          Une demande peut commencer très simplement :
+          une photo, une idée, une grimace, un personnage,
+          une ambiance ou une envie de dessin.
+        </p>
+
         <div class="hero-actions">
-          <a href="#contact-form" class="btn dark">
+          <a href="#contact-form" class="btn btn-primary">
             Envoyer un message
           </a>
 
-          <a href="commande.html" class="btn">
+          <a href="commande.html" class="btn btn-secondary">
             Commander un dessin
           </a>
         </div>
@@ -77,8 +92,7 @@
     </div>
   </section>
 
-  <section class="section">
-
+  <section class="section section-value">
     <div class="container split">
 
       <div class="paper-card tilt-left">
@@ -87,7 +101,7 @@
 
         <h2>Suivre le carnet vivant.</h2>
 
-        <ul class="list-sketch">
+        <ul class="sketch-list">
           <li>Process Art et speed drawing</li>
           <li>Nouveaux dessins</li>
           <li>Évolutions du carnet</li>
@@ -98,31 +112,31 @@
           <a href="https://www.instagram.com/rick.levif"
              target="_blank"
              rel="noopener noreferrer"
-             class="btn dark">
+             class="btn btn-primary">
             Instagram
           </a>
 
           <a href="https://www.tiktok.com/@rickolevif"
              target="_blank"
              rel="noopener noreferrer"
-             class="btn">
+             class="btn btn-secondary">
             TikTok
           </a>
         </div>
 
       </div>
 
-      <div>
+      <div class="paper-panel">
 
         <div class="kicker">contact direct</div>
 
-        <h2>Collaboration ou demande spéciale.</h2>
+        <h3>Collaboration ou demande spéciale.</h3>
 
         <p>
           Possibilité de discuter pour :
         </p>
 
-        <ul class="list-sketch">
+        <ul class="sketch-list">
           <li>Caricatures personnalisées</li>
           <li>Portraits sur commande</li>
           <li>Prints spécifiques</li>
@@ -133,12 +147,11 @@
       </div>
 
     </div>
-
   </section>
 
-  <section class="section" id="contact-form">
+  <section class="section commande-hero" id="contact-form">
 
-    <div class="container">
+    <div class="container split">
 
       <div class="paper-card">
 
@@ -150,25 +163,25 @@
 
           <label>
             Nom
-            <input type="text" placeholder="Ton nom">
+            <input type="text" name="name" placeholder="Ton nom">
           </label>
 
           <label>
             Email
-            <input type="email" placeholder="ton@email.com">
+            <input type="email" name="email" placeholder="ton@email.com">
           </label>
 
           <label>
             Sujet
-            <input type="text" placeholder="Commande, collaboration, question...">
+            <input type="text" name="subject" placeholder="Commande, collaboration, question...">
           </label>
 
           <label>
             Message
-            <textarea placeholder="Décris ta demande..."></textarea>
+            <textarea name="message" placeholder="Décris ta demande..."></textarea>
           </label>
 
-          <button type="submit" class="btn dark">
+          <button type="submit" class="btn btn-primary">
             Envoyer le message
           </button>
 
@@ -176,33 +189,173 @@
 
       </div>
 
+      <div class="paper-panel">
+
+        <div class="kicker">à préparer</div>
+
+        <h3>Pour une réponse plus claire.</h3>
+
+        <ul class="sketch-list">
+          <li>Type de demande : caricature, portrait, print, collaboration</li>
+          <li>Image ou référence si tu en as une</li>
+          <li>Style recherché ou ambiance voulue</li>
+          <li>Délai souhaité si c’est important</li>
+          <li>Format voulu : digital, papier, original, print</li>
+        </ul>
+
+      </div>
+
     </div>
 
   </section>
 
+  <section class="section final-cta">
+    <div class="container final-card">
+
+      <div>
+        <div class="kicker">atelier ouvert</div>
+
+        <h2>Une idée peut devenir une pièce.</h2>
+
+        <p>
+          Envoie ton idée, ton visage, ton personnage ou ta demande spéciale.
+          L’atelier peut ensuite transformer ça en caricature, portrait,
+          print ou création plus expérimentale.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a href="commande.html" class="btn btn-primary">
+          Commander un dessin
+        </a>
+
+        <a href="boutique.html" class="btn btn-secondary">
+          Voir la boutique
+        </a>
+      </div>
+
+    </div>
+  </section>
+
 </main>
 
-<footer class="footer">
+<div class="social-orbit">
+
+  <button class="social-orbit-main" type="button">
+    <span>Réseaux</span>
+  </button>
+
+  <div class="social-orbit-links">
+
+    <a href="https://www.instagram.com/rick.levif?igsh=cWZvNGpxcG5tYndm"
+       target="_blank"
+       rel="noopener noreferrer">
+      Instagram
+    </a>
+
+    <a href="https://www.tiktok.com/@rickolevif?_r=1&_t=ZN-96Nm4YwrV7m"
+       target="_blank"
+       rel="noopener noreferrer">
+      Carickat
+    </a>
+
+    <a href="https://www.tiktok.com/@baby.gorilla3?_r=1&_t=ZN-96NmALeh4Ss"
+       target="_blank"
+       rel="noopener noreferrer">
+      B&amp;B
+    </a>
+
+    <a href="https://www.tiktok.com/@frisson543?_r=1&_t=ZN-96NmCGzt4rO"
+       target="_blank"
+       rel="noopener noreferrer">
+      Acting
+    </a>
+
+    <a href="https://youtube.com/@sarkmotion652?si=uZpebtaPLKUP2go8"
+       target="_blank"
+       rel="noopener noreferrer">
+      YouTube
+    </a>
+
+  </div>
+
+</div>
+
+<footer class="site-footer">
 
   <div class="footer-inner">
 
     <div>
-      <div class="logo">Carickat</div>
+      <div class="site-logo">Carickat</div>
 
       <p>
-        Galerie d’artiste & carnet vivant.
+        Galerie d’artiste · Carnet vivant · Contact atelier.
       </p>
     </div>
 
-    <div>
-      <p>
-        Contact · Réseaux · Commandes · Collaborations
-      </p>
+    <div class="footer-links">
+      <a href="galerie.html">Galerie</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="commande.html">Commande</a>
+      <a href="contact.html">Contact</a>
     </div>
 
   </div>
 
 </footer>
+
+<div class="guide-lights-system" aria-hidden="true">
+  <span class="wandering-light light-xl"></span>
+  <span class="wandering-light light-lg"></span>
+  <span class="wandering-light light-md"></span>
+  <span class="wandering-light light-sm"></span>
+  <span class="wandering-light light-blue"></span>
+  <span class="wandering-light light-green"></span>
+  <span class="wandering-light light-red"></span>
+</div>
+
+<script>
+document.body.classList.add("page-enter");
+
+const revealTargets = document.querySelectorAll(
+  ".section, .portal-card, .showcase-card, .paper-panel, .paper-card, .offer-card, .art-card, .final-card"
+);
+
+revealTargets.forEach((element) => {
+  element.classList.add("carickat-reveal");
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.14
+});
+
+revealTargets.forEach((element) => {
+  revealObserver.observe(element);
+});
+
+document.querySelectorAll("a[href]").forEach((link) => {
+  const href = link.getAttribute("href");
+
+  if (!href || href.startsWith("#") || link.target === "_blank") return;
+
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    document.body.classList.add("page-leave");
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 260);
+  });
+});
+</script>
 
 </body>
 </html>
