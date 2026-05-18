@@ -4558,7 +4558,7 @@ FIX FINAL — BULLE TRACE ROUGE + BULLE RÉSEAUX FIXE DROITE
       var(--note-red-2) 16px 21px
     ) !important;
 
-  color: #ffffff !important;
+  color: --red-glow: rgba(255, 80, 80, 0.4);
 
   font-family: "Caveat", cursive !important;
   font-size: 1.8rem !important;
@@ -4605,7 +4605,7 @@ FIX FINAL — BULLE TRACE ROUGE + BULLE RÉSEAUX FIXE DROITE
 }
 
 .trace-count-display span{
-  color: var(--note-red) !important;
+  color: var(----red: #9d2f22);
 }
 
 /* ---------------------------------------------------------
