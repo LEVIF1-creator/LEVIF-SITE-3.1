@@ -18,12 +18,17 @@
 
 <body>
 
-<header class="header">
-  <nav class="nav">
+<div class="page-transition-layer" aria-hidden="true"></div>
+<div class="paper-grain-layer" aria-hidden="true"></div>
+<div class="mobile-safe-glow" aria-hidden="true"></div>
 
-    <a href="index.html" class="logo">Carickat</a>
+<header class="site-header">
+  <div class="header-art" aria-hidden="true"></div>
 
-    <div class="menu">
+  <nav class="site-nav">
+    <a href="index.html" class="site-logo">Carickat</a>
+
+    <div class="site-menu">
       <a href="galerie.html">Galerie</a>
       <a href="boutique.html">Boutique</a>
       <a href="commande.html">Commande</a>
@@ -32,33 +37,27 @@
       <a href="soutien.html">Soutenir</a>
       <a href="contact.html">Contact</a>
     </div>
-
   </nav>
 </header>
 
 <main>
 
-  <section class="section">
+  <section class="section section-shop-system">
     <div class="container split">
 
       <div>
+        <div class="kicker">vitrine 02 / animaux & créatures</div>
 
-        <div class="kicker">
-          vitrine 02 / animaux & créatures
-        </div>
+        <h1>Animaux, instincts & créatures vivantes.</h1>
 
-        <h1>
-          Animaux, instincts & créatures vivantes.
-        </h1>
-
-        <p style="max-width:760px; margin-top:25px;">
+        <p>
           Cette vitrine rassemble les recherches animales,
           les silhouettes instinctives,
           les créatures hybrides
           et les dessins liés au vivant.
         </p>
 
-        <p style="max-width:760px;">
+        <p>
           Certaines œuvres naissent d’observations réelles,
           d’autres de transformations plus étranges,
           entre anatomie,
@@ -67,26 +66,20 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#recherches" class="btn dark">
+          <a href="#recherches" class="btn btn-primary">
             Explorer les recherches
           </a>
 
-          <a href="boutique.html" class="btn">
+          <a href="boutique.html" class="btn btn-secondary">
             Retour boutique
           </a>
         </div>
-
       </div>
 
       <div class="paper-card tilt-right">
+        <div class="kicker">note naturaliste</div>
 
-        <div class="kicker">
-          note naturaliste
-        </div>
-
-        <h2>
-          Observer avant de transformer.
-        </h2>
+        <h2>Observer avant de transformer.</h2>
 
         <p>
           Beaucoup de dessins commencent par des formes vivantes :
@@ -94,27 +87,21 @@
           regards,
           tensions,
           comportements,
-          textures,
-          mouvements naturels.
+          textures
+          et mouvements naturels.
         </p>
-
       </div>
 
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-value">
     <div class="container split">
 
       <div class="paper-card tilt-left">
+        <div class="kicker">esprit de la vitrine</div>
 
-        <div class="kicker">
-          esprit de la vitrine
-        </div>
-
-        <h2>
-          Entre carnet animalier et transformation.
-        </h2>
+        <h2>Entre carnet animalier et transformation.</h2>
 
         <p>
           Cette partie du carnet mélange :
@@ -125,12 +112,14 @@
           créature
           et expérimentation organique.
         </p>
-
       </div>
 
-      <div>
+      <div class="paper-panel">
+        <div class="kicker">matière vivante</div>
 
-        <ul class="list-sketch">
+        <h3>Animal · instinct · créature</h3>
+
+        <ul class="sketch-list">
           <li>Études animales</li>
           <li>Créatures hybrides</li>
           <li>Recherches instinctives</li>
@@ -138,187 +127,131 @@
           <li>Silhouettes vivantes</li>
           <li>Futures collections animalières</li>
         </ul>
-
       </div>
 
     </div>
   </section>
 
-  <section class="section" id="recherches">
-    <div class="container">
+  <section class="section section-gallery-preview" id="recherches">
+    <div class="container section-intro">
 
-      <div class="kicker">
-        recherches / carnet vivant
-      </div>
+      <div class="kicker">recherches / carnet vivant</div>
 
-      <h2>
-        Fragments d’expérimentation animale.
-      </h2>
+      <h2>Fragments d’expérimentation animale.</h2>
 
-      <p style="max-width:850px;">
+      <p>
         Cette vitrine évoluera progressivement avec de nouvelles recherches,
         études et futures collections liées au monde animal,
         aux instincts et aux créatures imaginées.
       </p>
 
-      <div class="gallery-grid">
+    </div>
 
-        <article class="art-card">
+    <div class="container gallery-grid">
 
-          <img src="./animaux-1.jpg" alt="Recherche animale 1">
+      <article class="art-card">
+        <img src="./animaux-1.jpg" alt="Recherche animale 1">
+        <h3>Recherche instinctive</h3>
+        <p class="art-meta">vivant / matière / silhouette</p>
+      </article>
 
-          <h3>
-            Recherche instinctive
-          </h3>
+      <article class="art-card">
+        <img src="./animaux-2.jpg" alt="Recherche animale 2">
+        <h3>Texture organique</h3>
+        <p class="art-meta">détail / anatomie / expérimentation</p>
+      </article>
 
-          <p class="art-meta">
-            vivant / matière / silhouette
-          </p>
-
-        </article>
-
-        <article class="art-card">
-
-          <img src="./animaux-2.jpg" alt="Recherche animale 2">
-
-          <h3>
-            Texture organique
-          </h3>
-
-          <p class="art-meta">
-            détail / anatomie / expérimentation
-          </p>
-
-        </article>
-
-        <article class="art-card">
-
-          <img src="./animaux-3.jpg" alt="Recherche animale 3">
-
-          <h3>
-            Créature en évolution
-          </h3>
-
-          <p class="art-meta">
-            hybride / instinct / transformation
-          </p>
-
-        </article>
-
-      </div>
+      <article class="art-card">
+        <img src="./animaux-3.jpg" alt="Recherche animale 3">
+        <h3>Créature en évolution</h3>
+        <p class="art-meta">hybride / instinct / transformation</p>
+      </article>
 
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
+  <section class="section section-showcases">
+    <div class="container section-intro">
 
-      <div class="kicker">
-        futur des collections
-      </div>
+      <div class="kicker">futur des collections</div>
 
-      <h2>
-        Ce qui arrivera progressivement.
-      </h2>
+      <h2>Ce qui arrivera progressivement.</h2>
 
-      <div class="offer-grid">
+    </div>
 
-        <article class="offer-card">
+    <div class="container offer-grid">
 
-          <div class="kicker">
-            collection animale
-          </div>
+      <article class="offer-card">
+        <div class="kicker">collection animale</div>
 
-          <h3>
-            Originaux vivants
-          </h3>
+        <h3>Originaux vivants</h3>
 
-          <p>
-            Dessins originaux liés aux recherches animales,
-            instincts et transformations organiques.
-          </p>
+        <p>
+          Dessins originaux liés aux recherches animales,
+          instincts et transformations organiques.
+        </p>
 
-          <div class="price">
-            bientôt
-          </div>
+        <div class="price">bientôt</div>
 
-          <a href="#" class="btn dark">
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">
             En préparation
           </a>
+        </div>
+      </article>
 
-        </article>
+      <article class="offer-card">
+        <div class="kicker">éditions futures</div>
 
-        <article class="offer-card">
+        <h3>Prints & séries</h3>
 
-          <div class="kicker">
-            éditions futures
-          </div>
+        <p>
+          Futures éditions numérotées liées
+          aux créatures,
+          silhouettes
+          et collections animales.
+        </p>
 
-          <h3>
-            Prints & séries
-          </h3>
+        <div class="price">ouverture future</div>
 
-          <p>
-            Futures éditions numérotées liées
-            aux créatures,
-            silhouettes
-            et collections animales.
-          </p>
-
-          <div class="price">
-            ouverture future
-          </div>
-
-          <a href="#" class="btn dark">
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">
             À venir
           </a>
+        </div>
+      </article>
 
-        </article>
+      <article class="offer-card">
+        <div class="kicker">expérimentation</div>
 
-        <article class="offer-card">
+        <h3>Carnets & recherches</h3>
 
-          <div class="kicker">
-            expérimentation
-          </div>
+        <p>
+          Pages de recherches,
+          croquis,
+          fragments d’études
+          et expérimentations vivantes.
+        </p>
 
-          <h3>
-            Carnets & recherches
-          </h3>
+        <div class="price">carnet évolutif</div>
 
-          <p>
-            Pages de recherches,
-            croquis,
-            fragments d’études
-            et expérimentations vivantes.
-          </p>
-
-          <div class="price">
-            carnet évolutif
-          </div>
-
-          <a href="#" class="btn dark">
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">
             En évolution
           </a>
-
-        </article>
-
-      </div>
+        </div>
+      </article>
 
     </div>
   </section>
 
-  <section class="section">
-    <div class="container split">
+  <section class="section final-cta">
+    <div class="container final-card">
 
       <div>
+        <div class="kicker">commande spéciale</div>
 
-        <div class="kicker">
-          commande spéciale
-        </div>
-
-        <h2>
-          Demander une création animale.
-        </h2>
+        <h2>Demander une création animale.</h2>
 
         <p>
           Il sera possible de demander :
@@ -328,30 +261,28 @@
           composition instinctive
           ou dessin expérimental.
         </p>
-
-        <div class="hero-actions">
-
-          <a href="commande.html" class="btn dark">
-            Faire une demande
-          </a>
-
-          <a href="contact.html" class="btn">
-            Contacter l’atelier
-          </a>
-
-        </div>
-
       </div>
 
-      <div class="paper-card tilt-right">
+      <div class="hero-actions">
+        <a href="commande.html" class="btn btn-primary">
+          Faire une demande
+        </a>
 
-        <div class="kicker">
-          vitrine évolutive
-        </div>
+        <a href="contact.html" class="btn btn-secondary">
+          Contacter l’atelier
+        </a>
+      </div>
 
-        <h3>
-          Cette section grandira progressivement.
-        </h3>
+    </div>
+  </section>
+
+  <section class="section section-value">
+    <div class="container split">
+
+      <div class="paper-panel">
+        <div class="kicker">vitrine évolutive</div>
+
+        <h3>Cette section grandira progressivement.</h3>
 
         <p>
           Nouvelles créatures,
@@ -360,7 +291,17 @@
           nouvelles collections.
           Le carnet évoluera avec le vivant.
         </p>
+      </div>
 
+      <div class="paper-panel">
+        <div class="kicker">direction</div>
+
+        <h3>Vivant · Hybridation · Carnet organique</h3>
+
+        <p>
+          Cette vitrine sert à construire un monde animal personnel :
+          moins documentaire, plus instinctif, plus étrange, plus Carickat.
+        </p>
       </div>
 
     </div>
@@ -368,27 +309,106 @@
 
 </main>
 
-<footer class="footer">
+<div class="social-orbit">
 
-  <div class="footer-inner">
+  <button class="social-orbit-main" type="button">
+    <span>Réseaux</span>
+  </button>
 
-    <div>
-      <div class="logo">Carickat</div>
+  <div class="social-orbit-links">
 
-      <p>
-        Animaux · Créatures · Recherches instinctives.
-      </p>
-    </div>
+    <a href="https://www.instagram.com/rick.levif?igsh=cWZvNGpxcG5tYndm" target="_blank" rel="noopener noreferrer">
+      Instagram
+    </a>
 
-    <div>
-      <p>
-        Vivant · Hybridation · Carnet organique
-      </p>
-    </div>
+    <a href="https://www.tiktok.com/@rickolevif?_r=1&_t=ZN-96Nm4YwrV7m" target="_blank" rel="noopener noreferrer">
+      Carickat
+    </a>
+
+    <a href="https://www.tiktok.com/@baby.gorilla3?_r=1&_t=ZN-96NmALeh4Ss" target="_blank" rel="noopener noreferrer">
+      B&amp;B
+    </a>
+
+    <a href="https://www.tiktok.com/@frisson543?_r=1&_t=ZN-96NmCGzt4rO" target="_blank" rel="noopener noreferrer">
+      Acting
+    </a>
+
+    <a href="https://youtube.com/@sarkmotion652?si=uZpebtaPLKUP2go8" target="_blank" rel="noopener noreferrer">
+      YouTube
+    </a>
 
   </div>
 
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="site-logo">Carickat</div>
+      <p>Animaux · Créatures · Recherches instinctives.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="galerie.html">Galerie</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="commande.html">Commande</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
 </footer>
+
+<div class="guide-lights-system" aria-hidden="true">
+  <span class="wandering-light light-xl"></span>
+  <span class="wandering-light light-lg"></span>
+  <span class="wandering-light light-md"></span>
+  <span class="wandering-light light-sm"></span>
+  <span class="wandering-light light-blue"></span>
+  <span class="wandering-light light-green"></span>
+  <span class="wandering-light light-red"></span>
+</div>
+
+<script>
+document.body.classList.add("page-enter");
+
+const revealTargets = document.querySelectorAll(
+  ".section, .portal-card, .showcase-card, .paper-panel, .paper-card, .offer-card, .art-card, .final-card"
+);
+
+revealTargets.forEach((element) => {
+  element.classList.add("carickat-reveal");
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.14
+});
+
+revealTargets.forEach((element) => {
+  revealObserver.observe(element);
+});
+
+document.querySelectorAll("a[href]").forEach((link) => {
+  const href = link.getAttribute("href");
+
+  if (!href || href.startsWith("#") || link.target === "_blank") return;
+
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    document.body.classList.add("page-leave");
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 260);
+  });
+});
+</script>
 
 </body>
 </html>
