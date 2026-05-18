@@ -18,12 +18,18 @@
 
 <body>
 
-<header class="header">
-  <nav class="nav">
+<div class="page-transition-layer" aria-hidden="true"></div>
+<div class="paper-grain-layer" aria-hidden="true"></div>
+<div class="mobile-safe-glow" aria-hidden="true"></div>
 
-    <a href="index.html" class="logo">Carickat</a>
+<header class="site-header">
+  <div class="header-art" aria-hidden="true"></div>
 
-    <div class="menu">
+  <nav class="site-nav">
+
+    <a href="index.html" class="site-logo">Carickat</a>
+
+    <div class="site-menu">
       <a href="galerie.html">Galerie</a>
       <a href="boutique.html">Boutique</a>
       <a href="commande.html">Commande</a>
@@ -38,7 +44,7 @@
 
 <main>
 
-  <section class="section">
+  <section class="section section-shop-system">
     <div class="container split">
 
       <div>
@@ -51,7 +57,7 @@
           Héros, icônes & réinterprétations.
         </h1>
 
-        <p style="max-width:760px; margin-top:25px;">
+        <p>
           Cette vitrine rassemble les reproductions artistiques,
           inspirations manga,
           cinéma,
@@ -60,7 +66,7 @@
           et personnages iconiques revisités dans l’univers Carickat.
         </p>
 
-        <p style="max-width:760px;">
+        <p>
           L’objectif n’est pas seulement de reproduire,
           mais de réinterpréter :
           retrouver une énergie,
@@ -71,11 +77,11 @@
 
         <div class="hero-actions">
 
-          <a href="#galerie-heros" class="btn dark">
+          <a href="#galerie-heros" class="btn btn-primary">
             Explorer la vitrine
           </a>
 
-          <a href="boutique.html" class="btn">
+          <a href="boutique.html" class="btn btn-secondary">
             Retour boutique
           </a>
 
@@ -107,7 +113,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-value">
     <div class="container split">
 
       <div class="paper-card tilt-left">
@@ -130,9 +136,17 @@
 
       </div>
 
-      <div>
+      <div class="paper-panel">
 
-        <ul class="list-sketch">
+        <div class="kicker">
+          matière inspiration
+        </div>
+
+        <h3>
+          Icônes · Manga · Pop culture
+        </h3>
+
+        <ul class="sketch-list">
           <li>Personnages iconiques</li>
           <li>Inspirations manga & cinéma</li>
           <li>Reproductions artistiques</li>
@@ -146,8 +160,8 @@
     </div>
   </section>
 
-  <section class="section" id="galerie-heros">
-    <div class="container">
+  <section class="section section-gallery-preview" id="galerie-heros">
+    <div class="container section-intro">
 
       <div class="kicker">
         galerie / inspirations
@@ -157,7 +171,7 @@
         Premières inspirations en préparation.
       </h2>
 
-      <p style="max-width:850px;">
+      <p>
         Cette vitrine accueillera progressivement des héros,
         personnages cultes,
         inspirations manga,
@@ -166,57 +180,58 @@
         et créations influencées par la pop culture.
       </p>
 
-      <div class="gallery-grid">
+    </div>
 
-        <article class="art-card">
+    <div class="container gallery-grid">
 
-          <img src="./hero-1.jpg" alt="Inspiration héros 1">
+      <article class="art-card">
 
-          <h3>
-            Icône 01
-          </h3>
+        <img src="./hero-1.jpg" alt="Inspiration héros 1">
 
-          <p class="art-meta">
-            hommage / personnage / énergie
-          </p>
+        <h3>
+          Icône 01
+        </h3>
 
-        </article>
+        <p class="art-meta">
+          hommage / personnage / énergie
+        </p>
 
-        <article class="art-card">
+      </article>
 
-          <img src="./hero-2.jpg" alt="Inspiration héros 2">
+      <article class="art-card">
 
-          <h3>
-            Icône 02
-          </h3>
+        <img src="./hero-2.jpg" alt="Inspiration héros 2">
 
-          <p class="art-meta">
-            manga / regard / stylisation
-          </p>
+        <h3>
+          Icône 02
+        </h3>
 
-        </article>
+        <p class="art-meta">
+          manga / regard / stylisation
+        </p>
 
-        <article class="art-card">
+      </article>
 
-          <img src="./hero-3.jpg" alt="Inspiration héros 3">
+      <article class="art-card">
 
-          <h3>
-            Icône 03
-          </h3>
+        <img src="./hero-3.jpg" alt="Inspiration héros 3">
 
-          <p class="art-meta">
-            cinéma / tension / carnet
-          </p>
+        <h3>
+          Icône 03
+        </h3>
 
-        </article>
+        <p class="art-meta">
+          cinéma / tension / carnet
+        </p>
 
-      </div>
+      </article>
 
     </div>
+
   </section>
 
-  <section class="section">
-    <div class="container">
+  <section class="section section-showcases">
+    <div class="container section-intro">
 
       <div class="kicker">
         futur des collections
@@ -226,94 +241,101 @@
         Ce qui arrivera progressivement.
       </h2>
 
-      <div class="offer-grid">
+    </div>
 
-        <article class="offer-card">
+    <div class="container offer-grid">
 
-          <div class="kicker">
-            reproductions
-          </div>
+      <article class="offer-card">
 
-          <h3>
-            Dessins de héros
-          </h3>
+        <div class="kicker">
+          reproductions
+        </div>
 
-          <p>
-            Reproductions artistiques,
-            inspirations visuelles
-            et personnages revisités dans le style Carickat.
-          </p>
+        <h3>
+          Dessins de héros
+        </h3>
 
-          <div class="price">
-            bientôt
-          </div>
+        <p>
+          Reproductions artistiques,
+          inspirations visuelles
+          et personnages revisités dans le style Carickat.
+        </p>
 
-          <a href="#" class="btn dark">
+        <div class="price">
+          bientôt
+        </div>
+
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">
             En préparation
           </a>
+        </div>
 
-        </article>
+      </article>
 
-        <article class="offer-card">
+      <article class="offer-card">
 
-          <div class="kicker">
-            éditions futures
-          </div>
+        <div class="kicker">
+          éditions futures
+        </div>
 
-          <h3>
-            Prints & affiches
-          </h3>
+        <h3>
+          Prints & affiches
+        </h3>
 
-          <p>
-            Futures éditions imprimées liées aux personnages,
-            inspirations et œuvres de cette vitrine.
-          </p>
+        <p>
+          Futures éditions imprimées liées aux personnages,
+          inspirations et œuvres de cette vitrine.
+        </p>
 
-          <div class="price">
-            ouverture future
-          </div>
+        <div class="price">
+          ouverture future
+        </div>
 
-          <a href="#" class="btn dark">
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">
             À venir
           </a>
+        </div>
 
-        </article>
+      </article>
 
-        <article class="offer-card">
+      <article class="offer-card">
 
-          <div class="kicker">
-            carnet d’inspirations
-          </div>
+        <div class="kicker">
+          carnet d’inspirations
+        </div>
 
-          <h3>
-            Études & recherches
-          </h3>
+        <h3>
+          Études & recherches
+        </h3>
 
-          <p>
-            Pages de recherches,
-            études de personnages,
-            silhouettes,
-            regards
-            et réinterprétations graphiques.
-          </p>
+        <p>
+          Pages de recherches,
+          études de personnages,
+          silhouettes,
+          regards
+          et réinterprétations graphiques.
+        </p>
 
-          <div class="price">
-            carnet évolutif
-          </div>
+        <div class="price">
+          carnet évolutif
+        </div>
 
-          <a href="#" class="btn dark">
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">
             En évolution
           </a>
+        </div>
 
-        </article>
-
-      </div>
+      </article>
 
     </div>
+
   </section>
 
-  <section class="section">
-    <div class="container split">
+  <section class="section final-cta">
+    <div class="container final-card">
 
       <div>
 
@@ -334,21 +356,27 @@
           ou interprétation plus expérimentale.
         </p>
 
-        <div class="hero-actions">
+      </div>
 
-          <a href="commande.html" class="btn dark">
-            Faire une demande
-          </a>
+      <div class="hero-actions">
 
-          <a href="contact.html" class="btn">
-            Contacter l’atelier
-          </a>
+        <a href="commande.html" class="btn btn-primary">
+          Faire une demande
+        </a>
 
-        </div>
+        <a href="contact.html" class="btn btn-secondary">
+          Contacter l’atelier
+        </a>
 
       </div>
 
-      <div class="paper-card tilt-right">
+    </div>
+  </section>
+
+  <section class="section section-value">
+    <div class="container split">
+
+      <div class="paper-panel">
 
         <div class="kicker">
           vitrine évolutive
@@ -368,32 +396,135 @@
 
       </div>
 
+      <div class="paper-panel">
+
+        <div class="kicker">
+          direction
+        </div>
+
+        <h3>
+          Manga · Cinéma · Icônes · Carnet vivant
+        </h3>
+
+        <p>
+          Cette vitrine sert à construire une bibliothèque d’inspirations
+          personnelles et de réinterprétations dans l’univers Carickat.
+        </p>
+
+      </div>
+
     </div>
   </section>
 
 </main>
 
-<footer class="footer">
+<div class="social-orbit">
+
+  <button class="social-orbit-main" type="button">
+    <span>Réseaux</span>
+  </button>
+
+  <div class="social-orbit-links">
+
+    <a href="https://www.instagram.com/rick.levif?igsh=cWZvNGpxcG5tYndm" target="_blank" rel="noopener noreferrer">
+      Instagram
+    </a>
+
+    <a href="https://www.tiktok.com/@rickolevif?_r=1&_t=ZN-96Nm4YwrV7m" target="_blank" rel="noopener noreferrer">
+      Carickat
+    </a>
+
+    <a href="https://www.tiktok.com/@baby.gorilla3?_r=1&_t=ZN-96NmALeh4Ss" target="_blank" rel="noopener noreferrer">
+      B&amp;B
+    </a>
+
+    <a href="https://www.tiktok.com/@frisson543?_r=1&_t=ZN-96NmCGzt4rO" target="_blank" rel="noopener noreferrer">
+      Acting
+    </a>
+
+    <a href="https://youtube.com/@sarkmotion652?si=uZpebtaPLKUP2go8" target="_blank" rel="noopener noreferrer">
+      YouTube
+    </a>
+
+  </div>
+
+</div>
+
+<footer class="site-footer">
 
   <div class="footer-inner">
 
     <div>
-      <div class="logo">Carickat</div>
+      <div class="site-logo">Carickat</div>
 
       <p>
         Héros · Inspirations · Pop culture · Réinterprétations.
       </p>
     </div>
 
-    <div>
-      <p>
-        Manga · Cinéma · Icônes · Carnet vivant
-      </p>
+    <div class="footer-links">
+      <a href="galerie.html">Galerie</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="commande.html">Commande</a>
+      <a href="contact.html">Contact</a>
     </div>
 
   </div>
 
 </footer>
+
+<div class="guide-lights-system" aria-hidden="true">
+  <span class="wandering-light light-xl"></span>
+  <span class="wandering-light light-lg"></span>
+  <span class="wandering-light light-md"></span>
+  <span class="wandering-light light-sm"></span>
+  <span class="wandering-light light-blue"></span>
+  <span class="wandering-light light-green"></span>
+  <span class="wandering-light light-red"></span>
+</div>
+
+<script>
+document.body.classList.add("page-enter");
+
+const revealTargets = document.querySelectorAll(
+  ".section, .portal-card, .showcase-card, .paper-panel, .paper-card, .offer-card, .art-card, .final-card"
+);
+
+revealTargets.forEach((element) => {
+  element.classList.add("carickat-reveal");
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.14
+});
+
+revealTargets.forEach((element) => {
+  revealObserver.observe(element);
+});
+
+document.querySelectorAll("a[href]").forEach((link) => {
+  const href = link.getAttribute("href");
+
+  if (!href || href.startsWith("#") || link.target === "_blank") return;
+
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    document.body.classList.add("page-leave");
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 260);
+  });
+});
+</script>
 
 </body>
 </html>
