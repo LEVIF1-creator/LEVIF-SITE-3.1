@@ -4439,68 +4439,100 @@ opacity: 0.22;
 
 /* =========================================================VERSION MOBILE========================================================= */
 
-@media (max-width:900px) {
+/* =========================================================
+MOBILE FIX PROPRE — CARICKAT
+========================================================= */
 
-.header-art {
-height:170px;
+@media (max-width: 900px) {
 
-background-image:url("assets/ui/header-carickat-mobile.png");
+  .site-header,
+  .header {
+    position: relative;
+  }
 
-background-size:cover;
+  .site-nav,
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-}
+    padding-top: 22px;
+    padding-bottom: 22px;
 
-.site-nav {
-height:160px;
-padding-top:28px;
+    min-height: auto;
+    gap: 18px;
+  }
 
-}
+  .site-logo,
+  .logo {
+    font-size: 2.6rem !important;
+  }
 
-.site-menu {
-flex-wrap;
-justify-content;
-gap:4px;
-width:90%;
+  .site-menu,
+  .menu {
+    width: 100%;
 
-}
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
-.site-menu a {
-width:42%;
-height:42px;
+    gap: 14px;
 
-font-size:1.35rem;
+    justify-content: center;
+    align-items: center;
+  }
 
-}
+  .site-menu a,
+  .menu a {
 
-body {
-padding-top:170px;
+    width: 100%;
+    min-height: 64px;
 
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1rem !important;
+    text-align: center;
+
+    padding: 12px;
+
+    transform: none !important;
+  }
+
+  .hero-carnet {
+    padding-top: 70px !important;
+  }
+
+  body {
+    padding-top: 0 !important;
+  }
 
 }
 
 /* PETIT MOBILE */
 
-@media (max-width:600px) {
+@media (max-width: 680px) {
 
-.header-art {
-height:190px;
+  .site-logo,
+  .logo {
+    font-size: 2.2rem !important;
+  }
+
+  .site-menu,
+  .menu {
+    gap: 10px;
+  }
+
+  .site-menu a,
+  .menu a {
+    min-height: 58px;
+
+    font-size: 0.92rem !important;
+
+    border-width: 2px !important;
+  }
 
 }
-
-.site-menu a {
-width:48%;
-font-size:1.15rem;
-
-}
-
-body {
-padding-top:190px;
-
-}
-
-}
-
 /* =========================================================
 FIX FINAL — BULLE TRACE ROUGE + BULLE RÉSEAUX FIXE DROITE
 À COLLER EN FIN DE CSS — NE TOUCHE PAS AU RESTE
