@@ -18,11 +18,17 @@
 
 <body>
 
-<header class="header">
-  <nav class="nav">
-    <a href="index.html" class="logo">Carickat</a>
+<div class="page-transition-layer" aria-hidden="true"></div>
+<div class="paper-grain-layer" aria-hidden="true"></div>
+<div class="mobile-safe-glow" aria-hidden="true"></div>
 
-    <div class="menu">
+<header class="site-header">
+  <div class="header-art" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <a href="index.html" class="site-logo">Carickat</a>
+
+    <div class="site-menu">
       <a href="galerie.html">Galerie</a>
       <a href="boutique.html">Boutique</a>
       <a href="commande.html">Commande</a>
@@ -36,7 +42,7 @@
 
 <main>
 
-  <section class="section">
+  <section class="section section-shop-system">
     <div class="container split">
 
       <div>
@@ -44,20 +50,20 @@
 
         <h1>Originaux & collections temporaires.</h1>
 
-        <p style="max-width:760px; margin-top:25px;">
+        <p>
           Cette vitrine regroupe les œuvres originales premium Carickat :
           pièces uniques, collections liées, prints numérotés et affiches digitales
           disponibles uniquement pendant une période précise.
         </p>
 
-        <p style="max-width:760px;">
+        <p>
           Lorsqu’un original quitte l’atelier, les dérivés associés à cette œuvre
           s’arrêtent aussi. Chaque collection devient alors un chapitre fermé du carnet.
         </p>
 
         <div class="hero-actions">
-          <a href="#collection-01" class="btn dark">Voir les œuvres en préparation</a>
-          <a href="commande.html" class="btn">Demander une œuvre</a>
+          <a href="#collection-01" class="btn btn-primary">Voir les œuvres en préparation</a>
+          <a href="commande.html" class="btn btn-secondary">Demander une œuvre</a>
         </div>
       </div>
 
@@ -76,7 +82,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-value">
     <div class="container split">
 
       <div class="paper-card tilt-left">
@@ -90,8 +96,12 @@
         </p>
       </div>
 
-      <div>
-        <ul class="list-sketch">
+      <div class="paper-panel">
+        <div class="kicker">fonctionnement</div>
+
+        <h3>Pièce unique · édition limitée · archive</h3>
+
+        <ul class="sketch-list">
           <li>Une seule œuvre originale physique</li>
           <li>Prix premium selon format, temps et importance</li>
           <li>Prints numérotés tant que l’original est disponible</li>
@@ -104,138 +114,132 @@
     </div>
   </section>
 
-  <section class="section" id="collection-01">
-    <div class="container">
+  <section class="section section-gallery-preview" id="collection-01">
+    <div class="container section-intro">
 
       <div class="kicker">originaux / en construction</div>
 
       <h2>Trois œuvres en préparation.</h2>
 
-      <p style="max-width:850px;">
+      <p>
         Ces trois œuvres forment les premières pièces originales de la vitrine.
         Chacune ouvre un chapitre différent du carnet vivant et pourra devenir
         le centre d’une collection temporaire avec prints numérotés et affiches digitales associées.
       </p>
 
-      <div class="gallery-grid">
+    </div>
 
-        <article class="art-card">
-          <img src="./originaux-1.jpg" alt="Constitution — œuvre originale Carickat">
+    <div class="container gallery-grid">
 
-          <h3>Constitution</h3>
+      <article class="art-card">
+        <img src="./originaux-1.jpg" alt="Constitution — œuvre originale Carickat">
+        <h3>Constitution</h3>
+        <p class="art-meta">original 01 / construction / chapitre</p>
+      </article>
 
-          <p class="art-meta">
-            original 01 / construction / chapitre
-          </p>
-        </article>
+      <article class="art-card">
+        <img src="./originaux-2.jpg" alt="La découverte de soi — œuvre originale Carickat">
+        <h3>La découverte de soi</h3>
+        <p class="art-meta">original 02 / recherche / identité</p>
+      </article>
 
-        <article class="art-card">
-          <img src="./originaux-2.jpg" alt="La découverte de soi — œuvre originale Carickat">
-
-          <h3>La découverte de soi</h3>
-
-          <p class="art-meta">
-            original 02 / recherche / identité
-          </p>
-        </article>
-
-        <article class="art-card">
-          <img src="./originaux-3.jpg" alt="La transmission — œuvre originale Carickat">
-
-          <h3>La transmission</h3>
-
-          <p class="art-meta">
-            original 03 / passage / mémoire
-          </p>
-        </article>
-
-      </div>
+      <article class="art-card">
+        <img src="./originaux-3.jpg" alt="La transmission — œuvre originale Carickat">
+        <h3>La transmission</h3>
+        <p class="art-meta">original 03 / passage / mémoire</p>
+      </article>
 
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
+  <section class="section section-showcases">
+    <div class="container section-intro">
 
       <div class="kicker">offres liées aux originaux</div>
 
       <h2>Ce qui sera disponible à l’ouverture.</h2>
 
-      <div class="offer-grid">
+    </div>
 
-        <article class="offer-card">
-          <div class="kicker">pièce unique</div>
+    <div class="container offer-grid">
 
-          <h3>Original premium</h3>
+      <article class="offer-card">
+        <div class="kicker">pièce unique</div>
 
-          <p>
-            Chaque œuvre physique unique pourra être vendue comme pièce centrale
-            de collection. Elle porte l’histoire complète de son chapitre.
-          </p>
+        <h3>Original premium</h3>
 
-          <div class="price">prochainement</div>
+        <p>
+          Chaque œuvre physique unique pourra être vendue comme pièce centrale
+          de collection. Elle porte l’histoire complète de son chapitre.
+        </p>
 
-          <ul class="list-sketch">
-            <li>Œuvre originale physique</li>
-            <li>Pièce unique</li>
-            <li>Valeur liée au processus documenté</li>
-            <li>Fin des dérivés après vente</li>
-          </ul>
+        <div class="price">prochainement</div>
 
-          <a href="contact.html" class="btn dark">Demander les infos</a>
-        </article>
+        <ul class="sketch-list">
+          <li>Œuvre originale physique</li>
+          <li>Pièce unique</li>
+          <li>Valeur liée au processus documenté</li>
+          <li>Fin des dérivés après vente</li>
+        </ul>
 
-        <article class="offer-card">
-          <div class="kicker">édition limitée</div>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Demander les infos</a>
+        </div>
+      </article>
 
-          <h3>Prints numérotés</h3>
+      <article class="offer-card">
+        <div class="kicker">édition limitée</div>
 
-          <p>
-            Tirages associés à chaque original, disponibles uniquement tant que
-            l’œuvre centrale reste dans l’atelier.
-          </p>
+        <h3>Prints numérotés</h3>
 
-          <div class="price">bientôt</div>
+        <p>
+          Tirages associés à chaque original, disponibles uniquement tant que
+          l’œuvre centrale reste dans l’atelier.
+        </p>
 
-          <ul class="list-sketch">
-            <li>Quantité limitée</li>
-            <li>Numérotation prévue</li>
-            <li>Liés à une œuvre précise</li>
-            <li>Disponibilité temporaire</li>
-          </ul>
+        <div class="price">bientôt</div>
 
-          <a href="contact.html" class="btn dark">Être prévenu</a>
-        </article>
+        <ul class="sketch-list">
+          <li>Quantité limitée</li>
+          <li>Numérotation prévue</li>
+          <li>Liés à une œuvre précise</li>
+          <li>Disponibilité temporaire</li>
+        </ul>
 
-        <article class="offer-card">
-          <div class="kicker">digital</div>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Être prévenu</a>
+        </div>
+      </article>
 
-          <h3>Posters digitaux</h3>
+      <article class="offer-card">
+        <div class="kicker">digital</div>
 
-          <p>
-            Versions digitales et affiches liées aux collections,
-            pensées comme accès plus léger à chaque chapitre.
-          </p>
+        <h3>Posters digitaux</h3>
 
-          <div class="price">en préparation</div>
+        <p>
+          Versions digitales et affiches liées aux collections,
+          pensées comme accès plus léger à chaque chapitre.
+        </p>
 
-          <ul class="list-sketch">
-            <li>Formats digitaux</li>
-            <li>Affiches imprimables</li>
-            <li>Accès plus accessible</li>
-            <li>Arrêt avec la collection</li>
-          </ul>
+        <div class="price">en préparation</div>
 
-          <a href="contact.html" class="btn dark">Suivre l’ouverture</a>
-        </article>
+        <ul class="sketch-list">
+          <li>Formats digitaux</li>
+          <li>Affiches imprimables</li>
+          <li>Accès plus accessible</li>
+          <li>Arrêt avec la collection</li>
+        </ul>
 
-      </div>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Suivre l’ouverture</a>
+        </div>
+      </article>
 
     </div>
   </section>
 
-  <section class="section">
-    <div class="container split">
+  <section class="section final-cta">
+    <div class="container final-card">
 
       <div>
         <div class="kicker">commande spéciale</div>
@@ -247,14 +251,20 @@
           œuvre originale personnalisée : portrait, caricature, composition, idée
           spéciale ou dessin plus ambitieux.
         </p>
-
-        <div class="hero-actions">
-          <a href="commande.html" class="btn dark">Faire une demande</a>
-          <a href="boutique.html" class="btn">Retour boutique</a>
-        </div>
       </div>
 
-      <div class="paper-card tilt-right">
+      <div class="hero-actions">
+        <a href="commande.html" class="btn btn-primary">Faire une demande</a>
+        <a href="boutique.html" class="btn btn-secondary">Retour boutique</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-value">
+    <div class="container split">
+
+      <div class="paper-panel">
         <div class="kicker">note importante</div>
 
         <h3>Cette vitrine est en construction.</h3>
@@ -265,28 +275,122 @@
         </p>
       </div>
 
+      <div class="paper-panel">
+        <div class="kicker">chapitres prévus</div>
+
+        <h3>Constitution · Découverte de soi · Transmission</h3>
+
+        <p>
+          Ces premières œuvres posent la base de la vitrine Originaux :
+          trois axes, trois histoires, trois futures collections possibles.
+        </p>
+      </div>
+
     </div>
   </section>
 
 </main>
 
-<footer class="footer">
+<div class="social-orbit">
+
+  <button class="social-orbit-main" type="button">
+    <span>Réseaux</span>
+  </button>
+
+  <div class="social-orbit-links">
+
+    <a href="https://www.instagram.com/rick.levif?igsh=cWZvNGpxcG5tYndm" target="_blank" rel="noopener noreferrer">
+      Instagram
+    </a>
+
+    <a href="https://www.tiktok.com/@rickolevif?_r=1&_t=ZN-96Nm4YwrV7m" target="_blank" rel="noopener noreferrer">
+      Carickat
+    </a>
+
+    <a href="https://www.tiktok.com/@baby.gorilla3?_r=1&_t=ZN-96NmALeh4Ss" target="_blank" rel="noopener noreferrer">
+      B&amp;B
+    </a>
+
+    <a href="https://www.tiktok.com/@frisson543?_r=1&_t=ZN-96NmCGzt4rO" target="_blank" rel="noopener noreferrer">
+      Acting
+    </a>
+
+    <a href="https://youtube.com/@sarkmotion652?si=uZpebtaPLKUP2go8" target="_blank" rel="noopener noreferrer">
+      YouTube
+    </a>
+
+  </div>
+
+</div>
+
+<footer class="site-footer">
   <div class="footer-inner">
     <div>
-      <div class="logo">Carickat</div>
-
-      <p>
-        Originaux premium · Collections temporaires · Prints associés.
-      </p>
+      <div class="site-logo">Carickat</div>
+      <p>Originaux premium · Collections temporaires · Prints associés.</p>
     </div>
 
-    <div>
-      <p>
-        Constitution · Découverte de soi · Transmission
-      </p>
+    <div class="footer-links">
+      <a href="galerie.html">Galerie</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="commande.html">Commande</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
 </footer>
+
+<div class="guide-lights-system" aria-hidden="true">
+  <span class="wandering-light light-xl"></span>
+  <span class="wandering-light light-lg"></span>
+  <span class="wandering-light light-md"></span>
+  <span class="wandering-light light-sm"></span>
+  <span class="wandering-light light-blue"></span>
+  <span class="wandering-light light-green"></span>
+  <span class="wandering-light light-red"></span>
+</div>
+
+<script>
+document.body.classList.add("page-enter");
+
+const revealTargets = document.querySelectorAll(
+  ".section, .portal-card, .showcase-card, .paper-panel, .paper-card, .offer-card, .art-card, .final-card"
+);
+
+revealTargets.forEach((element) => {
+  element.classList.add("carickat-reveal");
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.14
+});
+
+revealTargets.forEach((element) => {
+  revealObserver.observe(element);
+});
+
+document.querySelectorAll("a[href]").forEach((link) => {
+  const href = link.getAttribute("href");
+
+  if (!href || href.startsWith("#") || link.target === "_blank") return;
+
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    document.body.classList.add("page-leave");
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 260);
+  });
+});
+</script>
 
 </body>
 </html>
