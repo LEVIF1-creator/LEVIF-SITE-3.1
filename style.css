@@ -5838,3 +5838,469 @@ body.page-leave .page-transition-layer {
     transform-origin: top right;
   }
 }
+/* =========================================================
+   CARICKAT V5.1 — STABILISATION PREMIUM
+   Header propre · sections carnet · CTA visibles · chaos maîtrisé
+   À COLLER TOUT EN BAS DU CSS
+   ========================================================= */
+
+/* 1. CALMER LE CHAOS GLOBAL SANS PERDRE LE STYLE */
+
+.portal-card,
+.showcase-card,
+.paper-panel,
+.paper-card,
+.art-card,
+.offer-card,
+.final-card,
+.social-spot,
+.sketch-frame {
+  filter: none !important;
+}
+
+.portal-card::after,
+.showcase-card::after,
+.paper-panel::after,
+.paper-card::after,
+.offer-card::after,
+.final-card::after,
+.social-spot::after {
+  opacity: 0.26 !important;
+}
+
+/* 2. HEADER PLUS MAÎTRISÉ */
+
+.site-header,
+.header {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,254,248,0.98),
+      rgba(255,255,255,0.94)
+    ) !important;
+
+  border-bottom: 3px solid rgba(23,60,143,0.82) !important;
+
+  box-shadow:
+    0 5px 0 rgba(178,43,34,0.22),
+    0 11px 0 rgba(47,122,69,0.10),
+    0 18px 34px rgba(20,16,13,0.10) !important;
+}
+
+.site-nav,
+.nav {
+  min-height: 82px !important;
+}
+
+.site-logo,
+.logo {
+  letter-spacing: -0.03em;
+  transform: rotate(-1.4deg) !important;
+}
+
+/* 3. MENU PLUS LISIBLE */
+
+.site-menu a,
+.menu a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  line-height: 1.1;
+  font-size: 0.86rem !important;
+
+  border-width: 2px !important;
+
+  box-shadow:
+    3px 4px 0 rgba(23,60,143,0.13),
+    inset 0 0 0 1px rgba(255,255,255,0.9) !important;
+}
+
+.site-menu a:hover,
+.menu a:hover {
+  filter: brightness(1.03);
+}
+
+/* 4. SECTIONS PLUS CARNET / MOINS FLOTTANTES */
+
+.section {
+  padding-top: 96px !important;
+  padding-bottom: 96px !important;
+}
+
+.section::after {
+  opacity: 0.22 !important;
+}
+
+.section-intro {
+  margin-bottom: 44px !important;
+}
+
+/* 5. TITRES PLUS PREMIUM */
+
+h1 {
+  max-width: 900px !important;
+  line-height: 0.98 !important;
+}
+
+h2 {
+  line-height: 1 !important;
+}
+
+h1::after,
+h2::after {
+  opacity: 0.62 !important;
+  height: 13px !important;
+}
+
+/* 6. TEXTES PLUS CONFORTABLES */
+
+p {
+  color: rgba(20,16,13,0.76) !important;
+}
+
+.hero-content p,
+.section-intro p,
+.paper-panel p,
+.paper-card p,
+.offer-card p,
+.showcase-card p,
+.portal-card p,
+.final-card p {
+  max-width: 720px;
+}
+
+/* 7. CARTES PLUS PROFESSIONNELLES */
+
+.portal-card,
+.showcase-card,
+.paper-panel,
+.paper-card,
+.art-card,
+.offer-card,
+.final-card,
+.social-spot {
+  border-width: 3px !important;
+
+  box-shadow:
+    8px 10px 0 rgba(23,60,143,0.10),
+    -4px -3px 0 rgba(178,43,34,0.07),
+    0 22px 48px rgba(20,16,13,0.10),
+    inset 0 0 0 2px rgba(255,255,255,0.92) !important;
+}
+
+.portal-card:hover,
+.showcase-card:hover,
+.paper-panel:hover,
+.paper-card:hover,
+.art-card:hover,
+.offer-card:hover,
+.final-card:hover,
+.social-spot:hover {
+  transform:
+    translateY(-9px)
+    rotate(-0.8deg)
+    scale(1.01) !important;
+
+  box-shadow:
+    0 32px 70px rgba(20,16,13,0.17),
+    12px 14px 0 rgba(23,60,143,0.10),
+    -6px -5px 0 rgba(178,43,34,0.08) !important;
+}
+
+/* 8. CTA PLUS CLAIRS */
+
+.btn {
+  min-height: 56px !important;
+  padding-inline: 26px !important;
+
+  font-size: 0.94rem !important;
+  text-transform: none;
+
+  box-shadow:
+    5px 6px 0 rgba(23,60,143,0.16),
+    -2px -2px 0 rgba(178,43,34,0.08),
+    inset 0 0 0 2px rgba(255,255,255,0.92) !important;
+}
+
+.btn-primary,
+.btn.dark {
+  box-shadow:
+    5px 6px 0 rgba(13,43,110,0.24),
+    -2px -2px 0 rgba(178,43,34,0.12),
+    0 16px 34px rgba(23,60,143,0.20) !important;
+}
+
+.btn-primary:hover,
+.btn.dark:hover {
+  box-shadow:
+    7px 8px 0 rgba(13,43,110,0.25),
+    -3px -3px 0 rgba(178,43,34,0.14),
+    0 20px 42px rgba(23,60,143,0.24) !important;
+}
+
+/* 9. HERO MIEUX CADRÉ */
+
+.hero-carnet {
+  min-height: auto !important;
+  padding-top: 86px !important;
+  padding-bottom: 76px !important;
+}
+
+.hero-grid {
+  gap: 58px !important;
+}
+
+.hero-visual {
+  min-height: 360px !important;
+}
+
+/* 10. IMAGE PRINCIPALE PLUS LUXE MAIS MOINS ÉNORME */
+
+.main-frame {
+  width: min(390px, 94%) !important;
+}
+
+.main-frame img {
+  border-width: 3px !important;
+}
+
+/* 11. LABELS FLOTTANTS PLUS DISCRETS */
+
+.floating-label {
+  font-size: 1.18rem !important;
+  padding: 7px 13px !important;
+}
+
+.label-one {
+  left: -1% !important;
+}
+
+.label-two {
+  right: -2% !important;
+}
+
+/* 12. COMPTEUR +1 PLUS PROPRE */
+
+.trace-counter-widget {
+  top: 64px !important;
+  left: 57% !important;
+
+  padding: 12px 16px !important;
+
+  transform: rotate(-1.4deg) !important;
+}
+
+.trace-click-button {
+  width: 58px !important;
+  height: 50px !important;
+}
+
+.trace-count-display span {
+  font-size: 2.1rem !important;
+}
+
+/* 13. BULLE RÉSEAUX PLUS DISCRÈTE */
+
+.social-orbit-main {
+  width: 98px !important;
+  height: 80px !important;
+  font-size: 1.35rem !important;
+}
+
+.social-orbit-links a {
+  font-size: 0.82rem !important;
+}
+
+/* 14. FORMULAIRE COMMANDE PLUS PREMIUM */
+
+.contact-form {
+  gap: 20px !important;
+}
+
+.contact-form label {
+  font-size: 0.92rem;
+  color: rgba(20,16,13,0.84);
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  min-height: 54px;
+  font-size: 0.95rem;
+
+  border-width: 2.4px !important;
+
+  box-shadow:
+    4px 5px 0 rgba(23,60,143,0.10),
+    inset 0 0 0 2px rgba(255,255,255,0.92) !important;
+}
+
+.contact-form textarea {
+  min-height: 170px;
+}
+
+/* 15. FINAL CTA PLUS STABLE */
+
+.final-card {
+  gap: 36px !important;
+}
+
+.final-card .hero-actions {
+  flex-shrink: 0;
+}
+
+/* 16. MOBILE — PROPRE ET STABLE */
+
+@media (max-width: 900px) {
+
+  .site-nav,
+  .nav {
+    min-height: auto !important;
+  }
+
+  .section {
+    padding-top: 76px !important;
+    padding-bottom: 76px !important;
+  }
+
+  .hero-carnet {
+    padding-top: 58px !important;
+    padding-bottom: 58px !important;
+  }
+
+  .hero-grid {
+    gap: 44px !important;
+  }
+
+  .hero-visual {
+    min-height: 310px !important;
+  }
+
+  .main-frame {
+    width: min(320px, 92%) !important;
+  }
+
+  .trace-counter-widget {
+    top: 18px !important;
+    right: 16px !important;
+    left: auto !important;
+    transform: scale(0.82) rotate(-1.4deg) !important;
+    transform-origin: top right;
+  }
+}
+
+@media (max-width: 680px) {
+
+  .section {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  .section-intro {
+    margin-bottom: 32px !important;
+  }
+
+  h1 {
+    font-size: clamp(2.55rem, 11vw, 4rem) !important;
+    line-height: 1 !important;
+  }
+
+  h2 {
+    font-size: clamp(1.9rem, 8vw, 2.7rem) !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  h1::after,
+  h2::after {
+    height: 9px !important;
+    width: 145px !important;
+  }
+
+  p {
+    font-size: 0.94rem !important;
+    line-height: 1.68 !important;
+  }
+
+  .site-logo,
+  .logo {
+    font-size: 2.15rem !important;
+  }
+
+  .site-menu,
+  .menu {
+    gap: 9px !important;
+  }
+
+  .site-menu a,
+  .menu a {
+    min-height: 52px !important;
+    font-size: 0.86rem !important;
+    padding: 10px !important;
+  }
+
+  .hero-actions {
+    gap: 10px !important;
+  }
+
+  .btn {
+    min-height: 52px !important;
+    padding-inline: 18px !important;
+  }
+
+  .portal-card,
+  .showcase-card,
+  .paper-panel,
+  .paper-card,
+  .art-card,
+  .offer-card,
+  .final-card,
+  .social-spot,
+  .sketch-frame {
+    border-width: 2.2px !important;
+    outline-offset: 2px !important;
+  }
+
+  .portal-card::after,
+  .showcase-card::after,
+  .paper-panel::after,
+  .paper-card::after,
+  .offer-card::after,
+  .final-card::after,
+  .social-spot::after {
+    opacity: 0.18 !important;
+  }
+
+  .floating-label {
+    display: none !important;
+  }
+
+  .trace-guide {
+    display: none !important;
+  }
+
+  .trace-counter-widget {
+    top: 14px !important;
+    right: 12px !important;
+    transform: scale(0.74) rotate(-1deg) !important;
+  }
+
+  .social-orbit {
+    right: 10px !important;
+    bottom: 10px !important;
+  }
+
+  .social-orbit-main {
+    width: 78px !important;
+    height: 64px !important;
+    font-size: 1.05rem !important;
+  }
+
+  .final-card {
+    gap: 22px !important;
+  }
+}
