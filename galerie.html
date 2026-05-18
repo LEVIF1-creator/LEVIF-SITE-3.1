@@ -6,6 +6,8 @@
 
   <title>Galerie — Carickat</title>
 
+  <meta name="description" content="Galerie Carickat : caricatures, dessins au stylo Bic, portraits expressifs, créatures, recherches anatomiques et expérimentations graphiques." />
+
   <link rel="stylesheet" href="style.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,16 +18,23 @@
 
 <body>
 
-<header class="header">
-  <nav class="nav">
-    <a href="index.html" class="logo">Carickat</a>
+<div class="page-transition-layer" aria-hidden="true"></div>
+<div class="paper-grain-layer" aria-hidden="true"></div>
+<div class="mobile-safe-glow" aria-hidden="true"></div>
 
-    <div class="menu">
-      <a href="galerie.html">Galerie</a>
+<header class="site-header">
+  <div class="header-art" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <a href="index.html" class="site-logo">Carickat</a>
+
+    <div class="site-menu">
+      <a href="galerie.html" aria-current="page">Galerie</a>
       <a href="boutique.html">Boutique</a>
       <a href="commande.html">Commande</a>
       <a href="process.html">Process</a>
       <a href="a-propos.html">À propos</a>
+      <a href="soutien.html">Soutenir</a>
       <a href="contact.html">Contact</a>
     </div>
   </nav>
@@ -33,87 +42,63 @@
 
 <main>
 
-  <section class="section">
-    <div class="container">
+  <section class="section section-gallery-preview">
+    <div class="container section-intro">
 
       <div class="kicker">pages du carnet</div>
 
       <h1>Galerie</h1>
 
-      <p style="max-width:700px; margin-top:25px;">
+      <p>
         Une sélection de caricatures, dessins au stylo,
         recherches anatomiques, créatures humaines et
         expérimentations graphiques.
       </p>
 
-      <div class="gallery-grid">
+    </div>
 
-        <article class="art-card">
-          <img src="galerie-1.jpg" alt="Caricature 1">
+    <div class="container gallery-grid">
 
-          <h3>Expression.CariCkat</h3>
+      <article class="art-card">
+        <img src="galerie-1.jpg" alt="Expression Carickat">
+        <h3>Expression.CariCkat</h3>
+        <p class="art-meta">stylo / portrait / tension</p>
+      </article>
 
-          <p class="art-meta">
-            stylo / portrait / tension
-          </p>
-        </article>
+      <article class="art-card">
+        <img src="galerie-2.jpg" alt="Dessin au Bic">
+        <h3>BIC</h3>
+        <p class="art-meta">noir et blanc / détail / contraste</p>
+      </article>
 
-        <article class="art-card">
-          <img src="galerie-2.jpg" alt="Caricature 2">
+      <article class="art-card">
+        <img src="galerie-3.jpg" alt="Créature humaine dessinée">
+        <h3>Créature humaine</h3>
+        <p class="art-meta">anatomie / instinct / matière</p>
+      </article>
 
-          <h3>BIC</h3>
+      <article class="art-card">
+        <img src="galerie-4.jpg" alt="Portrait brut Carickat">
+        <h3>Portrait brut</h3>
+        <p class="art-meta">croquis / énergie / visage</p>
+      </article>
 
-          <p class="art-meta">
-            noir et blanc / détail / contraste
-          </p>
-        </article>
+      <article class="art-card">
+        <img src="galerie-5.jpg" alt="Étude organique au stylo">
+        <h3>Étude organique</h3>
+        <p class="art-meta">muscles / texture / expérimentation</p>
+      </article>
 
-        <article class="art-card">
-          <img src="galerie-3.jpg" alt="Caricature 3">
-
-          <h3>Créature humaine</h3>
-
-          <p class="art-meta">
-            anatomie / instinct / matière
-          </p>
-        </article>
-
-        <article class="art-card">
-          <img src="galerie-4.jpg" alt="Caricature 4">
-
-          <h3>Portrait brut</h3>
-
-          <p class="art-meta">
-            croquis / énergie / visage
-          </p>
-        </article>
-
-        <article class="art-card">
-          <img src="galerie-5.jpg" alt="Caricature 5">
-
-          <h3>Étude organique</h3>
-
-          <p class="art-meta">
-            muscles / texture / expérimentation
-          </p>
-        </article>
-
-        <article class="art-card">
-          <img src="galerie-6.jpg" alt="Caricature 6">
-
-          <h3>Expression nerveuse</h3>
-
-          <p class="art-meta">
-            caricature / mouvement / instinct
-          </p>
-        </article>
-
-      </div>
+      <article class="art-card">
+        <img src="galerie-6.jpg" alt="Expression nerveuse caricaturale">
+        <h3>Expression nerveuse</h3>
+        <p class="art-meta">caricature / mouvement / instinct</p>
+      </article>
 
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-shop-system">
     <div class="container split">
 
       <div class="paper-card tilt-left">
@@ -128,9 +113,11 @@
           originale.
         </p>
 
-        <a href="boutique.html" class="btn dark">
-          Voir la boutique
-        </a>
+        <div class="hero-actions">
+          <a href="boutique.html" class="btn btn-primary">
+            Voir la boutique
+          </a>
+        </div>
 
       </div>
 
@@ -146,40 +133,84 @@
           ou d’une idée.
         </p>
 
-        <a href="commande.html" class="btn">
-          Commander un dessin
-        </a>
+        <div class="hero-actions">
+          <a href="commande.html" class="btn btn-secondary">
+            Commander un dessin
+          </a>
+        </div>
 
       </div>
 
     </div>
   </section>
 
+  <section class="section final-cta">
+    <div class="container final-card">
+      <div>
+        <div class="kicker">carnet vivant</div>
+        <h2>Un dessin peut devenir une pièce.</h2>
+        <p>
+          Une image, une grimace, un personnage ou une idée peuvent devenir
+          une création Carickat personnalisée.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a href="commande.html" class="btn btn-primary">Demander une création</a>
+        <a href="boutique.html" class="btn btn-secondary">Voir les œuvres</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<footer class="footer">
+<div class="social-orbit">
 
-  <div class="footer-inner">
+  <button class="social-orbit-main" type="button">
+    <span>Réseaux</span>
+  </button>
 
-    <div>
-      <div class="logo">Carickat</div>
+  <div class="social-orbit-links">
 
-      <p>
-        Galerie d’artiste & carnet de croquis vivant.
-      </p>
-    </div>
+    <a href="https://www.instagram.com/rick.levif?igsh=cWZvNGpxcG5tYndm" target="_blank" rel="noopener noreferrer">
+      Instagram
+    </a>
 
-    <div>
-      <p>
-        Dessins · Caricatures · Process Art · Prints
-      </p>
-    </div>
+    <a href="https://www.tiktok.com/@rickolevif?_r=1&_t=ZN-96Nm4YwrV7m" target="_blank" rel="noopener noreferrer">
+      Carickat
+    </a>
+
+    <a href="https://www.tiktok.com/@baby.gorilla3?_r=1&_t=ZN-96NmALeh4Ss" target="_blank" rel="noopener noreferrer">
+      B&amp;B
+    </a>
+
+    <a href="https://www.tiktok.com/@frisson543?_r=1&_t=ZN-96NmCGzt4rO" target="_blank" rel="noopener noreferrer">
+      Acting
+    </a>
+
+    <a href="https://youtube.com/@sarkmotion652?si=uZpebtaPLKUP2go8" target="_blank" rel="noopener noreferrer">
+      YouTube
+    </a>
 
   </div>
 
-</footer>
+</div>
 
-<!-- LUMIÈRES GUIDEUSES MULTIPLES -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="site-logo">Carickat</div>
+      <p>Galerie d’artiste · Carnet vivant · Boutique d’art.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="galerie.html">Galerie</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="commande.html">Commande</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
 
 <div class="guide-lights-system" aria-hidden="true">
   <span class="wandering-light light-xl"></span>
@@ -191,15 +222,48 @@
   <span class="wandering-light light-red"></span>
 </div>
 
-<!-- FLÈCHES GUIDEUSES ORGANIQUES -->
+<script>
+document.body.classList.add("page-enter");
 
-<div class="guide-arrows-system" aria-hidden="true">
-  <span class="wandering-arrow arrow-blue arrow-a">➜</span>
-  <span class="wandering-arrow arrow-red arrow-b">➜</span>
-  <span class="wandering-arrow arrow-green arrow-c">➜</span>
-  <span class="wandering-arrow arrow-blue arrow-d">➜</span>
-  <span class="wandering-arrow arrow-red arrow-e">➜</span>
-</div>
+const revealTargets = document.querySelectorAll(
+  ".section, .portal-card, .showcase-card, .paper-panel, .paper-card, .offer-card, .art-card, .final-card"
+);
+
+revealTargets.forEach((element) => {
+  element.classList.add("carickat-reveal");
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.14
+});
+
+revealTargets.forEach((element) => {
+  revealObserver.observe(element);
+});
+
+document.querySelectorAll("a[href]").forEach((link) => {
+  const href = link.getAttribute("href");
+
+  if (!href || href.startsWith("#") || link.target === "_blank") return;
+
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    document.body.classList.add("page-leave");
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 260);
+  });
+});
+</script>
 
 </body>
 </html>
