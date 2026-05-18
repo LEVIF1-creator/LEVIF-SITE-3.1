@@ -4888,115 +4888,139 @@ button:focus-visible,
   outline-offset: 4px;
 }
 /* =========================================================
-   CARICKAT V3 — LAYER CROQUIS / CARNET DESSINÉ
+   CARICKAT V3 FORT — STYLE DESSIN DIGITALISÉ
    À COLLER TOUT EN BAS DU CSS
    ========================================================= */
 
-/* COUCHE GLOBALE — PAPIER + ENCRE */
+/* 1. BASE PAGE — FEUILLE BLANCHE DIGITALISÉE */
 
-:root {
-  --v3-paper: #fffdf7;
-  --v3-paper-soft: #fffaf0;
-  --v3-ink-blue: rgba(23, 60, 143, 0.72);
-  --v3-ink-red: rgba(178, 43, 34, 0.78);
-  --v3-ink-green: rgba(47, 122, 69, 0.62);
-  --v3-black-line: rgba(20, 16, 13, 0.42);
+html,
+body {
+  background: #fffef8 !important;
 }
 
 body {
   background:
-    radial-gradient(circle at 12% 10%, rgba(23,60,143,0.07), transparent 22%),
-    radial-gradient(circle at 88% 18%, rgba(178,43,34,0.055), transparent 24%),
-    radial-gradient(circle at 70% 86%, rgba(47,122,69,0.06), transparent 28%),
-    linear-gradient(135deg, #fffdf7 0%, #ffffff 46%, #f8fbff 100%);
+    radial-gradient(circle at 12% 18%, rgba(178,43,34,0.07), transparent 18%),
+    radial-gradient(circle at 84% 12%, rgba(23,60,143,0.075), transparent 22%),
+    radial-gradient(circle at 72% 86%, rgba(47,122,69,0.06), transparent 24%),
+    repeating-linear-gradient(
+      -7deg,
+      transparent 0 9px,
+      rgba(20,16,13,0.045) 10px,
+      transparent 11px 18px
+    ),
+    #fffef8 !important;
 }
 
-/* grain plus proche feuille scannée */
-body::before {
-  opacity: 0.13;
-  background-image:
-    repeating-linear-gradient(92deg, rgba(20,16,13,0.025) 0 1px, transparent 1px 7px),
-    repeating-linear-gradient(-8deg, rgba(23,60,143,0.025) 0 1px, transparent 1px 11px),
-    radial-gradient(circle at 20% 30%, rgba(178,43,34,0.035), transparent 14%);
-  background-size: auto;
-}
-
-/* HEADER — plus proche cadre dessiné */
+/* 2. HEADER — BANDE DESSINÉE */
 
 .site-header,
 .header {
-  border-bottom: 2px solid var(--v3-ink-blue);
-  background:
-    linear-gradient(180deg, rgba(255,253,247,0.97), rgba(255,255,255,0.90));
+  background: #fffef8 !important;
+  border-bottom: 4px solid #173c8f !important;
   box-shadow:
-    0 7px 0 rgba(23,60,143,0.035),
-    0 18px 36px rgba(20,16,13,0.08);
+    0 6px 0 rgba(178,43,34,0.35),
+    0 12px 0 rgba(47,122,69,0.18),
+    0 22px 42px rgba(20,16,13,0.14) !important;
 }
+
+.site-header::after,
+.header::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: -13px;
+  height: 10px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #b22b22 0 22px,
+      transparent 23px 34px,
+      #173c8f 35px 54px,
+      transparent 55px 68px,
+      #2f7a45 69px 82px,
+      transparent 83px 96px
+    );
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* 3. LOGO */
 
 .site-logo,
 .logo {
-  color: var(--note-red);
+  color: #b22b22 !important;
+  font-size: 3rem !important;
   text-shadow:
-    2px 2px 0 rgba(178,43,34,0.16),
-    -1px -1px 0 rgba(23,60,143,0.12);
+    3px 3px 0 rgba(23,60,143,0.16),
+    -2px 1px 0 rgba(47,122,69,0.13) !important;
 }
 
-/* MENU — cartouches façon dessin */
+/* 4. MENU — BOUTONS DESSINÉS */
 
 .site-menu a,
 .menu a {
-  border: 2px solid var(--v3-ink-blue);
-  border-radius: 14px 24px 16px 22px / 22px 14px 24px 16px;
-  background: var(--v3-paper);
+  background: #fffefa !important;
+  border: 3px solid #173c8f !important;
+  border-radius: 16px 32px 18px 28px / 28px 16px 32px 18px !important;
   box-shadow:
-    3px 4px 0 rgba(23,60,143,0.09),
-    inset 0 0 0 1px rgba(255,255,255,0.85);
+    4px 5px 0 rgba(23,60,143,0.18),
+    -2px -1px 0 rgba(178,43,34,0.12),
+    inset 0 0 0 2px rgba(255,255,255,0.9) !important;
+  transform: rotate(-1deg);
 }
 
 .site-menu a:nth-child(2n),
 .menu a:nth-child(2n) {
-  border-color: var(--v3-ink-red);
+  border-color: #b22b22 !important;
+  transform: rotate(1deg);
 }
 
 .site-menu a:nth-child(3n),
 .menu a:nth-child(3n) {
-  border-color: var(--v3-ink-green);
+  border-color: #2f7a45 !important;
 }
 
-/* TITRES — soulignage rouge type marqueur */
+.site-menu a:hover,
+.menu a:hover {
+  transform: translateY(-5px) rotate(-2deg) scale(1.04) !important;
+}
+
+/* 5. TITRES — PLUS DESSINÉS */
 
 h1,
 h2 {
-  background: none;
-  color: var(--ink);
-  -webkit-background-clip: initial;
-  background-clip: initial;
+  color: #14100d !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
   text-shadow:
-    1px 1px 0 rgba(23,60,143,0.08),
-    -1px 0 0 rgba(178,43,34,0.06);
+    2px 1px 0 rgba(23,60,143,0.10),
+    -1px -1px 0 rgba(178,43,34,0.10) !important;
 }
 
 h1::after,
 h2::after {
   content: "";
   display: block;
-  width: min(230px, 52vw);
-  height: 12px;
-  margin-top: 14px;
+  width: min(280px, 60vw);
+  height: 18px;
+  margin-top: 16px;
   background:
     repeating-linear-gradient(
-      -12deg,
-      rgba(178,43,34,0.95) 0 5px,
-      transparent 6px 8px,
-      rgba(178,43,34,0.55) 9px 12px,
-      transparent 13px 18px
-    );
-  clip-path: polygon(0 35%, 94% 0, 100% 55%, 8% 100%);
-  transform: rotate(-1.2deg);
-  opacity: 0.72;
+      -13deg,
+      rgba(178,43,34,1) 0 8px,
+      transparent 9px 12px,
+      rgba(178,43,34,0.62) 13px 18px,
+      transparent 19px 26px
+    ) !important;
+  clip-path: polygon(0 38%, 93% 0, 100% 54%, 7% 100%);
+  transform: rotate(-1.5deg);
 }
 
-/* CARTES — vrais blocs carnet */
+/* 6. CARTES — CADRES DESSINÉS FORTS */
 
 .portal-card,
 .showcase-card,
@@ -5008,34 +5032,48 @@ h2::after {
 .social-spot,
 .sketch-frame {
   background:
-    repeating-linear-gradient(-18deg, rgba(23,60,143,0.028) 0 1px, transparent 2px 9px),
-    repeating-linear-gradient(24deg, rgba(178,43,34,0.02) 0 1px, transparent 2px 12px),
-    linear-gradient(135deg, #fffefa 0%, #ffffff 56%, #fffaf4 100%);
-  border: 2px solid var(--v3-black-line);
-  border-radius: 30px 46px 34px 52px / 46px 30px 50px 34px;
-  outline: 1px solid rgba(20,16,13,0.14);
-  outline-offset: 3px;
+    repeating-linear-gradient(
+      -18deg,
+      rgba(23,60,143,0.055) 0 2px,
+      transparent 3px 12px
+    ),
+    repeating-linear-gradient(
+      24deg,
+      rgba(178,43,34,0.04) 0 2px,
+      transparent 3px 15px
+    ),
+    #fffefa !important;
+
+  border: 4px solid #14100d !important;
+  border-radius: 34px 62px 38px 70px / 58px 34px 66px 42px !important;
+
+  outline: 3px solid rgba(178,43,34,0.35) !important;
+  outline-offset: 5px !important;
+
   box-shadow:
-    7px 9px 0 rgba(20,16,13,0.055),
-    0 20px 46px rgba(20,16,13,0.075),
-    inset 0 0 0 1px rgba(255,255,255,0.9);
+    10px 12px 0 rgba(23,60,143,0.13),
+    -5px -4px 0 rgba(178,43,34,0.10),
+    0 28px 54px rgba(20,16,13,0.13),
+    inset 0 0 0 2px rgba(255,255,255,0.92) !important;
 }
 
 .portal-card:nth-child(2n),
 .showcase-card:nth-child(2n),
 .art-card:nth-child(2n),
 .offer-card:nth-child(2n) {
-  border-radius: 42px 28px 48px 32px / 30px 52px 34px 46px;
+  border-radius: 60px 32px 72px 38px / 34px 70px 42px 66px !important;
+  outline-color: rgba(23,60,143,0.35) !important;
 }
 
 .portal-card:nth-child(3n),
 .showcase-card:nth-child(3n),
 .art-card:nth-child(3n),
 .offer-card:nth-child(3n) {
-  border-radius: 34px 54px 28px 46px / 50px 32px 44px 28px;
+  border-radius: 42px 74px 34px 62px / 72px 38px 60px 32px !important;
+  outline-color: rgba(47,122,69,0.34) !important;
 }
 
-/* double contour croquis */
+/* 7. DOUBLE CONTOUR INTERNE */
 
 .portal-card::before,
 .showcase-card::before,
@@ -5044,15 +5082,18 @@ h2::after {
 .offer-card::before,
 .final-card::before,
 .social-spot::before {
-  inset: 10px;
-  border: 2px solid rgba(20,16,13,0.30);
-  border-radius: inherit;
+  content: "";
+  position: absolute;
+  inset: 11px;
+  border: 2px dashed rgba(20,16,13,0.55) !important;
+  border-radius: inherit !important;
   box-shadow:
-    3px -2px 0 rgba(23,60,143,0.12),
-    -2px 3px 0 rgba(178,43,34,0.09);
+    4px -3px 0 rgba(23,60,143,0.16),
+    -3px 4px 0 rgba(178,43,34,0.14) !important;
+  pointer-events: none;
 }
 
-/* coin hachuré */
+/* 8. COINS HACHURÉS */
 
 .portal-card::after,
 .showcase-card::after,
@@ -5061,90 +5102,94 @@ h2::after {
 .offer-card::after,
 .final-card::after,
 .social-spot::after {
-  width: 82px;
-  height: 82px;
-  right: 12px;
-  bottom: 10px;
-  border-radius: 0;
-  opacity: 0.32;
+  content: "";
+  position: absolute;
+  right: 12px !important;
+  bottom: 12px !important;
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 0 !important;
+  opacity: 0.42 !important;
   background:
     repeating-linear-gradient(
       -35deg,
-      rgba(20,16,13,0.36) 0 2px,
-      transparent 3px 7px
-    );
+      rgba(20,16,13,0.55) 0 3px,
+      transparent 4px 9px
+    ) !important;
   clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  pointer-events: none;
 }
 
-/* couleurs utiles */
+/* 9. CARTES COLORÉES */
 
 .portal-blue {
-  border-color: var(--v3-ink-blue);
+  border-color: #173c8f !important;
 }
 
 .portal-red {
-  border-color: var(--v3-ink-red);
+  border-color: #b22b22 !important;
 }
 
 .portal-green {
-  border-color: var(--v3-ink-green);
+  border-color: #2f7a45 !important;
 }
 
-/* BOUTONS — morceaux d’interface dessinée */
+.portal-number {
+  font-size: 2.8rem !important;
+  text-shadow:
+    3px 3px 0 rgba(20,16,13,0.10),
+    -1px -1px 0 rgba(255,255,255,0.9) !important;
+}
+
+/* 10. BOUTONS — CARTOUCHES ENCRÉS */
 
 .btn {
-  border: 2px solid var(--v3-ink-blue);
-  border-radius: 18px 34px 20px 30px / 28px 18px 32px 20px;
-  background: var(--v3-paper);
+  border: 3px solid #173c8f !important;
+  border-radius: 20px 42px 22px 36px / 36px 20px 42px 22px !important;
+  background: #fffefa !important;
+  color: #173c8f !important;
   box-shadow:
-    5px 6px 0 rgba(23,60,143,0.13),
-    inset 0 0 0 1px rgba(255,255,255,0.9);
-  letter-spacing: 0.02em;
-}
-
-.btn::before {
-  background:
-    repeating-linear-gradient(
-      -18deg,
-      transparent 0 8px,
-      rgba(23,60,143,0.08) 9px 10px,
-      transparent 11px 16px
-    );
+    6px 7px 0 rgba(23,60,143,0.20),
+    -2px -2px 0 rgba(178,43,34,0.12),
+    inset 0 0 0 2px rgba(255,255,255,0.9) !important;
 }
 
 .btn-primary,
 .btn.dark {
-  color: #fff;
-  border-color: rgba(13,43,110,0.88);
+  color: #fff !important;
+  border-color: #0d2b6e !important;
   background:
     repeating-linear-gradient(
       -18deg,
-      #0d2b6e 0 5px,
-      #173c8f 6px 10px,
-      #2457b8 11px 15px,
-      #0d2b6e 16px 20px
-    );
+      #0d2b6e 0 7px,
+      #173c8f 8px 13px,
+      #2457b8 14px 18px,
+      #0d2b6e 19px 25px
+    ) !important;
 }
 
 .btn:hover {
-  transform: translateY(-5px) rotate(-1.3deg) scale(1.02);
+  transform: translateY(-6px) rotate(-2deg) scale(1.04) !important;
 }
 
-/* KICKERS / TAGS */
+/* 11. KICKERS / LABELS */
 
 .kicker,
 .hero-trust span,
 .floating-label,
 .social-orbit-main,
 .social-orbit-links a {
-  background: #fffefa;
-  border: 1.8px solid rgba(178,43,34,0.48);
-  outline: 1px solid rgba(20,16,13,0.14);
-  outline-offset: 3px;
-  border-radius: 20px 34px 18px 28px / 28px 18px 34px 20px;
+  background: #fffefa !important;
+  border: 3px solid #b22b22 !important;
+  border-radius: 24px 42px 22px 36px / 34px 22px 42px 24px !important;
+  outline: 2px solid rgba(20,16,13,0.18) !important;
+  outline-offset: 4px !important;
+  box-shadow:
+    4px 5px 0 rgba(178,43,34,0.15),
+    inset 0 0 0 1px rgba(255,255,255,0.92) !important;
 }
 
-/* hachure sous les petits titres */
+/* 12. SOUS-TITRES HACHURÉS */
 
 .portal-card h3::after,
 .showcase-card h3::after,
@@ -5153,108 +5198,107 @@ h2::after {
 .offer-card h3::after {
   content: "";
   display: block;
-  width: 78px;
-  height: 6px;
-  margin-top: 10px;
+  width: 90px;
+  height: 9px;
+  margin-top: 12px;
   background:
     repeating-linear-gradient(
       -12deg,
-      currentColor 0 5px,
-      transparent 6px 10px
-    );
-  opacity: 0.42;
+      currentColor 0 6px,
+      transparent 7px 12px
+    ) !important;
+  opacity: 0.55;
   border-radius: 999px;
 }
 
-/* images comme feuilles posées */
+/* 13. IMAGES — POSÉES / DIGITALISÉES */
 
 .art-card img,
-.main-frame img {
-  border: 2px solid rgba(20,16,13,0.38);
+.main-frame img,
+.sketch-frame img {
+  border: 4px solid #14100d !important;
+  border-radius: 26px 42px 28px 38px / 42px 26px 40px 28px !important;
   box-shadow:
-    0 0 0 2px rgba(20,16,13,0.14),
-    6px 7px 0 rgba(20,16,13,0.055),
-    -3px -2px 0 rgba(23,60,143,0.06);
-  filter: contrast(1.06) saturate(1.04);
-}
-
-.art-card img {
-  border-radius: 22px 34px 24px 30px / 34px 22px 32px 24px;
-  transform: rotate(-0.6deg);
+    0 0 0 3px rgba(178,43,34,0.20),
+    8px 9px 0 rgba(20,16,13,0.10),
+    -4px -3px 0 rgba(23,60,143,0.10) !important;
+  filter: contrast(1.09) saturate(1.06) !important;
 }
 
 .art-card:nth-child(2n) img {
-  transform: rotate(0.7deg);
+  transform: rotate(1.2deg) scale(1.02) !important;
 }
 
-/* listes plus graphiques */
-
-.sketch-list li::before {
-  content: "➜";
-  color: var(--organic-green);
-  font-size: 1.2rem;
-  transform: rotate(-8deg);
+.art-card:nth-child(2n+1) img {
+  transform: rotate(-1.2deg) scale(1.02) !important;
 }
 
-/* formulaires en cohérence V3 */
+/* 14. LISTES */
+
+.sketch-list li::before,
+.list-sketch li::before {
+  content: "➜" !important;
+  color: #2f7a45 !important;
+  font-size: 1.25rem !important;
+}
+
+/* 15. FORMULAIRES */
 
 .contact-form input,
 .contact-form textarea,
 .contact-form select {
-  background: #fffefa;
-  border: 2px solid rgba(23,60,143,0.45);
-  border-radius: 18px 32px 20px 28px / 28px 18px 30px 20px;
+  background: #fffefa !important;
+  border: 3px solid #173c8f !important;
+  border-radius: 22px 38px 24px 34px / 34px 22px 38px 24px !important;
   box-shadow:
-    4px 5px 0 rgba(23,60,143,0.055),
-    inset 0 0 0 1px rgba(255,255,255,0.9);
+    5px 6px 0 rgba(23,60,143,0.12),
+    inset 0 0 0 2px rgba(255,255,255,0.92) !important;
 }
 
-/* compteur +1 plus cohérent avec le rouge */
+/* 16. COMPTEUR +1 */
 
 .trace-counter-widget {
-  background: #fffefa;
-  border: 2px solid rgba(178,43,34,0.68);
-  border-radius: 26px 42px 30px 46px / 40px 28px 46px 32px;
+  background: #fffefa !important;
+  border: 4px solid #b22b22 !important;
+  border-radius: 28px 48px 32px 44px / 44px 28px 48px 32px !important;
   box-shadow:
-    6px 8px 0 rgba(178,43,34,0.13),
-    0 18px 38px rgba(20,16,13,0.12);
+    7px 9px 0 rgba(178,43,34,0.20),
+    -3px -2px 0 rgba(23,60,143,0.12),
+    0 22px 42px rgba(20,16,13,0.16) !important;
 }
 
 .trace-click-button {
   background:
     repeating-linear-gradient(
       -18deg,
-      var(--note-red-3) 0 8px,
-      var(--note-red) 9px 15px,
-      var(--note-red-2) 16px 21px
-    );
-  border: 2px solid rgba(134,30,26,0.78);
+      #861e1a 0 8px,
+      #b22b22 9px 15px,
+      #d74432 16px 22px
+    ) !important;
+  border: 3px solid #861e1a !important;
+  color: #fff !important;
 }
 
 .trace-count-display span {
-  color: var(--note-red);
+  color: #b22b22 !important;
 }
 
-/* petites griffures décoratives par section */
-
-.section {
-  isolation: isolate;
-}
+/* 17. SECTIONS — GRIFFURES VISIBLES */
 
 .section::after {
   content: "";
   position: absolute;
   right: 5vw;
-  top: 26px;
-  width: 86px;
-  height: 64px;
+  top: 28px;
+  width: 110px;
+  height: 78px;
   pointer-events: none;
-  opacity: 0.22;
+  opacity: 0.32;
   background:
     repeating-linear-gradient(
       -32deg,
-      rgba(178,43,34,0.85) 0 3px,
-      transparent 4px 9px
+      rgba(178,43,34,0.95) 0 4px,
+      transparent 5px 11px
     );
   clip-path: polygon(0 0, 100% 12%, 78% 100%, 18% 72%);
   transform: rotate(7deg);
@@ -5267,8 +5311,8 @@ h2::after {
   background:
     repeating-linear-gradient(
       26deg,
-      rgba(23,60,143,0.82) 0 3px,
-      transparent 4px 9px
+      rgba(23,60,143,0.92) 0 4px,
+      transparent 5px 11px
     );
   transform: rotate(-9deg);
 }
@@ -5277,18 +5321,33 @@ h2::after {
   background:
     repeating-linear-gradient(
       -18deg,
-      rgba(47,122,69,0.8) 0 3px,
-      transparent 4px 9px
+      rgba(47,122,69,0.88) 0 4px,
+      transparent 5px 11px
     );
 }
 
-/* mobile : on calme le chaos */
+/* 18. FOOTER */
+
+.site-footer,
+.footer {
+  background: #fffef8 !important;
+  border-top: 4px solid #173c8f !important;
+  box-shadow:
+    inset 0 8px 0 rgba(178,43,34,0.22) !important;
+}
+
+/* 19. MOBILE — RÉDUIRE MAIS GARDER LE STYLE */
 
 @media (max-width: 680px) {
+  .site-logo,
+  .logo {
+    font-size: 2.35rem !important;
+  }
+
   h1::after,
   h2::after {
-    width: 150px;
-    height: 9px;
+    width: 160px;
+    height: 10px;
   }
 
   .portal-card,
@@ -5300,9 +5359,10 @@ h2::after {
   .final-card,
   .social-spot,
   .sketch-frame {
-    border-radius: 24px 32px 26px 34px / 32px 24px 34px 26px;
-    border-width: 1.6px;
-    outline-offset: 2px;
+    border-width: 2.4px !important;
+    outline-width: 1.5px !important;
+    outline-offset: 2px !important;
+    border-radius: 24px 34px 26px 38px / 34px 24px 38px 26px !important;
   }
 
   .portal-card::after,
@@ -5312,23 +5372,24 @@ h2::after {
   .offer-card::after,
   .final-card::after,
   .social-spot::after {
-    width: 52px;
-    height: 52px;
-    opacity: 0.20;
+    width: 56px !important;
+    height: 56px !important;
+    opacity: 0.22 !important;
   }
 
   .section::after {
-    width: 54px;
-    height: 40px;
-    opacity: 0.15;
-  }
-
-  .site-logo,
-  .logo {
-    font-size: 2.35rem;
+    width: 58px;
+    height: 42px;
+    opacity: 0.18;
   }
 
   .btn {
-    border-radius: 22px;
+    border-width: 2px !important;
+  }
+
+  .kicker,
+  .hero-trust span,
+  .floating-label {
+    border-width: 2px !important;
   }
 }
