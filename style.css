@@ -6618,3 +6618,295 @@ body {
     opacity: 1;
   }
 }
+/* =========================================================
+   CARICKAT V5.3 — CONVERSION / ACHAT / CONFIANCE
+   À COLLER TOUT EN BAS DU CSS
+   ========================================================= */
+
+/* 1. ZONES IMPORTANTES PLUS “ACHAT PREMIUM” */
+
+.final-card,
+.commande-hero .paper-card,
+.section-shop-system .paper-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.final-card::before,
+.commande-hero .paper-card::before,
+.section-shop-system .paper-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at top right,
+      rgba(178,43,34,0.08),
+      transparent 34%),
+
+    radial-gradient(circle at bottom left,
+      rgba(23,60,143,0.07),
+      transparent 32%);
+
+  pointer-events: none;
+}
+
+/* 2. CTA PRINCIPAUX PLUS “IRRÉSISTIBLES” */
+
+.btn-primary,
+.btn.dark {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after,
+.btn.dark::after {
+  content: "";
+
+  position: absolute;
+  top: -120%;
+  left: -40%;
+
+  width: 48%;
+  height: 320%;
+
+  transform: rotate(18deg);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.34),
+      transparent
+    );
+
+  animation: carickatShine 6s linear infinite;
+}
+
+@keyframes carickatShine {
+  0% {
+    left: -60%;
+  }
+
+  100% {
+    left: 160%;
+  }
+}
+
+/* 3. BOUTONS PLUS “CLIQUABLES” */
+
+.btn-primary:hover,
+.btn.dark:hover {
+  transform:
+    translateY(-4px)
+    rotate(-0.5deg)
+    scale(1.02) !important;
+}
+
+/* 4. CARTES IMPORTANTES MISES EN AVANT */
+
+.portal-card.portal-red,
+.final-card,
+.commande-hero .paper-card {
+  z-index: 2;
+
+  box-shadow:
+    14px 18px 0 rgba(178,43,34,0.14),
+    -6px -5px 0 rgba(23,60,143,0.08),
+    0 38px 80px rgba(20,16,13,0.18),
+    inset 0 0 0 2px rgba(255,255,255,0.94) !important;
+}
+
+/* 5. MICRO BADGES DE CONFIANCE */
+
+.hero-trust span,
+.trust-row span,
+.order-trust span {
+  position: relative;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.92),
+      rgba(255,248,242,0.94)
+    ) !important;
+
+  border: 2px solid rgba(20,16,13,0.10);
+
+  box-shadow:
+    4px 5px 0 rgba(23,60,143,0.08),
+    inset 0 0 0 1px rgba(255,255,255,0.92);
+
+  padding-inline: 14px !important;
+}
+
+/* 6. TITRES PLUS “GALERIE D’ART” */
+
+h1,
+h2 {
+  text-wrap: balance;
+}
+
+h1 {
+  max-width: 10ch;
+}
+
+.section-intro h2,
+.final-card h2,
+.commande-hero h2 {
+  max-width: 14ch;
+}
+
+/* 7. SOCIAL PROOF VISUEL */
+
+.final-card::after {
+  content: "atelier ouvert";
+  position: absolute;
+
+  top: 18px;
+  right: 22px;
+
+  font-family: "Caveat", cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  color: rgba(47,122,69,0.72);
+
+  transform: rotate(7deg);
+}
+
+/* 8. FORMULAIRE — SENTIMENT PREMIUM */
+
+.contact-form {
+  position: relative;
+}
+
+.contact-form::before {
+  content: "";
+
+  position: absolute;
+  inset: -16px;
+
+  border:
+    2px dashed rgba(23,60,143,0.14);
+
+  border-radius:
+    34px 54px 36px 52px /
+    54px 36px 52px 34px;
+
+  pointer-events: none;
+}
+
+/* 9. INPUTS PLUS MODERNES */
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.96),
+      rgba(255,251,247,0.96)
+    ) !important;
+}
+
+/* 10. PLACEHOLDERS PLUS PROPRES */
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color:
+    rgba(20,16,13,0.42);
+}
+
+/* 11. SECTION COMMANDE PLUS CLAIRE */
+
+.section-order-steps .paper-card,
+.section-value .paper-card {
+  min-height: 100%;
+}
+
+.section-order-steps .paper-card h3,
+.section-value .paper-card h3 {
+  margin-bottom: 10px;
+}
+
+/* 12. CARDS GALERIE PLUS “EXPO” */
+
+.art-card img {
+  transition:
+    transform .45s ease,
+    filter .45s ease;
+}
+
+.art-card:hover img {
+  transform: scale(1.025);
+  filter: contrast(1.03);
+}
+
+/* 13. HOVER PLUS VIVANTS */
+
+.portal-card,
+.showcase-card,
+.social-spot,
+.art-card,
+.paper-panel,
+.paper-card {
+  transition:
+    transform .28s ease,
+    box-shadow .28s ease,
+    border-color .28s ease,
+    background .28s ease;
+}
+
+/* 14. LECTURE PLUS FLUIDE */
+
+.section-intro,
+.hero-content,
+.paper-panel,
+.paper-card,
+.final-card {
+  position: relative;
+  z-index: 1;
+}
+
+/* 15. GRAIN PAPIER PLUS FIN */
+
+.paper-grain-layer {
+  opacity: 0.045 !important;
+  mix-blend-mode: multiply;
+}
+
+/* 16. MOBILE — GARDER PREMIUM MAIS SIMPLE */
+
+@media (max-width: 680px) {
+
+  .contact-form::before {
+    display: none;
+  }
+
+  .final-card::after {
+    font-size: 1.15rem;
+    top: 12px;
+    right: 14px;
+  }
+
+  .btn-primary::after,
+  .btn.dark::after {
+    display: none;
+  }
+
+  .portal-card.portal-red,
+  .final-card,
+  .commande-hero .paper-card {
+    box-shadow:
+      7px 9px 0 rgba(178,43,34,0.12),
+      0 24px 52px rgba(20,16,13,0.14),
+      inset 0 0 0 2px rgba(255,255,255,0.94) !important;
+  }
+
+  .hero-trust span,
+  .trust-row span,
+  .order-trust span {
+    padding-inline: 10px !important;
+  }
+}
