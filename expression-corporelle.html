@@ -18,12 +18,17 @@
 
 <body>
 
-<header class="header">
-  <nav class="nav">
+<div class="page-transition-layer" aria-hidden="true"></div>
+<div class="paper-grain-layer" aria-hidden="true"></div>
+<div class="mobile-safe-glow" aria-hidden="true"></div>
 
-    <a href="index.html" class="logo">Carickat</a>
+<header class="site-header">
+  <div class="header-art" aria-hidden="true"></div>
 
-    <div class="menu">
+  <nav class="site-nav">
+    <a href="index.html" class="site-logo">Carickat</a>
+
+    <div class="site-menu">
       <a href="galerie.html">Galerie</a>
       <a href="boutique.html">Boutique</a>
       <a href="commande.html">Commande</a>
@@ -32,13 +37,12 @@
       <a href="soutien.html">Soutenir</a>
       <a href="contact.html">Contact</a>
     </div>
-
   </nav>
 </header>
 
 <main>
 
-  <section class="section">
+  <section class="section section-shop-system">
     <div class="container split">
 
       <div>
@@ -51,24 +55,24 @@
           Gestes, tensions & corps expressifs.
         </h1>
 
-        <p style="max-width:760px; margin-top:25px;">
+        <p>
           Cette vitrine rassemble les recherches autour du corps :
           postures, attitudes, mouvements, tensions musculaires,
           expressions physiques et compositions vivantes.
         </p>
 
-        <p style="max-width:760px;">
+        <p>
           Ici, le corps n’est pas seulement anatomique.
           Il devient langage, grimace, poids, déséquilibre,
           énergie ou théâtre silencieux.
         </p>
 
         <div class="hero-actions">
-          <a href="#recherches" class="btn dark">
+          <a href="#recherches" class="btn btn-primary">
             Explorer les recherches
           </a>
 
-          <a href="boutique.html" class="btn">
+          <a href="boutique.html" class="btn btn-secondary">
             Retour boutique
           </a>
         </div>
@@ -96,7 +100,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-value">
     <div class="container split">
 
       <div class="paper-card tilt-left">
@@ -118,9 +122,17 @@
 
       </div>
 
-      <div>
+      <div class="paper-panel">
 
-        <ul class="list-sketch">
+        <div class="kicker">
+          matière corporelle
+        </div>
+
+        <h3>
+          Corps · Geste · Tension
+        </h3>
+
+        <ul class="sketch-list">
           <li>Postures et attitudes humaines</li>
           <li>Gestes expressifs</li>
           <li>Tensions musculaires</li>
@@ -134,8 +146,8 @@
     </div>
   </section>
 
-  <section class="section" id="recherches">
-    <div class="container">
+  <section class="section section-gallery-preview" id="recherches">
+    <div class="container section-intro">
 
       <div class="kicker">
         recherches / corps vivant
@@ -145,64 +157,65 @@
         Fragments d’expression corporelle.
       </h2>
 
-      <p style="max-width:850px;">
+      <p>
         Cette vitrine évoluera avec des études de poses,
         des recherches corporelles, des scènes humaines,
         des compositions expressives et des œuvres originales
         construites autour du mouvement.
       </p>
 
-      <div class="gallery-grid">
+    </div>
 
-        <article class="art-card">
+    <div class="container gallery-grid">
 
-          <img src="./expression-corporel-1.jpg" alt="Recherche d’expression corporelle 1">
+      <article class="art-card">
 
-          <h3>
-            Posture en construction
-          </h3>
+        <img src="./expression-corporel-1.jpg" alt="Recherche d’expression corporelle 1">
 
-          <p class="art-meta">
-            corps / tension / recherche
-          </p>
+        <h3>
+          Posture en construction
+        </h3>
 
-        </article>
+        <p class="art-meta">
+          corps / tension / recherche
+        </p>
 
-        <article class="art-card">
+      </article>
 
-          <img src="./corps-2.jpg" alt="Recherche d’expression corporelle 2">
+      <article class="art-card">
 
-          <h3>
-            Geste & déséquilibre
-          </h3>
+        <img src="./corps-2.jpg" alt="Recherche d’expression corporelle 2">
 
-          <p class="art-meta">
-            mouvement / attitude / poids
-          </p>
+        <h3>
+          Geste & déséquilibre
+        </h3>
 
-        </article>
+        <p class="art-meta">
+          mouvement / attitude / poids
+        </p>
 
-        <article class="art-card">
+      </article>
 
-          <img src="./corps-3.jpg" alt="Recherche d’expression corporelle 3">
+      <article class="art-card">
 
-          <h3>
-            Corps expressif
-          </h3>
+        <img src="./corps-3.jpg" alt="Recherche d’expression corporelle 3">
 
-          <p class="art-meta">
-            posture / énergie / composition
-          </p>
+        <h3>
+          Corps expressif
+        </h3>
 
-        </article>
+        <p class="art-meta">
+          posture / énergie / composition
+        </p>
 
-      </div>
+      </article>
 
     </div>
+
   </section>
 
-  <section class="section">
-    <div class="container">
+  <section class="section section-showcases">
+    <div class="container section-intro">
 
       <div class="kicker">
         futur des collections
@@ -212,91 +225,98 @@
         Ce qui arrivera progressivement.
       </h2>
 
-      <div class="offer-grid">
+    </div>
 
-        <article class="offer-card">
+    <div class="container offer-grid">
 
-          <div class="kicker">
-            originaux corporels
-          </div>
+      <article class="offer-card">
 
-          <h3>
-            Œuvres autour du corps
-          </h3>
+        <div class="kicker">
+          originaux corporels
+        </div>
 
-          <p>
-            Dessins originaux centrés sur les attitudes,
-            postures, tensions, silhouettes et compositions humaines.
-          </p>
+        <h3>
+          Œuvres autour du corps
+        </h3>
 
-          <div class="price">
-            bientôt
-          </div>
+        <p>
+          Dessins originaux centrés sur les attitudes,
+          postures, tensions, silhouettes et compositions humaines.
+        </p>
 
-          <a href="#" class="btn dark">
+        <div class="price">
+          bientôt
+        </div>
+
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">
             En préparation
           </a>
+        </div>
 
-        </article>
+      </article>
 
-        <article class="offer-card">
+      <article class="offer-card">
 
-          <div class="kicker">
-            éditions futures
-          </div>
+        <div class="kicker">
+          éditions futures
+        </div>
 
-          <h3>
-            Prints & séries corporelles
-          </h3>
+        <h3>
+          Prints & séries corporelles
+        </h3>
 
-          <p>
-            Futures éditions autour du mouvement,
-            des attitudes humaines et des compositions expressives.
-          </p>
+        <p>
+          Futures éditions autour du mouvement,
+          des attitudes humaines et des compositions expressives.
+        </p>
 
-          <div class="price">
-            ouverture future
-          </div>
+        <div class="price">
+          ouverture future
+        </div>
 
-          <a href="#" class="btn dark">
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">
             À venir
           </a>
+        </div>
 
-        </article>
+      </article>
 
-        <article class="offer-card">
+      <article class="offer-card">
 
-          <div class="kicker">
-            recherches
-          </div>
+        <div class="kicker">
+          recherches
+        </div>
 
-          <h3>
-            Pages de carnet
-          </h3>
+        <h3>
+          Pages de carnet
+        </h3>
 
-          <p>
-            Croquis, essais, fragments de poses,
-            recherches de corps et notes visuelles
-            autour de l’expression physique.
-          </p>
+        <p>
+          Croquis, essais, fragments de poses,
+          recherches de corps et notes visuelles
+          autour de l’expression physique.
+        </p>
 
-          <div class="price">
-            carnet évolutif
-          </div>
+        <div class="price">
+          carnet évolutif
+        </div>
 
-          <a href="#" class="btn dark">
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">
             En évolution
           </a>
+        </div>
 
-        </article>
-
-      </div>
+      </article>
 
     </div>
+
   </section>
 
-  <section class="section">
-    <div class="container split">
+  <section class="section final-cta">
+    <div class="container final-card">
 
       <div>
 
@@ -314,21 +334,27 @@
           une scène humaine ou une recherche plus expérimentale.
         </p>
 
-        <div class="hero-actions">
+      </div>
 
-          <a href="commande.html" class="btn dark">
-            Faire une demande
-          </a>
+      <div class="hero-actions">
 
-          <a href="contact.html" class="btn">
-            Contacter l’atelier
-          </a>
+        <a href="commande.html" class="btn btn-primary">
+          Faire une demande
+        </a>
 
-        </div>
+        <a href="contact.html" class="btn btn-secondary">
+          Contacter l’atelier
+        </a>
 
       </div>
 
-      <div class="paper-card tilt-right">
+    </div>
+  </section>
+
+  <section class="section section-value">
+    <div class="container split">
+
+      <div class="paper-panel">
 
         <div class="kicker">
           vitrine évolutive
@@ -346,32 +372,136 @@
 
       </div>
 
+      <div class="paper-panel">
+
+        <div class="kicker">
+          direction
+        </div>
+
+        <h3>
+          Corps · Attitudes · Tensions · Carnet vivant
+        </h3>
+
+        <p>
+          Cette vitrine explore le corps comme langage :
+          équilibre, poids, énergie, expression silencieuse
+          et mouvement vivant.
+        </p>
+
+      </div>
+
     </div>
   </section>
 
 </main>
 
-<footer class="footer">
+<div class="social-orbit">
+
+  <button class="social-orbit-main" type="button">
+    <span>Réseaux</span>
+  </button>
+
+  <div class="social-orbit-links">
+
+    <a href="https://www.instagram.com/rick.levif?igsh=cWZvNGpxcG5tYndm" target="_blank" rel="noopener noreferrer">
+      Instagram
+    </a>
+
+    <a href="https://www.tiktok.com/@rickolevif?_r=1&_t=ZN-96Nm4YwrV7m" target="_blank" rel="noopener noreferrer">
+      Carickat
+    </a>
+
+    <a href="https://www.tiktok.com/@baby.gorilla3?_r=1&_t=ZN-96NmALeh4Ss" target="_blank" rel="noopener noreferrer">
+      B&amp;B
+    </a>
+
+    <a href="https://www.tiktok.com/@frisson543?_r=1&_t=ZN-96NmCGzt4rO" target="_blank" rel="noopener noreferrer">
+      Acting
+    </a>
+
+    <a href="https://youtube.com/@sarkmotion652?si=uZpebtaPLKUP2go8" target="_blank" rel="noopener noreferrer">
+      YouTube
+    </a>
+
+  </div>
+
+</div>
+
+<footer class="site-footer">
 
   <div class="footer-inner">
 
     <div>
-      <div class="logo">Carickat</div>
+      <div class="site-logo">Carickat</div>
 
       <p>
         Expression corporelle · Gestes · Postures · Mouvement.
       </p>
     </div>
 
-    <div>
-      <p>
-        Corps · Attitudes · Tensions · Carnet vivant
-      </p>
+    <div class="footer-links">
+      <a href="galerie.html">Galerie</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="commande.html">Commande</a>
+      <a href="contact.html">Contact</a>
     </div>
 
   </div>
 
 </footer>
+
+<div class="guide-lights-system" aria-hidden="true">
+  <span class="wandering-light light-xl"></span>
+  <span class="wandering-light light-lg"></span>
+  <span class="wandering-light light-md"></span>
+  <span class="wandering-light light-sm"></span>
+  <span class="wandering-light light-blue"></span>
+  <span class="wandering-light light-green"></span>
+  <span class="wandering-light light-red"></span>
+</div>
+
+<script>
+document.body.classList.add("page-enter");
+
+const revealTargets = document.querySelectorAll(
+  ".section, .portal-card, .showcase-card, .paper-panel, .paper-card, .offer-card, .art-card, .final-card"
+);
+
+revealTargets.forEach((element) => {
+  element.classList.add("carickat-reveal");
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.14
+});
+
+revealTargets.forEach((element) => {
+  revealObserver.observe(element);
+});
+
+document.querySelectorAll("a[href]").forEach((link) => {
+  const href = link.getAttribute("href");
+
+  if (!href || href.startsWith("#") || link.target === "_blank") return;
+
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    document.body.classList.add("page-leave");
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 260);
+  });
+});
+</script>
 
 </body>
 </html>
