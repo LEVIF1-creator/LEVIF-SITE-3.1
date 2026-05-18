@@ -18,11 +18,17 @@
 
 <body>
 
-<header class="header">
-  <nav class="nav">
-    <a href="index.html" class="logo">Carickat</a>
+<div class="page-transition-layer" aria-hidden="true"></div>
+<div class="paper-grain-layer" aria-hidden="true"></div>
+<div class="mobile-safe-glow" aria-hidden="true"></div>
 
-    <div class="menu">
+<header class="site-header">
+  <div class="header-art" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <a href="index.html" class="site-logo">Carickat</a>
+
+    <div class="site-menu">
       <a href="galerie.html">Galerie</a>
       <a href="boutique.html">Boutique</a>
       <a href="commande.html">Commande</a>
@@ -36,7 +42,7 @@
 
 <main>
 
-  <section class="section">
+  <section class="section section-shop-system">
     <div class="container split">
 
       <div>
@@ -44,21 +50,21 @@
 
         <h1>Visages, grimaces & déformations.</h1>
 
-        <p style="max-width:760px; margin-top:25px;">
+        <p>
           Cette vitrine rassemble les caricatures Carickat :
           visages observés, traits exagérés, expressions poussées,
           portraits déformés et recherches autour de l’identité visuelle.
         </p>
 
-        <p style="max-width:760px;">
+        <p>
           Ici, le visage devient terrain de jeu :
           une bouche trop présente, un regard étrange,
           une attitude, une tension ou un détail qui prend toute la place.
         </p>
 
         <div class="hero-actions">
-          <a href="#galerie-caricatures" class="btn dark">Voir les caricatures</a>
-          <a href="commande.html" class="btn">Commander une caricature</a>
+          <a href="#galerie-caricatures" class="btn btn-primary">Voir les caricatures</a>
+          <a href="commande.html" class="btn btn-secondary">Commander une caricature</a>
         </div>
       </div>
 
@@ -77,7 +83,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-value">
     <div class="container split">
 
       <div class="paper-card tilt-left">
@@ -93,8 +99,12 @@
         </p>
       </div>
 
-      <div>
-        <ul class="list-sketch">
+      <div class="paper-panel">
+        <div class="kicker">matière visage</div>
+
+        <h3>Portrait · grimace · identité</h3>
+
+        <ul class="sketch-list">
           <li>Caricatures personnalisées</li>
           <li>Portraits expressifs</li>
           <li>Déformations faciales</li>
@@ -107,147 +117,187 @@
     </div>
   </section>
 
-  <section class="section" id="galerie-caricatures">
-    <div class="container">
+  <section class="section section-gallery-preview" id="galerie-caricatures">
+    <div class="container section-intro">
 
       <div class="kicker">galerie / visages</div>
 
       <h2>Exemples de caricatures.</h2>
 
-      <p style="max-width:850px;">
+      <p>
         Cette galerie servira à montrer différents types de visages,
         de déformations et d’expressions.
         Les images seront remplacées progressivement par les caricatures finales
         et les meilleures pièces du carnet.
       </p>
 
-      <div class="gallery-grid">
+    </div>
 
-        <article class="art-card">
-          <img src="./caricature-1.jpg" alt="Caricature Carickat 1">
-          <h3>Visage 01</h3>
-          <p class="art-meta">caricature / expression / trait</p>
-        </article>
+    <div class="container gallery-grid">
 
-        <article class="art-card">
-          <img src="./caricature-2.jpg" alt="Caricature Carickat 2">
-          <h3>Visage 02</h3>
-          <p class="art-meta">déformation / regard / énergie</p>
-        </article>
+      <article class="art-card">
+        <img src="./caricature-1.jpg" alt="Caricature Carickat 1">
+        <h3>Visage 01</h3>
+        <p class="art-meta">caricature / expression / trait</p>
+      </article>
 
-        <article class="art-card">
-          <img src="./caricature-3.jpg" alt="Caricature Carickat 3">
-          <h3>Visage 03</h3>
-          <p class="art-meta">portrait / grimace / tension</p>
-        </article>
+      <article class="art-card">
+        <img src="./caricature-2.jpg" alt="Caricature Carickat 2">
+        <h3>Visage 02</h3>
+        <p class="art-meta">déformation / regard / énergie</p>
+      </article>
 
-        <article class="art-card">
-          <img src="./caricature-4.jpg" alt="Caricature Carickat 4">
-          <h3>Visage 04</h3>
-          <p class="art-meta">exagération / attitude / stylo</p>
-        </article>
+      <article class="art-card">
+        <img src="./caricature-3.jpg" alt="Caricature Carickat 3">
+        <h3>Visage 03</h3>
+        <p class="art-meta">portrait / grimace / tension</p>
+      </article>
 
-        <article class="art-card">
-          <img src="./caricature-5.jpg" alt="Caricature Carickat 5">
-          <h3>Visage 05</h3>
-          <p class="art-meta">caractère / détail / satire</p>
-        </article>
+      <article class="art-card">
+        <img src="./caricature-4.jpg" alt="Caricature Carickat 4">
+        <h3>Visage 04</h3>
+        <p class="art-meta">exagération / attitude / stylo</p>
+      </article>
 
-        <article class="art-card">
-          <img src="./caricature-6.jpg" alt="Caricature Carickat 6">
-          <h3>Visage 06</h3>
-          <p class="art-meta">forme / bouche / intensité</p>
-        </article>
+      <article class="art-card">
+        <img src="./caricature-5.jpg" alt="Caricature Carickat 5">
+        <h3>Visage 05</h3>
+        <p class="art-meta">caractère / détail / satire</p>
+      </article>
 
-        <article class="art-card">
-          <img src="./caricature-7.jpg" alt="Caricature Carickat 7">
-          <h3>Visage 07</h3>
-          <p class="art-meta">profil / énergie / recherche</p>
-        </article>
+      <article class="art-card">
+        <img src="./caricature-6.jpg" alt="Caricature Carickat 6">
+        <h3>Visage 06</h3>
+        <p class="art-meta">forme / bouche / intensité</p>
+      </article>
 
-        <article class="art-card">
-          <img src="./caricature-8.jpg" alt="Caricature Carickat 8">
-          <h3>Visage 08</h3>
-          <p class="art-meta">expression / rythme / carnet</p>
-        </article>
+      <article class="art-card">
+        <img src="./caricature-7.jpg" alt="Caricature Carickat 7">
+        <h3>Visage 07</h3>
+        <p class="art-meta">profil / énergie / recherche</p>
+      </article>
 
-        <article class="art-card">
-          <img src="./caricature-9.jpg" alt="Caricature Carickat 9">
-          <h3>Visage 09</h3>
-          <p class="art-meta">portrait / instinct / déformation</p>
-        </article>
+      <article class="art-card">
+        <img src="./caricature-8.jpg" alt="Caricature Carickat 8">
+        <h3>Visage 08</h3>
+        <p class="art-meta">expression / rythme / carnet</p>
+      </article>
 
-        <article class="art-card">
-          <img src="./caricature-10.jpg" alt="Caricature Carickat 10">
-          <h3>Visage 10</h3>
-          <p class="art-meta">regard / tension / caractère</p>
-        </article>
+      <article class="art-card">
+        <img src="./caricature-9.jpg" alt="Caricature Carickat 9">
+        <h3>Visage 09</h3>
+        <p class="art-meta">portrait / instinct / déformation</p>
+      </article>
 
-        <article class="art-card">
-          <img src="./caricature-11.jpg" alt="Caricature Carickat 11">
-          <h3>Visage 11</h3>
-          <p class="art-meta">grimace / trait / présence</p>
-        </article>
+      <article class="art-card">
+        <img src="./caricature-10.jpg" alt="Caricature Carickat 10">
+        <h3>Visage 10</h3>
+        <p class="art-meta">regard / tension / caractère</p>
+      </article>
 
-        <article class="art-card">
-          <img src="./caricature-12.jpg" alt="Caricature Carickat 12">
-          <h3>Visage 12</h3>
-          <p class="art-meta">déformation / visage / rythme</p>
-        </article>
+      <article class="art-card">
+        <img src="./caricature-11.jpg" alt="Caricature Carickat 11">
+        <h3>Visage 11</h3>
+        <p class="art-meta">grimace / trait / présence</p>
+      </article>
 
-        <article class="art-card">
-          <img src="./caricature-13.jpg" alt="Caricature Carickat 13">
-          <h3>Visage 13</h3>
-          <p class="art-meta">portrait / expression / contraste</p>
-        </article>
+      <article class="art-card">
+        <img src="./caricature-12.jpg" alt="Caricature Carickat 12">
+        <h3>Visage 12</h3>
+        <p class="art-meta">déformation / visage / rythme</p>
+      </article>
 
-      </div>
+      <article class="art-card">
+        <img src="./caricature-13.jpg" alt="Caricature Carickat 13">
+        <h3>Visage 13</h3>
+        <p class="art-meta">portrait / expression / contraste</p>
+      </article>
 
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
+  <section class="section section-showcases">
+    <div class="container section-intro">
 
       <div class="kicker">offres à venir</div>
 
       <h2>Ce qui pourra être proposé.</h2>
 
-      <div class="offer-grid">
+    </div>
 
-        <article class="offer-card">
-          <div class="kicker">commande</div>
-          <h3>Caricature personnalisée</h3>
-          <p>
-            Création d’une caricature à partir d’une photo,
-            d’une personne, d’une expression ou d’une idée.
-          </p>
-          <div class="price">déjà possible</div>
-          <a href="commande.html" class="btn dark">Faire une demande</a>
-        </article>
+    <div class="container offer-grid">
 
-        <article class="offer-card">
-          <div class="kicker">prints</div>
-          <h3>Prints de caricatures</h3>
-          <p>
-            Futures reproductions de certaines caricatures sélectionnées,
-            en formats limités ou séries spéciales.
-          </p>
-          <div class="price">à venir</div>
-          <a href="contact.html" class="btn dark">Être prévenu</a>
-        </article>
+      <article class="offer-card">
+        <div class="kicker">commande</div>
 
-        <article class="offer-card">
-          <div class="kicker">original</div>
-          <h3>Originaux caricature</h3>
-          <p>
-            Certaines caricatures pourront devenir des pièces originales
-            disponibles à la vente.
-          </p>
-          <div class="price">en préparation</div>
-          <a href="boutique.html" class="btn dark">Retour boutique</a>
-        </article>
+        <h3>Caricature personnalisée</h3>
 
+        <p>
+          Création d’une caricature à partir d’une photo,
+          d’une personne, d’une expression ou d’une idée.
+        </p>
+
+        <div class="price">déjà possible</div>
+
+        <div class="hero-actions">
+          <a href="commande.html" class="btn btn-primary">Faire une demande</a>
+        </div>
+      </article>
+
+      <article class="offer-card">
+        <div class="kicker">prints</div>
+
+        <h3>Prints de caricatures</h3>
+
+        <p>
+          Futures reproductions de certaines caricatures sélectionnées,
+          en formats limités ou séries spéciales.
+        </p>
+
+        <div class="price">à venir</div>
+
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Être prévenu</a>
+        </div>
+      </article>
+
+      <article class="offer-card">
+        <div class="kicker">original</div>
+
+        <h3>Originaux caricature</h3>
+
+        <p>
+          Certaines caricatures pourront devenir des pièces originales
+          disponibles à la vente.
+        </p>
+
+        <div class="price">en préparation</div>
+
+        <div class="hero-actions">
+          <a href="boutique.html" class="btn btn-primary">Retour boutique</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section final-cta">
+    <div class="container final-card">
+
+      <div>
+        <div class="kicker">commande ouverte</div>
+
+        <h2>Faire dessiner un visage.</h2>
+
+        <p>
+          Tu peux demander une caricature personnalisée à partir d’une photo,
+          d’une expression, d’un personnage, d’une grimace ou d’une idée spéciale.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a href="commande.html" class="btn btn-primary">Commander une caricature</a>
+        <a href="contact.html" class="btn btn-secondary">Contacter l’atelier</a>
       </div>
 
     </div>
@@ -255,18 +305,106 @@
 
 </main>
 
-<footer class="footer">
+<div class="social-orbit">
+
+  <button class="social-orbit-main" type="button">
+    <span>Réseaux</span>
+  </button>
+
+  <div class="social-orbit-links">
+
+    <a href="https://www.instagram.com/rick.levif?igsh=cWZvNGpxcG5tYndm" target="_blank" rel="noopener noreferrer">
+      Instagram
+    </a>
+
+    <a href="https://www.tiktok.com/@rickolevif?_r=1&_t=ZN-96Nm4YwrV7m" target="_blank" rel="noopener noreferrer">
+      Carickat
+    </a>
+
+    <a href="https://www.tiktok.com/@baby.gorilla3?_r=1&_t=ZN-96NmALeh4Ss" target="_blank" rel="noopener noreferrer">
+      B&amp;B
+    </a>
+
+    <a href="https://www.tiktok.com/@frisson543?_r=1&_t=ZN-96NmCGzt4rO" target="_blank" rel="noopener noreferrer">
+      Acting
+    </a>
+
+    <a href="https://youtube.com/@sarkmotion652?si=uZpebtaPLKUP2go8" target="_blank" rel="noopener noreferrer">
+      YouTube
+    </a>
+
+  </div>
+
+</div>
+
+<footer class="site-footer">
   <div class="footer-inner">
     <div>
-      <div class="logo">Carickat</div>
+      <div class="site-logo">Carickat</div>
       <p>Caricatures · Visages · Expressions · Déformations.</p>
     </div>
 
-    <div>
-      <p>Portraits · Grimaces · Commandes · Prints</p>
+    <div class="footer-links">
+      <a href="galerie.html">Galerie</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="commande.html">Commande</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
 </footer>
 
+<div class="guide-lights-system" aria-hidden="true">
+  <span class="wandering-light light-xl"></span>
+  <span class="wandering-light light-lg"></span>
+  <span class="wandering-light light-md"></span>
+  <span class="wandering-light light-sm"></span>
+  <span class="wandering-light light-blue"></span>
+  <span class="wandering-light light-green"></span>
+  <span class="wandering-light light-red"></span>
+</div>
+
+<script>
+document.body.classList.add("page-enter");
+
+const revealTargets = document.querySelectorAll(
+  ".section, .portal-card, .showcase-card, .paper-panel, .paper-card, .offer-card, .art-card, .final-card"
+);
+
+revealTargets.forEach((element) => {
+  element.classList.add("carickat-reveal");
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.14
+});
+
+revealTargets.forEach((element) => {
+  revealObserver.observe(element);
+});
+
+document.querySelectorAll("a[href]").forEach((link) => {
+  const href = link.getAttribute("href");
+
+  if (!href || href.startsWith("#") || link.target === "_blank") return;
+
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    document.body.classList.add("page-leave");
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 260);
+  });
+});
+</script>
+
 </body>
-</html> 
+</html>
