@@ -4887,3 +4887,448 @@ button:focus-visible,
   outline: 3px solid var(--carickat-red-bright);
   outline-offset: 4px;
 }
+/* =========================================================
+   CARICKAT V3 — LAYER CROQUIS / CARNET DESSINÉ
+   À COLLER TOUT EN BAS DU CSS
+   ========================================================= */
+
+/* COUCHE GLOBALE — PAPIER + ENCRE */
+
+:root {
+  --v3-paper: #fffdf7;
+  --v3-paper-soft: #fffaf0;
+  --v3-ink-blue: rgba(23, 60, 143, 0.72);
+  --v3-ink-red: rgba(178, 43, 34, 0.78);
+  --v3-ink-green: rgba(47, 122, 69, 0.62);
+  --v3-black-line: rgba(20, 16, 13, 0.42);
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 10%, rgba(23,60,143,0.07), transparent 22%),
+    radial-gradient(circle at 88% 18%, rgba(178,43,34,0.055), transparent 24%),
+    radial-gradient(circle at 70% 86%, rgba(47,122,69,0.06), transparent 28%),
+    linear-gradient(135deg, #fffdf7 0%, #ffffff 46%, #f8fbff 100%);
+}
+
+/* grain plus proche feuille scannée */
+body::before {
+  opacity: 0.13;
+  background-image:
+    repeating-linear-gradient(92deg, rgba(20,16,13,0.025) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(-8deg, rgba(23,60,143,0.025) 0 1px, transparent 1px 11px),
+    radial-gradient(circle at 20% 30%, rgba(178,43,34,0.035), transparent 14%);
+  background-size: auto;
+}
+
+/* HEADER — plus proche cadre dessiné */
+
+.site-header,
+.header {
+  border-bottom: 2px solid var(--v3-ink-blue);
+  background:
+    linear-gradient(180deg, rgba(255,253,247,0.97), rgba(255,255,255,0.90));
+  box-shadow:
+    0 7px 0 rgba(23,60,143,0.035),
+    0 18px 36px rgba(20,16,13,0.08);
+}
+
+.site-logo,
+.logo {
+  color: var(--note-red);
+  text-shadow:
+    2px 2px 0 rgba(178,43,34,0.16),
+    -1px -1px 0 rgba(23,60,143,0.12);
+}
+
+/* MENU — cartouches façon dessin */
+
+.site-menu a,
+.menu a {
+  border: 2px solid var(--v3-ink-blue);
+  border-radius: 14px 24px 16px 22px / 22px 14px 24px 16px;
+  background: var(--v3-paper);
+  box-shadow:
+    3px 4px 0 rgba(23,60,143,0.09),
+    inset 0 0 0 1px rgba(255,255,255,0.85);
+}
+
+.site-menu a:nth-child(2n),
+.menu a:nth-child(2n) {
+  border-color: var(--v3-ink-red);
+}
+
+.site-menu a:nth-child(3n),
+.menu a:nth-child(3n) {
+  border-color: var(--v3-ink-green);
+}
+
+/* TITRES — soulignage rouge type marqueur */
+
+h1,
+h2 {
+  background: none;
+  color: var(--ink);
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  text-shadow:
+    1px 1px 0 rgba(23,60,143,0.08),
+    -1px 0 0 rgba(178,43,34,0.06);
+}
+
+h1::after,
+h2::after {
+  content: "";
+  display: block;
+  width: min(230px, 52vw);
+  height: 12px;
+  margin-top: 14px;
+  background:
+    repeating-linear-gradient(
+      -12deg,
+      rgba(178,43,34,0.95) 0 5px,
+      transparent 6px 8px,
+      rgba(178,43,34,0.55) 9px 12px,
+      transparent 13px 18px
+    );
+  clip-path: polygon(0 35%, 94% 0, 100% 55%, 8% 100%);
+  transform: rotate(-1.2deg);
+  opacity: 0.72;
+}
+
+/* CARTES — vrais blocs carnet */
+
+.portal-card,
+.showcase-card,
+.paper-panel,
+.paper-card,
+.art-card,
+.offer-card,
+.final-card,
+.social-spot,
+.sketch-frame {
+  background:
+    repeating-linear-gradient(-18deg, rgba(23,60,143,0.028) 0 1px, transparent 2px 9px),
+    repeating-linear-gradient(24deg, rgba(178,43,34,0.02) 0 1px, transparent 2px 12px),
+    linear-gradient(135deg, #fffefa 0%, #ffffff 56%, #fffaf4 100%);
+  border: 2px solid var(--v3-black-line);
+  border-radius: 30px 46px 34px 52px / 46px 30px 50px 34px;
+  outline: 1px solid rgba(20,16,13,0.14);
+  outline-offset: 3px;
+  box-shadow:
+    7px 9px 0 rgba(20,16,13,0.055),
+    0 20px 46px rgba(20,16,13,0.075),
+    inset 0 0 0 1px rgba(255,255,255,0.9);
+}
+
+.portal-card:nth-child(2n),
+.showcase-card:nth-child(2n),
+.art-card:nth-child(2n),
+.offer-card:nth-child(2n) {
+  border-radius: 42px 28px 48px 32px / 30px 52px 34px 46px;
+}
+
+.portal-card:nth-child(3n),
+.showcase-card:nth-child(3n),
+.art-card:nth-child(3n),
+.offer-card:nth-child(3n) {
+  border-radius: 34px 54px 28px 46px / 50px 32px 44px 28px;
+}
+
+/* double contour croquis */
+
+.portal-card::before,
+.showcase-card::before,
+.paper-panel::before,
+.paper-card::before,
+.offer-card::before,
+.final-card::before,
+.social-spot::before {
+  inset: 10px;
+  border: 2px solid rgba(20,16,13,0.30);
+  border-radius: inherit;
+  box-shadow:
+    3px -2px 0 rgba(23,60,143,0.12),
+    -2px 3px 0 rgba(178,43,34,0.09);
+}
+
+/* coin hachuré */
+
+.portal-card::after,
+.showcase-card::after,
+.paper-panel::after,
+.paper-card::after,
+.offer-card::after,
+.final-card::after,
+.social-spot::after {
+  width: 82px;
+  height: 82px;
+  right: 12px;
+  bottom: 10px;
+  border-radius: 0;
+  opacity: 0.32;
+  background:
+    repeating-linear-gradient(
+      -35deg,
+      rgba(20,16,13,0.36) 0 2px,
+      transparent 3px 7px
+    );
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* couleurs utiles */
+
+.portal-blue {
+  border-color: var(--v3-ink-blue);
+}
+
+.portal-red {
+  border-color: var(--v3-ink-red);
+}
+
+.portal-green {
+  border-color: var(--v3-ink-green);
+}
+
+/* BOUTONS — morceaux d’interface dessinée */
+
+.btn {
+  border: 2px solid var(--v3-ink-blue);
+  border-radius: 18px 34px 20px 30px / 28px 18px 32px 20px;
+  background: var(--v3-paper);
+  box-shadow:
+    5px 6px 0 rgba(23,60,143,0.13),
+    inset 0 0 0 1px rgba(255,255,255,0.9);
+  letter-spacing: 0.02em;
+}
+
+.btn::before {
+  background:
+    repeating-linear-gradient(
+      -18deg,
+      transparent 0 8px,
+      rgba(23,60,143,0.08) 9px 10px,
+      transparent 11px 16px
+    );
+}
+
+.btn-primary,
+.btn.dark {
+  color: #fff;
+  border-color: rgba(13,43,110,0.88);
+  background:
+    repeating-linear-gradient(
+      -18deg,
+      #0d2b6e 0 5px,
+      #173c8f 6px 10px,
+      #2457b8 11px 15px,
+      #0d2b6e 16px 20px
+    );
+}
+
+.btn:hover {
+  transform: translateY(-5px) rotate(-1.3deg) scale(1.02);
+}
+
+/* KICKERS / TAGS */
+
+.kicker,
+.hero-trust span,
+.floating-label,
+.social-orbit-main,
+.social-orbit-links a {
+  background: #fffefa;
+  border: 1.8px solid rgba(178,43,34,0.48);
+  outline: 1px solid rgba(20,16,13,0.14);
+  outline-offset: 3px;
+  border-radius: 20px 34px 18px 28px / 28px 18px 34px 20px;
+}
+
+/* hachure sous les petits titres */
+
+.portal-card h3::after,
+.showcase-card h3::after,
+.paper-panel h3::after,
+.art-card h3::after,
+.offer-card h3::after {
+  content: "";
+  display: block;
+  width: 78px;
+  height: 6px;
+  margin-top: 10px;
+  background:
+    repeating-linear-gradient(
+      -12deg,
+      currentColor 0 5px,
+      transparent 6px 10px
+    );
+  opacity: 0.42;
+  border-radius: 999px;
+}
+
+/* images comme feuilles posées */
+
+.art-card img,
+.main-frame img {
+  border: 2px solid rgba(20,16,13,0.38);
+  box-shadow:
+    0 0 0 2px rgba(20,16,13,0.14),
+    6px 7px 0 rgba(20,16,13,0.055),
+    -3px -2px 0 rgba(23,60,143,0.06);
+  filter: contrast(1.06) saturate(1.04);
+}
+
+.art-card img {
+  border-radius: 22px 34px 24px 30px / 34px 22px 32px 24px;
+  transform: rotate(-0.6deg);
+}
+
+.art-card:nth-child(2n) img {
+  transform: rotate(0.7deg);
+}
+
+/* listes plus graphiques */
+
+.sketch-list li::before {
+  content: "➜";
+  color: var(--organic-green);
+  font-size: 1.2rem;
+  transform: rotate(-8deg);
+}
+
+/* formulaires en cohérence V3 */
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  background: #fffefa;
+  border: 2px solid rgba(23,60,143,0.45);
+  border-radius: 18px 32px 20px 28px / 28px 18px 30px 20px;
+  box-shadow:
+    4px 5px 0 rgba(23,60,143,0.055),
+    inset 0 0 0 1px rgba(255,255,255,0.9);
+}
+
+/* compteur +1 plus cohérent avec le rouge */
+
+.trace-counter-widget {
+  background: #fffefa;
+  border: 2px solid rgba(178,43,34,0.68);
+  border-radius: 26px 42px 30px 46px / 40px 28px 46px 32px;
+  box-shadow:
+    6px 8px 0 rgba(178,43,34,0.13),
+    0 18px 38px rgba(20,16,13,0.12);
+}
+
+.trace-click-button {
+  background:
+    repeating-linear-gradient(
+      -18deg,
+      var(--note-red-3) 0 8px,
+      var(--note-red) 9px 15px,
+      var(--note-red-2) 16px 21px
+    );
+  border: 2px solid rgba(134,30,26,0.78);
+}
+
+.trace-count-display span {
+  color: var(--note-red);
+}
+
+/* petites griffures décoratives par section */
+
+.section {
+  isolation: isolate;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  right: 5vw;
+  top: 26px;
+  width: 86px;
+  height: 64px;
+  pointer-events: none;
+  opacity: 0.22;
+  background:
+    repeating-linear-gradient(
+      -32deg,
+      rgba(178,43,34,0.85) 0 3px,
+      transparent 4px 9px
+    );
+  clip-path: polygon(0 0, 100% 12%, 78% 100%, 18% 72%);
+  transform: rotate(7deg);
+  z-index: -1;
+}
+
+.section:nth-child(2n)::after {
+  left: 4vw;
+  right: auto;
+  background:
+    repeating-linear-gradient(
+      26deg,
+      rgba(23,60,143,0.82) 0 3px,
+      transparent 4px 9px
+    );
+  transform: rotate(-9deg);
+}
+
+.section:nth-child(3n)::after {
+  background:
+    repeating-linear-gradient(
+      -18deg,
+      rgba(47,122,69,0.8) 0 3px,
+      transparent 4px 9px
+    );
+}
+
+/* mobile : on calme le chaos */
+
+@media (max-width: 680px) {
+  h1::after,
+  h2::after {
+    width: 150px;
+    height: 9px;
+  }
+
+  .portal-card,
+  .showcase-card,
+  .paper-panel,
+  .paper-card,
+  .art-card,
+  .offer-card,
+  .final-card,
+  .social-spot,
+  .sketch-frame {
+    border-radius: 24px 32px 26px 34px / 32px 24px 34px 26px;
+    border-width: 1.6px;
+    outline-offset: 2px;
+  }
+
+  .portal-card::after,
+  .showcase-card::after,
+  .paper-panel::after,
+  .paper-card::after,
+  .offer-card::after,
+  .final-card::after,
+  .social-spot::after {
+    width: 52px;
+    height: 52px;
+    opacity: 0.20;
+  }
+
+  .section::after {
+    width: 54px;
+    height: 40px;
+    opacity: 0.15;
+  }
+
+  .site-logo,
+  .logo {
+    font-size: 2.35rem;
+  }
+
+  .btn {
+    border-radius: 22px;
+  }
+}
