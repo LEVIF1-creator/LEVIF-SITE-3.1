@@ -4613,7 +4613,7 @@ FIX FINAL — BULLE TRACE ROUGE + BULLE RÉSEAUX FIXE DROITE
 --------------------------------------------------------- */
 
 .social-orbit{
-  position: fixed !important;
+  position: fixed;
 
   right: 26px !important;
   bottom: 26px !important;
