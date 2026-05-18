@@ -7563,3 +7563,268 @@ body .vitrine-hero .sketch-frame.main-frame img {
   object-fit: cover !important;
   border-radius: 50% !important;
 }
+/* =========================================================
+   CARICKAT — PATCH TYPO / AÉRATION / COMPACT LISIBLE
+   À COLLER TOUT EN BAS DU CSS
+   ========================================================= */
+
+/* STRUCTURE GÉNÉRALE PLUS AÉRÉE MAIS MOINS ÉNORME */
+
+.section {
+  padding-top: 76px !important;
+  padding-bottom: 76px !important;
+}
+
+.section-intro {
+  margin-bottom: 34px !important;
+}
+
+.split {
+  gap: 38px !important;
+}
+
+.hero-grid {
+  gap: 46px !important;
+}
+
+/* TITRES PLUS COMPACTS */
+
+h1 {
+  font-size: clamp(2.65rem, 4.6vw, 5.2rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.045em !important;
+  max-width: 860px !important;
+}
+
+h2 {
+  font-size: clamp(1.85rem, 3.1vw, 3.15rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.035em !important;
+}
+
+h3 {
+  font-size: 1.28rem !important;
+  line-height: 1.18 !important;
+}
+
+/* PARAGRAPHES PLUS LÉGERS */
+
+p {
+  font-size: 0.96rem !important;
+  line-height: 1.62 !important;
+  max-width: 700px;
+}
+
+.hero-content p {
+  font-size: 0.98rem !important;
+  line-height: 1.62 !important;
+  margin-top: 14px !important;
+}
+
+.section-intro p {
+  font-size: 0.97rem !important;
+  line-height: 1.62 !important;
+}
+
+/* CARTES MOINS MASSIVES */
+
+.paper-card,
+.paper-panel,
+.offer-card,
+.portal-card,
+.showcase-card,
+.final-card {
+  padding: 24px !important;
+}
+
+.art-card h3 {
+  padding-top: 14px !important;
+}
+
+.art-card h3,
+.art-card .art-meta {
+  padding-inline: 16px !important;
+}
+
+.art-meta {
+  font-size: 0.8rem !important;
+  padding-bottom: 14px !important;
+}
+
+/* LISTES PLUS PROPRES */
+
+.sketch-list {
+  margin-top: 16px !important;
+  gap: 6px !important;
+}
+
+.sketch-list li,
+.list-sketch li {
+  font-size: 0.93rem !important;
+  line-height: 1.42 !important;
+  margin-bottom: 7px !important;
+}
+
+/* KICKERS ET BOUTONS */
+
+.kicker {
+  font-size: 0.68rem !important;
+  padding: 5px 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.btn {
+  min-height: 50px !important;
+  padding-inline: 20px !important;
+  font-size: 0.9rem !important;
+}
+
+.hero-actions {
+  margin-top: 20px !important;
+  gap: 10px !important;
+}
+
+/* HERO VITRINES : PLUS COMPACT */
+
+.hero-carnet {
+  padding-top: 66px !important;
+  padding-bottom: 64px !important;
+}
+
+body .vitrine-hero .hero-visual {
+  min-height: 420px !important;
+}
+
+body .vitrine-hero .sketch-frame.main-frame {
+  width: 380px !important;
+  height: 380px !important;
+}
+
+/* GRILLES PLUS RESPIRANTES */
+
+.gallery-grid,
+.offer-grid,
+.showcase-grid,
+.portal-grid {
+  gap: 18px !important;
+  margin-top: 26px !important;
+}
+
+/* HEADER UN PEU PLUS COMPACT */
+
+.site-nav,
+.nav {
+  min-height: 74px !important;
+}
+
+.site-logo,
+.logo {
+  font-size: 2.55rem !important;
+}
+
+.site-menu a,
+.menu a {
+  min-height: 38px !important;
+  padding: 7px 12px !important;
+  font-size: 0.84rem !important;
+}
+
+/* CTA FINAL PLUS STABLE */
+
+.final-card {
+  gap: 28px !important;
+}
+
+.final-card p {
+  font-size: 0.96rem !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .section {
+    padding-top: 58px !important;
+    padding-bottom: 58px !important;
+  }
+
+  .hero-carnet {
+    padding-top: 42px !important;
+    padding-bottom: 50px !important;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 10vw, 3.65rem) !important;
+  }
+
+  h2 {
+    font-size: clamp(1.65rem, 7vw, 2.45rem) !important;
+  }
+
+  p {
+    font-size: 0.93rem !important;
+    line-height: 1.58 !important;
+  }
+
+  body .vitrine-hero .container.hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body .vitrine-hero .hero-visual {
+    min-height: 320px !important;
+    justify-content: center !important;
+    padding-left: 0 !important;
+  }
+
+  body .vitrine-hero .sketch-frame.main-frame {
+    width: 300px !important;
+    height: 300px !important;
+    transform: rotate(-2deg) !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .section {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+
+  h1 {
+    font-size: clamp(2.15rem, 11vw, 3.2rem) !important;
+    line-height: 1.03 !important;
+  }
+
+  h2 {
+    font-size: clamp(1.55rem, 8vw, 2.2rem) !important;
+  }
+
+  h3 {
+    font-size: 1.14rem !important;
+  }
+
+  .paper-card,
+  .paper-panel,
+  .offer-card,
+  .portal-card,
+  .showcase-card,
+  .final-card {
+    padding: 20px !important;
+  }
+
+  .btn {
+    min-height: 48px !important;
+    font-size: 0.86rem !important;
+  }
+
+  .site-logo,
+  .logo {
+    font-size: 2rem !important;
+  }
+
+  .site-menu a,
+  .menu a {
+    min-width: 112px !important;
+    min-height: 42px !important;
+    font-size: 0.78rem !important;
+  }
+}
