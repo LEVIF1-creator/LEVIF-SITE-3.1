@@ -7227,20 +7227,33 @@ body {
    À COLLER TOUT EN BAS DU CSS
    ========================================================= */
 
+/* BULLES BOUTIQUE — FIXES À L’ÉCRAN SOUS LE HEADER */
+
 .source-orbit {
-  position: fixed;
-  left: 18px;
-  top: 50%;
+  position: fixed !important;
+  top: 118px !important;
+  right: 28px !important;
+  left: auto !important;
+  bottom: auto !important;
 
-  transform: translateY(-50%);
+  transform: none !important;
 
-  z-index: 999999;
+  z-index: 999999 !important;
 
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 12px !important;
 
-  pointer-events: auto;
+  width: auto !important;
+  height: auto !important;
+
+  pointer-events: auto !important;
+}
+
+.source-node {
+  position: relative !important;
 }
 .source-node {
   width: 108px;
