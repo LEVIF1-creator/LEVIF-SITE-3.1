@@ -5393,3 +5393,416 @@ h2::after {
     border-width: 2px !important;
   }
 }
+/* =========================================================
+   CARICKAT V4 — FINITION GALERIE PREMIUM
+   À AJOUTER TOUT EN BAS DU V3
+   ========================================================= */
+
+/* 1. RESPIRATION GÉNÉRALE */
+
+.section {
+  padding-top: 110px !important;
+  padding-bottom: 110px !important;
+}
+
+.section-intro {
+  margin-bottom: 54px !important;
+}
+
+/* 2. STRUCTURE VISUELLE PLUS PREMIUM */
+
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+/* 3. EFFET “GALERIE D’ART” */
+
+.section::before {
+  height: 2px !important;
+  opacity: 0.24 !important;
+  filter: blur(0.4px);
+}
+
+/* 4. TITRES PLUS MAJESTUEUX */
+
+h1 {
+  max-width: 980px !important;
+  line-height: 0.95 !important;
+  font-size: clamp(3.4rem, 6vw, 6.8rem) !important;
+  letter-spacing: -0.06em !important;
+}
+
+h2 {
+  font-size: clamp(2.4rem, 4vw, 4rem) !important;
+  line-height: 0.98 !important;
+}
+
+h3 {
+  font-size: 1.5rem !important;
+}
+
+/* 5. TEXTES PLUS LISIBLES */
+
+p {
+  max-width: 760px;
+  font-size: 1.02rem !important;
+  line-height: 1.8 !important;
+  color: rgba(20,16,13,0.78) !important;
+}
+
+/* 6. HERO — PLUS CINÉMATOGRAPHIQUE */
+
+.hero-carnet {
+  min-height: 92vh !important;
+  display: flex;
+  align-items: center;
+  padding-top: 90px !important;
+  padding-bottom: 90px !important;
+}
+
+.hero-grid {
+  align-items: center !important;
+  gap: 72px !important;
+}
+
+/* 7. IMAGE HERO — PIÈCE CENTRALE */
+
+.main-frame {
+  width: min(420px, 96%) !important;
+  transform: rotate(-2deg) !important;
+}
+
+.main-frame img {
+  box-shadow:
+    0 0 0 6px rgba(255,255,255,0.95),
+    0 0 0 10px rgba(20,16,13,0.10),
+    18px 22px 0 rgba(23,60,143,0.12),
+    -10px -8px 0 rgba(178,43,34,0.10),
+    0 34px 80px rgba(20,16,13,0.22) !important;
+}
+
+/* 8. LABELS FLOTTANTS */
+
+.floating-label {
+  backdrop-filter: blur(10px);
+  transform-origin: center;
+}
+
+.label-one {
+  left: -4% !important;
+  top: 10% !important;
+}
+
+.label-two {
+  right: -6% !important;
+  bottom: 16% !important;
+}
+
+/* 9. BOUTONS — PLUS PREMIUM */
+
+.btn {
+  min-height: 58px !important;
+  padding-inline: 28px !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(255,255,255,0.24) 42%,
+      transparent 58%
+    );
+  transform: translateX(-120%);
+  transition: transform 0.8s ease;
+}
+
+.btn:hover::after {
+  transform: translateX(120%);
+}
+
+/* 10. CARTES — PLUS PROFONDES */
+
+.portal-card,
+.showcase-card,
+.paper-panel,
+.paper-card,
+.art-card,
+.offer-card,
+.final-card,
+.social-spot {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    filter 0.35s ease !important;
+
+  will-change: transform;
+}
+
+.portal-card:hover,
+.showcase-card:hover,
+.paper-panel:hover,
+.paper-card:hover,
+.art-card:hover,
+.offer-card:hover,
+.final-card:hover,
+.social-spot:hover {
+  transform:
+    translateY(-12px)
+    rotate(-1deg)
+    scale(1.015) !important;
+
+  box-shadow:
+    0 40px 90px rgba(20,16,13,0.20),
+    16px 18px 0 rgba(23,60,143,0.12),
+    -8px -6px 0 rgba(178,43,34,0.10) !important;
+
+  filter: brightness(1.02);
+}
+
+/* 11. IMAGES — EFFET EXPOSITION */
+
+.art-card img {
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease !important;
+}
+
+.art-card:hover img {
+  transform:
+    scale(1.045)
+    rotate(-1deg) !important;
+
+  filter:
+    contrast(1.08)
+    saturate(1.08)
+    brightness(1.03) !important;
+}
+
+/* 12. NUMÉROS 01 / 02 / 03 */
+
+.portal-number {
+  opacity: 0.82;
+  font-size: 3.2rem !important;
+  margin-bottom: 22px !important;
+}
+
+/* 13. CTA FINAL — PLUS IMPACTANT */
+
+.final-card {
+  position: relative;
+  overflow: visible !important;
+}
+
+.final-card::before {
+  opacity: 0.42 !important;
+}
+
+.final-card::after {
+  opacity: 0.55 !important;
+}
+
+.final-card h2 {
+  max-width: 700px;
+}
+
+/* 14. PETITS DÉTAILS “MUSÉE” */
+
+.kicker {
+  letter-spacing: 0.18em !important;
+  font-size: 0.72rem !important;
+}
+
+/* 15. FOOTER PLUS PROPRE */
+
+.site-footer,
+.footer {
+  padding-top: 90px !important;
+  padding-bottom: 70px !important;
+}
+
+.footer-inner {
+  align-items: flex-start;
+}
+
+/* 16. EFFET PAPIER HAUT DE GAMME */
+
+.paper-grain-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  opacity: 0.10;
+
+  background-image:
+    radial-gradient(rgba(20,16,13,0.16) 0.6px, transparent 0.7px);
+
+  background-size: 8px 8px;
+
+  mix-blend-mode: multiply;
+}
+
+/* 17. LUMIÈRE DOUCE GLOBALE */
+
+.mobile-safe-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255,255,255,0.55),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(255,255,255,0.26),
+      transparent 58%
+    );
+
+  opacity: 0.8;
+}
+
+/* 18. TRANSITION PAGE */
+
+.page-transition-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0),
+      rgba(255,255,255,0.16),
+      rgba(255,255,255,0)
+    );
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.page-leave .page-transition-layer {
+  opacity: 1;
+}
+
+/* 19. ANIMATIONS APPARITION */
+
+.carickat-reveal {
+  opacity: 0;
+  transform:
+    translateY(38px)
+    rotate(-1deg)
+    scale(0.985);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.carickat-reveal.is-visible {
+  opacity: 1;
+  transform:
+    translateY(0)
+    rotate(0deg)
+    scale(1);
+}
+
+/* 20. SOCIAL ORBIT — PLUS PREMIUM */
+
+.social-orbit-main {
+  width: 112px !important;
+  height: 92px !important;
+  font-size: 1.55rem !important;
+}
+
+.social-orbit-links a {
+  font-size: 0.9rem !important;
+}
+
+/* 21. COMPTEUR TRACE */
+
+.trace-counter-widget {
+  transform: rotate(-2deg);
+}
+
+.trace-count-display span {
+  font-size: 2.4rem !important;
+}
+
+/* 22. MOBILE PREMIUM */
+
+@media (max-width: 980px) {
+
+  .hero-grid {
+    gap: 52px !important;
+  }
+
+  .hero-carnet {
+    min-height: auto !important;
+  }
+
+  .main-frame {
+    width: min(360px, 100%) !important;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 10vw, 5rem) !important;
+  }
+}
+
+@media (max-width: 680px) {
+
+  .section {
+    padding-top: 74px !important;
+    padding-bottom: 74px !important;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 12vw, 4.4rem) !important;
+    line-height: 0.98 !important;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+  }
+
+  p {
+    font-size: 0.95rem !important;
+  }
+
+  .hero-grid {
+    gap: 42px !important;
+  }
+
+  .main-frame {
+    width: min(300px, 96%) !important;
+  }
+
+  .btn {
+    min-height: 54px !important;
+  }
+
+  .social-orbit-main {
+    width: 88px !important;
+    height: 74px !important;
+    font-size: 1.2rem !important;
+  }
+
+  .trace-counter-widget {
+    transform: scale(0.82) rotate(-2deg);
+    transform-origin: top right;
+  }
+}
