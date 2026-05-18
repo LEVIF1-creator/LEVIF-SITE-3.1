@@ -2418,34 +2418,6 @@ position: fixed;
 
 }
 
-/* On remet les flèches dans l’écran sans créer de hauteur fantôme */
-
-.arrow-a  {
- left: 18vw;
- top: 48vh;
- 
-}
-.arrow-b  {
- left: 34vw;
- top: 48vh;
- 
-}
-.arrow-c  {
- left: 26vw;
- top: 72vh;
- 
-}
-.arrow-d  {
- left: 72vw;
- top: 72vh;
- 
-}
-.arrow-e  {
- left: 66vw;
- top: 84vh;
- 
-}
-
 /* Sécurité animations */
 
 .carickat-reveal  {
@@ -3997,40 +3969,6 @@ rgba(47,
 transparent 4px 9px);
 
 }
-
-/* FLÈCHES GUIDEUSES PLUS DESSINÉES */
-
-.wandering-arrow  {
-font-family: "Caveat",
- cursive;
-font-weight: 700;
-text-shadow:0 0 8px rgba(255,
-255,
-255,
-0.95),
-2px 3px 0 rgba(20,
-16,
-13,
-0.08);
-transform: scale(1.3);
-
-}
-
-.arrow-blue  {
-color: var(--bic-blue);
-
-}
-
-.arrow-red  {
-color: var(--note-red);
-
-}
-
-.arrow-green  {
-color: var(--organic-green);
-
-}
-
 /* FORMULAIRES AUSSI DANS LE STYLE */
 
 .contact-form input,
