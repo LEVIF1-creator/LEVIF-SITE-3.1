@@ -7417,3 +7417,110 @@ body {
     line-height: 0.95;
   }
 }
+/* =========================================================
+   FIX DÉFINITIF — BULLES BOUTIQUE FIXES À L'ÉCRAN
+   ========================================================= */
+
+/* On neutralise le transform du body qui casse le fixed */
+body.page-enter {
+  animation: none !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+html,
+body {
+  transform: none !important;
+}
+
+/* Bulles réellement fixées à l'écran */
+.boutique-fixed-orbit {
+  position: fixed !important;
+  top: 118px !important;
+  right: 28px !important;
+  left: auto !important;
+  bottom: auto !important;
+
+  transform: none !important;
+  translate: none !important;
+
+  z-index: 2147483647 !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 12px !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  pointer-events: auto !important;
+  contain: none !important;
+  will-change: auto !important;
+}
+
+.boutique-fixed-node {
+  position: relative !important;
+
+  width: 104px !important;
+  min-height: 52px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 8px 12px !important;
+
+  background: #fffefa !important;
+  border: 3px solid #173c8f !important;
+  border-radius: 999px 820px 920px 760px / 760px 940px 820px 999px !important;
+
+  color: #17130f !important;
+  text-decoration: none !important;
+
+  font-family: "Caveat", cursive !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+
+  box-shadow:
+    4px 5px 0 rgba(23,60,143,0.18),
+    0 12px 28px rgba(20,16,13,0.18) !important;
+}
+
+.boutique-fixed-one,
+.boutique-fixed-four {
+  border-color: #b22b22 !important;
+}
+
+.boutique-fixed-two,
+.boutique-fixed-five {
+  border-color: #173c8f !important;
+}
+
+.boutique-fixed-three {
+  border-color: #2f7a45 !important;
+}
+
+@media (max-width: 900px) {
+  .boutique-fixed-orbit {
+    top: auto !important;
+    right: 12px !important;
+    left: 12px !important;
+    bottom: 84px !important;
+
+    justify-content: center !important;
+    gap: 7px !important;
+  }
+
+  .boutique-fixed-node {
+    width: auto !important;
+    min-width: 58px !important;
+    min-height: 42px !important;
+
+    padding: 6px 8px !important;
+
+    font-size: 0.78rem !important;
+    border-width: 2px !important;
+  }
+}
