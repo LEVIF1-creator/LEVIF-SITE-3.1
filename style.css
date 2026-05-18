@@ -7524,3 +7524,37 @@ body {
     border-width: 2px !important;
   }
 }
+/* HERO VITRINES — CENTRAGE ROND */
+
+.vitrine-hero .hero-grid {
+  align-items: center;
+  gap: 90px;
+}
+
+.vitrine-hero .hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  transform: translateX(-40px);
+}
+
+.vitrine-hero .main-frame {
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vitrine-hero .main-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
