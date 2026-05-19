@@ -40,30 +40,12 @@
   </nav>
 </header>
 
-<!-- BULLES FIXES VITRINES -->
-
 <div class="boutique-fixed-orbit" aria-label="Navigation des vitrines Carickat">
-
-  <a class="boutique-fixed-node boutique-fixed-one" href="originaux.html">
-    <span>Source</span>
-  </a>
-
-  <a class="boutique-fixed-node boutique-fixed-two" href="animaux.html">
-    <span>Nature</span>
-  </a>
-
-  <a class="boutique-fixed-node boutique-fixed-three" href="expression-corporelle.html">
-    <span>Expression</span>
-  </a>
-
-  <a class="boutique-fixed-node boutique-fixed-four" href="caricatures.html">
-    <span>Caricature</span>
-  </a>
-
-  <a class="boutique-fixed-node boutique-fixed-five" href="heros.html">
-    <span>Héros</span>
-  </a>
-
+  <a class="boutique-fixed-node boutique-fixed-one" href="originaux.html"><span>Source</span></a>
+  <a class="boutique-fixed-node boutique-fixed-two" href="animaux.html"><span>Nature</span></a>
+  <a class="boutique-fixed-node boutique-fixed-three" href="expression-corporelle.html"><span>Expression</span></a>
+  <a class="boutique-fixed-node boutique-fixed-four" href="caricatures.html"><span>Caricature</span></a>
+  <a class="boutique-fixed-node boutique-fixed-five" href="heros.html"><span>Héros</span></a>
 </div>
 
 <main>
@@ -96,26 +78,19 @@
             Explorer les recherches
           </a>
 
-          <a href="boutique.html" class="btn btn-secondary">
-            Retour boutique
+          <a href="#offres-nature" class="btn btn-secondary">
+            Voir les acquisitions
           </a>
         </div>
       </div>
 
       <div class="hero-visual">
-
         <div class="sketch-frame main-frame">
           <img src="./logo-nature.jpg" alt="Logo vitrine Nature">
         </div>
 
-        <div class="floating-label label-one">
-          vivant
-        </div>
-
-        <div class="floating-label label-two">
-          instinct
-        </div>
-
+        <div class="floating-label label-one">vivant</div>
+        <div class="floating-label label-two">instinct</div>
       </div>
 
     </div>
@@ -160,7 +135,6 @@
 
   <section class="section section-gallery-preview" id="recherches">
     <div class="container section-intro">
-
       <div class="kicker">recherches / carnet vivant</div>
 
       <h2>Fragments d’expérimentation animale.</h2>
@@ -170,7 +144,6 @@
         études et futures collections liées au monde animal,
         aux instincts et aux créatures imaginées.
       </p>
-
     </div>
 
     <div class="container gallery-grid">
@@ -196,13 +169,46 @@
     </div>
   </section>
 
-  <section class="section section-showcases">
-    <div class="container section-intro">
+  <section class="section section-conversion">
+    <div class="container final-card">
+      <div>
+        <div class="kicker">chemin nature</div>
 
+        <h2>Suivre ou acquérir une pièce liée au vivant.</h2>
+
+        <p>
+          Cette vitrine prépare des œuvres animales, des prints, des carnets de recherche
+          et des créations sur demande autour des créatures, instincts et formes organiques.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a
+          href="https://wa.me/33759790325?text=Bonjour%20Carickat%2C%20je%20souhaite%20des%20infos%20sur%20la%20vitrine%20Nature."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+          data-intent="info_vitrine_nature"
+          data-vitrine="nature">
+          Infos Nature
+        </a>
+
+        <a
+          href="commande.html"
+          class="btn btn-secondary"
+          data-intent="commande_nature"
+          data-vitrine="nature">
+          Commander une création
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-showcases" id="offres-nature">
+    <div class="container section-intro">
       <div class="kicker">futur des collections</div>
 
       <h2>Ce qui arrivera progressivement.</h2>
-
     </div>
 
     <div class="container offer-grid">
@@ -220,8 +226,24 @@
         <div class="price">bientôt</div>
 
         <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">
-            En préparation
+          <a
+            href="#"
+            class="btn btn-primary"
+            data-intent="stripe_acquisition"
+            data-offer="original-vivant"
+            data-vitrine="nature">
+            Acquisition
+          </a>
+
+          <a
+            href="https://wa.me/33759790325?text=Bonjour%20Carickat%2C%20je%20souhaite%20des%20infos%20sur%20un%20original%20animalier."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+            data-intent="info_original_vivant"
+            data-offer="original-vivant"
+            data-vitrine="nature">
+            Infos
           </a>
         </div>
       </article>
@@ -241,8 +263,24 @@
         <div class="price">ouverture future</div>
 
         <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">
-            À venir
+          <a
+            href="#"
+            class="btn btn-primary"
+            data-intent="stripe_acquisition"
+            data-offer="prints-nature"
+            data-vitrine="nature">
+            Acquisition
+          </a>
+
+          <a
+            href="https://wa.me/33759790325?text=Bonjour%20Carickat%2C%20je%20souhaite%20des%20infos%20sur%20les%20prints%20Nature."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+            data-intent="info_prints_nature"
+            data-offer="prints-nature"
+            data-vitrine="nature">
+            Infos
           </a>
         </div>
       </article>
@@ -262,8 +300,24 @@
         <div class="price">carnet évolutif</div>
 
         <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">
-            En évolution
+          <a
+            href="#"
+            class="btn btn-primary"
+            data-intent="stripe_acquisition"
+            data-offer="carnet-nature"
+            data-vitrine="nature">
+            Acquisition
+          </a>
+
+          <a
+            href="https://wa.me/33759790325?text=Bonjour%20Carickat%2C%20je%20souhaite%20des%20infos%20sur%20les%20carnets%20et%20recherches%20Nature."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+            data-intent="info_carnet_nature"
+            data-offer="carnet-nature"
+            data-vitrine="nature">
+            Infos
           </a>
         </div>
       </article>
@@ -290,12 +344,22 @@
       </div>
 
       <div class="hero-actions">
-        <a href="commande.html" class="btn btn-primary">
+        <a
+          href="commande.html"
+          class="btn btn-primary"
+          data-intent="commande_creation_animale"
+          data-vitrine="nature">
           Faire une demande
         </a>
 
-        <a href="contact.html" class="btn btn-secondary">
-          Contacter l’atelier
+        <a
+          href="https://wa.me/33759790325?text=Bonjour%20Carickat%2C%20je%20souhaite%20parler%20d%E2%80%99une%20cr%C3%A9ation%20animale."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary"
+          data-intent="whatsapp_creation_animale"
+          data-vitrine="nature">
+          WhatsApp atelier
         </a>
       </div>
 
@@ -336,35 +400,17 @@
 </main>
 
 <div class="social-orbit">
-
   <button class="social-orbit-main" type="button">
     <span>Réseaux</span>
   </button>
 
   <div class="social-orbit-links">
-
-    <a href="https://www.instagram.com/rick.levif?igsh=cWZvNGpxcG5tYndm" target="_blank" rel="noopener noreferrer">
-      Instagram
-    </a>
-
-    <a href="https://www.tiktok.com/@rickolevif?_r=1&_t=ZN-96Nm4YwrV7m" target="_blank" rel="noopener noreferrer">
-      Carickat
-    </a>
-
-    <a href="https://www.tiktok.com/@baby.gorilla3?_r=1&_t=ZN-96NmALeh4Ss" target="_blank" rel="noopener noreferrer">
-      B&amp;B
-    </a>
-
-    <a href="https://www.tiktok.com/@frisson543?_r=1&_t=ZN-96NmCGzt4rO" target="_blank" rel="noopener noreferrer">
-      Acting
-    </a>
-
-    <a href="https://youtube.com/@sarkmotion652?si=uZpebtaPLKUP2go8" target="_blank" rel="noopener noreferrer">
-      YouTube
-    </a>
-
+    <a href="https://www.instagram.com/rick.levif?igsh=cWZvNGpxcG5tYndm" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="https://www.tiktok.com/@rickolevif?_r=1&_t=ZN-96Nm4YwrV7m" target="_blank" rel="noopener noreferrer">Carickat</a>
+    <a href="https://www.tiktok.com/@baby.gorilla3?_r=1&_t=ZN-96NmALeh4Ss" target="_blank" rel="noopener noreferrer">B&amp;B</a>
+    <a href="https://www.tiktok.com/@frisson543?_r=1&_t=ZN-96NmCGzt4rO" target="_blank" rel="noopener noreferrer">Acting</a>
+    <a href="https://youtube.com/@sarkmotion652?si=uZpebtaPLKUP2go8" target="_blank" rel="noopener noreferrer">YouTube</a>
   </div>
-
 </div>
 
 <footer class="site-footer">
