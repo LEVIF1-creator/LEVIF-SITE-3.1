@@ -5,14 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Originaux — Carickat</title>
-
   <meta name="description" content="Œuvres originales premium Carickat, collections temporaires, prints numérotés associés et affiches digitales limitées." />
 
   <link rel="stylesheet" href="style.css"/>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 
@@ -24,10 +21,8 @@
 
 <header class="site-header">
   <div class="header-art" aria-hidden="true"></div>
-
   <nav class="site-nav">
     <a href="index.html" class="site-logo">Carickat</a>
-
     <div class="site-menu">
       <a href="galerie.html">Galerie</a>
       <a href="boutique.html">Boutique</a>
@@ -52,10 +47,8 @@
 
   <section class="section hero-carnet vitrine-hero">
     <div class="container hero-grid">
-
       <div class="hero-content">
         <div class="kicker">vitrine 01 / source</div>
-
         <h1>Originaux & collections temporaires.</h1>
 
         <p>
@@ -71,7 +64,7 @@
 
         <div class="hero-actions">
           <a href="#collection-01" class="btn btn-primary">Voir les œuvres en préparation</a>
-          <a href="commande.html" class="btn btn-secondary">Demander une œuvre</a>
+          <a href="#offres-source" class="btn btn-secondary">Voir les acquisitions</a>
         </div>
       </div>
 
@@ -79,22 +72,17 @@
         <div class="sketch-frame main-frame">
           <img src="./logo-source.jpg" alt="Logo vitrine Source">
         </div>
-
         <div class="floating-label label-one">source</div>
         <div class="floating-label label-two">collection</div>
       </div>
-
     </div>
   </section>
 
   <section class="section section-value">
     <div class="container split">
-
       <div class="paper-card tilt-left">
         <div class="kicker">règle de la vitrine</div>
-
         <h2>L’original commande toute la collection.</h2>
-
         <p>
           Les éditions associées ne sont pas pensées comme des produits permanents.
           Elles existent pendant la vie de l’œuvre dans l’atelier.
@@ -103,9 +91,7 @@
 
       <div class="paper-panel">
         <div class="kicker">fonctionnement</div>
-
         <h3>Pièce unique · édition limitée · archive</h3>
-
         <ul class="sketch-list">
           <li>Une seule œuvre originale physique</li>
           <li>Prix premium selon format, temps et importance</li>
@@ -115,27 +101,21 @@
           <li>Chaque collection devient une archive de période</li>
         </ul>
       </div>
-
     </div>
   </section>
 
   <section class="section section-gallery-preview" id="collection-01">
     <div class="container section-intro">
-
       <div class="kicker">originaux / en construction</div>
-
       <h2>Trois œuvres en préparation.</h2>
-
       <p>
         Ces trois œuvres forment les premières pièces originales de la vitrine.
         Chacune ouvre un chapitre différent du carnet vivant et pourra devenir
         le centre d’une collection temporaire avec prints numérotés et affiches digitales associées.
       </p>
-
     </div>
 
     <div class="container gallery-grid">
-
       <article class="art-card">
         <img src="./originaux-1.jpg" alt="Constitution — œuvre originale Carickat">
         <h3>Constitution</h3>
@@ -153,24 +133,52 @@
         <h3>La transmission</h3>
         <p class="art-meta">original 03 / passage / mémoire</p>
       </article>
-
     </div>
   </section>
 
-  <section class="section section-showcases">
+  <section class="section section-conversion">
+    <div class="container final-card">
+      <div>
+        <div class="kicker">chemin collectionneur</div>
+        <h2>Entrer dans la Vitrine Source.</h2>
+        <p>
+          Tu peux demander les informations sur les originaux, suivre l’ouverture
+          des prints signés ou préparer une acquisition quand les liens seront disponibles.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a
+          href="https://wa.me/33759790325?text=Bonjour%20Carickat%2C%20je%20souhaite%20des%20infos%20sur%20la%20Vitrine%20Source."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+          data-intent="info_vitrine_source"
+          data-vitrine="source">
+          Infos Vitrine Source
+        </a>
+
+        <a
+          href="soutien.html"
+          class="btn btn-secondary"
+          data-intent="soutien_collection"
+          data-vitrine="source">
+          Soutenir la collection
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-showcases" id="offres-source">
     <div class="container section-intro">
-
       <div class="kicker">offres liées aux originaux</div>
-
       <h2>Ce qui sera disponible à l’ouverture.</h2>
-
     </div>
 
     <div class="container offer-grid">
 
       <article class="offer-card">
         <div class="kicker">pièce unique</div>
-
         <h3>Original premium</h3>
 
         <p>
@@ -188,13 +196,30 @@
         </ul>
 
         <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">Demander les infos</a>
+          <a
+            href="#"
+            class="btn btn-primary"
+            data-intent="stripe_acquisition"
+            data-offer="original-premium"
+            data-vitrine="source">
+            Acquisition
+          </a>
+
+          <a
+            href="https://wa.me/33759790325?text=Bonjour%20Carickat%2C%20je%20souhaite%20des%20infos%20sur%20un%20original%20premium."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+            data-intent="info_original_premium"
+            data-offer="original-premium"
+            data-vitrine="source">
+            Infos
+          </a>
         </div>
       </article>
 
       <article class="offer-card">
         <div class="kicker">édition limitée</div>
-
         <h3>Prints numérotés</h3>
 
         <p>
@@ -202,7 +227,7 @@
           l’œuvre centrale reste dans l’atelier.
         </p>
 
-        <div class="price">bientôt</div>
+        <div class="price">40€</div>
 
         <ul class="sketch-list">
           <li>Quantité limitée</li>
@@ -212,13 +237,30 @@
         </ul>
 
         <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">Être prévenu</a>
+          <a
+            href="#"
+            class="btn btn-primary"
+            data-intent="stripe_acquisition"
+            data-offer="print-numerote"
+            data-vitrine="source">
+            Acquisition
+          </a>
+
+          <a
+            href="https://wa.me/33759790325?text=Bonjour%20Carickat%2C%20je%20souhaite%20des%20infos%20sur%20un%20print%20num%C3%A9rot%C3%A9."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+            data-intent="info_print_numerote"
+            data-offer="print-numerote"
+            data-vitrine="source">
+            Infos
+          </a>
         </div>
       </article>
 
       <article class="offer-card">
         <div class="kicker">digital</div>
-
         <h3>Posters digitaux</h3>
 
         <p>
@@ -226,7 +268,7 @@
           pensées comme accès plus léger à chaque chapitre.
         </p>
 
-        <div class="price">en préparation</div>
+        <div class="price">10€</div>
 
         <ul class="sketch-list">
           <li>Formats digitaux</li>
@@ -236,7 +278,25 @@
         </ul>
 
         <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">Suivre l’ouverture</a>
+          <a
+            href="#"
+            class="btn btn-primary"
+            data-intent="stripe_acquisition"
+            data-offer="poster-digital"
+            data-vitrine="source">
+            Acquisition
+          </a>
+
+          <a
+            href="https://wa.me/33759790325?text=Bonjour%20Carickat%2C%20je%20souhaite%20des%20infos%20sur%20un%20poster%20digital."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+            data-intent="info_poster_digital"
+            data-offer="poster-digital"
+            data-vitrine="source">
+            Infos
+          </a>
         </div>
       </article>
 
@@ -245,12 +305,9 @@
 
   <section class="section final-cta">
     <div class="container final-card">
-
       <div>
         <div class="kicker">commande spéciale</div>
-
         <h2>Demander une œuvre originale.</h2>
-
         <p>
           En plus des collections temporaires, il sera possible de discuter d’une
           œuvre originale personnalisée : portrait, caricature, composition, idée
@@ -259,21 +316,32 @@
       </div>
 
       <div class="hero-actions">
-        <a href="commande.html" class="btn btn-primary">Faire une demande</a>
-        <a href="boutique.html" class="btn btn-secondary">Retour boutique</a>
-      </div>
+        <a
+          href="commande.html"
+          class="btn btn-primary"
+          data-intent="commande_originale"
+          data-vitrine="source">
+          Faire une demande
+        </a>
 
+        <a
+          href="https://wa.me/33759790325?text=Bonjour%20Carickat%2C%20je%20souhaite%20parler%20d%E2%80%99une%20%C5%93uvre%20originale."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary"
+          data-intent="whatsapp_originale"
+          data-vitrine="source">
+          WhatsApp atelier
+        </a>
+      </div>
     </div>
   </section>
 
   <section class="section section-value">
     <div class="container split">
-
       <div class="paper-panel">
         <div class="kicker">note importante</div>
-
         <h3>Cette vitrine est en construction.</h3>
-
         <p>
           Les prix, quantités, formats et ouvertures seront ajoutés progressivement,
           au rythme de la finalisation des œuvres et des collections.
@@ -282,15 +350,12 @@
 
       <div class="paper-panel">
         <div class="kicker">chapitres prévus</div>
-
         <h3>Constitution · Découverte de soi · Transmission</h3>
-
         <p>
           Ces premières œuvres posent la base de la vitrine Originaux :
           trois axes, trois histoires, trois futures collections possibles.
         </p>
       </div>
-
     </div>
   </section>
 
@@ -369,9 +434,7 @@ document.querySelectorAll("a[href]").forEach((link) => {
 
   link.addEventListener("click", (event) => {
     event.preventDefault();
-
     document.body.classList.add("page-leave");
-
     setTimeout(() => {
       window.location.href = href;
     }, 260);
