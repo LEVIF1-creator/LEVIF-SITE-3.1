@@ -115,24 +115,104 @@
       </p>
     </div>
 
-    <div class="container gallery-grid">
-      <article class="art-card">
-        <img src="./originaux-1.jpg" alt="Constitution — œuvre originale Carickat">
+    <div class="container gallery-grid source-linked-grid">
+
+      <article class="art-card source-master-card">
+        <button class="source-trigger" type="button">
+          <img src="./originaux-1.jpg" alt="Constitution — œuvre originale Carickat">
+          <div class="source-overlay">
+            <span>voir les acquisitions</span>
+          </div>
+        </button>
+
         <h3>Constitution</h3>
         <p class="art-meta">original 01 / construction / chapitre</p>
+
+        <div class="source-bubbles">
+          <a href="#" class="source-bubble bubble-original" data-offer="constitution-original-premium">
+            <span class="bubble-type">original</span>
+            <strong>Œuvre originale</strong>
+            <small>prix premium</small>
+          </a>
+
+          <a href="#" class="source-bubble bubble-print" data-offer="constitution-print-numerote">
+            <span class="bubble-type">print</span>
+            <strong>Print signé</strong>
+            <small>numéroté</small>
+          </a>
+
+          <a href="#" class="source-bubble bubble-digital" data-offer="constitution-poster-digital">
+            <span class="bubble-type">digital</span>
+            <strong>Poster digital</strong>
+            <small>petit prix</small>
+          </a>
+        </div>
       </article>
 
-      <article class="art-card">
-        <img src="./originaux-2.jpg" alt="La découverte de soi — œuvre originale Carickat">
+      <article class="art-card source-master-card">
+        <button class="source-trigger" type="button">
+          <img src="./originaux-2.jpg" alt="La découverte de soi — œuvre originale Carickat">
+          <div class="source-overlay">
+            <span>voir les acquisitions</span>
+          </div>
+        </button>
+
         <h3>La découverte de soi</h3>
         <p class="art-meta">original 02 / recherche / identité</p>
+
+        <div class="source-bubbles">
+          <a href="#" class="source-bubble bubble-original" data-offer="decouverte-original-premium">
+            <span class="bubble-type">original</span>
+            <strong>Œuvre originale</strong>
+            <small>prix premium</small>
+          </a>
+
+          <a href="#" class="source-bubble bubble-print" data-offer="decouverte-print-numerote">
+            <span class="bubble-type">print</span>
+            <strong>Print signé</strong>
+            <small>numéroté</small>
+          </a>
+
+          <a href="#" class="source-bubble bubble-digital" data-offer="decouverte-poster-digital">
+            <span class="bubble-type">digital</span>
+            <strong>Poster digital</strong>
+            <small>petit prix</small>
+          </a>
+        </div>
       </article>
 
-      <article class="art-card">
-        <img src="./originaux-3.jpg" alt="La transmission — œuvre originale Carickat">
+      <article class="art-card source-master-card">
+        <button class="source-trigger" type="button">
+          <img src="./originaux-3.jpg" alt="La transmission — œuvre originale Carickat">
+          <div class="source-overlay">
+            <span>voir les acquisitions</span>
+          </div>
+        </button>
+
         <h3>La transmission</h3>
         <p class="art-meta">original 03 / passage / mémoire</p>
+
+        <div class="source-bubbles">
+          <a href="#" class="source-bubble bubble-original" data-offer="transmission-original-premium">
+            <span class="bubble-type">original</span>
+            <strong>Œuvre originale</strong>
+            <small>prix premium</small>
+          </a>
+
+          <a href="#" class="source-bubble bubble-print" data-offer="transmission-print-numerote">
+            <span class="bubble-type">print</span>
+            <strong>Print signé</strong>
+            <small>numéroté</small>
+          </a>
+
+          <a href="#" class="source-bubble bubble-digital" data-offer="transmission-poster-digital">
+            <span class="bubble-type">digital</span>
+            <strong>Poster digital</strong>
+            <small>petit prix</small>
+          </a>
+        </div>
       </article>
+
     </div>
   </section>
 
@@ -439,6 +519,34 @@ document.querySelectorAll("a[href]").forEach((link) => {
       window.location.href = href;
     }, 260);
   });
+});
+
+const sourceCards = document.querySelectorAll(".source-master-card");
+
+sourceCards.forEach((card) => {
+  const trigger = card.querySelector(".source-trigger");
+
+  trigger.addEventListener("click", (event) => {
+    event.stopPropagation();
+
+    sourceCards.forEach((otherCard) => {
+      if (otherCard !== card) {
+        otherCard.classList.remove("active");
+      }
+    });
+
+    card.classList.toggle("active");
+  });
+});
+
+document.addEventListener("click", (event) => {
+  const insideCard = event.target.closest(".source-master-card");
+
+  if (!insideCard) {
+    sourceCards.forEach((card) => {
+      card.classList.remove("active");
+    });
+  }
 });
 </script>
 
