@@ -8265,3 +8265,71 @@ body .vitrine-hero .sketch-frame.main-frame {
   }
 
 }
+/* =========================================================
+   VITRINE SOURCE — STATUTS + TEXTE CONSTITUTION
+   À COLLER APRÈS LE PATCH BULLES
+========================================================= */
+
+.source-bubble.is-coming {
+  cursor: default !important;
+  filter: grayscale(0.12) saturate(0.9);
+}
+
+.source-bubble.is-coming small {
+  color: #b22b22 !important;
+  font-weight: 900 !important;
+}
+
+.source-bubble.is-available small {
+  color: #2f7a45 !important;
+  font-weight: 900 !important;
+}
+
+.source-bubble.is-available {
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.14),
+    0 0 0 3px rgba(47,122,69,0.10) !important;
+}
+
+.constitution-note {
+  margin: 10px 16px 18px !important;
+  max-width: 34ch !important;
+
+  color: rgba(20,16,13,0.72) !important;
+
+  font-size: 0.86rem !important;
+  line-height: 1.55 !important;
+
+  font-style: italic;
+}
+
+.constitution-note::before {
+  content: "note œuvre — ";
+  color: #b22b22;
+  font-family: "Caveat", cursive;
+  font-size: 1.12rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.source-master-card .source-bubble[target="_blank"] {
+  cursor: pointer !important;
+}
+
+.source-master-card .source-bubble[target="_blank"]:hover {
+  box-shadow:
+    0 22px 46px rgba(20,16,13,0.20),
+    0 0 0 4px rgba(47,122,69,0.14) !important;
+}
+
+@media (max-width: 680px) {
+  .constitution-note {
+    margin: 8px 12px 14px !important;
+    font-size: 0.78rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .constitution-note::before {
+    font-size: 1rem;
+  }
+}
