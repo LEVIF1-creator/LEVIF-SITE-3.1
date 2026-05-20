@@ -8021,3 +8021,247 @@ body .vitrine-hero .sketch-frame.main-frame {
     font-size: 0.7rem !important;
   }
 }
+/* =========================================================
+   VITRINE SOURCE — BULLES LIEES AUX OEUVRES
+========================================================= */
+
+.source-linked-grid{
+  gap:3.2rem;
+}
+
+.source-master-card{
+  position:relative;
+  overflow:visible;
+}
+
+.source-trigger{
+  position:relative;
+  width:100%;
+  border:none;
+  background:transparent;
+  padding:0;
+  cursor:pointer;
+}
+
+.source-trigger img{
+  width:100%;
+  display:block;
+  border-radius:34px;
+
+  transition:
+    transform .45s ease,
+    filter .45s ease;
+}
+
+.source-trigger:hover img{
+  transform:scale(1.015);
+  filter:brightness(1.02);
+}
+
+.source-overlay{
+  position:absolute;
+  inset:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0,0,0,.08),
+      rgba(0,0,0,.45)
+    );
+
+  border-radius:34px;
+
+  opacity:0;
+
+  transition:opacity .35s ease;
+}
+
+.source-trigger:hover .source-overlay{
+  opacity:1;
+}
+
+.source-overlay span{
+  padding:12px 20px;
+  border-radius:999px;
+
+  background:rgba(255,255,255,.92);
+
+  color:#111;
+
+  font-size:.8rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:800;
+}
+
+.source-card-content{
+  padding-top:1.2rem;
+}
+
+.source-bubbles{
+  position:absolute;
+  inset:0;
+
+  pointer-events:none;
+}
+
+.source-bubble{
+  position:absolute;
+
+  width:132px;
+  height:132px;
+
+  border-radius:50%;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+  text-decoration:none;
+
+  padding:16px;
+
+  backdrop-filter:blur(10px);
+
+  opacity:0;
+
+  pointer-events:auto;
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.14);
+
+  transition:
+    transform .45s ease,
+    opacity .45s ease,
+    filter .45s ease;
+}
+
+.source-bubble strong{
+  color:#111;
+  font-size:.84rem;
+  line-height:1.2;
+}
+
+.bubble-type{
+  font-size:.62rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin-bottom:6px;
+
+  opacity:.7;
+  color:#111;
+}
+
+/* BULLE ORIGINAL */
+
+.bubble-original{
+  top:-24px;
+  left:-24px;
+
+  transform:scale(.4);
+
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(255,255,255,.98),
+      rgba(255,230,230,.96)
+    );
+
+  border:2px solid rgba(180,50,50,.22);
+}
+
+/* BULLE PRINT */
+
+.bubble-print{
+  right:-24px;
+  top:28%;
+
+  transform:scale(.4);
+
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(255,255,255,.98),
+      rgba(225,240,255,.96)
+    );
+
+  border:2px solid rgba(40,90,180,.22);
+}
+
+/* BULLE DIGITAL */
+
+.bubble-digital{
+  bottom:-28px;
+  left:50%;
+
+  transform:
+    translateX(-50%)
+    scale(.4);
+
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(255,255,255,.98),
+      rgba(225,255,240,.96)
+    );
+
+  border:2px solid rgba(40,160,90,.22);
+}
+
+/* ACTIVATION */
+
+.source-master-card.active .bubble-original{
+  opacity:1;
+  transform:scale(1);
+}
+
+.source-master-card.active .bubble-print{
+  opacity:1;
+  transform:scale(1);
+}
+
+.source-master-card.active .bubble-digital{
+  opacity:1;
+
+  transform:
+    translateX(-50%)
+    scale(1);
+}
+
+/* HOVER */
+
+.source-bubble:hover{
+  transform:scale(1.08)!important;
+  filter:brightness(1.04);
+}
+
+/* MOBILE */
+
+@media (max-width:900px){
+
+  .source-bubble{
+    width:105px;
+    height:105px;
+    padding:12px;
+  }
+
+  .bubble-original{
+    top:-10px;
+    left:-10px;
+  }
+
+  .bubble-print{
+    right:-10px;
+  }
+
+  .bubble-digital{
+    bottom:-10px;
+  }
+
+}
