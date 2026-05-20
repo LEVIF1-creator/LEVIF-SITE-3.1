@@ -8266,13 +8266,236 @@ body .vitrine-hero .sketch-frame.main-frame {
 
 }
 /* =========================================================
-   VITRINE SOURCE — STATUTS + TEXTE CONSTITUTION
-   À COLLER APRÈS LE PATCH BULLES
+   VITRINE SOURCE — BULLES LIÉES AUX ŒUVRES + STATUTS
+   VERSION OPTIMISÉE
 ========================================================= */
+
+.section-gallery-preview,
+.section-gallery-preview .container,
+.section-gallery-preview .gallery-grid,
+.source-linked-grid {
+  overflow: visible !important;
+}
+
+.source-linked-grid {
+  gap: 4.4rem !important;
+  padding-right: 96px !important;
+}
+
+.source-master-card {
+  position: relative !important;
+  overflow: visible !important;
+  z-index: 1;
+}
+
+.source-master-card.active {
+  z-index: 20;
+}
+
+.source-trigger {
+  position: relative !important;
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  display: block !important;
+}
+
+.source-trigger img {
+  width: 100% !important;
+  display: block !important;
+  border-radius: 34px !important;
+  transition:
+    transform .45s ease,
+    filter .45s ease !important;
+}
+
+.source-trigger:hover img {
+  transform: scale(1.015) !important;
+  filter: brightness(1.02) !important;
+}
+
+.source-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0,0,0,.08),
+      rgba(0,0,0,.45)
+    ) !important;
+
+  border-radius: 34px !important;
+  opacity: 0 !important;
+  transition: opacity .35s ease !important;
+}
+
+.source-trigger:hover .source-overlay {
+  opacity: 1 !important;
+}
+
+.source-overlay span {
+  padding: 12px 20px !important;
+  border-radius: 999px !important;
+
+  background: rgba(255,255,255,.92) !important;
+  color: #111 !important;
+
+  font-size: .8rem !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  font-weight: 800 !important;
+}
+
+.source-bubbles {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 80 !important;
+}
+
+.source-bubble {
+  position: absolute !important;
+
+  width: 132px !important;
+  height: 132px !important;
+
+  border-radius: 50% !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  text-align: center !important;
+  text-decoration: none !important;
+
+  padding: 16px !important;
+
+  backdrop-filter: blur(10px) !important;
+
+  opacity: 0 !important;
+  pointer-events: auto !important;
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.14) !important;
+
+  transition:
+    transform .45s ease,
+    opacity .45s ease,
+    filter .45s ease,
+    box-shadow .45s ease !important;
+}
+
+.source-bubble strong {
+  color: #111 !important;
+  font-size: .84rem !important;
+  line-height: 1.15 !important;
+}
+
+.source-bubble small {
+  display: block !important;
+  margin-top: 4px !important;
+  color: rgba(20,16,13,.62) !important;
+  font-size: .68rem !important;
+  line-height: 1.05 !important;
+}
+
+.bubble-type {
+  font-size: .62rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: .12em !important;
+  margin-bottom: 6px !important;
+  opacity: .7 !important;
+  color: #111 !important;
+}
+
+/* ORIGINAL */
+
+.bubble-original {
+  top: -24px !important;
+  left: -24px !important;
+
+  transform: scale(.4) !important;
+
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(255,255,255,.98),
+      rgba(255,230,230,.96)
+    ) !important;
+
+  border: 2px solid rgba(180,50,50,.45) !important;
+}
+
+/* PRINT */
+
+.bubble-print {
+  right: -8px !important;
+  top: 30% !important;
+
+  transform: translateX(42%) scale(.4) !important;
+
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(255,255,255,.98),
+      rgba(225,240,255,.96)
+    ) !important;
+
+  border: 2px solid rgba(40,90,180,.45) !important;
+}
+
+/* DIGITAL */
+
+.bubble-digital {
+  bottom: -28px !important;
+  left: 50% !important;
+
+  transform:
+    translateX(-50%)
+    scale(.4) !important;
+
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(255,255,255,.98),
+      rgba(225,255,240,.96)
+    ) !important;
+
+  border: 2px solid rgba(40,160,90,.45) !important;
+}
+
+/* ACTIVATION */
+
+.source-master-card.active .bubble-original {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.source-master-card.active .bubble-print {
+  opacity: 1 !important;
+  transform: translateX(42%) scale(1) !important;
+}
+
+.source-master-card.active .bubble-digital {
+  opacity: 1 !important;
+  transform:
+    translateX(-50%)
+    scale(1) !important;
+}
+
+/* STATUTS */
 
 .source-bubble.is-coming {
   cursor: default !important;
-  filter: grayscale(0.12) saturate(0.9);
+  filter: grayscale(.12) saturate(.9);
 }
 
 .source-bubble.is-coming small {
@@ -8287,17 +8510,48 @@ body .vitrine-hero .sketch-frame.main-frame {
 
 .source-bubble.is-available {
   box-shadow:
-    0 18px 40px rgba(0,0,0,0.14),
-    0 0 0 3px rgba(47,122,69,0.10) !important;
+    0 18px 40px rgba(0,0,0,.14),
+    0 0 0 3px rgba(47,122,69,.10) !important;
 }
+
+.source-master-card .source-bubble[target="_blank"] {
+  cursor: pointer !important;
+}
+
+.source-master-card .source-bubble[target="_blank"]:hover {
+  box-shadow:
+    0 22px 46px rgba(20,16,13,.20),
+    0 0 0 4px rgba(47,122,69,.14) !important;
+}
+
+/* HOVER */
+
+.source-master-card.active .bubble-original:hover {
+  transform: scale(1.08) !important;
+  filter: brightness(1.04);
+}
+
+.source-master-card.active .bubble-print:hover {
+  transform: translateX(42%) scale(1.08) !important;
+  filter: brightness(1.04);
+}
+
+.source-master-card.active .bubble-digital:hover {
+  transform:
+    translateX(-50%)
+    scale(1.08) !important;
+  filter: brightness(1.04);
+}
+
+/* NOTE CONSTITUTION */
 
 .constitution-note {
   margin: 10px 16px 18px !important;
   max-width: 34ch !important;
 
-  color: rgba(20,16,13,0.72) !important;
+  color: rgba(20,16,13,.72) !important;
 
-  font-size: 0.86rem !important;
+  font-size: .86rem !important;
   line-height: 1.55 !important;
 
   font-style: italic;
@@ -8312,24 +8566,112 @@ body .vitrine-hero .sketch-frame.main-frame {
   font-weight: 700;
 }
 
-.source-master-card .source-bubble[target="_blank"] {
-  cursor: pointer !important;
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .source-linked-grid {
+    padding-right: 56px !important;
+  }
+
+  .bubble-print {
+    right: 0 !important;
+    transform: translateX(32%) scale(.4) !important;
+  }
+
+  .source-master-card.active .bubble-print {
+    transform: translateX(32%) scale(1) !important;
+  }
+
+  .source-master-card.active .bubble-print:hover {
+    transform: translateX(32%) scale(1.08) !important;
+  }
 }
 
-.source-master-card .source-bubble[target="_blank"]:hover {
-  box-shadow:
-    0 22px 46px rgba(20,16,13,0.20),
-    0 0 0 4px rgba(47,122,69,0.14) !important;
+@media (max-width: 900px) {
+  .source-linked-grid {
+    gap: 3.8rem !important;
+    padding-right: 0 !important;
+  }
+
+  .source-bubble {
+    width: 105px !important;
+    height: 105px !important;
+    padding: 12px !important;
+  }
+
+  .source-bubble strong {
+    font-size: .72rem !important;
+  }
+
+  .source-bubble small {
+    font-size: .6rem !important;
+  }
+
+  .bubble-type {
+    font-size: .54rem !important;
+  }
+
+  .bubble-original {
+    top: -10px !important;
+    left: -10px !important;
+  }
+
+  .bubble-print {
+    right: -10px !important;
+    top: 32% !important;
+    transform: scale(.4) !important;
+  }
+
+  .source-master-card.active .bubble-print {
+    transform: scale(1) !important;
+  }
+
+  .source-master-card.active .bubble-print:hover {
+    transform: scale(1.08) !important;
+  }
+
+  .bubble-digital {
+    bottom: -10px !important;
+  }
 }
 
 @media (max-width: 680px) {
   .constitution-note {
     margin: 8px 12px 14px !important;
-    font-size: 0.78rem !important;
+    font-size: .78rem !important;
     line-height: 1.45 !important;
   }
 
   .constitution-note::before {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .source-bubble {
+    width: 92px !important;
+    height: 92px !important;
+    padding: 9px !important;
+  }
+
+  .source-bubble strong {
+    font-size: .66rem !important;
+  }
+
+  .source-bubble small {
+    display: none !important;
+  }
+
+  .bubble-original {
+    top: -6px !important;
+    left: -6px !important;
+  }
+
+  .bubble-print {
+    right: -6px !important;
+  }
+
+  .bubble-digital {
+    bottom: -6px !important;
   }
 }
