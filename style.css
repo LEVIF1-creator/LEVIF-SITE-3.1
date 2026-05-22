@@ -8675,3 +8675,354 @@ body .vitrine-hero .sketch-frame.main-frame {
     bottom: -6px !important;
   }
 }
+/* =========================================================
+   CARICKAT — PATCH TRACE / VISAGE / CHATBOT
+   AJOUTER TOUT EN BAS DU CSS ACTUEL
+   ========================================================= */
+
+/* =========================
+   TRACE COUNTER VIVANT
+========================= */
+
+.trace-counter-widget{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:28px;
+  flex-wrap:wrap;
+  z-index:30;
+}
+
+.trace-guide{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-family:"Caveat",cursive;
+  font-size:1.4rem;
+  color:var(--red);
+  animation:traceFloat 2.2s ease-in-out infinite;
+}
+
+.trace-guide.hidden{
+  opacity:0;
+  pointer-events:none;
+}
+
+.trace-guide-arrow{
+  font-size:1.3rem;
+}
+
+.trace-click-button{
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  border:2px solid rgba(180,40,40,0.5);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.72));
+  color:var(--red);
+  font-weight:900;
+  font-size:1.2rem;
+  cursor:pointer;
+  transition:0.25s ease;
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.08),
+    0 0 22px rgba(190,50,50,0.18);
+}
+
+.trace-click-button:hover{
+  transform:translateY(-4px) scale(1.06);
+}
+
+.trace-click-button.trace-clicked{
+  background:rgba(190,40,40,0.12);
+  border-color:rgba(190,40,40,0.8);
+}
+
+.trace-count-display{
+  min-width:120px;
+  padding:12px 18px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.72);
+  border:1px solid rgba(0,0,0,0.08);
+  backdrop-filter:blur(10px);
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+}
+
+#traceCountNumber{
+  font-size:1.1rem;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+/* =========================
+   VISAGE INTERACTIF
+========================= */
+
+.hero-visual{
+  position:relative;
+}
+
+.face-trigger-guide{
+  position:absolute;
+  top:18px;
+  right:-22px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-family:"Caveat",cursive;
+  font-size:1.5rem;
+  color:var(--blue-pencil);
+  z-index:60;
+  animation:traceFloat 2.2s ease-in-out infinite;
+}
+
+.face-trigger-guide.hidden{
+  opacity:0;
+  pointer-events:none;
+}
+
+.face-trigger-button{
+  position:absolute;
+  bottom:-18px;
+  right:10px;
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.72));
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.14),
+    0 0 28px rgba(38,63,112,0.24);
+  overflow:hidden;
+  z-index:55;
+  transition:0.25s ease;
+}
+
+.face-trigger-button:hover{
+  transform:scale(1.08) rotate(-2deg);
+}
+
+.face-trigger-button img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* =========================
+   BULLE VISAGE
+========================= */
+
+.face-popup{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.38);
+  backdrop-filter:blur(8px);
+  opacity:0;
+  pointer-events:none;
+  transition:0.3s ease;
+  z-index:999;
+}
+
+.face-popup.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.face-popup-card{
+  width:min(92vw,560px);
+  background:rgba(255,250,240,0.96);
+  border-radius:34px;
+  padding:34px;
+  position:relative;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.2);
+  border:2px solid rgba(0,0,0,0.06);
+}
+
+.face-popup-card h3{
+  margin-top:0;
+  font-size:2rem;
+}
+
+.face-popup-close{
+  position:absolute;
+  top:16px;
+  right:16px;
+  border:none;
+  background:none;
+  font-size:1.5rem;
+  cursor:pointer;
+}
+
+.face-choice-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-top:20px;
+}
+
+.face-choice-grid button{
+  border:none;
+  border-radius:18px;
+  padding:14px;
+  background:white;
+  cursor:pointer;
+  font-weight:700;
+  transition:0.2s ease;
+}
+
+.face-choice-grid button:hover{
+  transform:translateY(-3px);
+}
+
+.face-email{
+  margin-top:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.face-email input{
+  padding:14px;
+  border-radius:16px;
+  border:1px solid rgba(0,0,0,0.12);
+  font-size:1rem;
+}
+
+.face-email button{
+  border:none;
+  border-radius:18px;
+  padding:16px;
+  cursor:pointer;
+  font-weight:800;
+  background:var(--red);
+  color:white;
+}
+
+/* =========================
+   CHATBOT ORBIT
+========================= */
+
+.carickat-chatbot{
+  position:fixed;
+  bottom:24px;
+  left:24px;
+  z-index:999;
+}
+
+.carickat-chatbot-button{
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  font-weight:900;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.96), rgba(255,255,255,0.78));
+  box-shadow:
+    0 14px 40px rgba(0,0,0,0.16),
+    0 0 30px rgba(38,63,112,0.24);
+  color:var(--blue-pencil);
+  transition:0.25s ease;
+}
+
+.carickat-chatbot-button:hover{
+  transform:scale(1.08);
+}
+
+.chatbot-panel{
+  position:absolute;
+  bottom:96px;
+  left:0;
+  width:320px;
+  padding:22px;
+  border-radius:26px;
+  background:rgba(255,250,240,0.98);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.18);
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(10px);
+  transition:0.28s ease;
+}
+
+.chatbot-panel.active{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+
+.chatbot-panel h4{
+  margin-top:0;
+}
+
+.chatbot-panel p{
+  font-size:0.95rem;
+  line-height:1.5;
+}
+
+.chatbot-actions{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:16px;
+}
+
+.chatbot-actions a{
+  text-decoration:none;
+  border-radius:16px;
+  padding:12px 14px;
+  background:white;
+  color:inherit;
+  font-weight:700;
+  transition:0.2s ease;
+}
+
+.chatbot-actions a:hover{
+  transform:translateX(4px);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes traceFloat{
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(-4px);}
+  100%{transform:translateY(0px);}
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .face-trigger-guide{
+    right:0;
+    top:-10px;
+    font-size:1.2rem;
+  }
+
+  .face-trigger-button{
+    width:68px;
+    height:68px;
+    right:0;
+  }
+
+  .carickat-chatbot{
+    bottom:18px;
+    left:18px;
+  }
+
+  .chatbot-panel{
+    width:86vw;
+  }
+
+}
