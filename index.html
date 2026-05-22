@@ -453,7 +453,85 @@ traceButton.addEventListener("click", () => {
   }, 220);
 });
 </script>
+<script>
+const traceButton = document.getElementById("traceClickButton");
+const traceCount = document.getElementById("traceCountNumber");
+const traceGuide = document.querySelector(".trace-guide");
 
+async function loadTraceCount() {
+
+  try {
+
+    const response = await fetch("/api/trace");
+    const data = await response.json();
+
+    traceCount.textContent =
+      String(data.count).padStart(3, "0");
+
+  } catch (error) {
+
+    console.error("Erreur compteur:", error);
+
+  }
+
+}
+
+async function addTrace() {
+
+  if (
+    localStorage.getItem("carickatTraceClickedV4")
+    === "true"
+  ) return;
+
+  try {
+
+    const response = await fetch("/api/trace", {
+      method: "POST"
+    });
+
+    const data = await response.json();
+
+    traceCount.textContent =
+      String(data.count).padStart(3, "0");
+
+    localStorage.setItem(
+      "carickatTraceClickedV4",
+      "true"
+    );
+
+    traceButton.innerText = "✓";
+    traceButton.classList.add("trace-clicked");
+
+    if (traceGuide) {
+      traceGuide.style.display = "none";
+    }
+
+  } catch (error) {
+
+    console.error("Erreur ajout trace:", error);
+
+  }
+
+}
+
+loadTraceCount();
+
+if (
+  localStorage.getItem("carickatTraceClickedV4")
+  === "true"
+) {
+
+  traceButton.innerText = "✓";
+  traceButton.classList.add("trace-clicked");
+
+  if (traceGuide) {
+    traceGuide.style.display = "none";
+  }
+
+}
+
+traceButton.addEventListener("click", addTrace);
+</script>
 <script>
 document.body.classList.add("page-enter");
 
