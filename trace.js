@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!traceButton || !traceCount) return;
 
-  const TRACE_API_URL = "https://hook.eu1.make.com/TON_WEBHOOK_ICI";
+  const TRACE_API_URL = "https://hook.eu1.make.com/fw2lb6cqupenxbq2jmfq6p6669kcy7sp";
 
   const VISITOR_ID_KEY = "carickatVisitorIdV1";
   const CLICKED_KEY = "carickatTraceClickedV3";
