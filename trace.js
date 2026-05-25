@@ -1,17 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const traceButton = document.getElementById("traceClickButton");
   const traceCount = document.getElementById("traceCountNumber");
 
   if (!traceButton || !traceCount) return;
 
-  const TRACE_API_URL = "/api/trace";
+  const TRACE_API_URL = "https://hook.eu1.make.com/TON_WEBHOOK_ICI";
+
   const VISITOR_ID_KEY = "carickatVisitorIdV1";
   const CLICKED_KEY = "carickatTraceClickedV3";
 
   function getVisitorId() {
+
     let visitorId = localStorage.getItem(VISITOR_ID_KEY);
 
     if (!visitorId) {
+
       visitorId =
         "visitor_" +
         Date.now() +
@@ -25,16 +29,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   traceButton.addEventListener("click", async () => {
+
     if (localStorage.getItem(CLICKED_KEY) === "true") {
+
       traceButton.innerText = "✓";
       traceButton.classList.add("trace-clicked");
       traceButton.disabled = true;
+
       return;
     }
 
     traceButton.innerText = "...";
 
     try {
+
       const response = await fetch(TRACE_API_URL, {
         method: "POST",
         headers: {
@@ -57,15 +65,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       localStorage.setItem(CLICKED_KEY, "true");
+
       traceButton.innerText = "✓";
       traceButton.classList.add("trace-clicked");
       traceButton.disabled = true;
 
     } catch (error) {
+
       console.error("Erreur trace :", error);
 
       traceButton.innerText = "+1";
       traceButton.disabled = false;
+
       alert("Le compteur n'est pas encore connecté au serveur.");
     }
   });
