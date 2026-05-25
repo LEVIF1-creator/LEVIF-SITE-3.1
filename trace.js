@@ -56,8 +56,15 @@ document.addEventListener("DOMContentLoaded", () => {
         })
       });
 
-      const data = await response.json();
+      if (!response.ok) {
+  throw new Error("Webhook Make non joignable");
+}
 
+const data = await response.json();
+
+if (!data || data.success !== true) {
+  throw new Error("Réponse Make invalide");
+}
       const total = data.total ?? data.count ?? null;
 
       if (total !== null) {
