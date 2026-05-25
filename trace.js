@@ -11,11 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const VISITOR_ID_KEY = "carickatVisitorIdV1";
   const CLICKED_KEY = "carickatTraceClickedV3";
-     if (localStorage.getItem(CLICKED_KEY) === "true") {
-  traceButton.innerText = "✓";
-  traceButton.classList.add("trace-clicked");
-  traceButton.disabled = true;
-}
+
+  if (localStorage.getItem(CLICKED_KEY) === "true") {
+    traceButton.innerText = "✓";
+    traceButton.classList.add("trace-clicked");
+    traceButton.disabled = true;
+  }
+
   function getVisitorId() {
     let visitorId = localStorage.getItem(VISITOR_ID_KEY);
 
@@ -64,14 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         data = {};
       }
 
-      const total = data.total ?? data.count ?? null;
-
-      if (total !== null) {
-        traceCount.textContent = String(total).padStart(3, "0");
-      } else {
-        const current = parseInt(traceCount.textContent || "0", 10) || 0;
-        traceCount.textContent = String(current + 1).padStart(3, "0");
-      }
+      traceCount.textContent = String(data.total).padStart(3, "0");
 
       localStorage.setItem(CLICKED_KEY, "true");
 
@@ -81,8 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } catch (error) {
       console.error("Erreur trace :", error);
+
       traceButton.innerText = "+1";
       traceButton.disabled = false;
+
       alert("Erreur : le webhook Make n'a pas été joint.");
     }
   });
