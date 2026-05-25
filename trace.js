@@ -11,7 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const VISITOR_ID_KEY = "carickatVisitorIdV1";
   const CLICKED_KEY = "carickatTraceClickedV3";
-
+     if (localStorage.getItem(CLICKED_KEY) === "true") {
+  traceButton.innerText = "✓";
+  traceButton.classList.add("trace-clicked");
+  traceButton.disabled = true;
+}
   function getVisitorId() {
     let visitorId = localStorage.getItem(VISITOR_ID_KEY);
 
