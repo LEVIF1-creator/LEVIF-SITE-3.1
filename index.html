@@ -419,39 +419,7 @@
 </div>
 
 <script>
-const traceButton = document.getElementById("traceClickButton");
-const traceCount = document.getElementById("traceCountNumber");
-
-let count = localStorage.getItem("carickatTraceCountV2")
-  ? parseInt(localStorage.getItem("carickatTraceCountV2"))
-  : 0;
-
-traceCount.textContent = String(count).padStart(3, "0");
-
-const alreadyClicked = localStorage.getItem("carickatTraceClickedV2");
-
-if (alreadyClicked === "true") {
-  traceButton.disabled = true;
-  traceButton.innerText = "✓";
-}
-
-traceButton.addEventListener("click", () => {
-  if (localStorage.getItem("carickatTraceClickedV2") === "true") return;
-
-  count++;
-
-  traceCount.textContent = String(count).padStart(3, "0");
-
-  localStorage.setItem("carickatTraceCountV2", count);
-  localStorage.setItem("carickatTraceClickedV2", "true");
-
-  traceButton.innerText = "✓";
-  traceButton.classList.add("trace-clicked");
-
-  setTimeout(() => {
-    traceButton.disabled = true;
-  }, 220);
-});
+<script src="./trace.js?v=11"></script>
 </script>
 
 <script>
