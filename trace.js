@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   traceButton.addEventListener("click", async () => {
     if (localStorage.getItem(CLICKED_KEY) === "true") {
-      alert("Déjà cliqué sur cet appareil");
       traceButton.innerText = "✓";
       traceButton.classList.add("trace-clicked");
       traceButton.disabled = true;
