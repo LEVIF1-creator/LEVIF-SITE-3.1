@@ -97,14 +97,12 @@ document.addEventListener("DOMContentLoaded", () => {
       traceButton.classList.add("trace-clicked");
       traceButton.disabled = true;
 
-    } catch (error) {
-  console.error("Erreur trace complète :", error);
+        } catch (error) {
+      console.error("Erreur trace :", error);
 
-  traceButton.innerText = "+1";
-  traceButton.disabled = false;
-
-  alert("Erreur technique compteur. Ouvre la console pour voir le détail.");
-}
+      traceButton.innerText = "+1";
+      traceButton.disabled = false;
+    }
   });
   loadCurrentTotal();
 });
