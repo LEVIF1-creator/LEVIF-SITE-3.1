@@ -33,6 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       const data = await response.json();
+
+      if (!data.success) {
+        throw new Error(data.error || "Trace API failed");
+      }
+
       updateCount(data.total);
 
     } catch (error) {
@@ -89,6 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const data = await response.json();
 
+      if (!data.success) {
+        throw new Error(data.error || "Trace API failed");
+      }
+
       updateCount(data.total);
 
       localStorage.setItem(CLICKED_KEY, "true");
@@ -97,12 +106,13 @@ document.addEventListener("DOMContentLoaded", () => {
       traceButton.classList.add("trace-clicked");
       traceButton.disabled = true;
 
-        } catch (error) {
+    } catch (error) {
       console.error("Erreur trace :", error);
 
       traceButton.innerText = "+1";
       traceButton.disabled = false;
     }
   });
+
   loadCurrentTotal();
 });
