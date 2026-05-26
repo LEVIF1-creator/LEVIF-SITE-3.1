@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const TRACE_API_URL = "https://hook.eu1.make.com/fw2lb6cqupenxbq2jmfq6p6669kcy7sp";
 
-  const VISITOR_ID_KEY = "carickatVisitorIdV1";
-  const CLICKED_KEY = "carickatTraceClickedV3";
+  const VISITOR_ID_KEY = "carickatVisitorIdV2";
+  const CLICKED_KEY = "carickatTraceClickedV4";
 
   function updateCount(total) {
     if (total === undefined || total === null || total === "") return;
