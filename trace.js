@@ -12,6 +12,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const VISITOR_ID_KEY = "carickatVisitorIdV1";
   const CLICKED_KEY = "carickatTraceClickedV3";
 
+  function updateCount(total) {
+    if (total === undefined || total === null || total === "") return;
+    traceCount.textContent = String(total).padStart(3, "0");
+  }
+
+  async function loadCurrentTotal() {
+    try {
+      const response = await fetch(TRACE_API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          action: "get_total",
+          page: window.location.pathname,
+          source: "page_load",
+          user_agent: navigator.userAgent
+        })
+      });
+
+      const data = await response.json();
+      updateCount(data.total);
+
+    } catch (error) {
+      console.error("Erreur chargement total :", error);
+    }
+  }
+
   if (localStorage.getItem(CLICKED_KEY) === "true") {
     traceButton.innerText = "✓";
     traceButton.classList.add("trace-clicked");
@@ -51,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
+          action: "click",
           visitor_id: getVisitorId(),
           page: window.location.pathname,
           source: "trace_button",
@@ -58,15 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
         })
       });
 
-      let data = {};
+      const data = await response.json();
 
-      try {
-        data = await response.json();
-      } catch (jsonError) {
-        data = {};
-      }
-
-      traceCount.textContent = String(data.total).padStart(3, "0");
+      updateCount(data.total);
 
       localStorage.setItem(CLICKED_KEY, "true");
 
@@ -83,4 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Erreur : le webhook Make n'a pas été joint.");
     }
   });
+
+  loadCurrentTotal();
 });
