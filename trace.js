@@ -105,6 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   alert("Erreur technique compteur. Ouvre la console pour voir le détail.");
 }
-
+  });
   loadCurrentTotal();
 });
