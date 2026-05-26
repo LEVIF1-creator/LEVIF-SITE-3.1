@@ -34,12 +34,28 @@ export default async function handler(req, res) {
 
     const rawText = await makeResponse.text();
 
-    let makeData = {};
+    let makeData;
 
     try {
       makeData = JSON.parse(rawText);
     } catch (error) {
-      makeData = {};
+      return res.status(502).json({
+        success: false,
+        total: 0,
+        error: "Make did not return JSON",
+        make_status: makeResponse.status,
+        make_raw: rawText
+      });
+    }
+
+    if (!makeResponse.ok || makeData.success !== true) {
+      return res.status(502).json({
+        success: false,
+        total: 0,
+        error: "Make response failed",
+        make_status: makeResponse.status,
+        make_raw: rawText
+      });
     }
 
     const total =
