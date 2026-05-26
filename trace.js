@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const TRACE_API_URL = "https://hook.eu1.make.com/fw2lb6cqupenxbq2jmfq6p6669kcy7sp";
+  const TRACE_API_URL = "/api/trace";
 
   const VISITOR_ID_KEY = "carickatVisitorIdV2";
   const CLICKED_KEY = "carickatTraceClickedV4";
