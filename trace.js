@@ -97,15 +97,15 @@ document.addEventListener("DOMContentLoaded", () => {
       traceButton.classList.add("trace-clicked");
       traceButton.disabled = true;
 
+    } 
     } catch (error) {
-      console.error("Erreur trace :", error);
+  console.error("Erreur trace complète :", error);
 
-      traceButton.innerText = "+1";
-      traceButton.disabled = false;
+  traceButton.innerText = "+1";
+  traceButton.disabled = false;
 
-      alert("Erreur : le webhook Make n'a pas été joint.");
-    }
-  });
+  alert("Erreur technique compteur. Ouvre la console pour voir le détail.");
+}
 
   loadCurrentTotal();
 });
