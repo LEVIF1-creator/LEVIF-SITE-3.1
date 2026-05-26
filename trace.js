@@ -97,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
       traceButton.classList.add("trace-clicked");
       traceButton.disabled = true;
 
-    } 
     } catch (error) {
   console.error("Erreur trace complète :", error);
 
