@@ -12,6 +12,7 @@ export default async function handler(req, res) {
   if (req.method === "GET") {
     return res.status(200).json({
       success: true,
+      total: 0,
       message: "API trace active"
     });
   }
@@ -19,9 +20,12 @@ export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({
       success: false,
+      total: 0,
       error: "Method not allowed"
     });
   }
+
+  const action = req.body?.action || "";
 
   try {
     const makeResponse = await fetch(MAKE_WEBHOOK_URL, {
@@ -34,45 +38,36 @@ export default async function handler(req, res) {
 
     const rawText = await makeResponse.text();
 
-    let makeData;
+    let makeData = null;
 
     try {
-      makeData = JSON.parse(rawText);
+      makeData = rawText ? JSON.parse(rawText) : null;
     } catch (error) {
-      return res.status(502).json({
-        success: false,
-        total: 0,
-        error: "Make did not return JSON",
-        make_status: makeResponse.status,
-        make_raw: rawText
-      });
+      makeData = null;
     }
 
-    if (!makeResponse.ok || makeData.success !== true) {
-      return res.status(502).json({
-        success: false,
-        total: 0,
-        error: "Make response failed",
-        make_status: makeResponse.status,
-        make_raw: rawText
+    if (makeData && makeData.success === true) {
+      return res.status(200).json({
+        success: true,
+        total: makeData.total ?? 0,
+        action: action
       });
     }
-
-    const total =
-      makeData.total !== undefined && makeData.total !== null
-        ? makeData.total
-        : 0;
 
     return res.status(200).json({
-      success: true,
-      total: total,
-      make_status: makeResponse.status
+      success: false,
+      total: 0,
+      action: action,
+      error: "Make response invalid",
+      make_status: makeResponse.status,
+      make_raw: rawText
     });
 
   } catch (error) {
     return res.status(200).json({
       success: false,
       total: 0,
+      action: action,
       error: "Make webhook unreachable"
     });
   }
