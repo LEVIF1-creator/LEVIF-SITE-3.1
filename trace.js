@@ -98,7 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
         throw new Error(data.error || "Trace API failed");
       }
 
-      await loadCurrentTotal();
+     await new Promise(resolve => setTimeout(resolve, 1200));
+    await loadCurrentTotal(); 
 
       localStorage.setItem(CLICKED_KEY, "true");
 
