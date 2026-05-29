@@ -1,1 +1,43 @@
+/* EXPRESSION — tension / ombres / présence humaine */
 
+:root {
+  --vitrine-main: #a92a22;
+  --vitrine-dark: #211512;
+}
+
+body {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(169,42,34,.14), transparent 24%),
+    radial-gradient(circle at 80% 78%, rgba(21,17,13,.08), transparent 30%),
+    linear-gradient(135deg, #fff8f5, #ffffff 48%, #f2ebe7) !important;
+}
+
+.vitrine-hero .kicker,
+.section-value .kicker,
+.section-conversion .kicker {
+  color: var(--vitrine-main);
+  border-color: rgba(169,42,34,.3);
+}
+
+.vitrine-hero h1::after,
+.section-intro h2::after {
+  background: linear-gradient(90deg, var(--vitrine-main), rgba(21,17,13,.28), transparent);
+}
+
+.paper-card,
+.paper-panel,
+.art-card,
+.offer-card,
+.final-card {
+  box-shadow:
+    0 28px 80px rgba(21,17,13,.14),
+    inset 0 0 0 1px rgba(255,255,255,.6);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #681b17, #a92a22, #d74432) !important;
+}
+
+.art-card:hover {
+  transform: translateY(-8px) rotate(-.8deg);
+}
