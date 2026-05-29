@@ -1,0 +1,55 @@
+/* HÉROS — coloré / icône / pop culture premium */
+
+:root {
+  --vitrine-main: #102f78;
+  --vitrine-accent: #d4a638;
+  --vitrine-red: #a92a22;
+  --vitrine-purple: #47306f;
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 16%, rgba(16,47,120,.13), transparent 24%),
+    radial-gradient(circle at 84% 18%, rgba(212,166,56,.16), transparent 26%),
+    radial-gradient(circle at 70% 88%, rgba(169,42,34,.10), transparent 28%),
+    linear-gradient(135deg, #fffdf6, #ffffff 46%, #f1ecff) !important;
+}
+
+.vitrine-hero .kicker,
+.section-value .kicker,
+.section-conversion .kicker {
+  color: var(--vitrine-main);
+  border-color: rgba(212,166,56,.34);
+}
+
+.vitrine-hero h1::after,
+.section-intro h2::after {
+  background: linear-gradient(90deg, var(--vitrine-main), var(--vitrine-accent), var(--vitrine-red), transparent);
+}
+
+.vitrine-hero .main-frame {
+  box-shadow:
+    0 0 0 10px rgba(255,255,255,.75),
+    0 0 0 1px rgba(212,166,56,.35),
+    0 42px 110px rgba(16,47,120,.18);
+}
+
+.art-card,
+.offer-card,
+.final-card {
+  border-color: rgba(212,166,56,.22);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #071d52, #102f78, #d4a638) !important;
+}
+
+.section-intro::after {
+  content: "icône revisitée";
+  display: inline-block;
+  margin-top: 10px;
+  color: rgba(212,166,56,.72);
+  font-family: "Caveat", cursive;
+  font-size: 1.35rem;
+  transform: rotate(-4deg);
+}
