@@ -1,44 +1,52 @@
-/* SOURCE — galerie premium / œuvre rare / collection */
-
-:root {
-  --vitrine-main: #102f78;
-  --vitrine-accent: #a92a22;
-  --vitrine-gold: #b89b5e;
-}
+/* SOURCE V2 — galerie froide / œuvre rare / collection */
 
 body {
   background:
-    radial-gradient(circle at 78% 12%, rgba(16,47,120,.09), transparent 26%),
-    radial-gradient(circle at 18% 86%, rgba(184,155,94,.12), transparent 28%),
-    linear-gradient(135deg, #fffdf7, #ffffff 48%, #f6f3ea) !important;
+    radial-gradient(circle at 76% 12%, rgba(16,47,120,.16), transparent 28%),
+    radial-gradient(circle at 12% 90%, rgba(184,155,94,.16), transparent 30%),
+    linear-gradient(135deg, #fbfbf7, #ffffff 46%, #eef2f9) !important;
 }
 
-.vitrine-hero .kicker,
-.section-value .kicker,
-.section-conversion .kicker {
-  color: var(--vitrine-main);
-  border-color: rgba(16,47,120,.24);
+.vitrine-hero {
+  min-height: 88vh;
 }
 
-.vitrine-hero h1::after,
-.section-intro h2::after {
-  background: linear-gradient(90deg, var(--vitrine-main), rgba(184,155,94,.5), transparent);
+.vitrine-hero .hero-content {
+  padding: 38px;
+  border-left: 1px solid rgba(16,47,120,.22);
+  background: rgba(255,255,255,.42);
+  backdrop-filter: blur(14px);
+}
+
+.vitrine-hero h1 {
+  color: #071d52;
 }
 
 .vitrine-hero .main-frame {
+  border-radius: 18px !important;
+  transform: rotate(0deg) !important;
   box-shadow:
-    0 0 0 12px rgba(255,255,255,.72),
-    0 42px 110px rgba(16,47,120,.18);
+    0 0 0 1px rgba(184,155,94,.28),
+    0 40px 120px rgba(16,47,120,.22) !important;
 }
 
-.source-master-card,
+.vitrine-hero .main-frame img {
+  border-radius: 12px !important;
+}
+
+.art-card,
 .offer-card,
-.final-card {
-  border-color: rgba(16,47,120,.18);
+.final-card,
+.paper-card,
+.paper-panel {
+  border-radius: 18px !important;
+  border-color: rgba(16,47,120,.20) !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(242,245,250,.84)) !important;
 }
 
-.source-bubble {
-  box-shadow: 0 24px 60px rgba(16,47,120,.16);
+.kicker {
+  color: #102f78 !important;
+  border-color: rgba(16,47,120,.28) !important;
 }
 
 .btn-primary {
