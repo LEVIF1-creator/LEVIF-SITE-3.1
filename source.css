@@ -1,0 +1,46 @@
+/* SOURCE — galerie premium / œuvre rare / collection */
+
+:root {
+  --vitrine-main: #102f78;
+  --vitrine-accent: #a92a22;
+  --vitrine-gold: #b89b5e;
+}
+
+body {
+  background:
+    radial-gradient(circle at 78% 12%, rgba(16,47,120,.09), transparent 26%),
+    radial-gradient(circle at 18% 86%, rgba(184,155,94,.12), transparent 28%),
+    linear-gradient(135deg, #fffdf7, #ffffff 48%, #f6f3ea) !important;
+}
+
+.vitrine-hero .kicker,
+.section-value .kicker,
+.section-conversion .kicker {
+  color: var(--vitrine-main);
+  border-color: rgba(16,47,120,.24);
+}
+
+.vitrine-hero h1::after,
+.section-intro h2::after {
+  background: linear-gradient(90deg, var(--vitrine-main), rgba(184,155,94,.5), transparent);
+}
+
+.vitrine-hero .main-frame {
+  box-shadow:
+    0 0 0 12px rgba(255,255,255,.72),
+    0 42px 110px rgba(16,47,120,.18);
+}
+
+.source-master-card,
+.offer-card,
+.final-card {
+  border-color: rgba(16,47,120,.18);
+}
+
+.source-bubble {
+  box-shadow: 0 24px 60px rgba(16,47,120,.16);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #071d52, #102f78, #1f4c9d) !important;
+}
