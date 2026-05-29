@@ -1,0 +1,53 @@
+/* CARICATURE — vivant / théâtral / satire / visage */
+
+:root {
+  --vitrine-main: #a92a22;
+  --vitrine-blue: #102f78;
+  --vitrine-yellow: #d4a638;
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(169,42,34,.12), transparent 22%),
+    radial-gradient(circle at 84% 16%, rgba(16,47,120,.1), transparent 26%),
+    radial-gradient(circle at 72% 88%, rgba(212,166,56,.12), transparent 28%),
+    linear-gradient(135deg, #fffdf6, #ffffff 50%, #f8f0e4) !important;
+}
+
+.vitrine-hero .kicker,
+.section-value .kicker,
+.section-conversion .kicker {
+  color: var(--vitrine-main);
+  border-color: rgba(169,42,34,.28);
+}
+
+.vitrine-hero h1::after,
+.section-intro h2::after {
+  background: linear-gradient(90deg, var(--vitrine-main), var(--vitrine-blue), transparent);
+}
+
+.art-card:nth-child(2n) {
+  transform: rotate(.25deg);
+}
+
+.art-card:nth-child(3n) {
+  transform: rotate(-.25deg);
+}
+
+.art-card:hover {
+  transform: translateY(-9px) rotate(-1deg) scale(1.01);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #7e1f1a, #a92a22, #102f78) !important;
+}
+
+.section-intro::after {
+  content: "visage observé";
+  display: inline-block;
+  margin-top: 10px;
+  color: rgba(169,42,34,.48);
+  font-family: "Caveat", cursive;
+  font-size: 1.35rem;
+  transform: rotate(-5deg);
+}
