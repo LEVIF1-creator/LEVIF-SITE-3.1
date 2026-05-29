@@ -1,0 +1,47 @@
+/* NATURE — organique / respiration / carnet vivant naturel */
+
+:root {
+  --vitrine-main: #2f7a45;
+  --vitrine-accent: #5d9f68;
+  --vitrine-warm: #efe6d2;
+}
+
+body {
+  background:
+    radial-gradient(circle at 16% 18%, rgba(47,122,69,.13), transparent 26%),
+    radial-gradient(circle at 86% 78%, rgba(93,159,104,.12), transparent 30%),
+    linear-gradient(135deg, #fffdf5, #fbfff8 46%, #f1ead8) !important;
+}
+
+.vitrine-hero .kicker,
+.section-value .kicker,
+.section-conversion .kicker {
+  color: var(--vitrine-main);
+  border-color: rgba(47,122,69,.26);
+}
+
+.vitrine-hero h1::after,
+.section-intro h2::after {
+  background: linear-gradient(90deg, var(--vitrine-main), rgba(93,159,104,.42), transparent);
+}
+
+.vitrine-hero .main-frame,
+.art-card,
+.offer-card {
+  border-color: rgba(47,122,69,.18);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #1d5b34, #2f7a45, #5d9f68) !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .vitrine-hero .main-frame {
+    animation: natureBreath 8s ease-in-out infinite;
+  }
+}
+
+@keyframes natureBreath {
+  0%,100% { transform: rotate(-2deg) scale(1); }
+  50% { transform: rotate(-1deg) scale(1.018); }
+}
