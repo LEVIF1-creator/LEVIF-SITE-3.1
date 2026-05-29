@@ -1,37 +1,57 @@
-/* SOURCE V2 — galerie froide / œuvre rare / collection */
+/* SOURCE V3 — salle d’archive / œuvre rare / collection froide */
 
 body {
   background:
-    radial-gradient(circle at 76% 12%, rgba(16,47,120,.16), transparent 28%),
-    radial-gradient(circle at 12% 90%, rgba(184,155,94,.16), transparent 30%),
-    linear-gradient(135deg, #fbfbf7, #ffffff 46%, #eef2f9) !important;
+    linear-gradient(90deg, rgba(16,47,120,.035) 1px, transparent 1px),
+    linear-gradient(rgba(16,47,120,.025) 1px, transparent 1px),
+    radial-gradient(circle at 78% 14%, rgba(16,47,120,.16), transparent 28%),
+    radial-gradient(circle at 14% 86%, rgba(184,155,94,.14), transparent 30%),
+    linear-gradient(135deg, #fbfbf7, #ffffff 48%, #eef2f9) !important;
+  background-size: 72px 72px, 72px 72px, auto, auto, auto !important;
 }
 
 .vitrine-hero {
-  min-height: 88vh;
+  min-height: 86vh;
 }
 
 .vitrine-hero .hero-content {
-  padding: 38px;
-  border-left: 1px solid rgba(16,47,120,.22);
-  background: rgba(255,255,255,.42);
-  backdrop-filter: blur(14px);
+  padding: 42px;
+  border-left: 2px solid rgba(16,47,120,.32);
+  background: rgba(255,255,255,.48);
+  backdrop-filter: blur(18px);
+}
+
+.vitrine-hero .hero-content::before {
+  content: "archive originale";
+  display: block;
+  margin-bottom: 18px;
+  color: rgba(16,47,120,.42);
+  font-family: "Caveat", cursive;
+  font-size: 1.5rem;
+  transform: rotate(-3deg);
 }
 
 .vitrine-hero h1 {
   color: #071d52;
 }
 
+.vitrine-hero h1::after,
+.section-intro h2::after {
+  background: linear-gradient(90deg, #071d52, rgba(184,155,94,.58), transparent) !important;
+}
+
 .vitrine-hero .main-frame {
   border-radius: 18px !important;
   transform: rotate(0deg) !important;
   box-shadow:
-    0 0 0 1px rgba(184,155,94,.28),
-    0 40px 120px rgba(16,47,120,.22) !important;
+    0 0 0 1px rgba(184,155,94,.35),
+    0 0 0 16px rgba(255,255,255,.58),
+    0 48px 130px rgba(16,47,120,.22) !important;
 }
 
 .vitrine-hero .main-frame img {
   border-radius: 12px !important;
+  filter: contrast(1.08) saturate(.96);
 }
 
 .art-card,
@@ -40,8 +60,22 @@ body {
 .paper-card,
 .paper-panel {
   border-radius: 18px !important;
-  border-color: rgba(16,47,120,.20) !important;
-  background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(242,245,250,.84)) !important;
+  border-color: rgba(16,47,120,.22) !important;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.94), rgba(242,245,250,.86)) !important;
+}
+
+.art-card::after,
+.offer-card::after,
+.paper-panel::after {
+  content: "certifié carnet";
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  color: rgba(16,47,120,.28);
+  font-family: "Caveat", cursive;
+  font-size: 1.1rem;
+  transform: rotate(-4deg);
 }
 
 .kicker {
