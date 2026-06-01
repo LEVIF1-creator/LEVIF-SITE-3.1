@@ -316,17 +316,17 @@
         <form class="contact-form" id="commandeForm">
           <label>
             Nom
-            <input type="text" name="nom" placeholder="Votre nom">
+            <input type="text" name="nom" placeholder="Votre nom" required>
           </label>
 
           <label>
             Email
-            <input type="email" name="email" placeholder="votre@email.com">
+            <input type="email" name="email" placeholder="votre@email.com" required>
           </label>
 
           <label>
             Profil de la demande
-            <select name="profil-demande">
+            <select name="profil-demande" required>
               <option>Particulier</option>
               <option>Professionnel / entreprise</option>
               <option>Entrepreneur / créateur de marque</option>
@@ -338,7 +338,7 @@
 
           <label>
             Niveau de clarté de l’idée
-            <select name="clarte-idee">
+            <select name="clarte-idee" required>
               <option>J’ai une idée très claire</option>
               <option>J’ai une idée mais elle est encore floue</option>
               <option>J’ai juste une envie ou une ambiance</option>
@@ -348,7 +348,7 @@
 
           <label>
             Ambiance souhaitée
-            <select name="ambiance">
+            <select name="ambiance" required>
               <option>Je ne sais pas encore</option>
               <option>Drôle / absurde</option>
               <option>Élégant / premium</option>
@@ -362,7 +362,7 @@
 
           <label>
             Format envisagé
-            <select name="format">
+            <select name="format" required>
               <option>Je ne sais pas encore</option>
               <option>Fichier numérique HD</option>
               <option>Print / impression</option>
@@ -373,9 +373,13 @@
           </label>
 
           <label>
-            Votre idée ou votre projet
-            <textarea name="description" placeholder="Racontez votre idée : demande personnelle ou professionnelle, ambiance, personnages, animal, scène, souvenir, marque, lieu, décoration, symbole, niveau de folie, références, format, usage prévu..."></textarea>
-          </label>
+  Votre idée ou votre projet
+  <textarea
+    name="description"
+    placeholder="Racontez votre idée : demande personnelle ou professionnelle, ambiance, personnages, animal, scène, souvenir, marque, lieu, décoration, symbole, niveau de folie, références, format, usage prévu..."
+    required
+  ></textarea>
+</label>
 
           <button type="submit" class="btn dark">
             Envoyer ma demande
