@@ -313,7 +313,7 @@
           les références, le style, le format, l’usage, le lieu ou l’émotion recherchée.
         </p>
 
-        <form class="contact-form">
+        <form class="contact-form" id="commandeForm">
           <label>
             Nom
             <input type="text" name="nom" placeholder="Votre nom">
@@ -432,6 +432,50 @@
     </div>
   </div>
 </footer>
+
+<script>
+const commandeForm = document.getElementById("commandeForm");
+
+commandeForm.addEventListener("submit", async function (event) {
+  event.preventDefault();
+
+  const formData = new FormData(commandeForm);
+
+  const data = {
+    nom: formData.get("nom"),
+    email: formData.get("email"),
+    profil_demande: formData.get("profil-demande"),
+    clarte_idee: formData.get("clarte-idee"),
+    ambiance: formData.get("ambiance"),
+    format: formData.get("format"),
+    description: formData.get("description"),
+    page: "commande.html",
+    source: "site Carickat"
+  };
+
+  try {
+    await fetch("https://hook.eu1.make.com/fcs5ii9iyhg7pdxtqvngadz2hdwraecp", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    commandeForm.innerHTML = `
+      <div class="kicker">demande envoyée</div>
+      <h2>Votre idée est bien partie dans le carnet.</h2>
+      <p>
+        Merci. Je reviendrai vers vous avec une première réponse ou une demande de précision.
+      </p>
+    `;
+
+  } catch (error) {
+    alert("Une erreur est survenue. Merci de réessayer.");
+    console.error(error);
+  }
+});
+</script>
 
 </body>
 </html>
