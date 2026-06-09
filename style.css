@@ -1761,20 +1761,21 @@ button:focus-visible,
 }
 .corner-levif {
   position: fixed;
-  top: 18px;
-  left: 18px;
-  width: 90px;
+  top: 58px;
+  left: 10px;
+  width: 86px;
   height: auto;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.92;
+  opacity: 0.9;
+  mix-blend-mode: multiply;
 }
 
 @media (max-width: 700px) {
   .corner-levif {
-    width: 62px;
-    top: 12px;
-    left: 12px;
-    opacity: 0.88;
+    width: 58px;
+    top: 50px;
+    left: 6px;
+    opacity: 0.86;
   }
 }
