@@ -491,6 +491,90 @@ commandeForm.addEventListener("submit", async function (event) {
   }
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const mascotte = document.querySelector(".corner-levif");
+  if (!mascotte) return;
 
+  let lastScrollY = window.scrollY;
+  let hiddenTimeout = null;
+  let exploded = false;
+
+  function randomShake() {
+    if (exploded) return;
+    if (Math.random() > 0.28) return;
+
+    mascotte.classList.add("is-shaking");
+
+    setTimeout(() => {
+      mascotte.classList.remove("is-shaking");
+    }, 420);
+  }
+
+  document.addEventListener("click", (event) => {
+    const clickedButton = event.target.closest(
+      "a, button, .btn, .portal-card, .offer-card"
+    );
+
+    const clickedMascotte = event.target.closest(".corner-levif");
+
+    if (clickedMascotte) return;
+
+    if (clickedButton) {
+      randomShake();
+    }
+  });
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (exploded) return;
+
+      const currentScrollY = window.scrollY;
+      const scrollingDown = currentScrollY > lastScrollY;
+
+      if (
+        scrollingDown &&
+        currentScrollY > 180 &&
+        Math.random() < 0.018
+      ) {
+        mascotte.classList.add("is-hidden-scroll");
+
+        clearTimeout(hiddenTimeout);
+
+        hiddenTimeout = setTimeout(() => {
+          mascotte.classList.remove("is-hidden-scroll");
+        }, 900 + Math.random() * 1400);
+      }
+
+      lastScrollY = currentScrollY;
+    },
+    { passive: true }
+  );
+
+  mascotte.addEventListener("click", () => {
+    if (exploded) return;
+
+    exploded = true;
+
+    mascotte.classList.remove(
+      "is-shaking",
+      "is-hidden-scroll"
+    );
+
+    mascotte.classList.add("is-exploding");
+
+    setTimeout(() => {
+      mascotte.style.display = "none";
+    }, 760);
+
+    setTimeout(() => {
+      mascotte.classList.remove("is-exploding");
+      mascotte.style.display = "";
+      exploded = false;
+    }, 6000);
+  });
+});
+</script>
 </body>
 </html>
