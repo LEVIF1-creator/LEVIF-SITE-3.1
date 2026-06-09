@@ -1823,3 +1823,56 @@ button:focus-visible,
     animation-duration: 8.5s;
   }
 }
+/* PAPY FIXE — GALERIE */
+
+.galerie-papy-fixed {
+  position: fixed;
+  top: 92px;
+  right: 18px;
+  width: 240px;
+  height: auto;
+  z-index: 1200;
+  pointer-events: none;
+  opacity: 0.92;
+  mix-blend-mode: multiply;
+  transform-origin: top right;
+  animation: galeriePapyBreath 9s ease-in-out infinite;
+}
+
+/* respiration organique légère */
+
+@keyframes galeriePapyBreath {
+
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.018) rotate(0.4deg);
+  }
+
+  50% {
+    transform: scale(0.992) rotate(-0.5deg);
+  }
+
+  75% {
+    transform: scale(1.012) rotate(0.25deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .galerie-papy-fixed {
+    width: 135px;
+    top: 82px;
+    right: -6px;
+    opacity: 0.82;
+  }
+
+}
