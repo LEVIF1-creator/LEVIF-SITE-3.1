@@ -367,5 +367,39 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const smileys = [
+    "smiley-1.png","smiley-2.png","smiley-3.png","smiley-4.png",
+    "smiley-5.png","smiley-6.png","smiley-7.png","smiley-8.png"
+  ];
+
+  const behaviors = [
+    "behavior-gallery-1",
+    "behavior-gallery-2",
+    "behavior-gallery-3"
+  ];
+
+  function spawnGallerySmiley() {
+    const img = document.createElement("img");
+    img.src = smileys[Math.floor(Math.random() * smileys.length)];
+    img.className = "living-smiley is-alive " + behaviors[Math.floor(Math.random() * behaviors.length)];
+
+    img.style.left = (8 + Math.random() * 82) + "vw";
+    img.style.top = (18 + Math.random() * 66) + "vh";
+    img.style.width = (28 + Math.random() * 22) + "px";
+
+    document.body.appendChild(img);
+
+    setTimeout(() => img.remove(), 7600);
+  }
+
+  setInterval(() => {
+    if (Math.random() < 0.72) spawnGallerySmiley();
+  }, 4200);
+});
+</script>
+  
 </body>
 </html>
