@@ -1876,3 +1876,59 @@ button:focus-visible,
   }
 
 }
+.commande-character{
+  position:fixed;
+  top:96px;
+  right:22px;
+  width:118px;
+  height:auto;
+  z-index:1200;
+  pointer-events:none;
+  opacity:.94;
+
+  transition:
+    opacity .35s ease,
+    transform .45s ease;
+
+  animation:commandeBreath 5.8s ease-in-out infinite;
+}
+
+.commande-character.is-switching{
+  opacity:.45;
+  transform:scale(.96) rotate(-2deg);
+}
+
+@keyframes commandeBreath{
+
+  0%,100%{
+    transform:
+      translateY(0)
+      rotate(-1deg)
+      scale(1);
+  }
+
+  50%{
+    transform:
+      translateY(5px)
+      rotate(1deg)
+      scale(1.03);
+  }
+}
+
+@media (max-width:760px){
+
+  .commande-character{
+    top:88px;
+    right:10px;
+    width:72px;
+  }
+}
+
+@media (max-width:480px){
+
+  .commande-character{
+    top:82px;
+    right:8px;
+    width:58px;
+  }
+}
