@@ -564,5 +564,52 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
+  <script>
+function triggerSmileyRain(amount = 18) {
+  const smileys = [
+    "smiley-1.png",
+    "smiley-2.png",
+    "smiley-3.png",
+    "smiley-4.png",
+    "smiley-5.png",
+    "smiley-6.png",
+    "smiley-7.png",
+    "smiley-8.png"
+  ];
+
+  const rain = document.createElement("div");
+  rain.className = "smiley-rain";
+  document.body.appendChild(rain);
+
+  for (let i = 0; i < amount; i++) {
+    const img = document.createElement("img");
+    img.src = smileys[Math.floor(Math.random() * smileys.length)];
+
+    img.style.left = Math.random() * 92 + "vw";
+    img.style.animationDelay = Math.random() * 0.55 + "s";
+    img.style.animationDuration = 2.2 + Math.random() * 1.3 + "s";
+
+    rain.appendChild(img);
+  }
+
+  setTimeout(() => {
+    rain.remove();
+  }, 4200);
+}
+</script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const plusButton = document.querySelector(".trace-counter-widget button, #traceClickButton, .click-plus, button");
+
+  if (!plusButton) return;
+
+  plusButton.addEventListener("click", () => {
+    triggerSmileyRain(22);
+  });
+});
+</script>
+  
 </body>
 </html>
