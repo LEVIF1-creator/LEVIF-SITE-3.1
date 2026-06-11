@@ -684,6 +684,38 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+  const commandeCharacter =
+    document.getElementById("commandeCharacter");
+
+  if (!commandeCharacter) return;
+
+  const images = [
+    "perso-commande1.png",
+    "perso-commande2.png"
+  ];
+
+  let index = 0;
+
+  setInterval(() => {
+
+    commandeCharacter.classList.add("is-switching");
+
+    setTimeout(() => {
+
+      index = (index + 1) % images.length;
+
+      commandeCharacter.src = images[index];
+
+      commandeCharacter.classList.remove("is-switching");
+
+    }, 220);
+
+  }, 4200);
+
+});
+</script>
 </body>
 </html>
