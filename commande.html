@@ -686,21 +686,37 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
   
 <script>
-const commandeCharacter = document.getElementById("commandeCharacter");
+document.addEventListener("DOMContentLoaded", () => {
 
-if (commandeCharacter) {
-  let currentImage = 1;
+  const commandeCharacter =
+    document.getElementById("commandeCharacter");
 
-  setInterval(function () {
-    if (currentImage === 1) {
-      commandeCharacter.src = "perso-commande2.png";
-      currentImage = 2;
-    } else {
-      commandeCharacter.src = "perso-commande1.png";
-      currentImage = 1;
-    }
-  }, 3000);
-}
+  if (!commandeCharacter) return;
+
+  const images = [
+    "perso-commande1.png",
+    "perso-commande2.png"
+  ];
+
+  let index = 0;
+
+  setInterval(() => {
+
+    commandeCharacter.classList.add("is-switching");
+
+    setTimeout(() => {
+
+      index = (index + 1) % images.length;
+
+      commandeCharacter.src = images[index];
+
+      commandeCharacter.classList.remove("is-switching");
+
+    }, 220);
+
+  }, 4200);
+
+});
 </script>
   
 </body>
