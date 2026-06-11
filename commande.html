@@ -99,7 +99,7 @@
 
 <body>
   <img src="coin-levif.png" alt="Signature visuelle LEVIF" class="corner-levif" />
-  <img src="perso-commande1.png" alt="Petit gardien de la commande" class="commande-character" id="commandeCharacter" />
+  <img src="perso-commande1.png" alt="Gardien du carnet" class="commande-character" id="commandeCharacter" />
 
 <header class="header">
   <nav class="nav">
@@ -686,37 +686,21 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
   
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+const commandeCharacter = document.getElementById("commandeCharacter");
 
-  const commandeCharacter =
-    document.getElementById("commandeCharacter");
+if (commandeCharacter) {
+  let currentImage = 1;
 
-  if (!commandeCharacter) return;
-
-  const images = [
-    "perso-commande1.png",
-    "perso-commande2.png"
-  ];
-
-  let index = 0;
-
-  setInterval(() => {
-
-    commandeCharacter.classList.add("is-switching");
-
-    setTimeout(() => {
-
-      index = (index + 1) % images.length;
-
-      commandeCharacter.src = images[index];
-
-      commandeCharacter.classList.remove("is-switching");
-
-    }, 220);
-
-  }, 4200);
-
-});
+  setInterval(function () {
+    if (currentImage === 1) {
+      commandeCharacter.src = "perso-commande2.png";
+      currentImage = 2;
+    } else {
+      commandeCharacter.src = "perso-commande1.png";
+      currentImage = 1;
+    }
+  }, 3000);
+}
 </script>
   
 </body>
