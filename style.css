@@ -1933,3 +1933,118 @@ mix-blend-mode: normal;
     width:58px;
   }
 }
+/* PETITS CROQUIS VIVANTS — smileys */
+
+.living-smiley {
+  position: fixed;
+  width: 42px;
+  height: auto;
+  z-index: 900;
+  pointer-events: none;
+  opacity: 0;
+  transform-origin: center bottom;
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 8px 12px rgba(21,17,13,0.10));
+}
+
+.living-smiley.is-alive {
+  opacity: 1;
+}
+
+/* Galerie : calme / curieux */
+.living-smiley.behavior-gallery-1 { animation: galleryHop 5.8s ease-in-out forwards; }
+.living-smiley.behavior-gallery-2 { animation: galleryPeek 6.4s ease-in-out forwards; }
+.living-smiley.behavior-gallery-3 { animation: galleryWander 7s ease-in-out forwards; }
+
+/* Boutique : joueur / rapide */
+.living-smiley.behavior-shop-1 { animation: shopDash 4.6s ease-in-out forwards; }
+.living-smiley.behavior-shop-2 { animation: shopBounce 5.2s ease-in-out forwards; }
+.living-smiley.behavior-shop-3 { animation: shopSpin 4.8s ease-in-out forwards; }
+
+/* Soutien : timide / émotionnel */
+.living-smiley.behavior-support-1 { animation: supportShy 7s ease-in-out forwards; }
+.living-smiley.behavior-support-2 { animation: supportTinySteps 8s ease-in-out forwards; }
+.living-smiley.behavior-support-3 { animation: supportAppearHide 6.6s ease-in-out forwards; }
+
+@keyframes galleryHop {
+  0% { opacity: 0; transform: translate(0, 14px) scale(.7) rotate(-4deg); }
+  15% { opacity: 1; transform: translate(0, 0) scale(1) rotate(2deg); }
+  35% { transform: translate(14px, -9px) scale(1.03) rotate(-3deg); }
+  55% { transform: translate(28px, 2px) scale(.98) rotate(2deg); }
+  80% { opacity: 1; transform: translate(36px, -5px) scale(1) rotate(-1deg); }
+  100% { opacity: 0; transform: translate(44px, 12px) scale(.72) rotate(5deg); }
+}
+
+@keyframes galleryPeek {
+  0% { opacity: 0; transform: translate(18px, 0) scale(.55) rotate(8deg); }
+  18% { opacity: 1; transform: translate(0, 0) scale(1) rotate(-2deg); }
+  45% { transform: translate(-8px, -4px) scale(1.02) rotate(2deg); }
+  70% { transform: translate(8px, 0) scale(.96) rotate(-1deg); }
+  100% { opacity: 0; transform: translate(24px, 8px) scale(.6) rotate(8deg); }
+}
+
+@keyframes galleryWander {
+  0% { opacity: 0; transform: translate(0, 10px) scale(.6); }
+  15% { opacity: 1; transform: translate(0, 0) scale(1); }
+  30% { transform: translate(-18px, -6px) scale(1.02) rotate(-4deg); }
+  50% { transform: translate(-4px, -12px) scale(1) rotate(3deg); }
+  72% { transform: translate(18px, -5px) scale(.98) rotate(-2deg); }
+  100% { opacity: 0; transform: translate(30px, 10px) scale(.7); }
+}
+
+@keyframes shopDash {
+  0% { opacity: 0; transform: translate(-30px, 10px) scale(.7) rotate(-8deg); }
+  10% { opacity: 1; }
+  35% { transform: translate(34px, -16px) scale(1.08) rotate(8deg); }
+  70% { transform: translate(72px, 2px) scale(.95) rotate(-5deg); }
+  100% { opacity: 0; transform: translate(110px, 16px) scale(.65) rotate(12deg); }
+}
+
+@keyframes shopBounce {
+  0% { opacity: 0; transform: translate(0, 24px) scale(.6); }
+  12% { opacity: 1; transform: translate(0, 0) scale(1); }
+  28% { transform: translate(12px, -22px) scale(1.08) rotate(-6deg); }
+  44% { transform: translate(24px, 0) scale(.94) rotate(4deg); }
+  62% { transform: translate(38px, -18px) scale(1.06) rotate(-3deg); }
+  82% { opacity: 1; transform: translate(52px, 0) scale(.96); }
+  100% { opacity: 0; transform: translate(64px, 20px) scale(.65); }
+}
+
+@keyframes shopSpin {
+  0% { opacity: 0; transform: scale(.55) rotate(0deg); }
+  18% { opacity: 1; transform: scale(1) rotate(24deg); }
+  48% { transform: translate(18px, -10px) scale(1.04) rotate(180deg); }
+  76% { transform: translate(36px, 4px) scale(.95) rotate(300deg); }
+  100% { opacity: 0; transform: translate(50px, 18px) scale(.65) rotate(360deg); }
+}
+
+@keyframes supportShy {
+  0% { opacity: 0; transform: translate(0, 8px) scale(.45); }
+  20% { opacity: .95; transform: translate(0, 0) scale(.9); }
+  45% { transform: translate(5px, -4px) scale(1) rotate(-2deg); }
+  72% { transform: translate(-4px, 2px) scale(.92) rotate(1deg); }
+  100% { opacity: 0; transform: translate(0, 10px) scale(.45); }
+}
+
+@keyframes supportTinySteps {
+  0% { opacity: 0; transform: translate(-8px, 0) scale(.55); }
+  18% { opacity: 1; transform: translate(0, 0) scale(.92); }
+  32% { transform: translate(6px, -3px) scale(.96); }
+  48% { transform: translate(12px, 0) scale(.9); }
+  65% { transform: translate(17px, -3px) scale(.94); }
+  100% { opacity: 0; transform: translate(24px, 7px) scale(.5); }
+}
+
+@keyframes supportAppearHide {
+  0% { opacity: 0; transform: scale(.4) rotate(-8deg); }
+  22% { opacity: 1; transform: scale(.9) rotate(2deg); }
+  48% { opacity: .75; transform: translate(0, -5px) scale(1); }
+  70% { opacity: 1; transform: translate(4px, 2px) scale(.92); }
+  100% { opacity: 0; transform: translate(10px, 12px) scale(.42) rotate(8deg); }
+}
+
+@media (max-width: 700px) {
+  .living-smiley {
+    width: 28px;
+  }
+}
