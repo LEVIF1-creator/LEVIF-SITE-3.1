@@ -1884,7 +1884,8 @@ button:focus-visible,
   height:auto;
   z-index:1200;
   pointer-events:none;
-  opacity:.94;
+  opacity:1;
+  mix-blend-mode:multiply;
 
   transition:
     opacity .35s ease,
