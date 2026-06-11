@@ -1833,8 +1833,8 @@ button:focus-visible,
   height: auto;
   z-index: 1200;
   pointer-events: none;
-  opacity: 0.92;
-  mix-blend-mode: multiply;
+  opacity: 1;
+mix-blend-mode: normal;
   transform-origin: top right;
   animation: galeriePapyBreath 9s ease-in-out infinite;
 }
