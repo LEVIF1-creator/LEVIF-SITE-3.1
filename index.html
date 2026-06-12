@@ -619,6 +619,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const popup = document.getElementById("posterPopup");
   if (!popup) return;
 
+  let shownOnScroll = false;
+
   function showPopup() {
     popup.classList.add("is-visible");
     popup.setAttribute("aria-hidden", "false");
@@ -635,8 +637,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setTimeout(showPopup, 800);
 
-  let shownOnScroll = false;
-
   window.addEventListener("scroll", () => {
     if (shownOnScroll) return;
 
@@ -647,6 +647,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { passive: true });
 });
 </script>
+
+
   
 </body>
   <div class="poster-popup" id="posterPopup" aria-hidden="true">
