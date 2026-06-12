@@ -2180,4 +2180,14 @@ mix-blend-mode: normal;
     max-height: 300px;
   }
 }
+.poster-popup .hero-actions {
+  position: relative;
+  z-index: 5;
+}
 
+.poster-popup .btn,
+.poster-popup button {
+  position: relative;
+  z-index: 6;
+  pointer-events: auto;
+}
