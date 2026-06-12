@@ -619,12 +619,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const popup = document.getElementById("posterPopup");
   if (!popup) return;
 
-  let secondPopupAllowed = false;
-  let secondPopupShown = false;
-  let permanentlyClosed = false;
-
   function showPopup() {
-    if (permanentlyClosed) return;
     popup.classList.add("is-visible");
     popup.setAttribute("aria-hidden", "false");
   }
@@ -635,34 +630,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.querySelectorAll("[data-close-popup]").forEach((button) => {
-    button.addEventListener("click", () => {
-      permanentlyClosed = true;
-      hidePopup();
-    });
+    button.addEventListener("click", hidePopup);
   });
 
-  document.querySelectorAll("[data-soft-close-popup]").forEach((button) => {
-    button.addEventListener("click", () => {
-      secondPopupAllowed = true;
-      hidePopup();
-    });
-  });
+  setTimeout(showPopup, 800);
 
-  setTimeout(() => {
-    showPopup();
-  }, 800);
+  let shownOnScroll = false;
 
   window.addEventListener("scroll", () => {
-    if (!secondPopupAllowed) return;
-    if (secondPopupShown) return;
-    if (permanentlyClosed) return;
+    if (shownOnScroll) return;
 
-    if (window.scrollY > 250) {
-      secondPopupShown = true;
-
-      setTimeout(() => {
-        showPopup();
-      }, 700);
+    if (window.scrollY > 600) {
+      shownOnScroll = true;
+      setTimeout(showPopup, 800);
     }
   }, { passive: true });
 });
