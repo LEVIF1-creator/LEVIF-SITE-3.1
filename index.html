@@ -614,37 +614,45 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const popup = document.getElementById("posterPopup");
   if (!popup) return;
 
-  const alreadySeen = sessionStorage.getItem("posterPopupSeen");
+  const closeButtons = document.querySelectorAll("[data-close-popup]");
+  let popupClosedManually = false;
+  let scrollPopupShown = false;
 
   function openPopup() {
-    if (alreadySeen) return;
+    if (popupClosedManually) return;
+
     popup.classList.add("is-visible");
     popup.setAttribute("aria-hidden", "false");
-    sessionStorage.setItem("posterPopupSeen", "true");
   }
 
   function closePopup() {
     popup.classList.remove("is-visible");
     popup.setAttribute("aria-hidden", "true");
+    popupClosedManually = true;
   }
 
-  document.querySelectorAll("[data-close-popup]").forEach((el) => {
-    el.addEventListener("click", closePopup);
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", closePopup);
   });
 
-  let triggered = false;
+  setTimeout(() => {
+    openPopup();
+  }, 900);
 
   window.addEventListener("scroll", () => {
-    if (triggered) return;
+    if (scrollPopupShown || popupClosedManually) return;
 
-    if (window.scrollY > 420) {
-      triggered = true;
-      setTimeout(openPopup, 500);
+    if (window.scrollY > 650) {
+      scrollPopupShown = true;
+
+      setTimeout(() => {
+        openPopup();
+      }, 400);
     }
   }, { passive: true });
 });
