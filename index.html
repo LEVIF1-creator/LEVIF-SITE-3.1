@@ -733,12 +733,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (secondPopupShown) return;
     if (permanentlyClosed) return;
 
-    if (window.scrollY > 4000) {
+    if (window.scrollY > 10000) {
       secondPopupShown = true;
 
       setTimeout(() => {
         showPopup();
-      }, 800);
+      }, 6000);
     }
   }, { passive: true });
 });
