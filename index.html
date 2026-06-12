@@ -619,40 +619,50 @@ document.addEventListener("DOMContentLoaded", () => {
   const popup = document.getElementById("posterPopup");
   if (!popup) return;
 
-  const closeButtons = document.querySelectorAll("[data-close-popup]");
-  let popupClosedManually = false;
-  let scrollPopupShown = false;
+  let secondPopupAllowed = false;
+  let secondPopupShown = false;
+  let permanentlyClosed = false;
 
-  function openPopup() {
-    if (popupClosedManually) return;
-
+  function showPopup() {
+    if (permanentlyClosed) return;
     popup.classList.add("is-visible");
     popup.setAttribute("aria-hidden", "false");
   }
 
-  function closePopup() {
+  function hidePopup() {
     popup.classList.remove("is-visible");
     popup.setAttribute("aria-hidden", "true");
-    popupClosedManually = true;
   }
 
-  closeButtons.forEach((button) => {
-    button.addEventListener("click", closePopup);
+  document.querySelectorAll("[data-close-popup]").forEach((button) => {
+    button.addEventListener("click", () => {
+      permanentlyClosed = true;
+      hidePopup();
+    });
+  });
+
+  document.querySelectorAll("[data-soft-close-popup]").forEach((button) => {
+    button.addEventListener("click", () => {
+      secondPopupAllowed = true;
+      hidePopup();
+    });
   });
 
   setTimeout(() => {
-    openPopup();
-  }, 900);
+    showPopup();
+  }, 800);
 
   window.addEventListener("scroll", () => {
-    if (scrollPopupShown || popupClosedManually) return;
+    if (!secondPopupAllowed) return;
+    if (secondPopupShown) return;
+    if (permanentlyClosed) return;
 
-    if (window.scrollY > 650) {
-      scrollPopupShown = true;
+    if (window.scrollY > 250) {
+      secondPopupShown = true;
 
       setTimeout(() => {
-        openPopup();
-      }, 400);
+        showPopup();
+      }, 700);
     }
   }, { passive: true });
 });
