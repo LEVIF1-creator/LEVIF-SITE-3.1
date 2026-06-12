@@ -613,6 +613,80 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("posterPopup");
+  if (!popup) return;
+
+  const alreadySeen = sessionStorage.getItem("posterPopupSeen");
+
+  function openPopup() {
+    if (alreadySeen) return;
+    popup.classList.add("is-visible");
+    popup.setAttribute("aria-hidden", "false");
+    sessionStorage.setItem("posterPopupSeen", "true");
+  }
+
+  function closePopup() {
+    popup.classList.remove("is-visible");
+    popup.setAttribute("aria-hidden", "true");
+  }
+
+  document.querySelectorAll("[data-close-popup]").forEach((el) => {
+    el.addEventListener("click", closePopup);
+  });
+
+  let triggered = false;
+
+  window.addEventListener("scroll", () => {
+    if (triggered) return;
+
+    if (window.scrollY > 420) {
+      triggered = true;
+      setTimeout(openPopup, 500);
+    }
+  }, { passive: true });
+});
+</script>
   
 </body>
+  <div class="poster-popup" id="posterPopup" aria-hidden="true">
+  <div class="poster-popup-backdrop" data-close-popup></div>
+
+  <div class="poster-popup-card">
+    <button class="poster-popup-close" type="button" data-close-popup>×</button>
+
+    <div class="poster-popup-image">
+      <img src="poster-popup.png" alt="Poster digital LEVIF CariCkat">
+    </div>
+
+    <div class="poster-popup-content">
+      <div class="kicker">pièce digitale disponible</div>
+
+      <h2>Le carnet est ouvert.</h2>
+
+      <p>
+        Une première œuvre du carnet vivant est disponible en poster digital HD.
+        Téléchargement simple, immédiat, sans attendre l’atelier.
+      </p>
+
+      <strong class="poster-popup-price">12,99€</strong>
+
+      <div class="hero-actions">
+        <a href="https://buy.stripe.com/6oUfZg89x1f9cSOfMe0RG0t" target="_blank" rel="noopener noreferrer" class="btn dark">
+          Récupérer le poster digital
+        </a>
+
+        <button class="btn" type="button" data-close-popup>
+          Continuer la visite
+        </button>
+      </div>
+
+      <a href="commande.html" class="poster-popup-small-link">
+        Je cherche plutôt une création personnalisée
+      </a>
+    </div>
+  </div>
+</div>
 </html>
