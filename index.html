@@ -36,6 +36,48 @@
 </head>
 
 <body>
+  <div class="poster-popup" id="posterPopup" aria-hidden="true">
+  <div class="poster-popup-backdrop" data-close-popup></div>
+
+  <div class="poster-popup-card">
+    <button class="poster-popup-close" type="button" data-close-popup>×</button>
+
+    <div class="poster-popup-image">
+      <img src="originaux-1.jpg" alt="Poster digital LEVIF CariCkat">
+    </div>
+
+    <div class="poster-popup-content">
+      <div class="kicker">pièce digitale disponible</div>
+
+      <h2>Le carnet est ouvert.</h2>
+
+      <p>
+        Une première œuvre du carnet vivant est disponible en poster digital HD.
+        Téléchargement simple, immédiat, sans attendre l’atelier.
+      </p>
+
+      <strong class="poster-popup-price">12,99€</strong>
+
+      <div class="hero-actions">
+        <a href="https://buy.stripe.com/6oUfZg89x1f9cSOfMe0RG0t"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn dark">
+          Récupérer le poster digital
+        </a>
+
+        <button class="btn" type="button" data-soft-close-popup>
+          Continuer la visite
+        </button>
+      </div>
+
+      <a href="commande.html" class="poster-popup-small-link">
+        Je cherche plutôt une création personnalisée
+      </a>
+    </div>
+  </div>
+</div>
+  
   <img src="coin-levif.png" alt="Signature visuelle LEVIF" class="corner-levif" />
 
 <div class="page-transition-layer" aria-hidden="true"></div>
@@ -651,42 +693,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
 </body>
-  <div class="poster-popup" id="posterPopup" aria-hidden="true">
-  <div class="poster-popup-backdrop" data-close-popup></div>
-
-  <div class="poster-popup-card">
-    <button class="poster-popup-close" type="button" data-close-popup>×</button>
-
-    <div class="poster-popup-image">
-      <img src="originaux-1.jpg" alt="Poster digital LEVIF CariCkat">
-    </div>
-
-    <div class="poster-popup-content">
-      <div class="kicker">pièce digitale disponible</div>
-
-      <h2>Le carnet est ouvert.</h2>
-
-      <p>
-        Une première œuvre du carnet vivant est disponible en poster digital HD.
-        Téléchargement simple, immédiat, sans attendre l’atelier.
-      </p>
-
-      <strong class="poster-popup-price">12,99€</strong>
-
-      <div class="hero-actions">
-        <a href="https://buy.stripe.com/6oUfZg89x1f9cSOfMe0RG0t" target="_blank" rel="noopener noreferrer" class="btn dark">
-          Récupérer le poster digital
-        </a>
-
-        <button class="btn" type="button" data-soft-close-popup>
-          Continuer la visite
-        </button>
-      </div>
-
-      <a href="commande.html" class="poster-popup-small-link">
-        Je cherche plutôt une création personnalisée
-      </a>
-    </div>
-  </div>
-</div>
+  
 </html>
