@@ -33,6 +33,128 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+  .about-personal-section {
+    position: relative;
+    padding: 70px 0 90px;
+    overflow: hidden;
+  }
+
+  .about-personal-inner {
+    width: min(1400px, calc(100% - 48px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(240px, 340px) minmax(220px, 1fr);
+    align-items: center;
+    gap: clamp(30px, 5vw, 80px);
+  }
+
+  .about-personal-text {
+    position: relative;
+  }
+
+  .about-personal-text p {
+    margin: 0;
+    font-size: clamp(0.88rem, 1.05vw, 1rem);
+    line-height: 1.85;
+  }
+
+  .about-personal-text-left {
+    text-align: right;
+  }
+
+  .about-personal-text-right {
+    text-align: left;
+  }
+
+  .about-personal-photo-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-personal-photo-frame {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 2px solid rgba(0, 0, 0, 0.85);
+    box-shadow: 0 25px 65px rgba(0, 0, 0, 0.35);
+    transform: rotate(-1deg);
+  }
+
+  .about-personal-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .about-personal-signature {
+    position: absolute;
+    right: -10px;
+    bottom: -28px;
+    margin: 0;
+    font-family: "Caveat", cursive;
+    font-size: clamp(2rem, 3vw, 3.4rem);
+    font-weight: 700;
+    transform: rotate(-7deg);
+  }
+
+  @media (max-width: 900px) {
+    .about-personal-inner {
+      grid-template-columns: 1fr minmax(230px, 300px);
+      grid-template-areas:
+        "left photo"
+        "right photo";
+    }
+
+    .about-personal-text-left {
+      grid-area: left;
+      text-align: left;
+    }
+
+    .about-personal-text-right {
+      grid-area: right;
+    }
+
+    .about-personal-photo-wrap {
+      grid-area: photo;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .about-personal-section {
+      padding: 45px 0 70px;
+    }
+
+    .about-personal-inner {
+      display: flex;
+      flex-direction: column;
+      width: min(100% - 28px, 560px);
+      gap: 30px;
+    }
+
+    .about-personal-text-left {
+      order: 1;
+    }
+
+    .about-personal-photo-wrap {
+      order: 2;
+      width: min(76vw, 300px);
+    }
+
+    .about-personal-text-right {
+      order: 3;
+    }
+
+    .about-personal-text-left,
+    .about-personal-text-right {
+      text-align: left;
+    }
+  }
+  </style>
 </head>
 
 <body>
@@ -63,6 +185,67 @@
 </header>
 
 <main>
+
+  <section class="section about-personal-section">
+    <div class="about-personal-inner">
+
+      <div class="about-personal-text about-personal-text-left">
+
+        <div class="kicker">
+          derrière le carnet
+        </div>
+
+        <p>
+          Navigateur de la bonne conscience,
+          mais surtout de l'inconscient,
+          j'ai vogué avec mes pieds pendant plusieurs années
+          à travers la France.
+          L'inconnu ne m'a jamais fait peur,
+          au contraire,
+          j'avais soif d'apprentissage.
+          Je voulais voir et savoir,
+          comprendre comment les choses,
+          le monde,
+          l'univers tournent.
+        </p>
+
+      </div>
+
+      <div class="about-personal-photo-wrap">
+
+        <div class="about-personal-photo-frame">
+
+          <img
+            src="portrait-levif.jpg"
+            alt="LEVIF, artiste et créateur de Carickat"
+            class="about-personal-photo"
+          >
+
+        </div>
+
+        <p class="about-personal-signature">
+          LEVIF
+        </p>
+
+      </div>
+
+      <div class="about-personal-text about-personal-text-right">
+
+        <p>
+          Ma vraie vie a commencé à 18 ans,
+          car nous sommes les seuls maîtres de notre destin.
+          Et j'ai fait de cette page blanche que j'étais,
+          un carnet complet d'instruction,
+          d'éducation
+          et de découverte.
+          Il faut savoir comprendre avec ce que l'on voit
+          pour voir ce que l'on veut avoir la vie.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
 
   <section class="section section-shop-system">
     <div class="container split">
