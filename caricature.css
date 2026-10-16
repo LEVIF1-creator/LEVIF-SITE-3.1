@@ -51,3 +51,8 @@ body {
   font-size: 1.35rem;
   transform: rotate(-5deg);
 }
+
+
+/* Galerie extensible : bouton sous les cartes, sans modifier la grille du site. */
+.caricatures-more-row { display: flex; justify-content: center; margin-top: 28px; }
+.caricatures-more-row[hidden] { display: none !important; }

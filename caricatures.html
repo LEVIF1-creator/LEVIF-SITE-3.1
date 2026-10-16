@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="caricature.css">
+  <script defer src="caricatures-gallery.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +58,7 @@
 
   <section class="section section-gallery-preview" id="galerie-caricatures">
 
-    <div class="container gallery-grid">
+    <div class="container gallery-grid" id="caricatures-grid">
 
       <article class="art-card"><img src="./caricature-1.jpg" alt="Caricature Carickat 1"><h3>Visage 01</h3><p class="art-meta">caricature / expression / trait</p></article>
       <article class="art-card"><img src="./caricature-2.jpg" alt="Caricature Carickat 2"><h3>Visage 02</h3><p class="art-meta">déformation / regard / énergie</p></article>
@@ -73,6 +74,10 @@
       <article class="art-card"><img src="./caricature-12.jpg" alt="Caricature Carickat 12"><h3>Visage 12</h3><p class="art-meta">déformation / visage / rythme</p></article>
       <article class="art-card"><img src="./caricature-13.jpg" alt="Caricature Carickat 13"><h3>Visage 13</h3><p class="art-meta">portrait / expression / contraste</p></article>
 
+    </div>
+
+    <div class="container caricatures-more-row" id="caricatures-more-row" hidden>
+      <button class="btn btn-secondary" type="button" id="caricatures-more" aria-controls="caricatures-grid">Voir plus de caricatures</button>
     </div>
 
     <div class="container section-intro" style="margin-top:42px;">

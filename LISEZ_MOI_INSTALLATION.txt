@@ -1,0 +1,63 @@
+KARIKAT — GALERIE DE CARICATURES, NOUVELLES EN PREMIER (V2)
+16 octobre 2026 — Préparé à partir de caricatures.html et caricature.css fournis.
+
+CE QUE CONTIENT LE PACK
+1. caricatures.html : la page actuelle, avec seulement un identifiant de grille,
+   le bouton "Voir plus" et le chargement d’un petit script supplémentaire.
+2. caricature.css : styles d’origine + mise en forme minimale du bouton.
+3. caricatures-gallery.js : lecture du catalogue, tri, affichage progressif.
+4. caricatures.json : description des 13 œuvres déjà présentes dans votre HTML.
+
+INSTALLATION — PAS ENCORE EFFECTUÉE SUR GITHUB
+1. Faire une sauvegarde des fichiers actuels du dépôt LEVIF-SITE-3.1.
+2. Ouvrir la racine GitHub du site (là où sont index.html, caricatures.html,
+   caricature.css et caricature-1.jpg...).
+3. Ajouter / remplacer les 4 fichiers du ZIP, sans supprimer style.css ni les
+   anciennes images caricature-1.jpg à caricature-13.jpg.
+4. Attendre la mise en ligne puis visiter caricatures.html en navigation privée,
+   sur ordinateur et sur téléphone.
+5. Vérifier la galerie, le bouton "Voir plus", les boutons du menu, les CTA.
+
+AJOUTER TA PROCHAINE VRAIE CARICATURE
+1. Photographier/scanner le dessin SEUL (pas un montage avec visage surajouté).
+2. Préparer sa version web .webp / .jpg / .png. Garder l’original HD ailleurs.
+3. Nommer son fichier caricature-14.webp, par exemple, et le mettre à la RACINE
+   du dépôt, au même niveau que caricatures.html.
+4. Dans caricatures.json, ajouter un nouvel objet à la FIN du tableau oeuvres :
+
+    ,{
+      "id": "ART-KARIKAT-0014",
+      "image": "caricature-14.webp",
+      "titre": "Nouveau dessin",
+      "description": "caricature / Bic / original",
+      "alt": "Dessin au Bic de l’atelier Carickat",
+      "date_publication": "2026-10-16",
+      "ordre_ajout": 14
+    }
+
+   Attention : la virgule se place entre le précédent objet et le nouvel objet.
+   L’ajout doit se faire AVANT le crochet fermant ] du tableau oeuvres.
+   La date est la date de PUBLICATION de l’image sur le site, PAS la date
+   de création de l’œuvre. Utiliser la date réelle le jour de l’ajout.
+5. Valider le JSON, enregistrer les changements sur GitHub et vérifier la page.
+
+RÈGLES DU TRI
+- Une date de publication plus récente passe automatiquement devant.
+- Plusieurs œuvres publiées le même jour : ordre_ajout le plus grand en premier.
+- Les 13 œuvres historiques ont une date nulle (date inconnue). Elles restent
+  à la fin de la galerie et dans leur ordre actuel 01..13.
+- Au-delà de 18 œuvres, le bouton "Voir plus de caricatures" apparaît.
+
+SÉCURITÉ / REPLI
+Si caricatures.json est absent, malformé ou indisponible, les 13 cartes HTML
+existantes restent visibles. Les titres/descriptions sont insérés comme du texte,
+pas comme du HTML. Les noms d’images doivent respecter caricature-N.extension.
+
+IMPORTANT
+- Aucun nouveau dessin n’est ajouté dans ce ZIP ; seuls les 13 existants
+  sont catalogués pour préparer l’arrivée de vraies caricatures.
+- Aucun lien de paiement, WhatsApp, menu, email, SEO ni contenu éditorial
+  d’origine n’a été changé.
+- Pas de déploiement GitHub automatique ; fichiers à publier et vérifier.
+- Une vraie publication automatique depuis ChatGPT viendra ultérieurement,
+  dans le module ASSET_PUBLISHER de l’écosystème KARIKAT.

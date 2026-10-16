@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "oeuvres": [
+    {
+      "id": "ART-KARIKAT-0001",
+      "image": "caricature-1.jpg",
+      "titre": "Visage 01",
+      "description": "caricature / expression / trait",
+      "alt": "Caricature Carickat 1",
+      "date_publication": null,
+      "ordre_ajout": 1
+    },
+    {
+      "id": "ART-KARIKAT-0002",
+      "image": "caricature-2.jpg",
+      "titre": "Visage 02",
+      "description": "déformation / regard / énergie",
+      "alt": "Caricature Carickat 2",
+      "date_publication": null,
+      "ordre_ajout": 2
+    },
+    {
+      "id": "ART-KARIKAT-0003",
+      "image": "caricature-3.jpg",
+      "titre": "Visage 03",
+      "description": "portrait / grimace / tension",
+      "alt": "Caricature Carickat 3",
+      "date_publication": null,
+      "ordre_ajout": 3
+    },
+    {
+      "id": "ART-KARIKAT-0004",
+      "image": "caricature-4.jpg",
+      "titre": "Visage 04",
+      "description": "exagération / attitude / stylo",
+      "alt": "Caricature Carickat 4",
+      "date_publication": null,
+      "ordre_ajout": 4
+    },
+    {
+      "id": "ART-KARIKAT-0005",
+      "image": "caricature-5.jpg",
+      "titre": "Visage 05",
+      "description": "caractère / détail / satire",
+      "alt": "Caricature Carickat 5",
+      "date_publication": null,
+      "ordre_ajout": 5
+    },
+    {
+      "id": "ART-KARIKAT-0006",
+      "image": "caricature-6.jpg",
+      "titre": "Visage 06",
+      "description": "forme / bouche / intensité",
+      "alt": "Caricature Carickat 6",
+      "date_publication": null,
+      "ordre_ajout": 6
+    },
+    {
+      "id": "ART-KARIKAT-0007",
+      "image": "caricature-7.jpg",
+      "titre": "Visage 07",
+      "description": "profil / énergie / recherche",
+      "alt": "Caricature Carickat 7",
+      "date_publication": null,
+      "ordre_ajout": 7
+    },
+    {
+      "id": "ART-KARIKAT-0008",
+      "image": "caricature-8.jpg",
+      "titre": "Visage 08",
+      "description": "expression / rythme / carnet",
+      "alt": "Caricature Carickat 8",
+      "date_publication": null,
+      "ordre_ajout": 8
+    },
+    {
+      "id": "ART-KARIKAT-0009",
+      "image": "caricature-9.jpg",
+      "titre": "Visage 09",
+      "description": "portrait / instinct / déformation",
+      "alt": "Caricature Carickat 9",
+      "date_publication": null,
+      "ordre_ajout": 9
+    },
+    {
+      "id": "ART-KARIKAT-0010",
+      "image": "caricature-10.jpg",
+      "titre": "Visage 10",
+      "description": "regard / tension / caractère",
+      "alt": "Caricature Carickat 10",
+      "date_publication": null,
+      "ordre_ajout": 10
+    },
+    {
+      "id": "ART-KARIKAT-0011",
+      "image": "caricature-11.jpg",
+      "titre": "Visage 11",
+      "description": "grimace / trait / présence",
+      "alt": "Caricature Carickat 11",
+      "date_publication": null,
+      "ordre_ajout": 11
+    },
+    {
+      "id": "ART-KARIKAT-0012",
+      "image": "caricature-12.jpg",
+      "titre": "Visage 12",
+      "description": "déformation / visage / rythme",
+      "alt": "Caricature Carickat 12",
+      "date_publication": null,
+      "ordre_ajout": 12
+    },
+    {
+      "id": "ART-KARIKAT-0013",
+      "image": "caricature-13.jpg",
+      "titre": "Visage 13",
+      "description": "portrait / expression / contraste",
+      "alt": "Caricature Carickat 13",
+      "date_publication": null,
+      "ordre_ajout": 13
+    }
+  ]
+}
