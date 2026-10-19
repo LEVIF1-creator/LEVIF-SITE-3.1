@@ -457,6 +457,39 @@ document.querySelectorAll("a[href]").forEach((link) => {
   });
 });
 </script>
+<!-- TRI AUTOMATIQUE DES CARICATURES -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+  const galerie = document.querySelector(
+    "#galerie-caricatures .gallery-grid"
+  );
+
+  if (!galerie) return;
+
+  const cartes = [...galerie.querySelectorAll(".art-card")];
+
+  cartes.sort((a, b) => {
+
+    const imageA = a.querySelector("img")?.getAttribute("src") || "";
+    const imageB = b.querySelector("img")?.getAttribute("src") || "";
+
+    const numeroA = Number(
+      imageA.match(/caricature-(\d+)\.(jpg|jpeg|png|webp)/i)?.[1] || 0
+    );
+
+    const numeroB = Number(
+      imageB.match(/caricature-(\d+)\.(jpg|jpeg|png|webp)/i)?.[1] || 0
+    );
+
+    return numeroB - numeroA;
+
+  });
+
+  cartes.forEach(carte => galerie.appendChild(carte));
+
+});
+</script>
+<!-- FIN TRI AUTOMATIQUE -->
 </body>
 </html>
