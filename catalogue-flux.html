@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FLUX — systèmes d'automatisation</title>
+<meta name="description" content="Neuf outils Python prêts à brancher : réceptionniste, tri de fichiers, relances, livraison après paiement, rapports, supervision, base de connaissances, contenu et publication.">
+<style>
+:root{
+  --paper:#f1f5f3; --card:#ffffff; --ink:#10263a; --muted:#4d6071; --line:#cfdad5;
+  --teal:#1b7a6c; --teal-d:#115a4f; --sun:#f0b429; --coral:#d9482b; --night:#0c1b29;
+  --r:14px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0c1b29; --card:#13293b; --ink:#eaf1ee; --muted:#9db1bf; --line:#27415a; --teal:#3fc2ac; --teal-d:#7fe0cd; --night:#07121c}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.08;margin:0;letter-spacing:-.025em;font-weight:800}
+h1{font-size:clamp(2.3rem,6vw,4.4rem)}
+h2{font-size:clamp(1.7rem,3.6vw,2.5rem)}
+p{margin:0}
+.btn{display:inline-block;border:0;border-radius:999px;padding:.8em 1.4em;font:inherit;font-weight:700;background:var(--teal);color:#fff;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--teal-d)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn[aria-disabled=true]{background:var(--line);color:var(--muted);cursor:not-allowed}
+
+header.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-weight:900;font-size:1.4rem;letter-spacing:-.04em;text-decoration:none;display:flex;gap:.5rem;align-items:center}
+.logo i{font-style:normal;background:var(--sun);color:#10263a;border-radius:10px;padding:.05em .35em}
+nav a{margin-left:20px;text-decoration:none;color:var(--muted);font-weight:600}
+nav a:hover{color:var(--ink)}
+
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:36px 0 64px}
+.hero p.lead{font-size:1.2rem;color:var(--muted);margin:22px 0 28px;max-width:34em}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.term{background:var(--night);color:#d8ecea;border-radius:var(--r);overflow:hidden;box-shadow:0 18px 50px -20px rgba(8,25,40,.55);font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.term .bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#12293c;color:#8fb0c4}
+.term .bar b{width:10px;height:10px;border-radius:50%;background:#2f4a60;display:inline-block}
+.term .bar span{margin-left:6px;font-size:12px}
+.term pre{margin:0;padding:16px 18px;min-height:250px;white-space:pre-wrap;word-break:break-word}
+.term .p{color:#f0b429}.term .o{color:#9ae3d3}.term .d{color:#7f98a8}
+.term .tabs{display:flex;gap:6px;padding:0 14px 12px;flex-wrap:wrap}
+.term .tabs button{font:inherit;font-size:12px;border:1px solid #2c4960;background:transparent;color:#a9c3d1;border-radius:999px;padding:3px 11px;cursor:pointer}
+.term .tabs button[aria-pressed=true]{background:#f0b429;color:#10263a;border-color:#f0b429}
+
+section{padding:56px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.head p{color:var(--muted);max-width:36em}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.filters button{font:inherit;font-weight:600;padding:.45em 1em;border-radius:999px;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:12px;border-top:6px solid var(--c,var(--teal))}
+.prod .who{display:flex;align-items:center;gap:12px}
+.prod .face{font-size:2rem;width:3.1rem;height:3.1rem;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 18%,transparent);border-radius:50%}
+.prod h3{font-size:1.35rem}
+.prod .role{color:var(--muted);font-size:.92rem}
+.prod ul{margin:0;padding-left:1.1em;color:var(--muted);font-size:.95rem}
+.prod .foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:10px}
+.price{font-weight:800;font-size:1.2rem}
+.price small{font-weight:500;color:var(--muted);font-size:.8rem}
+.pack{margin-top:18px;background:var(--night);color:#eaf1ee;border-radius:var(--r);padding:26px;display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+.pack p{color:#a9c3d1;max-width:38em;margin-top:6px}
+
+.chain{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;counter-reset:s}
+.chain div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;position:relative}
+.chain div b{display:block;font-size:1.05rem}
+.chain div span{color:var(--muted);font-size:.9rem}
+.chain div:not(:last-child)::after{content:"";position:absolute;right:-10px;top:50%;width:10px;height:2px;background:var(--ink)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.box h3{margin-bottom:10px}
+.box p,.box li{color:var(--muted)}
+.soon{display:inline-block;background:var(--sun);color:#10263a;font-weight:800;font-size:.8rem;padding:.15em .7em;border-radius:999px;margin-bottom:10px}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{font-weight:700;cursor:pointer}
+details p{color:var(--muted);margin-top:8px;max-width:46em}
+footer{padding:36px 0 50px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.chain{grid-template-columns:1fr}.chain div::after{display:none}.two{grid-template-columns:1fr}
+}
+@media (max-width:600px){.grid{grid-template-columns:1fr}nav{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#" aria-label="FLUX, accueil"><i>F</i>FLUX</a>
+    <nav aria-label="Navigation"><a href="#catalogue">Catalogue</a><a href="#chaine">Ensemble</a><a href="#make">Version Make</a><a href="#faq">Questions</a></nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Des petits systèmes qui font le travail à votre place.</h1>
+      <p class="lead">Neuf outils d'automatisation prêts à brancher : ils répondent, rangent, relancent, livrent, surveillent. Un fichier de configuration, aucune dépendance, aucun abonnement à installer.</p>
+      <div class="cta"><a class="btn" href="#catalogue">Voir les neuf outils</a><a class="btn ghost" href="#faq">Comment ça marche</a></div>
+    </div>
+    <div class="term" aria-label="Démonstration de Ping, la réceptionniste">
+      <div class="bar"><b></b><b></b><b></b><span>ping.py — exemple réel</span></div>
+      <div class="tabs" role="group" aria-label="Choisir un message"></div>
+      <pre id="termout" aria-live="polite"></pre>
+    </div>
+  </div>
+</div>
+
+<section id="catalogue">
+  <div class="wrap">
+    <div class="head">
+      <div><h2>Catalogue : systèmes en Python</h2></div>
+      <p>Chaque outil est autonome, testé, livré avec son guide d'installation et sa configuration d'exemple. Il tourne chez vous, vos données restent chez vous.</p>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filtrer par besoin"></div>
+    <div class="grid" id="grid"></div>
+    <div class="pack" id="pack"></div>
+  </div>
+</section>
+
+<section id="chaine">
+  <div class="wrap">
+    <div class="head"><h2>Ils travaillent aussi ensemble</h2><p>Chaque outil se suffit à lui-même. Ensemble, ils couvrent une activité de bout en bout.</p></div>
+    <div class="chain">
+      <div><b>Atelier</b><span>fabrique un mois de contenu</span></div>
+      <div><b>Relais</b><span>le publie chaque jour</span></div>
+      <div><b>Radar</b><span>mesure ce qui marche</span></div>
+      <div><b>Tally</b><span>livre après chaque paiement</span></div>
+      <div><b>Flux</b><span>surveille que tout tourne</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="make">
+  <div class="wrap">
+    <div class="head"><h2>Deux façons d'automatiser</h2></div>
+    <div class="two">
+      <div class="box"><h3>Systèmes en Python</h3><p>Disponibles maintenant. Vous les hébergez où vous voulez (serveur, ordinateur, tâche planifiée). Pas d'abonnement tiers nécessaire.</p></div>
+      <div class="box"><span class="soon">Prochainement</span><h3>Systèmes Make</h3><p>Les mêmes automatisations sous forme de scénarios à importer dans votre propre compte Make. Il faut un abonnement Make de votre côté.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="head"><h2>Questions fréquentes</h2></div>
+    <details><summary>Faut-il savoir programmer ?</summary><p>Non pour l'usage courant : on remplit un fichier de configuration et on lance une commande ou une tâche planifiée. Le guide fourni détaille chaque étape.</p></details>
+    <details><summary>Que faut-il installer ?</summary><p>Python 3.10 ou plus récent. Les outils n'utilisent que sa bibliothèque standard : rien d'autre à installer.</p></details>
+    <details><summary>Les outils envoient-ils des emails sans prévenir ?</summary><p>Non. Par défaut tout est en aperçu : les emails sont écrits dans un fichier à relire. L'envoi réel s'active volontairement dans la configuration.</p></details>
+    <details><summary>Que se passe-t-il après l'achat ?</summary><p>Le lien de téléchargement et la clé de licence vous sont envoyés par email automatiquement, grâce à Tally.</p></details>
+    <details><summary>Puis-je les adapter à mon métier ?</summary><p>Oui : règles, horaires, modèles de messages, colonnes, cibles de publication sont réglables sans toucher au code. Le code reste lisible si vous voulez aller plus loin.</p></details>
+    <details><summary>Mes données sont-elles envoyées chez vous ?</summary><p>Non. Les outils s'exécutent chez vous et ne communiquent qu'avec les services que vous configurez.</p></details>
+  </div>
+</section>
+
+<footer><div class="wrap">FLUX. Chaque outil est fourni avec une licence d'utilisation et à valider dans votre environnement avant usage en production.</div></footer>
+
+<script>
+/* ============ À MODIFIER ============
+   price : prix affiché, par exemple "49 €" (laisser vide pour « Tarif à venir »)
+   link  : lien de paiement Stripe (https://buy.stripe.com/...). Vide = bouton « Bientôt disponible ».
+   Les emojis des mascottes sans animal validé (Mémoire, Atelier, Relais) sont des propositions. */
+const PRODUCTS = [
+ {id:"ping",   mascot:"🦜", name:"Ping",   role:"Réceptionniste", tag:"clients", color:"#1b7a6c",
+  points:["Répond aux questions courantes (horaires, tarifs, adresse)","Propose des créneaux et enregistre les rendez-vous","Prévient le responsable en cas d'urgence"], price:"", link:""},
+ {id:"stash",  mascot:"🐿️", name:"Stash",  role:"Tri de fichiers", tag:"organisation", color:"#8a5a2b",
+  points:["Range selon vos règles (type, nom, taille, âge)","Repère les doublons, n'écrase ni ne supprime rien","Annule n'importe quel rangement"], price:"", link:""},
+ {id:"nudge",  mascot:"🐝", name:"Nudge",  role:"Relances de factures", tag:"argent", color:"#c98a00",
+  points:["Relances avant puis après l'échéance","Ignore les factures payées","Aperçu avant tout envoi"], price:"", link:""},
+ {id:"tally",  mascot:"🦫", name:"Tally",  role:"Livraison après paiement", tag:"argent", color:"#a4512f",
+  points:["Écoute les paiements Stripe, signature vérifiée","Envoie le produit et la clé de licence","Journal des ventes, aucun doublon"], price:"", link:""},
+ {id:"radar",  mascot:"🦉", name:"Radar",  role:"Rapport hebdomadaire", tag:"suivi", color:"#5b4bb7",
+  points:["Cette semaine contre la précédente","Repère les valeurs inhabituelles","Rapport HTML et Markdown, envoi par email"], price:"", link:""},
+ {id:"flux",   mascot:"🦡", name:"Flux",   role:"Supervision", tag:"suivi", color:"#10263a",
+  points:["Surveille sites, fichiers, disque, ports, commandes","Alerte après plusieurs échecs, pas au premier","Signale le rétablissement"], price:"", link:""},
+ {id:"memoire",mascot:"🐘", name:"Mémoire",role:"Base de connaissances", tag:"organisation", color:"#2f6f9f",
+  points:["Importe vos notes et procédures","Recherche plein texte rapide","Répond en citant ses sources"], price:"", link:""},
+ {id:"atelier",mascot:"🦊", name:"Atelier",role:"Fabrique de contenu", tag:"contenu", color:"#d9482b",
+  points:["Un mois de publications en une commande","Légendes, hashtags et consignes d'image","Jamais deux fois la même légende"], price:"", link:""},
+ {id:"relais", mascot:"🕊️", name:"Relais", role:"Publication planifiée", tag:"contenu", color:"#2a8c4a",
+  points:["Publie chaque jour les posts prévus","Réessaie en cas d'erreur, sans doublon","Compatible avec toute API HTTP"], price:"", link:""}
+];
+const PACK = {name:"Pack complet : les neuf outils", price:"", link:""};
+const FILTERS = [["tous","Tous"],["clients","Clients"],["argent","Argent"],["organisation","Organisation"],["suivi","Suivi"],["contenu","Contenu"]];
+/* ================================= */
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function buy(p){
+  return p.link ? `<a class="btn" href="${esc(p.link)}" rel="noopener">Acheter</a>`
+                : `<a class="btn" aria-disabled="true" role="link" tabindex="-1">Bientôt disponible</a>`;
+}
+function priceHtml(p){ return p.price ? `<span class="price">${esc(p.price)} <small>licence</small></span>` : `<span class="price"><small>Tarif à venir</small></span>`; }
+function render(f){
+  $("#grid").innerHTML = PRODUCTS.filter(p => f==="tous"||p.tag===f).map(p => `
+   <article class="prod" style="--c:${p.color}">
+     <div class="who"><div class="face" aria-hidden="true">${p.mascot}</div><div><h3>${esc(p.name)}</h3><div class="role">${esc(p.role)}</div></div></div>
+     <ul>${p.points.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+     <div class="foot">${priceHtml(p)}${buy(p)}</div>
+   </article>`).join("");
+}
+$("#filters").innerHTML = FILTERS.map(([k,l],i)=>`<button data-f="${k}" aria-pressed="${i===0}">${l}</button>`).join("");
+$("#filters").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  document.querySelectorAll("#filters button").forEach(x=>x.setAttribute("aria-pressed", x===b));
+  render(b.dataset.f);
+});
+$("#pack").innerHTML = `<div><h3>${esc(PACK.name)}</h3><p>Tous les outils, leurs guides et leurs configurations d'exemple, dans une seule archive.</p></div><div style="display:flex;gap:16px;align-items:center">${PACK.price?`<span class="price">${esc(PACK.price)}</span>`:`<small style="color:#a9c3d1">Tarif à venir</small>`}${buy(PACK)}</div>`;
+render("tous");
+
+/* Démonstration Ping : sorties réelles de l'outil */
+const DEMOS = [
+ {label:"Horaires", q:"Bonjour, vos horaires ?",
+  a:"Nos horaires :\n- lundi : 9h-12h et 14h-18h\n- mardi : 9h-12h et 14h-18h\n- mercredi : 9h-12h\n- jeudi : 9h-12h et 14h-18h\n- vendredi : 9h-12h et 14h-17h\n- samedi : fermé"},
+ {label:"Rendez-vous", q:"Je voudrais un rendez-vous demain",
+  a:"Voici les créneaux libres le vendredi 13/11 : 9h00, 9h30, 10h00, 10h30, 11h00, 11h30, 14h00, 14h30. Indiquez l'heure souhaitée pour confirmer."},
+];
+let timer;
+function type(el, head, text, i=0){
+  clearTimeout(timer);
+  if(matchMedia("(prefers-reduced-motion:reduce)").matches){ el.innerHTML = head + '<span class="o">' + esc(text) + '</span>'; return; }
+  el.innerHTML = head + '<span class="o">' + esc(text.slice(0,i)) + '</span><span class="d">▍</span>';
+  if(i < text.length) timer = setTimeout(()=>type(el,head,text,i+2), 14);
+  else el.innerHTML = head + '<span class="o">' + esc(text) + '</span>';
+}
+function show(i){
+  const d = DEMOS[i];
+  document.querySelectorAll(".term .tabs button").forEach((b,j)=>b.setAttribute("aria-pressed", j===i));
+  const head = `<span class="p">$</span> python3 ping.py handle --text "${esc(d.q)}"\n\n<span class="d">intention :</span> ${d.label==="Horaires"?"horaires":"rdv"}\n`;
+  type($("#termout"), head, d.a);
+}
+$(".term .tabs").innerHTML = DEMOS.map((d,i)=>`<button type="button" data-i="${i}" aria-pressed="false">${esc(d.label)}</button>`).join("");
+$(".term .tabs").addEventListener("click", e => { const b=e.target.closest("button"); if(b) show(+b.dataset.i); });
+show(0);
+</script>
+</body>
+</html>
