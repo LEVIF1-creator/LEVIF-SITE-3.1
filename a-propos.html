@@ -589,6 +589,99 @@
     </div>
   </section>
 
+<!-- FLUX : ACCES HAUT ET BAS DE PAGE -->
+
+<style>
+.flux-access {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 30px auto;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  clear: both;
+}
+
+.flux-access a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  max-width: 100%;
+  padding: 12px 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #10263a, #1b7a6c);
+  color: white;
+  font: 600 14px/1.4 system-ui, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,.18);
+  animation: fluxFloat 3.5s ease-in-out infinite;
+}
+
+.flux-access a:hover {
+  animation-play-state: paused;
+  box-shadow: 0 8px 22px rgba(0,0,0,.25);
+}
+
+.flux-access a:focus-visible {
+  outline: 3px solid #f0b429;
+  outline-offset: 4px;
+}
+
+.flux-arrow {
+  font-size: 18px;
+}
+
+@keyframes fluxFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@media (max-width: 480px) {
+  .flux-access a {
+    font-size: 13px;
+    padding: 11px 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flux-access a {
+    animation: none;
+  }
+}
+</style>
+
+<!-- BOUTON EN HAUT DE PAGE -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const main = document.querySelector("main");
+  if (!main) return;
+
+  const topButton = document.createElement("div");
+  topButton.className = "flux-access";
+
+  topButton.innerHTML = `
+    <a href="catalogue-flux.html">
+      ⚙️ Flux automatisation pour vous
+      <span class="flux-arrow" aria-hidden="true">↗</span>
+    </a>
+  `;
+
+  main.prepend(topButton);
+});
+</script>
+
+<!-- BOUTON EN BAS DE PAGE -->
+<div class="flux-access">
+  <a href="catalogue-flux.html">
+    ⚙️ Flux automatisation pour vous
+    <span class="flux-arrow" aria-hidden="true">↗</span>
+  </a>
+</div>
+
+<!-- FIN FLUX -->
+
 </main>
 
 <div class="social-orbit">
