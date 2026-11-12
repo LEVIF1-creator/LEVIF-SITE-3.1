@@ -102,7 +102,150 @@
   </nav>
 </header>
 
-<main>
+<!-- ===== BÉB : BOUTON ACCUEIL CARICKAT ===== -->
+<style>
+  .carickat-beb-entry {
+    position: relative;
+    width: min(100%, 480px);
+    margin: 24px auto;
+    isolation: isolate;
+    text-align: center;
+  }
+
+  .carickat-beb-link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    border-radius: 22px;
+    outline-offset: 6px;
+    animation: beb-float 5s ease-in-out infinite;
+    transition: filter .3s ease, transform .3s ease;
+  }
+
+  .carickat-beb-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 15px 16px rgba(0,0,0,.35))
+            drop-shadow(0 0 18px rgba(255,72,148,.25));
+    transition: filter .3s ease;
+  }
+
+  .carickat-beb-link:hover .carickat-beb-logo {
+    filter: drop-shadow(0 20px 24px rgba(0,0,0,.45))
+            drop-shadow(0 0 24px rgba(255,72,148,.65));
+  }
+
+  .carickat-beb-link:focus-visible {
+    outline: 3px solid #2455ae;
+  }
+
+  .carickat-beb-arrow {
+    position: absolute;
+    width: 116px;
+    height: 96px;
+    right: -62px;
+    top: 5%;
+    pointer-events: none;
+    transform: rotate(-8deg);
+    animation: beb-arrow-wiggle 3s ease-in-out infinite;
+  }
+
+  .carickat-beb-arrow path {
+    fill: none;
+    stroke: #2455ae;
+    stroke-width: 3.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .carickat-beb-arrow path:nth-child(2) {
+    stroke-width: 1.2;
+    opacity: .55;
+  }
+
+  .carickat-beb-hint {
+    position: absolute;
+    right: -54px;
+    top: 88px;
+    color: #2455ae;
+    font: italic 700 18px "Comic Sans MS", cursive;
+    transform: rotate(-9deg);
+    pointer-events: none;
+    text-shadow: 1px 1px 0 rgba(255,255,255,.8);
+  }
+
+  @keyframes beb-float {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-9px) rotate(1deg); }
+  }
+
+  @keyframes beb-arrow-wiggle {
+    0%, 100% { transform: rotate(-8deg) translateY(0); }
+    50% { transform: rotate(-2deg) translateY(-5px); }
+  }
+
+  @media (max-width: 650px) {
+    .carickat-beb-entry {
+      width: min(88%, 360px);
+      margin: 20px auto;
+    }
+
+    .carickat-beb-arrow {
+      width: 65px;
+      right: -30px;
+      top: 0;
+    }
+
+    .carickat-beb-hint {
+      right: -20px;
+      top: 58px;
+      font-size: 13px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .carickat-beb-link,
+    .carickat-beb-arrow {
+      animation: none;
+    }
+  }
+</style>
+
+<div class="carickat-beb-entry">
+
+  <a
+    class="carickat-beb-link"
+    href="/beb/"
+    aria-label="Entre dans l'univers BÉB"
+    title="Découvrir l'univers BÉB"
+  >
+    <img
+      class="carickat-beb-logo"
+      src="/assets/bouton-accueil-beb.webp"
+      alt="BÉB — Entre dans l'univers ! Un univers se construit sous tes yeux, mais pas sans toi quand même."
+      loading="lazy"
+      decoding="async"
+    />
+  </a>
+
+  <!-- Flèche dessinée façon stylo Bic -->
+  <svg
+    class="carickat-beb-arrow"
+    viewBox="0 0 120 100"
+    aria-hidden="true"
+  >
+    <path d="M112 10 C65 4 28 24 24 74 M10 60 L24 80 L40 61"/>
+    <path d="M110 14 C70 9 34 27 28 72"/>
+  </svg>
+
+  <span class="carickat-beb-hint" aria-hidden="true">
+    Clique ici !
+  </span>
+
+</div>
+<!-- ===== FIN BOUTON BÉB ===== -->
+  <main>
 
   <section class="hero-carnet">
 
