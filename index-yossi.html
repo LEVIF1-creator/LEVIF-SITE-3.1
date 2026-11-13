@@ -113,9 +113,33 @@ main{order:1;width:100%}
 }
 @media(min-width:691px) and (max-width:1000px){#modules{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:690px){.layout{display:flex;flex-direction:column}.left{order:0}.workspace{order:1}.right{order:2}}
+
+/* V2.6 / Unified YOSSI identity and page-to-page signal disruption */
+header .cross-nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+header .cross-nav a{display:inline-flex;align-items:center;min-height:34px;padding:7px 12px;border:1px solid #31535a;border-radius:2px;background:#0a1b21;color:#b1dad6;text-decoration:none;font-weight:900;font-size:.72rem;letter-spacing:.13em;box-shadow:inset 0 0 0 1px #10262b;transition:background .15s,color .15s}
+header .cross-nav a:hover,header .cross-nav a:focus-visible{background:#164039;color:#cffff3;border-color:#7df4d8}
+.logo{text-decoration:none!important;white-space:nowrap}
+#modules{scroll-margin-top:16px}
+.module{transition:background .14s,border-color .14s}
+.module:active{filter:brightness(1.5)}
+#transition-signal{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:#020b0df2;opacity:0;visibility:hidden;pointer-events:none;overflow:hidden}
+#transition-signal.is-active{opacity:1;visibility:visible;pointer-events:all}
+#transition-signal .transition-static{position:absolute;inset:0;background:repeating-linear-gradient(0deg,#70f8ec24 0 2px,transparent 2px 8px),repeating-linear-gradient(90deg,transparent 0 33px,#f8407a2e 34px 36px,transparent 37px 70px);opacity:.5;mix-blend-mode:screen}
+#transition-signal .transition-word{position:relative;z-index:1;color:#dffff9;font:950 clamp(2.1rem,10vw,8rem)/.9 system-ui,sans-serif;letter-spacing:-.07em;text-align:center;text-shadow:-9px 0 #f83b87,9px 0 #00ffeb}
+#transition-signal .transition-progress{position:absolute;left:10%;right:10%;bottom:20%;height:3px;background:#2d6060}
+#transition-signal .transition-progress:after{content:"";display:block;width:100%;height:100%;background:#a5fff1;transform:scaleX(0);transform-origin:left}
+#transition-signal.is-active .transition-progress:after{animation:transition-load .58s steps(8,end) forwards}
+#transition-signal.is-active .transition-word{animation:transition-shred .58s steps(1,end) both}
+#transition-signal.is-active .transition-static{animation:transition-noise .12s steps(2,end) infinite}
+@keyframes transition-load{to{transform:scaleX(1)}}
+@keyframes transition-shred{0%,100%{transform:none;filter:none}14%{transform:translate(15px,-8px) skewX(-7deg);filter:brightness(2)}28%{transform:translate(-22px,5px);clip-path:inset(15% 0 38%)}45%{transform:translate(9px,12px);clip-path:inset(50% 0 5%)}68%{transform:translate(-8px,-5px);filter:blur(2px)}82%{transform:translate(3px,0);filter:contrast(2)}}
+@keyframes transition-noise{0%{transform:translate(0,0)}50%{transform:translate(8px,-12px)}100%{transform:translate(-12px,8px)}}
+body.motion-off #transition-signal .transition-word,body.motion-off #transition-signal .transition-static,body.motion-off #transition-signal .transition-progress:after{animation:none!important}
+@media(prefers-reduced-motion:reduce){#transition-signal{display:none!important}}
+@media(max-width:690px){header .cross-nav{gap:6px}header .cross-nav a{font-size:.68rem;padding:7px 9px;min-height:32px}.logo{font-size:1.3rem}#transition-signal .transition-word{padding:0 10px}}
 </style></head>
-<body><div id="ghost-layer" aria-hidden="true"></div><div id="fault-flash" aria-hidden="true"></div><div class="fault-snow" id="fault-snow" aria-hidden="true"></div><div class="fault-band" id="fault-band" aria-hidden="true"></div><div class="fault-readout" id="fault-readout" aria-hidden="true">SIGNAL LOST // RECOVERING</div><header><a class="logo" href="index-yossi.html" aria-label="Yossi — accueil">YO<span>SS</span>I / LAB</a><nav aria-label="Navigation"><a href="index.html">Portail</a><a href="index-beb.html">BÉB</a><a href="catalogue-flux.html">FLUX</a></nav></header>
-<div class="layout"><aside class="left"><div class="eyebrow">YOSSI_OS / V2.0</div><p class="small">Laboratoire audiovisuel<br>Interface expérimentale</p><div class="section"><div class="eyebrow">01 / Modules</div><div id="modules" role="group" aria-label="Explorer les modules"><button class="module" data-key="signal" aria-pressed="true">01 / CORE<strong>Signal central</strong></button><button class="module" data-key="animation" aria-pressed="false">02 / MOTION<strong>Animation</strong></button><button class="module" data-key="identite" aria-pressed="false">03 / VISUAL<strong>Identité visuelle</strong></button><button class="module" data-key="production" aria-pressed="false">04 / STUDIO<strong>Production</strong></button><button class="module" data-key="flux" aria-pressed="false">05 / SYSTEM<strong>Automatisation</strong></button></div></div><button class="motion-control" id="motion-toggle" type="button" aria-pressed="true">EFFETS GLITCH : ACTIVÉS</button><div class="section"><div class="eyebrow">02 / État</div><p class="small">Prototype exploratoire.<br>Les offres Yossi sont en préparation.</p></div></aside>
+<body><div id="ghost-layer" aria-hidden="true"></div><div id="transition-signal" aria-hidden="true"><div class="transition-static"></div><div class="transition-word">SIGNAL LOST</div><div class="transition-progress"></div></div><div id="fault-flash" aria-hidden="true"></div><div class="fault-snow" id="fault-snow" aria-hidden="true"></div><div class="fault-band" id="fault-band" aria-hidden="true"></div><div class="fault-readout" id="fault-readout" aria-hidden="true">SIGNAL LOST // RECOVERING</div><header><a class="logo" href="index-yossi.html" aria-label="Yossi — accueil">YO<span>SS</span>I / LAB</a><nav class="cross-nav" aria-label="Explorer les autres univers"><a href="index.html">↖ Portail</a><a href="index-beb.html">BÉB</a><a href="catalogue-flux.html">FLUX</a></nav></header>
+<div class="layout"><aside class="left"><div class="eyebrow">YOSSI_OS / V2.6</div><p class="small">Laboratoire audiovisuel<br>Interface expérimentale</p><div class="section"><div class="eyebrow">01 / Modules</div><div id="modules" role="group" aria-label="Explorer les modules"><button class="module" data-key="signal" aria-pressed="true">01 / CORE<strong>Signal central</strong></button><button class="module" data-key="animation" aria-pressed="false">02 / MOTION<strong>Animation</strong></button><button class="module" data-key="identite" aria-pressed="false">03 / VISUAL<strong>Identité visuelle</strong></button><button class="module" data-key="production" aria-pressed="false">04 / STUDIO<strong>Production</strong></button><button class="module" data-key="flux" aria-pressed="false">05 / SYSTEM<strong>Automatisation</strong></button></div></div><button class="motion-control" id="motion-toggle" type="button" aria-pressed="true">EFFETS GLITCH : ACTIVÉS</button><div class="section"><div class="eyebrow">02 / État</div><p class="small">Laboratoire en construction.<br>Explore les modules. Le signal évolue, les créations arrivent.</p></div></aside>
 <main><div class="workspace"><div class="topline"><span class="eyebrow">Interface de création / laboratoire</span><span class="status">Signal actif</span></div><div class="stage" id="visual-stage"><div class="noise" aria-hidden="true"></div><video autoplay muted loop playsinline preload="metadata" aria-label="Animation officielle Yossi"><source src="yossi-animation-originale.mp4" type="video/mp4"></video><span class="stage-label">YOSSI // VISUAL CORE // LOOP</span></div><div class="eyebrow" id="module-code">MODULE 01 — CORE</div><h1 id="module-title">L'image prend <em>vie.</em></h1><p class="intro" id="module-description">Un laboratoire en construction pour les créateurs audiovisuels. Animation, identités visuelles, production et idées connectées : Yossi prépare son propre langage.</p><div class="actions"><a class="action" href="catalogue-flux.html">Explorer FLUX ↗</a><a class="action alt" href="index.html">Retour au portail</a></div><section class="readout" aria-live="polite"><div class="eyebrow">Console / Module sélectionné</div><h2 id="detail-title">Signal central</h2><p id="detail-copy">Choisissez un module à gauche pour explorer les futurs domaines de création. Cette interface présente des pistes, pas des services déjà disponibles.</p></section></div></main>
 <aside class="right"><div class="eyebrow">03 / Télémétrie</div><div class="metrics"><div class="metric"><b>05</b>Modules</div><div class="metric"><b>V2</b>Prototype</div></div><div class="signal" aria-hidden="true" id="signal"></div><p class="small">Lignes de signal générées en CSS, sans suivi utilisateur ni dépendance externe.</p><div class="section"><div class="eyebrow">04 / Connexions</div><a href="catalogue-flux.html">FLUX — systèmes automatiques ↗</a><a href="index-beb.html">BÉB — univers narratif ↗</a><a href="index-carickat.html">CariCkat — atelier d'artiste ↗</a></div><div class="note">VERSION DE TRAVAIL<br>La page publique Yossi n'est pas remplacée. Aucun formulaire, paiement ou automatisation n'est déclenché ici.</div></aside></div><footer>© LEVIF CariCkat · YOSSI / Prototype d'interface — version non indexée</footer>
 <script>
@@ -167,7 +191,7 @@ function wordEjection(){
  if(!words.length)return;
  const rect=source.getBoundingClientRect();
  if(rect.bottom<0||rect.top>innerHeight||rect.width<1)return;
- const word=words[Math.floor(Math.random()*words.length)].slice(0,22);
+ const word=["SOON","READY?","???","ERROR_404","SIGNAL LOST","REBOOT","NO SIGNAL","YOSSI","LOADING...","SYSTEM / ONLINE","COMING SOON","GLITCH","WAKE UP"][Math.floor(Math.random()*13)];
  const node=document.createElement("span");node.className="ghost-word";node.textContent=word;
  node.style.left=Math.max(4,Math.min(innerWidth-50,rect.left+Math.random()*Math.min(rect.width,120)))+"px";
  node.style.top=Math.max(6,Math.min(innerHeight-40,rect.top))+"px";
@@ -193,5 +217,39 @@ scheduleEjection();
 toggle.addEventListener("click",()=>{if(!effectsOn)clearGhosts()});
 document.addEventListener("visibilitychange",()=>{if(document.hidden)clearGhosts()});
 reduced.addEventListener("change",e=>{if(e.matches)clearGhosts()});
+
+/* Controlled transition system: module changes and same-site navigation */
+const transition=$("transition-signal"),transitionWord=transition.querySelector(".transition-word");
+let navigationLocked=false,transitionTimeout=null;
+function runTransition(message,done){
+ if(!effectsOn||reduced.matches||document.hidden){done();return}
+ if(navigationLocked)return;
+ navigationLocked=true;
+ clearGhosts();clearFault();
+ transitionWord.textContent=message;
+ transition.classList.remove("is-active");void transition.offsetWidth;transition.classList.add("is-active");
+ transitionTimeout=setTimeout(()=>{transition.classList.remove("is-active");navigationLocked=false;done()},620);
+}
+function resetTransition(){clearTimeout(transitionTimeout);transition.classList.remove("is-active");navigationLocked=false}
+window.addEventListener("pageshow",resetTransition);
+document.addEventListener("click",event=>{
+ const link=event.target.closest("a[href]");
+ if(!link||event.defaultPrevented||event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||link.target==="_blank"||link.hasAttribute("download"))return;
+ const dest=new URL(link.href,location.href);
+ if(dest.origin!==location.origin||dest.pathname===location.pathname&&dest.hash)return;
+ if(!effectsOn||reduced.matches)return;
+ event.preventDefault();
+ runTransition(["REBOOTING","CONNECTING...","SIGNAL LOST","LOADING..."][Math.floor(Math.random()*4)],()=>{location.assign(dest.href)});
+});
+/* For module buttons, apply the selected content after a brief distortion. */
+$("modules").addEventListener("click",event=>{
+ if(!effectsOn||reduced.matches)return;
+ const button=event.target.closest("button[data-key]");
+ if(!button||button.getAttribute("aria-pressed")==="true")return;
+ const title=$("module-title");title.classList.add("fault-shift");title.style.setProperty("--fault-dx","19px");
+ setTimeout(()=>title.classList.remove("fault-shift"),190);
+ faultFlash.classList.remove("active");void faultFlash.offsetWidth;faultFlash.classList.add("active");
+ wordEjection();
+});
 for(let i=0;i<35;i++){const bar=document.createElement("i");bar.style.setProperty("--h",(7+((i*37+11)%40))+"px");$("signal").append(bar)}
 </script></body></html>
