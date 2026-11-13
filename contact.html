@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7615927970609037"
+ 
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7615927970609037"
      crossorigin="anonymous">
     </script>
-<head>
  <meta property="og:image" content="https://levif-art.fr/social-preview.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -29,7 +30,7 @@
 <meta property="og:url" content="https://levif-art.fr/contact.html" />
 
 <link rel="canonical" href="https://levif-art.fr/contact.html" />
-<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="style-carickat.css"/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -229,7 +230,7 @@
         Même une réponse incomplète suffit : le carnet clarifiera le reste.
       </p>
 
-      <form class="contact-form">
+      <form class="contact-form" id="contactForm">
         <label>
           Nom
           <input type="text" name="name" placeholder="Ton nom">
@@ -237,7 +238,7 @@
 
         <label>
           Email
-          <input type="email" name="email" placeholder="ton@email.com">
+          <input type="email" name="email" placeholder="ton@email.com" required>
         </label>
 
         <label>
@@ -247,10 +248,14 @@
 
         <label>
           Message
-          <textarea name="message" placeholder="Décris ta demande : type de dessin, ambiance, format, délai, références, usage prévu..."></textarea>
+          <textarea name="message" placeholder="Décris ta demande : type de dessin, ambiance, format, délai, références, usage prévu..." required></textarea>
         </label>
 
-        <a href="galerie.html" class="btn btn-primary" style="margin-top:18px;">
+        <button type="submit" class="btn btn-primary" style="margin-top:18px;">
+          Préparer mon e-mail
+        </button>
+        <p style="font-size:.85rem;margin-top:10px">Votre application de messagerie s’ouvrira pour envoyer le message. Aucun envoi automatique n’est effectué.</p>
+        <a href="galerie.html" class="btn btn-secondary" style="margin-top:18px;">
           Voir la galerie avant d’écrire
         </a>
       </form>
@@ -549,5 +554,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+<script>
+document.getElementById("contactForm")?.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const fields = new FormData(this);
+  const subject = String(fields.get("subject") || "Contact depuis le site CariCkat").trim();
+  const body = ["Nom : " + String(fields.get("name") || ""), "E-mail : " + String(fields.get("email") || ""), "", String(fields.get("message") || "")].join("\n");
+  window.location.href = "mailto:atelier@levif-art.fr?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+});
+</script>
 </body>
 </html>
