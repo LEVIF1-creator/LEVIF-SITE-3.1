@@ -395,29 +395,27 @@ whyBackdrop.addEventListener("click",e=>{if(e.target===whyBackdrop)closeWhy(true
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeWhy(true);if(!whyBackdrop.hidden&&e.key==="Tab"){const controls=[whyClose,whyReduce];if(e.shiftKey&&document.activeElement===controls[0]){e.preventDefault();controls[1].focus()}else if(!e.shiftKey&&document.activeElement===controls[1]){e.preventDefault();controls[0].focus()}}});
 whyBackdrop.addEventListener("wheel",()=>closeWhy(),{passive:true});
 whyBackdrop.addEventListener("touchmove",()=>closeWhy(),{passive:true,once:false});
-/* V3.4 — one wheel action or one click = one full panel, without smooth-scroll jitter.
-   On the last panel, wheel movement remains native to reach all content and footer. */
+/* V3.5: reliable bidirectional panel stepping, including long final page. */
 const windows=[...document.querySelectorAll(".layout>.left,.layout>main,.layout>.right,.layout>.future-window")];
 const dots=[...document.querySelectorAll(".window-progress button")],nextWindow=$("window-next"),prevWindow=$("window-prev");
 let currentWindow=0,stepLock=0,wheelAccum=0,wheelReset=null,scrollRaf=false;
 function panelTop(i){return Math.round(windows[i].getBoundingClientRect().top+window.scrollY)}
 function nearestWindow(){const y=window.scrollY+Math.min(innerHeight*.22,110);let idx=0;windows.forEach((w,i)=>{if(panelTop(i)<=y)idx=i});return idx}
 function setWindowState(i){currentWindow=Math.max(0,Math.min(windows.length-1,i));dots.forEach((b,j)=>b.setAttribute("aria-current",j===currentWindow?"step":"false"));nextWindow.disabled=currentWindow===windows.length-1;prevWindow.disabled=currentWindow===0}
-function goWindow(i){closeWhy();const target=Math.max(0,Math.min(windows.length-1,i));setWindowState(target);stepLock=Date.now()+420;window.scrollTo({top:panelTop(target),behavior:"instant"})}
+function goWindow(i){closeWhy();const target=Math.max(0,Math.min(windows.length-1,i));setWindowState(target);wheelAccum=0;stepLock=Date.now()+300;window.scrollTo({top:panelTop(target),behavior:"instant"})}
 dots.forEach((b,i)=>b.addEventListener("click",()=>goWindow(i)));
 nextWindow.addEventListener("click",()=>goWindow(currentWindow+1));
 prevWindow.addEventListener("click",()=>goWindow(currentWindow-1));
 window.addEventListener("wheel",e=>{
  if(!whyBackdrop.hidden){closeWhy();e.preventDefault();return}
  if(e.ctrlKey||e.metaKey||Math.abs(e.deltaY)<2||e.target.closest("[data-native-scroll]"))return;
- const last=windows.length-1,atLast=currentWindow===last;
- const lastTop=panelTop(last);
- if(atLast&&e.deltaY>0)return; // final panel: scroll down to the actual bottom
- if(atLast&&e.deltaY<0&&window.scrollY>lastTop+5)return; // scroll back up within final panel
+ const last=windows.length-1,lastTop=panelTop(last),atLast=currentWindow===last;
+ // Let the last window scroll normally in BOTH directions until its top is reached.
+ if(atLast&&(e.deltaY>0||(e.deltaY<0&&window.scrollY>lastTop+4)))return;
  e.preventDefault();
  if(Date.now()<stepLock)return;
- wheelAccum+=e.deltaY;clearTimeout(wheelReset);wheelReset=setTimeout(()=>{wheelAccum=0},160);
- if(Math.abs(wheelAccum)<18)return;
+ wheelAccum+=e.deltaY;clearTimeout(wheelReset);wheelReset=setTimeout(()=>{wheelAccum=0},180);
+ if(Math.abs(wheelAccum)<15)return;
  const dir=Math.sign(wheelAccum);wheelAccum=0;
  if(dir<0&&currentWindow===0)return;
  goWindow(currentWindow+dir);
@@ -428,25 +426,35 @@ window.addEventListener("pageshow",()=>{stepLock=0;setWindowState(nearestWindow(
 setWindowState(nearestWindow());
 /* V3.2 — the REAL DOM elements glitch, not only an overlay.
    Targets are resolved at each burst, including content changed by module selection. */
+/* Include real text, media and interactive parts of EVERY YOSSI window. */
 const nativeGlitchSelectors=[
- ".logo","header nav a",".eyebrow",".small",".section h2",".section h3",
- ".module",".module strong",".module span","#module-title","#module-description",
- "#detail-title","#detail-copy",".metric",".metric b",".metric span",
- ".right a",".right p",".right strong",".right .note",
- ".floating-why h2",".floating-why p",".floating-why-kicker",".floating-why-foot",
- ".future-lead h2",".future-lead p",".future-index",".future-feature",
- ".future-feature h3",".future-feature p",".future-feature span",
- ".future-bottom strong",".future-bottom p",".future-actions a",
- ".stage video",".stage-label",".action",".motion-control",
- ".window-arrows button",".window-progress button","footer"
+ "header .logo","header nav a",
+ ".layout h1",".layout h2",".layout h3",".layout h4",
+ ".layout p",".layout small",".layout strong",".layout em",
+ ".layout .eyebrow",".layout .small",".layout .note",
+ ".layout button",".layout a",".layout label",
+ ".layout .module",".layout .metric",".layout .readout",
+ ".layout .stage video",".layout video",".layout img",".layout svg",
+ ".layout .future-feature",".layout .future-index",".layout .future-bottom",
+ ".layout .floating-why-trigger",".layout .floating-why-kicker",
+ ".layout .floating-why-foot",".layout .stage-label",
+ "footer a","footer p","footer strong",
+ ".window-arrows button",".window-progress button"
 ];
 const nativeAnimations=new Set();
 function stopNativeGlitches(){for(const anim of nativeAnimations){anim.cancel()}nativeAnimations.clear()}
-function nativeTargets(){const all=[...document.querySelectorAll(nativeGlitchSelectors.join(","))];return all.filter(el=>{const r=el.getBoundingClientRect();return r.width>0&&r.height>0&&r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth&&!el.closest("#transition-signal")})}
+function nativeTargets(){
+ const all=[...new Set(document.querySelectorAll(nativeGlitchSelectors.join(",")))];
+ return all.filter(el=>{
+  if(el.closest("#transition-signal,.why-backdrop[hidden]")||el.hidden)return false;
+  const r=el.getBoundingClientRect(),style=getComputedStyle(el);
+  return style.visibility!=="hidden"&&style.display!=="none"&&r.width>0&&r.height>0&&r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth;
+ });
+}
 function nativeGlitchBurst(){
  if(!effectsOn||reduced.matches||document.hidden)return;
  const pool=nativeTargets();if(!pool.length)return;
- const amount=Math.min(pool.length,2+Math.floor(Math.random()*Math.min(7,pool.length)));
+ const amount=Math.min(pool.length,4+Math.floor(Math.random()*Math.min(11,pool.length)));
  for(let i=0;i<amount;i++){
   const index=Math.floor(Math.random()*pool.length),el=pool.splice(index,1)[0];
   const dx=(Math.random()>.5?1:-1)*(5+Math.floor(Math.random()*23));
@@ -466,7 +474,7 @@ function nativeGlitchBurst(){
  }
 }
 let nativeFaultTimer=null;
-function scheduleNativeFault(){clearTimeout(nativeFaultTimer);nativeFaultTimer=setTimeout(()=>{nativeGlitchBurst();scheduleNativeFault()},360+Math.floor(Math.random()*1100))}
+function scheduleNativeFault(){clearTimeout(nativeFaultTimer);nativeFaultTimer=setTimeout(()=>{nativeGlitchBurst();scheduleNativeFault()},260+Math.floor(Math.random()*780))}
 scheduleNativeFault();
 toggle.addEventListener("click",()=>{if(!effectsOn)stopNativeGlitches()});
 document.addEventListener("visibilitychange",()=>{if(document.hidden)stopNativeGlitches()});
