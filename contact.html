@@ -563,5 +563,5 @@ document.getElementById("contactForm")?.addEventListener("submit", function (eve
   window.location.href = "mailto:atelier@levif-art.fr?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
 });
 </script>
-</body>
+<script>document.getElementById("contactForm")?.addEventListener("submit",function(e){e.preventDefault();const f=new FormData(this);const s=String(f.get("subject")||"Contact CariCkat");const b=["Nom : "+String(f.get("name")||""),"E-mail : "+String(f.get("email")||""),"",String(f.get("message")||"")].join("\n");location.href="mailto:atelier@levif-art.fr?subject="+encodeURIComponent(s)+"&body="+encodeURIComponent(b);});</script></body>
 </html>
