@@ -490,7 +490,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
-  cartes.forEach(carte => galerie.appendChild(carte));
+  cartes.forEach((carte, index) => {
+    galerie.appendChild(carte);
+    const img = carte.querySelector("img");
+    if (img) {
+      img.loading = index < 3 ? "eager" : "lazy";
+      img.decoding = "async";
+      if (index === 0) img.fetchPriority = "high";
+    }
+  });
+
+  // Sur téléphone, les dessins ne doivent jamais dépendre d'une animation
+  // ou d'un observateur d'intersection pour rester visibles.
+  if (window.matchMedia("(max-width: 980px)").matches) {
+    const section = document.getElementById("galerie-caricatures");
+    section?.classList.remove("carickat-reveal");
+    cartes.forEach(carte => carte.classList.remove("carickat-reveal"));
+  }
 
 });
 </script>
