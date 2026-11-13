@@ -44,19 +44,12 @@ h1 em{font-style:normal;color:var(--rose)}
 .choice:hover .arrow,.choice:focus-visible .arrow{transform:translate(4px,-4px);background:#ffffff18}
 footer{position:relative;z-index:1;text-align:center;color:#a8a5b0;font-size:.67rem;padding:10px 16px 14px}
 
-/* Atmospheric portal transition — layered drifting vapor, not expanding circles */
-.cloud-wipe{position:fixed;inset:0;z-index:1000;pointer-events:none;visibility:hidden;opacity:0;overflow:hidden;background:transparent;isolation:isolate}
-.cloud-wipe .veil{position:absolute;inset:0;background:linear-gradient(130deg,#f2f0ee,#d7e5e8 58%,#f7f2ee);opacity:0}
-.cloud-wipe .vapor{position:absolute;left:-40%;top:-45%;width:180%;height:190%;opacity:0;transform:translate3d(-24%,14%,0) scale(.75);will-change:transform,opacity;background:radial-gradient(ellipse at 15% 40%,#fff 0 9%,#ffffffd9 16%,transparent 38%),radial-gradient(ellipse at 42% 60%,#f6f0f5 0 13%,#f6f0f5a8 24%,transparent 44%),radial-gradient(ellipse at 74% 36%,#d9e8ec 0 11%,#e7f2f4ae 26%,transparent 47%),radial-gradient(ellipse at 84% 78%,#fff 0 8%,#fff9 23%,transparent 41%);filter:blur(clamp(18px,4vw,60px))}
-.cloud-wipe .vapor:nth-child(2){animation-delay:.07s;transform:translate3d(25%,12%,0) scale(.72);filter:blur(clamp(25px,5vw,80px));mix-blend-mode:screen}
-.cloud-wipe .vapor:nth-child(3){animation-delay:.14s;transform:translate3d(-12%,38%,0) scale(.8);filter:blur(clamp(12px,3vw,45px));background:radial-gradient(ellipse at 22% 72%,#fff 0 12%,transparent 42%),radial-gradient(ellipse at 63% 45%,#f5eff7 0 16%,transparent 46%),radial-gradient(ellipse at 85% 25%,#cfe7ee 0 9%,transparent 38%)}
+/* Portal V4 — fine luminous particles materialize a new page */
+.cloud-wipe{position:fixed;inset:0;z-index:1000;pointer-events:none;opacity:0;visibility:hidden;background:#0d151c;overflow:hidden}
+.cloud-wipe canvas{display:block;width:100%;height:100%}
 body.leaving .cloud-wipe{visibility:visible;opacity:1}
-body.leaving .cloud-wipe .veil{animation:cloud-veil 1.02s ease-in-out both}
-body.leaving .cloud-wipe .vapor{animation:cloud-drift .98s cubic-bezier(.16,.65,.18,1) both}
-body.leaving .content{animation:portal-dissolve .7s ease-out both}
-@keyframes cloud-veil{0%,23%{opacity:0}75%{opacity:.8}100%{opacity:1}}
-@keyframes cloud-drift{0%{opacity:0;transform:translate3d(-20%,16%,0) scale(.68)}28%{opacity:.85}75%{opacity:1;transform:translate3d(1%,-3%,0) scale(1.1)}100%{opacity:1;transform:translate3d(5%,-5%,0) scale(1.18)}}
-@keyframes portal-dissolve{0%{opacity:1;filter:blur(0);transform:scale(1)}100%{opacity:.15;filter:blur(13px);transform:scale(.975)}}
+body.leaving .content{animation:portal-disperse .8s ease-out both}
+@keyframes portal-disperse{0%{opacity:1;filter:blur(0);transform:scale(1)}100%{opacity:0;filter:blur(8px);transform:scale(1.025)}}
 @media(max-width:700px){main{padding:8px 15px 12px}h1{font-size:clamp(2.1rem,9vw,3.7rem);margin:8px 0 17px}.choices{grid-template-columns:1fr;gap:12px}.choice{min-height:clamp(155px,25svh,210px);padding:20px}.choice strong{font-size:clamp(2.3rem,9vw,3.7rem)}.choice .arrow{width:50px;height:50px}.eyebrow{font-size:.58rem}footer{font-size:.6rem}}
 @media(max-height:680px) and (min-width:701px){header{padding-top:12px;padding-bottom:10px}main{padding:4px 20px 8px}h1{font-size:clamp(2.1rem,5vw,3.5rem);margin:5px 0 14px}.choice{min-height:190px;padding:20px}.choice strong{font-size:clamp(2.1rem,4vw,3.2rem)}.choice .arrow{width:48px;height:48px}footer{padding:6px}}
 @media(max-height:590px) and (max-width:700px){.choice{min-height:135px;padding:14px}.choice strong{font-size:2rem}.eyebrow{display:none}h1{font-size:2rem;margin:4px 0 12px}header{padding:9px 15px}footer{padding:5px}}
@@ -83,22 +76,47 @@ body.leaving .content{animation:portal-dissolve .7s ease-out both}
 </nav>
 </div>
 </main>
-<div class="cloud-wipe" aria-hidden="true"><div class="veil"></div><div class="vapor"></div><div class="vapor"></div><div class="vapor"></div></div><footer>© LEVIF CariCkat · L’art et la création sous toutes leurs formes</footer>
+<div class="cloud-wipe" aria-hidden="true"><canvas id="portal-particles"></canvas></div><footer>© LEVIF CariCkat · L’art et la création sous toutes leurs formes</footer>
 <script>
 (function(){
- const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- document.querySelectorAll('.choice').forEach(link=>{
-  link.addEventListener('click',function(event){
-   if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey||reduced)return;
-   event.preventDefault();
-   if(document.body.classList.contains('leaving'))return;
-   document.body.classList.add('leaving');
-   const destination=link.href;
-   window.setTimeout(()=>{window.location.assign(destination)},950);
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const overlay=document.querySelector('.cloud-wipe'),canvas=document.getElementById('portal-particles'),ctx=canvas.getContext('2d',{alpha:false});
+ let navigating=false,raf=0;
+ function renderParticles(start){
+  if(!ctx)return;
+  const ratio=Math.min(devicePixelRatio||1,1.5),w=innerWidth,h=innerHeight;
+  canvas.width=Math.round(w*ratio);canvas.height=Math.round(h*ratio);ctx.setTransform(ratio,0,0,ratio,0,0);
+  const count=Math.min(950,Math.max(360,Math.round(w*h/1350)));
+  const particles=Array.from({length:count},(_,i)=>{
+   const a=Math.random()*Math.PI*2,r=Math.sqrt(Math.random()),side=Math.random()<.5?-1:1;
+   return {x:Math.random()*w,y:Math.random()*h,ox:side*(w*.45+Math.random()*w*.65),oy:(Math.random()-.5)*h*.9,sz:.45+Math.random()*2.1,phase:Math.random()*6.28,hue:Math.random()<.58?190:Math.random()<.5?325:40};
   });
- });
- window.addEventListener('pageshow',()=>document.body.classList.remove('leaving'));
- document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')document.body.classList.remove('leaving')});
+  function frame(now){
+   const t=Math.min(1,(now-start)/950),ease=1-Math.pow(1-t,3);
+   ctx.fillStyle='#0c151b';ctx.fillRect(0,0,w,h);
+   const bloom=ctx.createRadialGradient(w*.5,h*.5,10,w*.5,h*.5,Math.max(w,h)*.75);
+   bloom.addColorStop(0,'rgba(130,222,221,'+(0.13*t)+')');bloom.addColorStop(1,'rgba(9,17,23,0)');
+   ctx.fillStyle=bloom;ctx.fillRect(0,0,w,h);
+   for(const p of particles){
+    const x=p.x+p.ox*(1-ease),y=p.y+p.oy*(1-ease)+Math.sin(t*10+p.phase)*8*(1-t);
+    const alpha=Math.min(1,t*3)*(.2+.75*Math.sin(Math.PI*Math.min(1,t*1.25)))*(.5+.5*Math.sin(p.phase+t*12)**2);
+    ctx.fillStyle='hsla('+p.hue+',72%,85%,'+alpha+')';
+    ctx.beginPath();ctx.arc(x,y,p.sz*(.5+t*.65),0,Math.PI*2);ctx.fill();
+   }
+   if(t>.65){ctx.fillStyle='rgba(240,248,247,'+((t-.65)/.35*.93)+')';ctx.fillRect(0,0,w,h)}
+   if(t<1&&navigating)raf=requestAnimationFrame(frame);
+  }
+  raf=requestAnimationFrame(frame);
+ }
+ document.querySelectorAll('.choice').forEach(link=>link.addEventListener('click',e=>{
+  if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||navigating||reduced)return;
+  e.preventDefault();navigating=true;document.body.classList.add('leaving');
+  const destination=link.href;
+  if(ctx)renderParticles(performance.now());else overlay.style.background='#f0f8f7';
+  setTimeout(()=>location.assign(destination),940);
+ }));
+ addEventListener('pageshow',()=>{navigating=false;cancelAnimationFrame(raf);document.body.classList.remove('leaving')});
+ addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&!navigating)document.body.classList.remove('leaving')});
 })();
 </script></body>
 </html>
