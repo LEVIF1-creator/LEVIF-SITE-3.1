@@ -1,41 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://levif-art.fr/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://levif-art.fr/galerie.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://levif-art.fr/boutique.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://levif-art.fr/commande.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://levif-art.fr/contact.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://levif-art.fr/a-propos.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+  <url><loc>https://levif-art.fr/</loc></url>
+  <url><loc>https://levif-art.fr/index-carickat.html</loc></url>
+  <url><loc>https://levif-art.fr/galerie.html</loc></url>
+  <url><loc>https://levif-art.fr/boutique.html</loc></url>
+  <url><loc>https://levif-art.fr/commande.html</loc></url>
+  <url><loc>https://levif-art.fr/process.html</loc></url>
+  <url><loc>https://levif-art.fr/a-propos.html</loc></url>
+  <url><loc>https://levif-art.fr/soutien.html</loc></url>
+  <url><loc>https://levif-art.fr/contact.html</loc></url>
+  <url><loc>https://levif-art.fr/originaux.html</loc></url>
+  <url><loc>https://levif-art.fr/animaux.html</loc></url>
+  <url><loc>https://levif-art.fr/expression-corporelle.html</loc></url>
+  <url><loc>https://levif-art.fr/caricatures.html</loc></url>
+  <url><loc>https://levif-art.fr/heros.html</loc></url>
+  <url><loc>https://levif-art.fr/index-beb.html</loc></url>
+  <url><loc>https://levif-art.fr/index-yossi.html</loc></url>
+  <url><loc>https://levif-art.fr/catalogue-flux.html</loc></url>
 </urlset>
