@@ -259,6 +259,15 @@ body:not(.motion-off) .module,body:not(.motion-off) .future-feature,body:not(.mo
 body.why-open{overflow:hidden}
 @media(min-width:691px) and (max-width:1100px){.floating-why{position:absolute!important;top:clamp(60px,9vh,100px)!important;right:28px!important;width:190px!important}}
 @media(max-width:690px){.floating-why{position:relative!important;top:auto!important;right:auto!important;width:190px!important;max-width:100%!important;margin:10px 0 18px auto!important}.floating-why-trigger{padding:11px 13px}.why-backdrop{padding:15px}.why-dialog{max-height:82svh}}
+
+/* V3.4 navigation consolidation: direct steps, readable final panel, centered explainer */
+html{scroll-behavior:auto!important;scroll-snap-type:none!important}
+.layout{display:block!important;overflow:visible!important;isolation:auto!important}
+.layout>.left,.layout>main,.layout>.right,.layout>.future-window{position:sticky!important;top:0!important;min-height:100svh!important;height:auto!important;max-height:none!important;overflow:visible!important;transform:none!important;scroll-snap-align:none!important}
+.layout>.future-window{padding-bottom:clamp(75px,12vh,145px)}
+.floating-why{position:absolute!important;top:clamp(65px,9vh,110px)!important;left:50%!important;right:auto!important;width:205px!important;max-width:calc(100% - 32px)!important;transform:translateX(-50%)!important;margin:0!important}
+.window-arrows button:disabled{opacity:.35}
+@media(max-width:690px){.floating-why{position:relative!important;top:auto!important;left:auto!important;right:auto!important;transform:none!important;margin:10px auto 18px!important}}
 </style></head>
 <body><nav class="window-progress" aria-label="Fenêtres Yossi"><button type="button" data-window="0" aria-label="Fenêtre 1 : modules"></button><button type="button" data-window="1" aria-label="Fenêtre 2 : laboratoire"></button><button type="button" data-window="2" aria-label="Fenêtre 3 : connexions"></button><button type="button" data-window="3" aria-label="Fenêtre 4 : découvrir Yossi"></button></nav><div class="window-arrows"><button class="window-next" id="window-prev" type="button">↑ FENÊTRE PRÉCÉDENTE</button><button class="window-next" id="window-next" type="button">FENÊTRE SUIVANTE ↓</button></div><div id="ghost-layer" aria-hidden="true"></div><div id="transition-signal" aria-hidden="true"><div class="transition-static"></div><div class="transition-word">SIGNAL LOST</div><div class="transition-progress"></div></div><div id="fault-flash" aria-hidden="true"></div><div class="fault-snow" id="fault-snow" aria-hidden="true"></div><div class="fault-band" id="fault-band" aria-hidden="true"></div><div class="fault-readout" id="fault-readout" aria-hidden="true">SIGNAL LOST // RECOVERING</div><header><a class="logo" href="index-yossi.html" aria-label="Yossi — accueil">YO<span>SS</span>I / LAB</a><nav class="cross-nav" aria-label="Explorer les autres univers"><a href="index.html">↖ Portail</a><a href="index-beb.html">BÉB</a><a href="catalogue-flux.html">FLUX</a></nav></header>
 <div class="layout"><aside class="left"><aside class="floating-why" id="why-yossi" aria-labelledby="floating-why-title"><button class="floating-why-trigger" id="why-open" type="button" aria-haspopup="dialog" aria-controls="why-dialog"><span id="floating-why-title">Pourquoi YOSSI ?</span><span class="floating-why-open-icon" aria-hidden="true">↗</span><small>CLIQUER POUR DÉCOUVRIR</small></button></aside><div class="why-backdrop" id="why-backdrop" hidden><section class="why-dialog" id="why-dialog" role="dialog" aria-modal="true" aria-labelledby="why-dialog-title" tabindex="-1"><button class="why-close" id="why-close" type="button" aria-label="Réduire la fenêtre">✕</button><span class="floating-why-kicker">TRANSMISSION / SOON</span><h2 id="why-dialog-title">Pourquoi YOSSI ?</h2><p class="why-hook">Et si vos créations pouvaient prendre vie… puis voyager presque seules ?</p><p>YOSSI prépare un laboratoire audiovisuel pour les créateurs : <strong>clips et transitions animés maison</strong> pour signer visuellement leurs vidéos, et <strong>robots de diffusion</strong> conçus pour organiser, programmer et suivre leurs contenus sur plusieurs plateformes.</p><p>Moins de tâches répétitives. Plus de temps pour créer. Les outils et démonstrations seront présentés au fur et à mesure de leur développement.</p><span class="floating-why-foot">EN CONSTRUCTION · RESTEZ CONNECTÉS</span><button class="why-reduce" id="why-reduce" type="button">RÉDUIRE LA FENÊTRE ↙</button></section></div><div class="eyebrow">YOSSI_OS / LIVE</div><p class="small">Laboratoire audiovisuel<br>Interface expérimentale</p><div class="section"><div class="eyebrow">01 / Modules</div><div id="modules" role="group" aria-label="Explorer les modules"><button class="module" data-key="signal" aria-pressed="true">01 / CORE<strong>Signal central</strong></button><button class="module" data-key="animation" aria-pressed="false">02 / MOTION<strong>Animation</strong></button><button class="module" data-key="identite" aria-pressed="false">03 / VISUAL<strong>Identité visuelle</strong></button><button class="module" data-key="production" aria-pressed="false">04 / STUDIO<strong>Production</strong></button><button class="module" data-key="flux" aria-pressed="false">05 / SYSTEM<strong>Automatisation</strong></button></div></div><button class="motion-control" id="motion-toggle" type="button" aria-pressed="true">EFFETS GLITCH : ACTIVÉS</button><div class="section"><div class="eyebrow">02 / État</div><p class="small">Laboratoire en construction.<br>Explore les modules. Le signal évolue, les créations arrivent.</p></div></aside>
@@ -386,31 +395,37 @@ whyBackdrop.addEventListener("click",e=>{if(e.target===whyBackdrop)closeWhy(true
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeWhy(true);if(!whyBackdrop.hidden&&e.key==="Tab"){const controls=[whyClose,whyReduce];if(e.shiftKey&&document.activeElement===controls[0]){e.preventDefault();controls[1].focus()}else if(!e.shiftKey&&document.activeElement===controls[1]){e.preventDefault();controls[0].focus()}}});
 whyBackdrop.addEventListener("wheel",()=>closeWhy(),{passive:true});
 whyBackdrop.addEventListener("touchmove",()=>closeWhy(),{passive:true,once:false});
-/* One wheel gesture = one stacked window. Four windows, four dots. */
+/* V3.4 — one wheel action or one click = one full panel, without smooth-scroll jitter.
+   On the last panel, wheel movement remains native to reach all content and footer. */
 const windows=[...document.querySelectorAll(".layout>.left,.layout>main,.layout>.right,.layout>.future-window")];
 const dots=[...document.querySelectorAll(".window-progress button")],nextWindow=$("window-next"),prevWindow=$("window-prev");
-let currentWindow=0,scrollRaf=false,stepLock=0,wheelAccum=0,wheelReset=null;
-function nearestWindow(){const y=window.scrollY+Math.min(innerHeight*.3,170);let idx=0;windows.forEach((w,i)=>{if(w.offsetTop<=y)idx=i});return idx}
+let currentWindow=0,stepLock=0,wheelAccum=0,wheelReset=null,scrollRaf=false;
+function panelTop(i){return Math.round(windows[i].getBoundingClientRect().top+window.scrollY)}
+function nearestWindow(){const y=window.scrollY+Math.min(innerHeight*.22,110);let idx=0;windows.forEach((w,i)=>{if(panelTop(i)<=y)idx=i});return idx}
 function setWindowState(i){currentWindow=Math.max(0,Math.min(windows.length-1,i));dots.forEach((b,j)=>b.setAttribute("aria-current",j===currentWindow?"step":"false"));nextWindow.disabled=currentWindow===windows.length-1;prevWindow.disabled=currentWindow===0}
-function goWindow(i){closeWhy();const target=Math.max(0,Math.min(windows.length-1,i));setWindowState(target);stepLock=Date.now()+760;window.scrollTo({top:windows[target].offsetTop,behavior:reduced.matches?"instant":"smooth"})}
+function goWindow(i){closeWhy();const target=Math.max(0,Math.min(windows.length-1,i));setWindowState(target);stepLock=Date.now()+420;window.scrollTo({top:panelTop(target),behavior:"instant"})}
 dots.forEach((b,i)=>b.addEventListener("click",()=>goWindow(i)));
 nextWindow.addEventListener("click",()=>goWindow(currentWindow+1));
 prevWindow.addEventListener("click",()=>goWindow(currentWindow-1));
 window.addEventListener("wheel",e=>{
- if(!whyBackdrop.hidden){closeWhy();return}
- if(e.ctrlKey||e.metaKey||Math.abs(e.deltaY)<2)return;
- if(e.target.closest("[data-native-scroll]"))return;
+ if(!whyBackdrop.hidden){closeWhy();e.preventDefault();return}
+ if(e.ctrlKey||e.metaKey||Math.abs(e.deltaY)<2||e.target.closest("[data-native-scroll]"))return;
+ const last=windows.length-1,atLast=currentWindow===last;
+ const lastTop=panelTop(last);
+ if(atLast&&e.deltaY>0)return; // final panel: scroll down to the actual bottom
+ if(atLast&&e.deltaY<0&&window.scrollY>lastTop+5)return; // scroll back up within final panel
  e.preventDefault();
  if(Date.now()<stepLock)return;
- wheelAccum+=e.deltaY;clearTimeout(wheelReset);wheelReset=setTimeout(()=>{wheelAccum=0},180);
- if(Math.abs(wheelAccum)<24)return;
- const dir=Math.sign(wheelAccum);wheelAccum=0;goWindow(currentWindow+dir);
+ wheelAccum+=e.deltaY;clearTimeout(wheelReset);wheelReset=setTimeout(()=>{wheelAccum=0},160);
+ if(Math.abs(wheelAccum)<18)return;
+ const dir=Math.sign(wheelAccum);wheelAccum=0;
+ if(dir<0&&currentWindow===0)return;
+ goWindow(currentWindow+dir);
 },{passive:false});
 window.addEventListener("keydown",e=>{if(e.defaultPrevented||e.altKey||e.ctrlKey||e.metaKey||/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName||""))return;if(e.key==="PageDown"||e.key==="PageUp"){e.preventDefault();goWindow(currentWindow+(e.key==="PageDown"?1:-1))}});
 window.addEventListener("scroll",()=>{if(scrollRaf||Date.now()<stepLock)return;scrollRaf=true;requestAnimationFrame(()=>{setWindowState(nearestWindow());scrollRaf=false})},{passive:true});
 window.addEventListener("pageshow",()=>{stepLock=0;setWindowState(nearestWindow())});
 setWindowState(nearestWindow());
-
 /* V3.2 — the REAL DOM elements glitch, not only an overlay.
    Targets are resolved at each burst, including content changed by module selection. */
 const nativeGlitchSelectors=[
