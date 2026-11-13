@@ -56,3 +56,28 @@ body {
 /* Galerie extensible : bouton sous les cartes, sans modifier la grille du site. */
 .caricatures-more-row { display: flex; justify-content: center; margin-top: 28px; }
 .caricatures-more-row[hidden] { display: none !important; }
+
+/* Boutique > Caricatures : visibilité garantie des œuvres sur téléphone. */
+@media (max-width: 980px) {
+  #galerie-caricatures,
+  #galerie-caricatures.carickat-reveal,
+  #galerie-caricatures .art-card,
+  #galerie-caricatures .art-card.carickat-reveal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+  #galerie-caricatures .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 16px;
+  }
+  #galerie-caricatures .art-card img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
