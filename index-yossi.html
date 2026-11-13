@@ -6,6 +6,29 @@
 <title>YOSSI — On arrive bientôt | LEVIF CariCkat</title>
 <style>
 :root{color-scheme:dark}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 35%,#171321 0%,#08080c 48%,#050507 100%);color:#f4f0eb;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit}a:focus-visible{outline:2px solid #dbc8ff;outline-offset:5px}.bar{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:20px clamp(18px,5vw,65px);font-size:.8rem;letter-spacing:.12em}.bar a{text-decoration:none;color:#bfb9c9}.bar a:hover{color:white}.brand{font-weight:800}.center{max-width:950px;margin:0 auto;padding:15px 20px 80px;text-align:center}.kicker{font-size:.75rem;letter-spacing:.32em;text-transform:uppercase;color:#b9a7d0;font-weight:700}.animation{width:min(100%,480px);height:clamp(300px,52vh,540px);margin:5px auto 12px;display:grid;place-items:center;overflow:hidden;position:relative}.animation video{display:block;height:100%;width:100%;object-fit:contain;mix-blend-mode:screen;pointer-events:none}.animation:after{content:"";pointer-events:none;position:absolute;inset:0;background:linear-gradient(0deg,#08080c 0%,transparent 10%,transparent 90%,#08080c 100%)}h1{font-size:clamp(2rem,6vw,4.5rem);line-height:1.06;letter-spacing:.05em;margin:0 0 16px;text-transform:uppercase}p{max-width:650px;margin:0 auto 25px;color:#cbc5d1;font-size:clamp(1rem,2vw,1.14rem)}.flux{display:inline-flex;justify-content:center;align-items:center;padding:17px 26px;min-height:58px;border-radius:12px;background:#e8dcfa;color:#191121;text-decoration:none;font-weight:800;box-shadow:0 10px 45px #7f5caa35;transition:transform .2s}.flux:hover{transform:translateY(-2px);background:white}.secondary{display:block;margin-top:25px;font-size:.85rem;color:#aaa4b3;text-decoration:underline;text-underline-offset:5px}footer{text-align:center;padding:18px 12px 30px;font-size:.75rem;color:#807a89}@media(max-width:600px){.bar{padding:17px}.animation{height:clamp(280px,48vh,440px)}.center{padding-bottom:45px}}
+
+/* YOSSI — cybernetic visual skin; decorative, no external assets */
+:root{--cy:#63f4ff;--vio:#a978ff;--ink:#050812}
+body{background:radial-gradient(ellipse at 50% 26%,#182c47 0%,#0a1022 43%,#04070e 85%);isolation:isolate;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.28;background-image:linear-gradient(90deg,transparent 49.7%,#42c5e02b 50%,transparent 50.3%),linear-gradient(transparent 49.7%,#42c5e02b 50%,transparent 50.3%);background-size:72px 72px;mask-image:linear-gradient(to bottom,transparent,#000 25%,#000 75%,transparent)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.65;background:repeating-linear-gradient(90deg,transparent 0 11.8%,#4be9ff23 11.85%,transparent 11.95%),radial-gradient(circle at 14% 30%,#63f4ff16 0 2px,transparent 3px),radial-gradient(circle at 85% 65%,#a978ff36 0 3px,transparent 4px);background-size:100% 100%,80px 80px,115px 115px}
+.bar{border-bottom:1px solid #6be9ff29;background:#030a16a8;backdrop-filter:blur(14px);position:relative}
+.bar::after{content:"";position:absolute;bottom:-1px;left:5%;width:34%;height:1px;background:linear-gradient(90deg,transparent,var(--cy),transparent);box-shadow:0 0 16px var(--cy)}
+.brand{color:#d8faff;letter-spacing:.17em;text-shadow:0 0 20px #42d8ff45}
+.center{position:relative;padding-top:34px}
+.kicker{color:var(--cy);text-shadow:0 0 16px #4df1ff75}
+.animation{width:min(100%,560px);height:clamp(330px,56vh,610px);border-radius:32px;filter:drop-shadow(0 0 25px #48e9ff19)}
+.animation::before{content:"";position:absolute;inset:8% 5%;border:1px solid #6ef7ff4b;border-radius:50%;box-shadow:0 0 35px #4bf2ff1b,inset 0 0 40px #8e65ff12;pointer-events:none}
+.animation video{position:relative;z-index:1;filter:contrast(1.08) saturate(1.12)}
+.animation:after{z-index:2;background:linear-gradient(0deg,#070e1b 0%,transparent 13%,transparent 87%,#0a1525 100%)}
+h1{color:#f1fbff;text-shadow:0 0 28px #69dbff35}
+p{color:#bacddd}
+.flux{background:linear-gradient(110deg,#69f4ff,#9c91ff);color:#04101a;border:1px solid #a1ffff;box-shadow:0 0 26px #41e6ff37,0 12px 40px #0009;transition:transform .2s,box-shadow .2s}
+.flux:hover{background:#c4fcff;box-shadow:0 0 42px #41e6ff66;transform:translateY(-3px)}
+.secondary{color:#a8cbd9}
+footer{border-top:1px solid #6be9ff1b;color:#8ba7ba}
+@media(max-width:600px){.animation{height:clamp(280px,48vh,470px)}.center{padding-top:22px}}
+@media(prefers-reduced-motion:reduce){.flux{transition:none}}
 </style>
 
 <link rel="canonical" href="https://levif-art.fr/index-yossi.html">
