@@ -89,6 +89,30 @@ body.motion-off #ghost-layer,body.motion-off #fault-flash{display:none}
 .stage video{width:min(100%,540px);height:clamp(320px,45vw,520px);max-width:100%;object-fit:contain;object-position:center center}
 .stage::before{width:min(80%,520px)}.stage::after{width:min(65%,420px)}
 @media(max-width:690px){.stage{min-height:clamp(300px,85vw,440px)}.stage video{height:clamp(290px,80vw,420px);width:100%}}
+
+/* V2.5 unified presentation: desktop follows the same reading order as mobile */
+@media(min-width:691px){
+header{height:auto;min-height:92px;flex-wrap:wrap;align-items:center;padding:22px clamp(22px,4vw,68px)}
+header nav{gap:clamp(12px,2vw,30px);flex-wrap:wrap}
+.layout{display:flex;flex-direction:column;min-height:0}
+.left{order:0;border-right:0;border-bottom:1px solid var(--line);padding:34px clamp(24px,5vw,80px) 28px}
+.left>.eyebrow,.left>.small,.left>.section{max-width:1180px;margin-left:auto;margin-right:auto}
+.left>.section:first-of-type{margin-top:25px}
+#modules{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:14px}
+.module{min-height:110px;padding:16px 14px;border-left-width:3px}
+.module strong{font-size:clamp(.95rem,1.3vw,1.2rem);overflow-wrap:anywhere}
+.motion-control{display:block;max-width:1180px;margin:24px auto 0}
+.left>.section:last-of-type{margin-top:20px}
+main{order:1;width:100%}
+.workspace{max-width:1180px;padding:40px clamp(24px,5vw,80px) 85px}
+.stage{min-height:clamp(390px,45vw,560px)}
+.stage video{height:clamp(380px,43vw,540px);width:min(100%,550px)}
+.right{order:2;display:block;border-left:0;border-top:1px solid var(--line);padding:32px max(24px,calc((100vw - 1020px)/2))}
+.right .section{margin-top:25px}
+.right .metrics{max-width:420px}
+}
+@media(min-width:691px) and (max-width:1000px){#modules{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:690px){.layout{display:flex;flex-direction:column}.left{order:0}.workspace{order:1}.right{order:2}}
 </style></head>
 <body><div id="ghost-layer" aria-hidden="true"></div><div id="fault-flash" aria-hidden="true"></div><div class="fault-snow" id="fault-snow" aria-hidden="true"></div><div class="fault-band" id="fault-band" aria-hidden="true"></div><div class="fault-readout" id="fault-readout" aria-hidden="true">SIGNAL LOST // RECOVERING</div><header><a class="logo" href="index-yossi.html" aria-label="Yossi — accueil">YO<span>SS</span>I / LAB</a><nav aria-label="Navigation"><a href="index.html">Portail</a><a href="index-beb.html">BÉB</a><a href="catalogue-flux.html">FLUX</a></nav></header>
 <div class="layout"><aside class="left"><div class="eyebrow">YOSSI_OS / V2.0</div><p class="small">Laboratoire audiovisuel<br>Interface expérimentale</p><div class="section"><div class="eyebrow">01 / Modules</div><div id="modules" role="group" aria-label="Explorer les modules"><button class="module" data-key="signal" aria-pressed="true">01 / CORE<strong>Signal central</strong></button><button class="module" data-key="animation" aria-pressed="false">02 / MOTION<strong>Animation</strong></button><button class="module" data-key="identite" aria-pressed="false">03 / VISUAL<strong>Identité visuelle</strong></button><button class="module" data-key="production" aria-pressed="false">04 / STUDIO<strong>Production</strong></button><button class="module" data-key="flux" aria-pressed="false">05 / SYSTEM<strong>Automatisation</strong></button></div></div><button class="motion-control" id="motion-toggle" type="button" aria-pressed="true">EFFETS GLITCH : ACTIVÉS</button><div class="section"><div class="eyebrow">02 / État</div><p class="small">Prototype exploratoire.<br>Les offres Yossi sont en préparation.</p></div></aside>
